@@ -1,8 +1,9 @@
 export const NAVIGATE = 'NAVIGATE'
 
-export const navigate = (destination) => {
+export const navigateLanding = (destination) => {
   return {
     type: NAVIGATE,
     destination
   }
 }
+//pass in a string for it to become
