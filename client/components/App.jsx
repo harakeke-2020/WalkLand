@@ -1,27 +1,35 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Landing from './Landing'
-import Map from './Map'
+import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
 
-const App = () => {
+class App extends Component {
   state = {
-    activePage: 'landingPage',
+    activePage: 'map',
     landingPage: true,
     showMap: true
   }
-  return (
-    <div className="app-container">
-      {this.state.activePage === 'landingPage' ? <Landing />
-        : <div>
-          <SideBar />
-          {this.state.activePage === 'map' && <Map />}
-          {this.state.activePage === 'details' && <Details />}
-        </div>
-      }
+  render () {
+    return (
 
-    </div>
-  )
+      <div className="appContainer">
+        {this.state.activePage === 'landingPage' ? <Landing />
+          : <>
+
+          <div className="sideBarContainer">
+            <SideBar />
+          </div>
+          <div className="mapContainer">
+            {this.state.activePage === 'map' && <DisplayMap />}
+          </div>
+            {this.state.activePage === 'details' && <Details />}
+
+          </>
+        }
+
+      </div>
+    )
+  }
 }
-
 export default App
