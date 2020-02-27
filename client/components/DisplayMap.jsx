@@ -33,8 +33,10 @@ class DisplayMap extends Component {
             google={this.props.google}
             zoom={11}
             style={mapStyles}
-            initialCenter={{ lat: -36.848461, lng: 174.763336 }}>
-
+            initialCenter={{ lat: -36.848461, lng: 174.763336 }}
+            google={this.props.google}
+            >
+              
             {this.displayMarkers()}
 
           </Map>
