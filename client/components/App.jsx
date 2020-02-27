@@ -7,7 +7,7 @@ import Details from './Details'
 
 class App extends Component {
   state = {
-    activePage: 'landingPage',  
+    activePage: 'landingPage',
     landingPage: true,
     showMap: true
   }
@@ -16,23 +16,22 @@ class App extends Component {
 
       <div className="appContainer">
         {this.state.activePage === 'landingPage' && <LandingPage />}
-        {this.state.activePage === 'map' && 
+        {this.state.activePage === 'map' &&
         <>
         <div className="sideBarContainer">
-            <SideBar />
+          <SideBar />
         </div>
         <div className="mapContainer">
           {this.state.activePage === 'map' && <DisplayMap />}
         </div>
         </> }
-        {this.state.activePage === 'details' && 
+        {this.state.activePage === 'details' &&
         <>
         <div className="sideBarContainer">
-        <SideBar />
+          <SideBar />
         </div>
         <Details />
         </>}
-      
 
       </div>
     )
