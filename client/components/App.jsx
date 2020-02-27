@@ -6,7 +6,7 @@ import Details from './Details'
 
 class App extends Component {
   state = {
-    activePage: 'map',
+    activePage: 'landingPage',
     landingPage: true,
     showMap: true
   }
