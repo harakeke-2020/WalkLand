@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
 export default class Details extends Component {
-  render() {
+  render () {
     return (
       <div>
-        
+
       </div>
     )
   }
