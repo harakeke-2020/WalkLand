@@ -6,23 +6,25 @@ export class DisplayMap extends Component {
     super(props)
     this.state = {
       walks: [
-        { latitude: -36.854520, longitude: 174.772353 },
-        { latitude: -36.829306, longitude: 174.746528 },
-        { latitude: -36.848461, longitude: 174.763336 }
+        { latitude: -36.854520, longitude: 174.772353, id: 1 },
+        { latitude: -36.829306, longitude: 174.746528, id: 2 },
+        { latitude: -36.848461, longitude: 174.763336, id: 3 }
 
       ]
     }
   }
 
   displayMarkers = () => {
-    return this.state.walks.map((walk, index, mark, props) => {
+    return this.state.walks.map((walk, index) => {
       return <Marker key={index} id={index} position={{
         lat: walk.latitude,
         lng: walk.longitude
       }}
+      animation={window.google.maps.Animation.DROP}
 
       onClick={() => console.log(index)}
-      className="markerLayer" />
+
+      />
     })
   }
 
@@ -33,13 +35,15 @@ export class DisplayMap extends Component {
     }
     return (
       <div>
-        <div className="mapContainer">
+        <div className="mapContainer" >
           <Map
             google={this.props.google}
-            zoom={13}
+            zoom={11}
             style={mapStyles}
             initialCenter={{ lat: -36.848461, lng: 174.763336 }}>
+
             {this.displayMarkers()}
+
           </Map>
         </div>
       </div>
