@@ -7,23 +7,25 @@ class SideBar extends Component {
       {
         id: 1,
         title: 'Goldies Bushwalk',
-        mainPhoto: 'lol',
+        mainPhoto: 'lolone',
         rating: '4.5'
       },
       {
         id: 2,
         title: 'Ice Walk',
-        mainPhoto: 'lol',
+        mainPhoto: 'loltwo',
         rating: '4'
       },
       {
         id: 3,
         title: 'Dessert walk',
-        mainPhoto: 'lol',
+        mainPhoto: 'lolthree',
         rating: '3'
       }
     ]
   }
+
+  //this.props.statefromstore
 
   render () {
     return (
