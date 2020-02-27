@@ -30,6 +30,7 @@ class DisplayMap extends Component {
       <div>
         <div className="mapContainer" >
           <Map
+            google={this.props.google}
             zoom={11}
             style={mapStyles}
             initialCenter={{ lat: -36.848461, lng: 174.763336 }}>
