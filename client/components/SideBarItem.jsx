@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { activePage } from './actions/activePage'
+import activePage from './actions/activePage'
 
 class SideBarItem extends Component {
   render () {
