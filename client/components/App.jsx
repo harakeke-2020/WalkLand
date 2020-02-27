@@ -6,11 +6,6 @@ import SideBar from './SideBar'
 import Details from './Details'
 
 class App extends Component {
-  state = {
-    activePage: 'landingPage',
-    landingPage: true,
-    showMap: true
-  }
   render () {
     return (
 
@@ -37,4 +32,11 @@ class App extends Component {
     )
   }
 }
-export default App
+
+const mapStateToProps = (state) => {
+  return {
+    activePage: state.activePage
+  }
+}
+
+export default connect(mapStateToProps)(App)
