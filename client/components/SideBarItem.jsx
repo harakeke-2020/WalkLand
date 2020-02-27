@@ -5,19 +5,23 @@ import activePage from './actions/activePage'
 import selectedWalk from './actions/selectedWalk'
 
 class SideBarItem extends Component {
+
   render () {
     const { id, title, mainPhoto, rating } = this.props.walk
-    const containerStyle = {
-      backgroundImage: `url(${mainPhoto})`,
-      height:
-        this.props.selectedWalk.id === id
-          ? '600px'
-          : '200px'
+    // const containerStyle = {
+    //   backgroundImage: `url(${mainPhoto})`,
+    //   height:
+    //     this.props.selectedWalk.id === id
+    //       ? '600px'
+    //       : '200px'
 
-    }
+    // }
     return (
-      <div onClick={() => this.props.selectedWalk(this.props.walk)}
-        className="sideBarItem" style={containerStyle}>
+      <div onClick={() => {
+        this.props.selectedWalk(this.props.walk)
+      }
+      }
+      className={`${this.props.selectedWalkState.id === id && 'highlighted'}`}>
         <h2>{title}</h2>
         <p>rating:  {rating}</p>
         { this.props.selectedWalk.id === id &&
@@ -46,7 +50,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state) => {
   return {
-    selectedWalk: state.selectedWalk,
+    selectedWalkState: state.selectedWalk,
     activePage: state.activePage
   }
 }

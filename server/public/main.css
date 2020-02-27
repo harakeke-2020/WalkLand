@@ -15,3 +15,6 @@ border: 1px inset blue;
   max-width: 75%;
 }
 
+.highlighted {
+  background: blue;
+}
