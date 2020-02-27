@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
 import { connect } from 'react-redux'
-import mockData from '../../data/data' //disable once redux functions working
+import mockData from '../../data/data' // disable once redux functions working
 import selectedWalk from './actions/selectedWalk'
 
 class DisplayMap extends Component {
-  //if mockData is not array, run a different function which displays the single marker
+  // if mockData is not array, run a different function which displays the single marker
   displayMarkers = () => {
     // console.log(this.props)
     return mockData.map((walk, mark, props) => {
@@ -34,9 +34,8 @@ class DisplayMap extends Component {
             zoom={11}
             style={mapStyles}
             initialCenter={{ lat: -36.848461, lng: 174.763336 }}
-            google={this.props.google}
-            >
-              
+          >
+
             {this.displayMarkers()}
 
           </Map>
