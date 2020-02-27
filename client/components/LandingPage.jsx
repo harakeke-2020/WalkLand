@@ -10,7 +10,7 @@ const Landing = (props) => {
       </div>
 
       <div>
-        <button onClick={() => props.activePage(activePage('map'))}>Click me</button>
+        <button onClick={() => props.activePage('map')}>Click me</button>
       </div>
     </>
   )

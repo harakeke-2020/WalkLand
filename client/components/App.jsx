@@ -7,25 +7,24 @@ import Details from './Details'
 
 class App extends Component {
   state = {
-    activePage: 'map',
+    activePage: 'landingPage',
     landingPage: true,
     showMap: true
   }
   render () {
     return (
-
       <div className="appContainer">
-        {this.state.activePage === 'landingPage' && <LandingPage />}
-        {this.state.activePage === 'map' &&
+        {this.props.activePage === 'landingPage' && <LandingPage />}
+        {this.props.activePage === 'map' &&
         <>
         <div className="sideBarContainer">
           <SideBar />
         </div>
         <div className="mapContainer">
-          {this.state.activePage === 'map' && <DisplayMap />}
+          <DisplayMap />
         </div>
         </> }
-        {this.state.activePage === 'details' &&
+        {this.props.activePage === 'details' &&
         <>
         <div className="sideBarContainer">
           <SideBar />
