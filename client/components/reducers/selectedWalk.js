@@ -1,7 +1,7 @@
-import mockData from '../../../data/data'
+// import mockData from '../../../data/data'
 export const SELECTEDWALK = 'SELECTEDWALK'
 
-const selectedWalk = (state = { /*mockData*/ }, action) => {
+const selectedWalk = (state = {}, action) => {
   switch (action.type) {
     case SELECTEDWALK:
       return action.selectedWalk
