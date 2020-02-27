@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
@@ -6,7 +7,7 @@ import Details from './Details'
 
 class App extends Component {
   state = {
-    activePage: 'landingPage',
+    activePage: 'landingPage',  
     landingPage: true,
     showMap: true
   }
@@ -14,19 +15,24 @@ class App extends Component {
     return (
 
       <div className="appContainer">
-        {this.state.activePage === 'landingPage' ? <LandingPage />
-          : <>
-
-          <div className="sideBarContainer">
+        {this.state.activePage === 'landingPage' && <LandingPage />}
+        {this.state.activePage === 'map' && 
+        <>
+        <div className="sideBarContainer">
             <SideBar />
-          </div>
-          <div className="mapContainer">
-            {this.state.activePage === 'map' && <DisplayMap />}
-          </div>
-            {this.state.activePage === 'details' && <Details />}
-
-          </>
-        }
+        </div>
+        <div className="mapContainer">
+          {this.state.activePage === 'map' && <DisplayMap />}
+        </div>
+        </> }
+        {this.state.activePage === 'details' && 
+        <>
+        <div className="sideBarContainer">
+        <SideBar />
+        </div>
+        <Details />
+        </>}
+      
 
       </div>
     )
