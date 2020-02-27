@@ -26,10 +26,10 @@ class SideBarItem extends Component {
         <p>rating:  {rating}</p>
         { this.props.selectedWalkState.id === id &&
         <>
-        <div>{this.props.activePageState === 'details' &&
-        <button onClick={() => this.props.activePage('map')}>Show Map</button>}</div>
-        <div>{this.props.activePageState === 'map' &&
-        <button onClick={() => this.props.activePage('details') }>Show Details</button>}</div>
+        {this.props.activePageState === 'details' &&
+        <button onClick={() => this.props.activePage('map')}>Show Map</button>}
+        {this.props.activePageState === 'map' &&
+        <button onClick={() => this.props.activePage('details') }>Show Details</button>}
         </>
         }
       </div>
