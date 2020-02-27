@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
+import data from '../../data/data'
 
 export class DisplayMap extends Component {
   constructor (props) {
@@ -15,10 +16,11 @@ export class DisplayMap extends Component {
   }
 
   displayMarkers = () => {
-    return this.state.walks.map((walk, index, mark, props) => {
+    return data.map((walk, index, mark, props) => {
       return <Marker key={index} id={index} position={{
         lat: walk.latitude,
-        lng: walk.longitude
+        lng: walk.longitude,
+        id: walk.id
       }}
 
       onClick={() => console.log(index)}
