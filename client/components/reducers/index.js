@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 import activePage from './activePage'
-// import selectedWalk from './SelectedWalk'
+import selectedWalk from './selectedWalk'
 
 export default combineReducers({
   activePage
