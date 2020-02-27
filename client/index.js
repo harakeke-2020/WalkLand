@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { ReactDOM } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
@@ -11,7 +11,7 @@ const store = createStore(reducers,
 )
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
+  ReactDOM(
     <Provider store={store}>
       <App />
     </Provider>,

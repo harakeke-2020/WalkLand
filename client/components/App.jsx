@@ -6,7 +6,7 @@ import Details from './Details'
 
 const App = () => {
   state = {
-    activePage: 'landingPage',
+    activePage: 'map',
     landingPage: true,
     showMap: true
   }
