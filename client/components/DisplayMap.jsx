@@ -5,9 +5,9 @@ import mockData from '../../data/data' //disable once redux functions working
 import selectedWalk from './actions/selectedWalk'
 
 class DisplayMap extends Component {
-
+  //if mockData is not array, run a different function which displays the single marker
   displayMarkers = () => {
-    console.log(this.props)
+    // console.log(this.props)
     return mockData.map((walk, mark, props) => {
       return <Marker key={walk.id} id={walk.id} position={{
         lat: walk.latitude,
@@ -15,7 +15,7 @@ class DisplayMap extends Component {
       }}
       animation={window.google.maps.Animation.DROP}
 
-      onClick={() => this.props.selectedWalk}
+      onClick={() => this.props.selectedWalk(walk)}
 
       />
     })
@@ -30,7 +30,6 @@ class DisplayMap extends Component {
       <div>
         <div className="mapContainer" >
           <Map
-            google={this.props.google}
             zoom={11}
             style={mapStyles}
             initialCenter={{ lat: -36.848461, lng: 174.763336 }}>
