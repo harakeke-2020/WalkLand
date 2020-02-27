@@ -1,29 +1,25 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
 
 class App extends Component {
-  state = {
-    activePage: 'map',
-    landingPage: true,
-    showMap: true
-  }
   render () {
     return (
 
       <div className="appContainer">
-        {this.state.activePage === 'landingPage' ? <LandingPage />
+        {this.props.activePage === 'landingPage' ? <LandingPage />
           : <>
 
           <div className="sideBarContainer">
             <SideBar />
           </div>
           <div className="mapContainer">
-            {this.state.activePage === 'map' && <DisplayMap />}
+            {this.props.activePage === 'map' && <DisplayMap />}
           </div>
-            {this.state.activePage === 'details' && <Details />}
+            {this.props.activePage === 'details' && <Details />}
 
           </>
         }
@@ -32,4 +28,11 @@ class App extends Component {
     )
   }
 }
-export default App
+
+const mapStateToProps = (state) => {
+  return {
+    activePage: state.activePage
+  }
+}
+
+export default connect(mapStateToProps)(App)
