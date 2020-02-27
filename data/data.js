@@ -1,5 +1,5 @@
 const mockData = [
-    {
+  {
     id: 1,
     title: 'Goldie\'s Bushwalk',
     latitude: -36.845928,
@@ -41,50 +41,52 @@ const mockData = [
       elevationGain: 9999,
       timeTaken: 99999,
       difficulty: 1
-        }
-    },
-    {
-        id: 3,
-        title: 'Te Henga Walkway',
-        location: 'Muriwai',
-        latitude: -36.884323,
-        longitude: 174.450309,
-        mainPhoto: 'https://www.doc.govt.nz/thumbs/hero/contentassets/70d774979b3440de8a37068e7a2a8d9e/te-henga-walkway-hero.jpg',
-        rating: 4.8,
-        photos: [
-        'https://www.newzealand.com/assets/Tourism-NZ/Auckland/141d0c557d/img-1536202424-2494-10947-p-18AB2FE5-AD39-F1FE-E87423DF59CE5681-2544003__FocalPointCropWzQ0MCwxMjgwLDYwLDM2LDc1LCJqcGciLDY1LDIuNV0.jpg',
-        'https://i0.wp.com/thethingis.co.nz/wp-content/uploads/2017/03/p638_orig.png?fit=1024%2C707',
-        'https://nztramper.com/wp-content/gallery/te-henga-walkway/te-henga-walkway-sign.jpg',
-        'https://welshkiwi.com/wp-content/uploads/2018/10/0545DF91-87E7-4119-A510-96123BADD452-1440x1080.jpeg8'
-        ],
-        routeImage: '../public/images/tehengawalkway.png',
-        info: {
-        distance: '2.1 - 10.3',
-        elevationGain: 9999,
-        timeTaken: '40min - 3hr20min one way',
-        difficulty: '2 - 3'
     }
-},
-    {
-        id: 4,
-        title: 'Rangitoto Summit Track',
-        location: 'Rangitoto',
-        latitude: -36.806138,
-        longitude: 174.861599,
-        mainPhoto: 'https://cdn.getyourguide.com/img/tour_img-2408255-146.jpg',
-        rating: 4.8,
-        photos: [
-            'https://www.aa.co.nz/assets/NEW-AA-TRAVELLER/Must-Dos/Hero-Images/_resampled/ScaleWidthWyI3OTUiXQ/Rangitoto-Summit.jpg?m=1562844211?m=1562844211',
-            'https://www.we12travel.com/blog/wp-content/uploads/2017/12/hiking-on-rangitoto-island-lava-field1.jpg',
-            'https://www.aa.co.nz/assets/NEW-AA-TRAVELLER/EDM-Aggregate-Content/_resampled/ScaleWidthWyI3OTUiXQ/Rangitoto-Walkers.jpg?m=1557466516?m=1557466516',
-            'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/1b/93/d7/photo0jpg.jpg'
-        ],
-        routeImage: '../public/images/tehengawalkway.png',
-        info: {
-            distance: '2.1 - 10.3',
-            elevationGain: 9999,
-            timeTaken: '40min - 3hr20min one way',
-            difficulty: '2 - 3'
-        }
+  },
+  {
+    id: 3,
+    title: 'Te Henga Walkway',
+    location: 'Muriwai',
+    latitude: -36.884323,
+    longitude: 174.450309,
+    mainPhoto: 'https://www.doc.govt.nz/thumbs/hero/contentassets/70d774979b3440de8a37068e7a2a8d9e/te-henga-walkway-hero.jpg',
+    rating: 4.8,
+    photos: [
+      'https://www.newzealand.com/assets/Tourism-NZ/Auckland/141d0c557d/img-1536202424-2494-10947-p-18AB2FE5-AD39-F1FE-E87423DF59CE5681-2544003__FocalPointCropWzQ0MCwxMjgwLDYwLDM2LDc1LCJqcGciLDY1LDIuNV0.jpg',
+      'https://i0.wp.com/thethingis.co.nz/wp-content/uploads/2017/03/p638_orig.png?fit=1024%2C707',
+      'https://nztramper.com/wp-content/gallery/te-henga-walkway/te-henga-walkway-sign.jpg',
+      'https://welshkiwi.com/wp-content/uploads/2018/10/0545DF91-87E7-4119-A510-96123BADD452-1440x1080.jpeg8'
+    ],
+    routeImage: '../public/images/tehengawalkway.png',
+    info: {
+      distance: '2.1 - 10.3',
+      elevationGain: 9999,
+      timeTaken: '40min - 3hr20min one way',
+      difficulty: '2 - 3'
     }
+  },
+  {
+    id: 4,
+    title: 'Rangitoto Summit Track',
+    location: 'Rangitoto',
+    latitude: -36.806138,
+    longitude: 174.861599,
+    mainPhoto: 'https://cdn.getyourguide.com/img/tour_img-2408255-146.jpg',
+    rating: 4.8,
+    photos: [
+      'https://www.aa.co.nz/assets/NEW-AA-TRAVELLER/Must-Dos/Hero-Images/_resampled/ScaleWidthWyI3OTUiXQ/Rangitoto-Summit.jpg?m=1562844211?m=1562844211',
+      'https://www.we12travel.com/blog/wp-content/uploads/2017/12/hiking-on-rangitoto-island-lava-field1.jpg',
+      'https://www.aa.co.nz/assets/NEW-AA-TRAVELLER/EDM-Aggregate-Content/_resampled/ScaleWidthWyI3OTUiXQ/Rangitoto-Walkers.jpg?m=1557466516?m=1557466516',
+      'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/1b/93/d7/photo0jpg.jpg'
+    ],
+    routeImage: '../public/images/tehengawalkway.png',
+    info: {
+      distance: '2.1 - 10.3',
+      elevationGain: 9999,
+      timeTaken: '40min - 3hr20min one way',
+      difficulty: '2 - 3'
+    }
+  }
 ]
+
+export default mockData

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
-// import data from '../../data/data'
+import mockData from '../../data/data'
 
 export class DisplayMap extends Component {
   constructor (props) {
+    console.log(mockData)
     super(props)
     this.state = {
       walks: [
@@ -16,7 +17,7 @@ export class DisplayMap extends Component {
   }
 
   displayMarkers = () => {
-    return this.state.walks.map((walk, index, mark, props) => {
+    return mockData.map((walk, index, mark, props) => {
       return <Marker key={index} id={index} position={{
         lat: walk.latitude,
         lng: walk.longitude
