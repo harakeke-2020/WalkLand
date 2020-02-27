@@ -24,17 +24,13 @@ class SideBarItem extends Component {
       className={`${this.props.selectedWalkState.id === id && 'highlighted'}`}>
         <h2>{title}</h2>
         <p>rating:  {rating}</p>
-        { this.props.selectedWalk.id === id &&
-        <div>
-          { this.props.activePage === 'details' &&
-        <button onClick={() => this.props.activePage('details')}>
-        Show Details
-        </button>}
-          {this.props.activePage === 'map' &&
-        <button onClick={() => this.props.activePage('map') }>
-          Show Map
-        </button>}
-        </div>
+        { this.props.selectedWalkState.id === id &&
+        <>
+        <div>{this.props.activePageState === 'details' &&
+        <button onClick={() => this.props.activePage('map')}>Show Map</button>}</div>
+        <div>{this.props.activePageState === 'map' &&
+        <button onClick={() => this.props.activePage('details') }>Show Details</button>}</div>
+        </>
         }
       </div>
     )
@@ -51,7 +47,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state) => {
   return {
     selectedWalkState: state.selectedWalk,
-    activePage: state.activePage
+    activePageState: state.activePage
   }
 }
 
