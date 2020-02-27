@@ -6,11 +6,11 @@ const Landing = (props) => {
   return (
     <>
       <div className>
-      <h1>Walkland</h1>
+        <h1>Walkland</h1>
       </div>
 
       <div className>
-      <button onClick={() => props.activePage(activePage('map'))}>Click me</button>
+        <button onClick={() => props.activePage(activePage('map'))}>Click me</button>
       </div>
     </>
   )
@@ -21,4 +21,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(null, mapDispatchToProps)(Landing)
-
