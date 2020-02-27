@@ -1,32 +1,21 @@
 import React, { Component } from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
 import { connect } from 'react-redux'
-import mockData from '../../data/data'
+import mockData from '../../data/data' //disable once redux functions working
+import selectedWalk from './actions/selectedWalk'
 
 class DisplayMap extends Component {
-  constructor (props) {
-    console.log(mockData)
-    super(props)
-    this.state = {
-      initialWalks: props.initialWalks
-      // walks: [
-      //   { latitude: -36.854520, longitude: 174.772353, id: 1 },
-      //   { latitude: -36.829306, longitude: 174.746528, id: 2 },
-      //   { latitude: -36.848461, longitude: 174.763336, id: 3 }
-
-      // ]
-    }
-  }
 
   displayMarkers = () => {
-    return mockData.map((walk, index, mark, props) => {
-      return <Marker key={index} id={index} position={{
+    console.log(this.props)
+    return mockData.map((walk, mark, props) => {
+      return <Marker key={walk.id} id={walk.id} position={{
         lat: walk.latitude,
         lng: walk.longitude
       }}
       animation={window.google.maps.Animation.DROP}
 
-      onClick={() => console.log(index)}
+      onClick={() => this.props.selectedWalk}
 
       />
     })
@@ -55,12 +44,18 @@ class DisplayMap extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => {
   return {
-    initialWalks: state.initialWalks
+    selectedWalk: (walk) => dispatch(selectedWalk(walk))
   }
 }
 
-export default connect(mapStateToProps)(GoogleApiWrapper({
+const mapStateToProps = (state) => {
+  return {
+    selectedWalkState: state.selectedWalk
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GoogleApiWrapper({
   apiKey: 'AIzaSyAnz2zXo94BzcNmXJucAXslMthhqQ52OlU'
 })(DisplayMap))

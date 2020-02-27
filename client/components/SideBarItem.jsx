@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import activePage from './actions/activePage'
 import selectedWalk from './actions/selectedWalk'
 
 class SideBarItem extends Component {
-
   render () {
     const { id, title, mainPhoto, rating } = this.props.walk
     // const containerStyle = {
@@ -14,10 +12,12 @@ class SideBarItem extends Component {
     //     this.props.selectedWalk.id === id
     //       ? '600px'
     //       : '200px'
-
+    const style = {
+      backgroundImage: `url(${mainPhoto})`
+    }
     // }
     return (
-      <div onClick={() => {
+      <div style={style} onClick={() => {
         this.props.selectedWalk(this.props.walk)
       }
       }

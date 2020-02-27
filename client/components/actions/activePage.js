@@ -1,9 +1,10 @@
 export const NAVIGATE = 'NAVIGATE'
 
-const activePage = (destination) => {
+const activePage = (destination, id) => {
   return {
     type: NAVIGATE,
-    destination
+    destination,
+    id
   }
 }
 

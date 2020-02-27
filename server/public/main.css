@@ -16,5 +16,6 @@ border: 1px inset blue;
 }
 
 .highlighted {
-  background: blue;
+  color: white;
+  opacity: 0.5;
 }

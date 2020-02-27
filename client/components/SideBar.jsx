@@ -1,38 +1,17 @@
 import React, { Component } from 'react'
 import SideBarItem from './SideBarItem'
+import mockData from '../../data/data'
+import { connect } from 'react-redux'
 
 class SideBar extends Component {
-  state = {
-    walkDetails: [
-      {
-        id: 1,
-        title: 'Goldies Bushwalk',
-        mainPhoto: 'lolone',
-        rating: '4.5'
-      },
-      {
-        id: 2,
-        title: 'Ice Walk',
-        mainPhoto: 'loltwo',
-        rating: '4'
-      },
-      {
-        id: 3,
-        title: 'Dessert walk',
-        mainPhoto: 'lolthree',
-        rating: '3'
-      }
-    ]
-  }
-
-  //this.props.statefromstore
+  state = { mockData } /* this.props.selectedWalkState */
 
   render () {
     return (
       <div>
-        {this.state.walkDetails.map((walk, idx) => {
+        {this.state.mockData.map((walk) => {
           return (
-            <SideBarItem key={idx} walk={walk} />
+            <SideBarItem key={walk.id} walk={walk} mainPhoto={walk.mainPhoto}/>
           )
         })}
       </div>
@@ -40,4 +19,10 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar
+const mapStateToProps = (state) => {
+  return {
+    selectedWalkState: state.selectedWalk
+  }
+}
+
+export default connect(mapStateToProps)(SideBar)
