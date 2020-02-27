@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Landing from './Landing'
+import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
@@ -14,7 +14,7 @@ class App extends Component {
     return (
 
       <div className="appContainer">
-        {this.state.activePage === 'landingPage' ? <Landing />
+        {this.state.activePage === 'landingPage' ? <LandingPage />
           : <>
 
           <div className="sideBarContainer">
