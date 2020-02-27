@@ -30,7 +30,7 @@ class SideBar extends Component {
       <div>
         {this.state.walkDetails.map((walk, idx) => {
           return (
-            <SideBarItem key={idx} title={walk.title} mainPhoto={walk.mainPhoto} rating={walk.rating} />
+            <SideBarItem key={idx} walk={walk} />
           )
         })}
       </div>

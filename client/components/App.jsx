@@ -36,4 +36,11 @@ class App extends Component {
     )
   }
 }
-export default App
+
+const mapStateToProps = state => {
+  return {
+  activePage: state.activePage
+  }
+}
+
+export default connect(mapStateToProps)(App)
