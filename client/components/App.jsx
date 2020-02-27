@@ -6,6 +6,11 @@ import SideBar from './SideBar'
 import Details from './Details'
 
 class App extends Component {
+  state = {
+    activePage: 'landingPage',
+    landingPage: true,
+    showMap: true
+  }
   render () {
     return (
       <div className="appContainer">
@@ -31,11 +36,4 @@ class App extends Component {
     )
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    activePage: state.activePage
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default App
