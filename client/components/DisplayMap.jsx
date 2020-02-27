@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
+import { connect } from 'react-redux'
 import mockData from '../../data/data'
 
-export class DisplayMap extends Component {
+class DisplayMap extends Component {
   constructor (props) {
     console.log(mockData)
     super(props)
     this.state = {
-      walks: [
-        { latitude: -36.854520, longitude: 174.772353, id: 1 },
-        { latitude: -36.829306, longitude: 174.746528, id: 2 },
-        { latitude: -36.848461, longitude: 174.763336, id: 3 }
+      initialWalks: props.initialWalks
+      // walks: [
+      //   { latitude: -36.854520, longitude: 174.772353, id: 1 },
+      //   { latitude: -36.829306, longitude: 174.746528, id: 2 },
+      //   { latitude: -36.848461, longitude: 174.763336, id: 3 }
 
-      ]
+      // ]
     }
   }
 
@@ -53,6 +55,12 @@ export class DisplayMap extends Component {
   }
 }
 
-export default GoogleApiWrapper({
+const mapStateToProps = state => {
+  return {
+    initialWalks: state.initialWalks
+  }
+}
+
+export default connect(mapStateToProps)(GoogleApiWrapper({
   apiKey: 'AIzaSyAnz2zXo94BzcNmXJucAXslMthhqQ52OlU'
-})(DisplayMap)
+})(DisplayMap))
