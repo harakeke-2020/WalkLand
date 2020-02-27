@@ -15,24 +15,19 @@ class App extends Component {
     return (
 
       <div className="appContainer">
-        {this.state.activePage === 'landingPage' && <LandingPage />}
-        {this.state.activePage === 'map' && 
-        <>
-        <div className="sideBarContainer">
+        {/* {this.state.activePage === 'landingPage' ? <Landing />
+          : <>
+
+          <div className="sideBarContainer">
             <SideBar />
-        </div>
-        <div className="mapContainer">
-          {this.state.activePage === 'map' && <DisplayMap />}
-        </div>
-        </> }
-        {this.state.activePage === 'details' && 
-        <>
-        <div className="sideBarContainer">
-        <SideBar />
-        </div>
+          </div>
+          <div className="mapContainer">
+            {this.state.activePage === 'map' && <DisplayMap />}
+          </div> */}
+        {/* {this.state.activePage === 'details' && <Details />} */}
         <Details />
-        </>}
-      
+        {/* </> */}
+        {/* } */}
 
       </div>
     )
