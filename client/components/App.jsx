@@ -17,7 +17,7 @@ class App extends Component {
           <SideBar />
         </div>
         <div className="mapContainer">
-          {this.state.activePage === 'map' && <DisplayMap />}
+          <DisplayMap />
         </div>
         </> }
         {this.state.activePage === 'details' &&
