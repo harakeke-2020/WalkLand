@@ -7,19 +7,19 @@ class SideBar extends Component {
       {
         id: 1,
         title: 'Goldies Bushwalk',
-        mainPhoto: 'https://unsplash.com/photos/T7lMR-syZAg',
+        mainPhoto: 'lol',
         rating: '4.5'
       },
       {
         id: 2,
         title: 'Ice Walk',
-        mainPhoto: 'https://unsplash.com/photos/Kmu-ovELSxk',
+        mainPhoto: 'lol',
         rating: '4'
       },
       {
         id: 3,
         title: 'Dessert walk',
-        mainPhoto: 'https://unsplash.com/photos/InrNz281-S8',
+        mainPhoto: 'lol',
         rating: '3'
       }
     ]
