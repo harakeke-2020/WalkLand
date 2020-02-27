@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux'
 const mockData = {
   id: 4,
   title: 'Goldie\'s Bushwalk',
@@ -22,7 +22,7 @@ const mockData = {
 }
 
 class Details extends Component {
-  state = props.selected
+  // state = props.selected
   render () {
     return (
       <div>
@@ -30,8 +30,15 @@ class Details extends Component {
         <h5>{mockData.location}</h5>
         <ul>
           {
-            mockData.photos.map(item => (<img src={item} height="42" width="42">))
+            mockData.photos.map((item, idx) => (<img key={idx} src={item} height="200" width="300" />))
           }
+        </ul>
+        <img src={mockData.routeImage} height="200" width="300" />
+        <ul>
+          <li>{`Distance: ${mockData.info.distance}km`}</li>
+          <li>{`Elevation Gain: ${mockData.info.elevationGain}m`}</li>
+          <li>{`Estimated Time: ${mockData.info.timeTaken}`}</li>
+          <li>{`Difficulty rating: ${mockData.info.difficulty}`}</li>
         </ul>
       </div>
     )
