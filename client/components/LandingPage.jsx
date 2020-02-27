@@ -5,12 +5,12 @@ import activePage from './actions/activePage'
 const Landing = (props) => {
   return (
     <>
-      <div className>
+      <div>
         <h1>Walkland</h1>
       </div>
 
-      <div className>
-        <button onClick={() => props.activePage(activePage('map'))}>Click me</button>
+      <div>
+        <button onClick={() => props.activePage('map')}>Click me</button>
       </div>
     </>
   )
