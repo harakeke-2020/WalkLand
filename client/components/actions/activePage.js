@@ -1,6 +1,6 @@
 export const NAVIGATE = 'NAVIGATE'
 
-export const navigate = (destination) => {
+export const activePage = (destination) => {
   return {
     type: NAVIGATE,
     destination
