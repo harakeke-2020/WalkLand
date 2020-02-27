@@ -6,31 +6,37 @@ import SideBar from './SideBar'
 import Details from './Details'
 
 class App extends Component {
-  state = {
-    activePage: 'landingPage',  
-    landingPage: true,
-    showMap: true
-  }
   render () {
     return (
 
       <div className="appContainer">
-        {/* {this.state.activePage === 'landingPage' ? <Landing />
-          : <>
-
-          <div className="sideBarContainer">
-            <SideBar />
-          </div>
-          <div className="mapContainer">
-            {this.state.activePage === 'map' && <DisplayMap />}
-          </div> */}
-        {/* {this.state.activePage === 'details' && <Details />} */}
+        {this.state.activePage === 'landingPage' && <LandingPage />}
+        {this.state.activePage === 'map' &&
+        <>
+        <div className="sideBarContainer">
+          <SideBar />
+        </div>
+        <div className="mapContainer">
+          {this.state.activePage === 'map' && <DisplayMap />}
+        </div>
+        </> }
+        {this.state.activePage === 'details' &&
+        <>
+        <div className="sideBarContainer">
+          <SideBar />
+        </div>
         <Details />
-        {/* </> */}
-        {/* } */}
+        </>}
 
       </div>
     )
   }
 }
-export default App
+
+const mapStateToProps = (state) => {
+  return {
+    activePage: state.activePage
+  }
+}
+
+export default connect(mapStateToProps)(App)
