@@ -9,6 +9,7 @@ import '@testing-library/jest-dom/extend-expect'
 import '@babel/polyfill'
 
 import App from '../client/components/App'
+import DisplayMap from '../client/components/DisplayMap'
 
 function renderWithRedux (
   ui,
@@ -33,9 +34,17 @@ test('loads and displays app', async () => {
   expect(appContainer).toHaveClass('appContainer')
 })
 
-// this does not work!!! it looks for the getByTestId in landingpage
-// test('loads and displays app', async () => {
-//   const { getByTestId } = renderWithRedux(<App />)
+/* both of these do not work, they cant find the test by id
+*/
+
+// test('loads and displays app', () => {
+//   const { getByText } = renderWithRedux(<App />)
+//   const appContainer = getByText('kev')
+//   expect(appContainer).toBeInTheDocument()
+// })
+
+// test('loads and displays app', () => {
+//   const { getByTestId } = renderWithRedux(<DisplayMap />)
 //   const appContainer = getByTestId('kev')
-//   expect(appContainer).toHaveClass('sideBarContainer')
+//   expect(appContainer).toBeInTheDocument()
 // })
