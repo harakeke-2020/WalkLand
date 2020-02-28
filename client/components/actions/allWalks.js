@@ -1,10 +1,45 @@
-export const ALLWALKS = 'ALLWALKS'
+// export const ALLWALKS = 'ALLWALKS'
 
-const allWalks = (payload) => {
+// // /api/v1/walks
+
+// const allWalks = (payload) => {
+//   return {
+//     type: ALLWALKS,
+//     payload
+//   }
+// }
+
+// export default allWalks
+ 
+import request from 'superagent'
+// import { showError } from './showError'
+
+export const GETWALKS = 'GETWALKS'
+export const RECEIVEWALKS = 'RECEIVEWALKS'
+
+export const requestWalks = () => {
   return {
-    type: ALLWALKS,
-    payload
+    type: GETWALKS
   }
 }
 
-export default allWalks
+export const receiveWalks = (walks) => {
+  return {
+    type: RECEIVEWALKS,
+    walks
+  }
+}
+
+export function fetchWalks () {
+  return (dispatch) => {
+    dispatch(requestWalks())
+    return request
+      .get('/api/v1/walks')
+      .then(res => {
+        dispatch(receiveWalks(res.body))
+      })
+      // .catch(err => {
+      //   dispatch(showError(err.message))
+      // })
+  }
+}

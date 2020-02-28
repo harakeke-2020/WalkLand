@@ -15,4 +15,14 @@ function getUsers () {
 function getWalks () {
   return db('walks')
     .select()
+    .then(walks => {
+      let parsedWalks = walks.map(walk => parser(walk))
+      return parsedWalks
+    })
+}
+
+function parser (photosArray) {
+  let parsedPhotos = JSON.parse(photosArray.photos)
+  photosArray.photos = parsedPhotos
+  return photosArray
 }
