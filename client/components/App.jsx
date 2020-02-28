@@ -11,11 +11,13 @@ class App extends Component {
     landingPage: true,
     showMap: true
   }
+  
   render () {
     return (
-      <div className="appContainer">
+      <div>
         {this.props.activePage === 'landingPage' && <LandingPage />}
-        {this.props.activePage === 'map' &&
+        <div className="appContainer">
+          {this.props.activePage === 'map' &&
         <>
         <div className="sideBarContainer">
           <SideBar />
@@ -24,14 +26,14 @@ class App extends Component {
           <DisplayMap />
         </div>
         </> }
-        {this.props.activePage === 'details' &&
+          {this.props.activePage === 'details' &&
         <>
         <div className="sideBarContainer">
           <SideBar />
         </div>
         <Details />
         </>}
-
+        </div>
       </div>
     )
   }
@@ -39,7 +41,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-  activePage: state.activePage
+    activePage: state.activePage
   }
 }
 

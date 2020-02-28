@@ -5,11 +5,9 @@ import { activePage } from '../client/components/reducers/activePage'
 import { render, fireEvent } from '@testing-library/react'
 
 import '@testing-library/jest-dom/extend-expect'
-import 'regenerator-runtime/runtime'
 import '@babel/polyfill'
+
 import LandingPage, { Landing } from '../client/components/LandingPage'
-// the component to test
-import LandingPage from '../client/components/LandingPage'
 
 function renderWithRedux (
   ui,
@@ -17,23 +15,20 @@ function renderWithRedux (
 ) {
   return {
     ...render(<Provider store={store}>{ui}</Provider>),
-    // adding `store` to the returned utilities to allow us
-    // to reference it in our tests (just try to avoid using
-    // this to test implementation details).
     store
   }
 }
 
 test('loads and displays WalkLand ', async () => {
-  const { getByText, getByTestId } = renderWithRedux(<LandingPage />)
+  const { getByTestId } = renderWithRedux(<LandingPage />)
   const title = getByTestId('title')
   expect(title).toHaveTextContent('Walkland')
 })
 
 test('The main button has the correct text and is present ', async () => {
-  const { getByText, getByTestId } = renderWithRedux(<LandingPage />)
+  const { getByTestId } = renderWithRedux(<LandingPage />)
   const button = getByTestId('startButton')
-  expect(button).toHaveTextContent('Click me')
+  expect(button).toHaveTextContent('Take a Walk')
   expect(button).toBeInTheDocument()
 })
 
@@ -44,9 +39,21 @@ test('should call props.onClick when clicked', async () => {
   expect(mockOnClick).toHaveBeenCalledTimes(1)
 })
 
-test('props change to map', () => {
-  const store = createStore(() => ({ activePage: 'test' }))
-  const{ getByTestId } = renderWithRedux(<LandingPage />, { store })
-  
+test('video exsists', async () => {
+  const { getByTestId } = renderWithRedux(<LandingPage />)
+  const video = getByTestId('video')
+  expect(video).toBeInTheDocument()
+  expect(video).toHaveAttribute('src')
+})
 
+test('video has className fullscreen-bg', async () => {
+  const { getByTestId } = renderWithRedux(<LandingPage />)
+  const fullscreen = getByTestId('fullscreen')
+  expect(fullscreen).toHaveClass('fullscreen-bg')
+})
+
+test('button has classname ', async () => {
+  const { getByTestId } = renderWithRedux(<LandingPage />)
+  const startbutton = getByTestId('startButton')
+  expect(startbutton).toHaveClass('w3-animate-zoom btneffect btn')
 })
