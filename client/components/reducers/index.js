@@ -4,6 +4,8 @@ import activePage from './activePage'
 import selectedWalk from './selectedWalk'
 import allWalks from './allWalks'
 
+
+
 export default combineReducers({
   activePage,
   selectedWalk,
