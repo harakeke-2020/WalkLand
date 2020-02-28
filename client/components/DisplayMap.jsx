@@ -20,6 +20,7 @@ class DisplayMap extends Component {
         lat: walk.latitude,
         lng: walk.longitude
       }}
+      animation={window.google.maps.Animation.DROP}
       onClick={() => { this.props.selectedWalk(walk) }}
       />
     })
