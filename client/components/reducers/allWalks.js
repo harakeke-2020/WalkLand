@@ -1,7 +1,7 @@
 import mockData from '../../../data/data'
 export const ALLWALKS = 'ALLWALKS'
 
-const selectedWalk = (state = mockData, action) => {
+const allWalks = (state = mockData, action) => {
   switch (action.type) {
     case ALLWALKS:
       return action.allWalks
@@ -10,4 +10,4 @@ const selectedWalk = (state = mockData, action) => {
   }
 }
 
-export default selectedWalk
+export default allWalks
