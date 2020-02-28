@@ -1,16 +1,3 @@
-// export const ALLWALKS = 'ALLWALKS'
-
-// // /api/v1/walks
-
-// const allWalks = (payload) => {
-//   return {
-//     type: ALLWALKS,
-//     payload
-//   }
-// }
-
-// export default allWalks
- 
 import request from 'superagent'
 // import { showError } from './showError'
 

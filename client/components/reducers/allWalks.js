@@ -1,5 +1,3 @@
-// import mockData from '../../../data/data'
-
 import { RECEIVEWALKS } from '../actions/allWalks.js'
 
 const allWalks = (state = [], action) => {

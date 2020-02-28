@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 class Details extends Component {
   render () {
     const { selectedWalk } = this.props
+    console.log('state from store in details ', selectedWalk)
     return (
       <div>
         <h3>{selectedWalk.title}</h3>
@@ -15,10 +16,10 @@ class Details extends Component {
         </ul>
         <img src={selectedWalk.routeImage} height="200" width="300" />
         <ul>
-          <li>{`Distance: ${selectedWalk.info.distance}km`}</li>
-          <li>{`Elevation Gain: ${selectedWalk.info.elevationGain}m`}</li>
-          <li>{`Estimated Time: ${selectedWalk.info.timeTaken}`}</li>
-          <li>{`Difficulty rating: ${selectedWalk.info.difficulty}`}</li>
+          <li>{`Distance: ${selectedWalk.distance}km`}</li>
+          <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
+          <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
+          <li>{`Difficulty rating: ${selectedWalk.difficulty}`}</li>
         </ul>
       </div>
     )

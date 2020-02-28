@@ -14,8 +14,8 @@ class DisplayMap extends Component {
     />
   }
   initialMarkers = () => {
-    const { allWalksSate } = this.props
-    return allWalksSate.map((walk) => {
+    const { allWalksState } = this.props
+    return allWalksState.map(walk => {
       return <Marker key={walk.id} id={walk.id} position={{
         lat: walk.latitude,
         lng: walk.longitude
@@ -27,14 +27,18 @@ class DisplayMap extends Component {
   }
 
     unselectedMarkers = () => {
-      const { unselected } = this.props
-      return unselected.map((walk) => {
-        return <Marker key={walk.id} id={walk.id} position={{
-          lat: walk.latitude,
-          lng: walk.longitude
-        }}
-        onClick={() => { this.props.selectedWalk(walk) }}
-        />
+      // state.filter((item) => item.id !== action.selectedWalk.id)
+      // const { unselected } = this.props
+      const { allWalksState, selectedWalkState } = this.props
+      console.log('from unselected markers function ', this.props)
+      return allWalksState.filter(walk => {
+        return walk.id !== selectedWalkState.id &&
+          <Marker key={walk.id} id={walk.id} position={{
+            lat: walk.latitude,
+            lng: walk.longitude
+          }}
+          onClick={() => { this.props.selectedWalk(walk) }}
+          />
       })
     }
 
@@ -76,8 +80,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state) => {
   return {
     selectedWalkState: state.selectedWalk,
-    allWalksSate: state.allWalks,
-    unselected: state.unselectedWalks
+    allWalksState: state.allWalks
+    // unselected: state.unselectedWalks
   }
 }
 

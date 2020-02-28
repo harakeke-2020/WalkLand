@@ -1,4 +1,3 @@
-// import mockData from '../../../data/data'
 export const SELECTEDWALK = 'SELECTEDWALK'
 
 const selectedWalk = (state = {}, action) => {
