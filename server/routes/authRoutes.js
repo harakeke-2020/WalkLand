@@ -17,4 +17,10 @@ router.get('/', (req, res) => {
 }
 )
 
+//post request when user reqisters
+
+//get request when user logs in to compare to databse.
+//if user trying to log in matches user in db, then authenticate will be successful
+//logout route?
+
 module.exports = router
