@@ -21,14 +21,14 @@ function renderWithRedux (
   }
 }
 
-// test('loads and displays sidebarcontainer', async () => {
-//   const { getByTestId } = renderWithRedux(<App />)
-//   const kev = getByTestId('whatever')
-//   expect(kev).toHaveClass('sideBarContainer')
-// })
+test('loads and displays sidebarcontainer', async () => {
+  const { getByTestId } = renderWithRedux(<App />)
+  const sideBarContainer = getByTestId('sideBarContainer')
+  expect(sideBarContainer).toHaveClass('sideBarContainer')
+})
+
 test('loads and displays app', async () => {
   const { getByTestId } = renderWithRedux(<App />)
   const appContainer = getByTestId('appContainer')
   expect(appContainer).toHaveClass('appContainer')
 })
-
