@@ -48,6 +48,7 @@ class DisplayMap extends Component {
         <div>
           <div className="mapContainer" >
             <Map
+
               google={this.props.google}
               zoom={11}
               style={mapStyles}

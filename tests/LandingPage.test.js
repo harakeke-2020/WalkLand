@@ -1,7 +1,8 @@
 import React from 'react'
 import { createStore } from 'redux'
+import combineReducers from '../client/components/reducers/index'
 import { Provider } from 'react-redux'
-import { activePage } from '../client/components/reducers/activePage'
+
 import { render, fireEvent } from '@testing-library/react'
 
 import '@testing-library/jest-dom/extend-expect'
@@ -11,10 +12,11 @@ import LandingPage, { Landing } from '../client/components/LandingPage'
 
 function renderWithRedux (
   ui,
-  { initialState, store = createStore(activePage, initialState) } = {}
+  { initialState, store = createStore(combineReducers, initialState) } = {}
 ) {
   return {
     ...render(<Provider store={store}>{ui}</Provider>),
+
     store
   }
 }

@@ -11,12 +11,14 @@ class App extends Component {
     landingPage: true,
     showMap: true
   }
-  
+
   render () {
     return (
       <div>
-        {this.props.activePage === 'landingPage' && <LandingPage />}
-        <div className="appContainer">
+        <div>
+          {this.props.activePage === 'landingPage' && <LandingPage />}
+        </div>
+        <div data-testid="appContainer" className="appContainer">
           {this.props.activePage === 'map' &&
         <>
         <div className="sideBarContainer">
@@ -28,7 +30,7 @@ class App extends Component {
         </> }
           {this.props.activePage === 'details' &&
         <>
-        <div className="sideBarContainer">
+        <div data-testid="whatever" className="sideBarContainer">
           <SideBar />
         </div>
         <Details />
