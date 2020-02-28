@@ -51,7 +51,7 @@ test('video exsists', async () => {
 test('video has className fullscreen-bg', async () => {
   const { getByTestId } = renderWithRedux(<LandingPage />)
   const fullscreen = getByTestId('fullscreen')
-  expect(fullscreen).toHaveClass('fullscreen-bg__video')
+  expect(fullscreen).toHaveClass('fullscreen-bg')
 })
 
 test('button has classname ', async () => {
