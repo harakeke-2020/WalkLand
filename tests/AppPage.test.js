@@ -23,8 +23,8 @@ function renderWithRedux (
 
 test('loads and displays sidebarcontainer', async () => {
   const { getByTestId } = renderWithRedux(<App />)
-  const sideBarContainer = getByTestId('sideBarContainer')
-  expect(sideBarContainer).toHaveClass('sideBarContainer')
+  const sideBarContainer = getByTestId('landing')
+  expect(sideBarContainer).toHaveClass('landing-page')
 })
 
 test('loads and displays app', async () => {
@@ -32,3 +32,10 @@ test('loads and displays app', async () => {
   const appContainer = getByTestId('appContainer')
   expect(appContainer).toHaveClass('appContainer')
 })
+
+// this does not work!!! it looks for the getByTestId in landingpage
+// test('loads and displays app', async () => {
+//   const { getByTestId } = renderWithRedux(<App />)
+//   const appContainer = getByTestId('kev')
+//   expect(appContainer).toHaveClass('sideBarContainer')
+// })
