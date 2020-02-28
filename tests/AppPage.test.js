@@ -1,26 +1,10 @@
 import React from 'react'
-import { createStore } from 'redux'
-import combineReducers from '../client/components/reducers/index'
-import { Provider } from 'react-redux'
-
-import { render } from '@testing-library/react'
+import renderWithRedux from '../tests/renderWithRedux'
 
 import '@testing-library/jest-dom/extend-expect'
 import '@babel/polyfill'
 
 import App from '../client/components/App'
-import DisplayMap from '../client/components/DisplayMap'
-
-function renderWithRedux (
-  ui,
-  { initialState, store = createStore(combineReducers, initialState) } = {}
-) {
-  return {
-    ...render(<Provider store={store}>{ui}</Provider>),
-
-    store
-  }
-}
 
 test('loads and displays sidebarcontainer', async () => {
   const { getByTestId } = renderWithRedux(<App />)
@@ -34,12 +18,9 @@ test('loads and displays app', async () => {
   expect(appContainer).toHaveClass('appContainer')
 })
 
-/* both of these do not work, they cant find the test by id
-*/
-
 // test('loads and displays app', () => {
 //   const { getByText } = renderWithRedux(<App />)
-//   const appContainer = getByText('kev')
+//   const appContainer = getByText('sidebar')
 //   expect(appContainer).toBeInTheDocument()
 // })
 

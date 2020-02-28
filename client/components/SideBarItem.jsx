@@ -19,15 +19,14 @@ class SideBarItem extends Component {
     return (
       <div style={style} onClick={() => {
         this.props.selectedWalk(this.props.walk)
-      }
-      }
+      }}
       className={`${this.props.selectedWalkState.id === id && 'highlighted'}`}>
-        <h2>{title}</h2>
-        <p>rating:  {rating}</p>
+        <h2 data-testid={'sideBarItem'}>{title}</h2>
+        <p data-testid={'rating'}>rating:{rating}</p>
         { this.props.selectedWalkState.id === id &&
         <>
         {this.props.activePageState === 'details' &&
-        <button onClick={() => this.props.activePage('map')}>Show Map</button>}
+        <button data-testid="showmapbutton" onClick={() => this.props.activePage('map')}>Show Map</button>}
         {this.props.activePageState === 'map' &&
         <button onClick={() => this.props.activePage('details') }>Show Details</button>}
         </>
