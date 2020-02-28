@@ -5,31 +5,28 @@ import selectedWalk from './actions/selectedWalk'
 
 class SideBarItem extends Component {
   render () {
-    const { id, title, mainPhoto, rating } = this.props.walk
-    // const containerStyle = {
-    //   backgroundImage: `url(${mainPhoto})`,
-    //   height:
-    //     this.props.selectedWalk.id === id
-    //       ? '600px'
-    //       : '200px'
-    const style = {
-      backgroundImage: `url(${mainPhoto})`
-    }
-    // }
+    const walk = this.props.walk
+    const { id, title, mainPhoto, rating } = walk
+    const { activePageState, selectedWalkState } = this.props
+    const { selectedWalk, activePage } = this.props
+    const style = { backgroundImage: `url(${mainPhoto})` }
+
     return (
-      <div style={style} onClick={() => {
-        this.props.selectedWalk(this.props.walk)
+      <div style={style} className={
+        `${selectedWalkState.id === id ? 'highlighted' : 'item'}`
       }
-      }
-      className={`${this.props.selectedWalkState.id === id && 'highlighted'}`}>
+      onClick={() => {
+        selectedWalk(walk)
+      }}
+      >
         <h2>{title}</h2>
         <p>rating:  {rating}</p>
-        { this.props.selectedWalkState.id === id &&
+        { selectedWalkState.id === id &&
         <>
-        {this.props.activePageState === 'details' &&
-        <button onClick={() => this.props.activePage('map')}>Show Map</button>}
-        {this.props.activePageState === 'map' &&
-        <button onClick={() => this.props.activePage('details') }>Show Details</button>}
+        {activePageState === 'details' &&
+        <button onClick={() => activePage('map')}>Show Map</button>}
+        {activePageState === 'map' &&
+        <button onClick={() => activePage('details') }>Show Details</button>}
         </>
         }
       </div>

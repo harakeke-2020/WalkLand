@@ -25,46 +25,45 @@ class DisplayMap extends Component {
       />
     })
   }
+  unselectedMarkers = () => {
+    const { unselected } = this.props
+    return unselected.map((walk) => {
+      return <Marker key={walk.id} id={walk.id} position={{
+        lat: walk.latitude,
+        lng: walk.longitude
+      }}
+      onClick={() => { this.props.selectedWalk(walk) }}
+      />
+    })
+  }
 
-    unselectedMarkers = () => {
-      const { unselected } = this.props
-      return unselected.map((walk) => {
-        return <Marker key={walk.id} id={walk.id} position={{
-          lat: walk.latitude,
-          lng: walk.longitude
-        }}
-        onClick={() => { this.props.selectedWalk(walk) }}
-        />
-      })
+  render () {
+    const mapStyles = {
+      width: '100%',
+      height: '100%'
     }
 
-    render () {
-      const mapStyles = {
-        width: '100%',
-        height: '100%'
-      }
-
-      return (
-        <div>
-          <div className="mapContainer" >
-            <Map
-              google={this.props.google}
-              zoom={11}
-              style={mapStyles}
-              initialCenter={{ lat: -36.848461, lng: 174.763336 }}
-            >
-              {this.props.selectedWalkState.id === undefined
-                ? this.initialMarkers()
-                : this.unselectedMarkers()
-              }
-              {this.props.selectedWalkState.id !== undefined &&
+    return (
+      <div>
+        <div className="mapContainer" >
+          <Map
+            google={this.props.google}
+            zoom={11}
+            style={mapStyles}
+            initialCenter={{ lat: -36.848461, lng: 174.763336 }}
+          >
+            {this.props.selectedWalkState.id === undefined
+              ? this.initialMarkers()
+              : this.unselectedMarkers()
+            }
+            {this.props.selectedWalkState.id !== undefined &&
             this.bounceMarker()
-              }
-            </Map>
-          </div>
+            }
+          </Map>
         </div>
-      )
-    }
+      </div>
+    )
+  }
 }
 
 const mapDispatchToProps = dispatch => {

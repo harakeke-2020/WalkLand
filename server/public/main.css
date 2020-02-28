@@ -1,3 +1,23 @@
+body {
+background-color: whitesmoke;
+margin: 0px;
+}
+
+p {
+  margin: 0
+}
+
+h1 {
+
+}
+
+h2 {
+margin: 0
+}
+
+h3 {
+
+}
 .appContainer {
   display: flex;
   flex-direction: row;
@@ -6,8 +26,10 @@
 .sideBarContainer {
 flex: 0 1 50%; 
 min-height: 100%;
-max-width: 25%;
-border: 1px inset blue;
+max-width: 30%;
+margin-right: 60px;
+margin-left: 60px;
+margin-top: 200px;
 }
 
 .mapContainer {
@@ -17,6 +39,19 @@ border: 1px inset blue;
 
 .highlighted {
   color: white;
-  opacity: 0.5;
+  padding: 15px;
+  margin-bottom: 30px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px #888888;
 }
 
+.item {
+  padding: 15px;
+  margin-bottom: 30px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px #888888;
+}

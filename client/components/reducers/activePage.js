@@ -1,6 +1,6 @@
 export const NAVIGATE = 'NAVIGATE'
 
-const activePage = (state = 'landingPage', action, id) => {
+const activePage = (state = 'map', action, id) => {
   switch (action.type) {
     case NAVIGATE:
       return action.destination

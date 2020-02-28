@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import SideBarItem from './SideBarItem'
-import mockData from '../../data/data'
 import { connect } from 'react-redux'
 
 class SideBar extends Component {
-  state = { mockData } /* this.props.selectedWalkState */
-
   render () {
     return (
       <div>
-        {this.state.mockData.map((walk) => {
+        {this.props.allWalks.map((walk) => {
           return (
             <SideBarItem key={walk.id} walk={walk} mainPhoto={walk.mainPhoto}/>
           )
@@ -21,7 +18,7 @@ class SideBar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    selectedWalkState: state.selectedWalk
+    allWalks: state.allWalks
   }
 }
 
