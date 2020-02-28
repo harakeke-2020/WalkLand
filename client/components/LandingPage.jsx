@@ -5,20 +5,15 @@ import activePage from './actions/activePage'
 const Landing = (props) => {
   return (
     <>
-
     <div className="fullscreen-bg">
     <video autoPlay muted loop id="myVideo" className="fullscreen-bg__video">
-    <source src='landingvideo.mp4' type="video/mp4" />
+    <source src='landingvideo1.mp4' type="video/mp4" />
     </video>
 
     </div>
-      <div>
-        <h1 className="landing-heading-centre">Walkland</h1>
-      </div>
+      <h1 className="landing-heading-centre">Walkland</h1>
       <div className="btn-group-wrap">
-      <div className="div.btn-group">
-        <button className="w3-animate-zoom btneffect btn" onClick={() => props.activePage('map')}>Take a Walk</button>
-      </div>
+        <button className="btn" onClick={() => props.activePage('map')}> Walk through Auckland</button>
       </div>
     </>
   )

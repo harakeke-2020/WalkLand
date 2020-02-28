@@ -13,8 +13,10 @@ class App extends Component {
   }
   render () {
     return (
+      <div className="landing-page">
       <div>
         {this.props.activePage === 'landingPage' && <LandingPage />}
+        </div>  
         <div className="appContainer">
         {this.props.activePage === 'map' &&
         <>
