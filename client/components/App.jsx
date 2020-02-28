@@ -4,34 +4,36 @@ import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
+import { fetchWalks } from './actions/allWalks'
 
 class App extends Component {
-  state = {
-    activePage: 'landingPage',
-    landingPage: true,
-    showMap: true
+  componentDidMount () {
+    this.props.dispatch(fetchWalks())
   }
+
   render () {
     return (
       <div>
         {this.props.activePage === 'landingPage' && <LandingPage />}
         <div className="appContainer">
-        {/* {this.props.activePage === 'map' &&
-        <>
-        <div className="sideBarContainer">
-          <SideBar />
-        </div>
-        <div className="mapContainer">
-          <DisplayMap />
-        </div>
-        </> } */}
-        {this.props.activePage === 'map' &&
-        <>
-        <div className="sideBarContainer">
-          <SideBar />
-        </div>
-        {/* <Details /> */}
-        </>}
+          {this.props.activePage === 'map' &&
+            <>
+              <div className="sideBarContainer">
+                <SideBar />
+              </div>
+              <div className="mapContainer">
+                <DisplayMap />
+              </div>
+            </>
+          }
+          {this.props.activePage === 'details' &&
+            <>
+              <div className="sideBarContainer">
+                <SideBar />
+              </div>
+              <Details />
+            </>
+          }
         </div>
       </div>
     )
@@ -40,7 +42,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-  activePage: state.activePage
+    activePage: state.activePage
   }
 }
 

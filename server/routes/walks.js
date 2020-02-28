@@ -5,13 +5,13 @@ const db = require('../db/db')
 
 router.get('/', (req, res) => {
   db.getWalks()
-    .then(response =>
+    .then(response => {
       // if (!req) {
       //   res.sendStatus(404)
       // } else {
       // console.log(res)
       res.json(response)
-      // }
+    }
     )
 }
 )

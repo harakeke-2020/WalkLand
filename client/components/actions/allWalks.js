@@ -32,7 +32,7 @@ export const receiveWalks = (walks) => {
 
 export function fetchWalks () {
   return (dispatch) => {
-    dispatch(requestWalks())
+    // dispatch(requestWalks())
     return request
       .get('/api/v1/walks')
       .then(res => {
