@@ -9,26 +9,34 @@ class SideBarItem extends Component {
     const { id, title, mainPhoto, rating } = walk
     const { activePageState, selectedWalkState } = this.props
     const { selectedWalk, activePage } = this.props
-    const style = { backgroundImage: `url(${mainPhoto})` }
+    const style = {
+      backgroundImage: `url(${mainPhoto})`
+
+    }
 
     return (
-      <div style={style} className={
-        `${selectedWalkState.id === id ? 'highlighted' : 'item'}`
-      }
-      onClick={() => {
-        selectedWalk(walk)
-      }}
-      >
-        <h2>{title}</h2>
-        <p>rating:  {rating}</p>
-        { selectedWalkState.id === id &&
+      <div>
+        <div style={style}
+          className={
+            `${selectedWalkState.id === id ? 'highlighted' : 'item'}`
+          }
+          onClick={() => {
+            selectedWalk(walk)
+          }}
+        >
+          <h2>{title}</h2>
+          <p>rating:  {rating}</p>
+          { selectedWalkState.id === id &&
         <>
+       
         {activePageState === 'details' &&
         <button onClick={() => activePage('map')}>Show Map</button>}
         {activePageState === 'map' &&
         <button onClick={() => activePage('details') }>Show Details</button>}
         </>
-        }
+          }
+          
+        </div>
       </div>
     )
   }
