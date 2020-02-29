@@ -4,6 +4,7 @@ import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
+import LogoComponent from './LogoComponent'
 import { fetchWalks } from './actions/allWalks'
 
 class App extends Component {
@@ -21,6 +22,9 @@ class App extends Component {
         }
         {this.props.activePage === 'map' &&
           <div className="map-page-container">
+            <div className="logo-container">
+              <LogoComponent />
+            </div>
             <div className="side-bar-container">
               <SideBar />
             </div>
