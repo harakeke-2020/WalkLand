@@ -1,24 +1,25 @@
 import React, { Component } from 'react'
 import SideBarItem from './SideBarItem'
 import { connect } from 'react-redux'
+import allWalks from './actions/activePage'
 
-class SideBar extends Component {
-  render () {
-    return (
-      <div>
-        {this.props.allWalks.map((walk) => {
-          return (
-            <SideBarItem key={walk.id} walk={walk} mainPhoto={walk.mainPhoto}/>
-          )
-        })}
-      </div>
-    )
-  }
+export const SideBar = (props) => {
+
+  return (
+    <div>
+      {props.allWalks.map((walk) => {
+        return (
+          <SideBarItem key={walk.id} walk={walk} mainPhoto={walk.mainPhoto}/>
+        )
+      })}
+    </div>
+  )
 }
 
-const mapStateToProps = (state) => {
+function mapStateToProps (state) {
   return {
     allWalks: state.allWalks
+
   }
 }
 

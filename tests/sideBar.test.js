@@ -18,9 +18,3 @@ test('Test the sideBar rating is loading', async () => {
   const rating = getAllByTestId('rating')
   expect(rating).toHaveLength(4)
 })
-
-test('test the button is present', async () => {
-  const { getAllByTestId } = renderWithRedux(<SideBar />)
-  const sideBarShowMapButton = getAllByTestId('showmapbutton')
-  expect(sideBarShowMapButton).toHaveTextContent('Show Map')
-})
