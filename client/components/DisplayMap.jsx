@@ -5,24 +5,25 @@ import selectedWalk from './actions/selectedWalk'
 
 class DisplayMap extends Component {
   bounceMarker = () => {
-    return <Marker key={this.props.selectedWalkState.id} id={this.props.selectedWalkState.id} position={{
-      lat: this.props.selectedWalkState.latitude,
-      lng: this.props.selectedWalkState.longitude
+    const walk = this.props.selectedWalkState
+    return <Marker key={walk.id} id={walk.id} position={{
+      lat: walk.latitude,
+      lng: walk.longitude
     }}
     animation={window.google.maps.Animation.BOUNCE}
-    onClick={() => { this.props.selectedWalk(this.props.selectedWalkState) }}
+    onClick={() => { this.props.selectedWalk(walk) }}
     />
   }
   initialMarkers = () => {
-    const { allWalksState } = this.props
+    const { allWalksState, selectedWalkState } = this.props
     return allWalksState.map(walk => {
       return <Marker key={walk.id} id={walk.id} position={{
         lat: walk.latitude,
         lng: walk.longitude
       }}
-      opacity={ this.props.selectedWalkState.id === undefined ? 1 : 0.3 }
-      visible={ walk.id === this.props.selectedWalkState.id ? false : true }
-      animation={ this.props.selectedWalkState.id === undefined ? 2 : 0}
+      opacity={ selectedWalkState.id === undefined ? 1 : 0.6 }
+      visible={ walk.id === selectedWalkState.id ? false : true }
+      animation={ selectedWalkState.id === undefined ? 2 : 0}
       onClick={() => { this.props.selectedWalk(walk) }}
       />
     })
@@ -39,10 +40,8 @@ class DisplayMap extends Component {
             initialCenter={{ lat: -36.848461, lng: 174.763336 }}
           >
             {this.initialMarkers()}
-            
-            {this.props.selectedWalkState.id !== undefined &&
-              this.bounceMarker()
-            }
+            {this.bounceMarker()}
+          
           </Map>
         </div>
       </div>
