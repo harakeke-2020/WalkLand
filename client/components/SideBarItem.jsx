@@ -11,6 +11,7 @@ export const SideBarItem = (props) => {
   const style = {
     backgroundImage: `url(${mainPhoto})`
   }
+  console.log('this is item', props)
 
   return (
     <div>

@@ -6,6 +6,7 @@ import allWalks from './actions/activePage'
 export const SideBar = (props) => {
 
   return (
+
     <div>
       {props.allWalks.map((walk) => {
         return (
