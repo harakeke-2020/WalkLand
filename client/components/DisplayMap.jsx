@@ -27,44 +27,44 @@ class DisplayMap extends Component {
     })
   }
 
-    unselectedMarkers = () => {
-      const { allWalksState } = this.props
-      const filteredArray = allWalksState.filter((walk) =>
-        walk.id !== this.props.selectedWalkState.id
-      )
-      return filteredArray.map(walk => {
-        return <Marker key={walk.id} id={walk.id} position={{
-          lat: walk.latitude,
-          lng: walk.longitude
-        }}
-        onClick={() => { this.props.selectedWalk(walk) }}
-        />
-      })
-    }
+  unselectedMarkers = () => {
+    const { allWalksState } = this.props
+    const filteredArray = allWalksState.filter((walk) =>
+      walk.id !== this.props.selectedWalkState.id
+    )
+    return filteredArray.map(walk => {
+      return <Marker key={walk.id} id={walk.id} position={{
+        lat: walk.latitude,
+        lng: walk.longitude
+      }}
+      onClick={() => { this.props.selectedWalk(walk) }}
+      />
+    })
+  }
 
-    render () {
-      return (
-        <div>
-          <div className="mapContainer" >
-            <Map
-              google={this.props.google}
-              zoom={11}
-              style={mapStyles}
-              initialCenter={{ lat: -36.848461, lng: 174.763336 }}
-            >
-              {this.props.selectedWalkState.id === undefined
-                ? this.initialMarkers()
-                : this.unselectedMarkers()
-              }
-              {/* {console.log('markers', this.bounceMarker())} */}
-              {this.props.selectedWalkState.id !== undefined &&
+  render () {
+    return (
+      <div>
+        <div className="mapContainer" >
+          <Map
+            google={this.props.google}
+            zoom={11}
+            style={mapStyles}
+            initialCenter={{ lat: -36.848461, lng: 174.763336 }}
+          >
+            {this.props.selectedWalkState.id === undefined
+              ? this.initialMarkers()
+              : this.unselectedMarkers()
+            }
+            {/* {console.log('markers', this.bounceMarker())} */}
+            {this.props.selectedWalkState.id !== undefined &&
               this.bounceMarker()
-              }
-            </Map>
-          </div>
+            }
+          </Map>
         </div>
-      )
-    }
+      </div>
+    )
+  }
 }
 
 const mapDispatchToProps = dispatch => {
