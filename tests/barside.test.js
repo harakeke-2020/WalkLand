@@ -19,8 +19,4 @@ test('Test the sideBar title is loading', async () => {
   expect(sideBarItem).toHaveLength(2)
 })
 
-// test('Test the sideBar rating is loading', async () => {
-//   const { getAllByTestId } = renderWithRedux(<SideBar />)
-//   const rating = getAllByTestId('rating')
-//   expect(rating).toHaveLength(4)
-// })
+//created an array with length of 2 and test if mapfunction creates 2 components
