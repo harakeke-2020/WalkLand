@@ -4,7 +4,8 @@ const db = require('knex')(config)
 
 module.exports = {
   getUsers,
-  getWalks
+  getWalks,
+  getReviewRatings
 }
 
 function getUsers () {
@@ -19,6 +20,13 @@ function getWalks () {
       let parsedWalks = walks.map(walk => parser(walk))
       return parsedWalks
     })
+}
+
+function getReviewRatings (id) {
+  return db('reviewRatings')
+    .join('users', 'userId', 'user.id')
+    .where('walkId', id)
+    .first()
 }
 
 function parser (photosArray) {

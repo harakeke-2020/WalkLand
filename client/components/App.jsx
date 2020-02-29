@@ -20,9 +20,9 @@ class App extends Component {
           {this.props.activePage === 'map' &&
         <>
         <div className="">
-        <SearchBar/>
-          </div>
-        <div className="sideBarContainer"> 
+          <SearchBar/>
+        </div>
+        <div className="sideBarContainer">
           <SideBar />
         </div>
         <div className="mapContainer">
@@ -48,6 +48,5 @@ const mapStateToProps = state => {
     activePage: state.activePage
   }
 }
-
 
 export default connect(mapStateToProps)(App)

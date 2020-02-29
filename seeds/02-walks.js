@@ -78,6 +78,82 @@ exports.seed = function (knex) {
           elevationGain: 1442,
           timeTaken: 89392,
           difficulty: 2.8
+        },
+        {
+          id: 5,
+          title: 'Maungauika/North Head Historic Walk',
+          latitude: -36.829496,
+          longitude: 174.8128587,
+          location: 'Devonport',
+          mainPhoto: 'https://docnz.files.wordpress.com/2019/04/north-head-devonport-doc.jpg',
+          photos: JSON.stringify([
+            'https://nzplaces.nz/media/17640/maungauika-panorama-1.jpg',
+            'https://docnz.files.wordpress.com/2019/04/north-head-devonport-doc.jpg',
+            'https://www.doc.govt.nz/globalassets/images/places/auckland/north-head/north-head-auckland-gallery.jpg',
+            'https://nzplaces.nz/media/17640/maungauika-panorama-1.jpg'
+          ]),
+          routeImage: 'https://www.doc.govt.nz/contentassets/7739db54ace849c5bbc7f397c5cf098c/north-head-interp-map-cropped-525.jpg',
+          distance: 3.91,
+          elevationGain: 1442,
+          timeTaken: 4500,
+          difficulty: 1.5
+        },
+        {
+          id: 7,
+          title: 'Motutapu Walkway',
+          latitude: -36.763222,
+          longitude: 174.8802163,
+          location: 'Devonport',
+          mainPhoto: 'https://www.doc.govt.nz/contentassets/7739db54ace849c5bbc7f397c5cf098c/north-head-interp-map-cropped-525.jpg',
+          photos: JSON.stringify([
+            'https://i1.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/Screen-Shot-2019-04-14-at-8.38.47-PM.png?resize=1393%2C800&ssl=1',
+            'https://i2.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/img_9434.jpg?w=648&h=486&ssl=1',
+            'https://i0.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/img_9412.jpg?w=364&h=486&ssl=1',
+            'https://i2.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/img_9437.jpg?w=506&h=675&ssl=1'
+          ]),
+          routeImage: 'https://i1.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/Screen-Shot-2019-04-14-at-8.38.47-PM.png?resize=1393%2C800&ssl=1',
+          distance: 2.2,
+          elevationGain: 1442,
+          timeTaken: 4500,
+          difficulty: 1.5
+        },
+        {
+          id: 8,
+          title: 'Stillwater Beach Walk',
+          latitude: -36.63918,
+          longitude: 174.7203575,
+          location: 'Stillwater',
+          mainPhoto: 'https://milesteppin.com/wp-content/uploads/2015/05/20150511_161331.jpg',
+          photos: JSON.stringify([
+            'https://cdn-assets.alltrails.com/uploads/photo/image/19292833/extra_large_08daa1e195cbad673716da5362f011b8.jpg',
+            'https://www.whiowhio.nz/uploads/3/0/3/1/30316931/dsc3477_orig.jpg',
+            'https://wilderness-production.imgix.net/2017/06/Dacre-Cottage-e1497827463105.jpg?auto=compress%2Cformat&ixlib=php-1.2.1',
+            'https://blissfulhiker.com/bliss/wp-content/uploads/2018/11/img_2409.jpg'
+          ]),
+          routeImage: 'https://www.google.com/maps/vt/data=uX2EyJaGYo0SeXwvFI7cpTyMdLmijk2lZ-ntJtwvTNMu2z8bF1tI3DOOaSZJ23JGGCD2dU8pBgRx8_swLGCC_FV63nKU7EJjLZGpunM0lD3Byisirt_WOb2ybYU2mNvkIAXf9b7ybuIFKls_Gmz7JloYruIXXOqV_dir2Er1-oxpGKx4xvhgVbdW4jd_iJT1_-ZsSqaLuf9_S6ZzeO57wCMgVa5ZT4TrmNzRJQLSsw3EoA',
+          distance: 2.2,
+          elevationGain: 20,
+          timeTaken: 3,
+          difficulty: 1.5
+        },
+        {
+          id: 9,
+          title: 'One Tree Hill Walk',
+          latitude: -36.899982,
+          longitude: 174.7745785,
+          location: 'Auckland',
+          mainPhoto: 'https://www.aucklandnz.com/sites/build_auckland/files/styles/carousel_banner/public/tourismnz/p-ECF142B8-05F9-7CD1-25AD2D89ADC6CB87-2544003.jpg',
+          photos: JSON.stringify([
+            'https://www.aucklandnz.com/sites/build_auckland/files/styles/carousel_banner/public/tourismnz/p-ECF142B8-05F9-7CD1-25AD2D89ADC6CB87-2544003.jpg',
+            'https://nomadsworld.com/wp-content/uploads/2017/08/auckland_one_tree_hill_bg_wiki.jpg',
+            'https://ourauckland.aucklandcouncil.govt.nz/media/6174/maungakiekie-one-tree-hill-summit-at-20-years.jpg',
+            'https://i.ytimg.com/vi/qNWidzkH9gU/maxresdefault.jpg'
+          ]),
+          routeImage: 'https://www.onetreehillcollege.school.nz/files/5114/3184/8392/Map.gif',
+          distance: 3.5,
+          elevationGain: 231,
+          timeTaken: 2,
+          difficulty: 1.5
         }
       ])
     })
