@@ -31,8 +31,7 @@ class DisplayMap extends Component {
 
   render () {
     return (
-      <div>
-        <div className="mapContainer" >
+      <>
           <Map
             google={this.props.google}
             zoom={11}
@@ -43,8 +42,7 @@ class DisplayMap extends Component {
             {this.bounceMarker()}
           
           </Map>
-        </div>
-      </div>
+      </>
     )
   }
 }

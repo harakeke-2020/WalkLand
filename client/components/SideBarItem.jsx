@@ -16,7 +16,7 @@ export const SideBarItem = (props) => {
     <div>
       <div style={style}
         className={
-          `${selectedWalkState.id === id ? 'highlighted' : 'item'}`
+          `${selectedWalkState.id === id ? 'selected-walk' : 'sidebar-item'}`
         }
         onClick={() => {
           selectedWalk(walk)

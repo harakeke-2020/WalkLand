@@ -5,7 +5,6 @@ import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
 import { fetchWalks } from './actions/allWalks'
-import SearchBar from '../components/SearchBar'
 
 class App extends Component {
   componentDidMount () {
@@ -14,31 +13,34 @@ class App extends Component {
 
   render () {
     return (
-      <div>
-        {this.props.activePage === 'landingPage' && <LandingPage />}
-        <div className="appContainer">
-          {this.props.activePage === 'map' &&
-        <>
-        <div className="">
-        <SearchBar/>
+      <>
+        {this.props.activePage === 'landingPage' && 
+          <div className="landing-page-container">
+            <LandingPage />
           </div>
-        <div className="sideBarContainer"> 
-          <SideBar />
-        </div>
-        <div className="mapContainer">
-          <DisplayMap />
-        </div>
-        </> }
-          {this.props.activePage === 'details' &&
-            <>
-              <div className="sideBarContainer">
-                <SideBar />
-              </div>
+        }
+        {this.props.activePage === 'map' &&
+          <div className="map-page-container">
+            <div className="side-bar-container">
+              <SideBar />
+            </div>
+            <div className="map-container">
+              <DisplayMap />
+            </div>
+          </div>
+        }
+
+        {this.props.activePage === 'details' &&
+          <div className="details-page-container">
+            <div className="side-bar-container">
+              <SideBar />
+            </div>
+            <div className="map-container">
               <Details />
-            </>
-          }
-        </div>
-      </div>
+            </div>
+          </div>
+        }
+      </>
     )
   }
 }
@@ -48,6 +50,5 @@ const mapStateToProps = state => {
     activePage: state.activePage
   }
 }
-
 
 export default connect(mapStateToProps)(App)
