@@ -81,6 +81,7 @@ passport.use(
 )
 
 const opts = {
+  // jwtFromRequest: ExtractJWT.fromAuthHeaderWithScheme('JWT'),
   jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.SECRET_KEY
 }
