@@ -18,7 +18,6 @@ class SideBar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    selectedWalkState: state.selectedWalk,
     allWalks: state.allWalks
   }
 }

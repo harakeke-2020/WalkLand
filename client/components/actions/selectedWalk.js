@@ -1,10 +1,9 @@
 export const SELECTEDWALK = 'SELECTEDWALK'
 
-const selectedWalk = (selectedWalk, allWalks) => {
+const selectedWalk = (selectedWalk) => {
   return {
     type: SELECTEDWALK,
-    selectedWalk,
-    allWalks
+    selectedWalk
   }
 }
 
