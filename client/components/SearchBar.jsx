@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 
 export const SearchBar = (props) => {
-    console.log(props)
    return (
    <div>
    <form>
