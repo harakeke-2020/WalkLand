@@ -118,25 +118,6 @@ exports.seed = function (knex) {
           difficulty: 1.5
         },
         {
-          id: 8,
-          title: 'Stillwater Beach Walk',
-          latitude: -36.63918,
-          longitude: 174.7203575,
-          location: 'Stillwater',
-          mainPhoto: 'https://milesteppin.com/wp-content/uploads/2015/05/20150511_161331.jpg',
-          photos: JSON.stringify([
-            'https://cdn-assets.alltrails.com/uploads/photo/image/19292833/extra_large_08daa1e195cbad673716da5362f011b8.jpg',
-            'https://www.whiowhio.nz/uploads/3/0/3/1/30316931/dsc3477_orig.jpg',
-            'https://wilderness-production.imgix.net/2017/06/Dacre-Cottage-e1497827463105.jpg?auto=compress%2Cformat&ixlib=php-1.2.1',
-            'https://blissfulhiker.com/bliss/wp-content/uploads/2018/11/img_2409.jpg'
-          ]),
-          routeImage: 'https://www.google.com/maps/vt/data=uX2EyJaGYo0SeXwvFI7cpTyMdLmijk2lZ-ntJtwvTNMu2z8bF1tI3DOOaSZJ23JGGCD2dU8pBgRx8_swLGCC_FV63nKU7EJjLZGpunM0lD3Byisirt_WOb2ybYU2mNvkIAXf9b7ybuIFKls_Gmz7JloYruIXXOqV_dir2Er1-oxpGKx4xvhgVbdW4jd_iJT1_-ZsSqaLuf9_S6ZzeO57wCMgVa5ZT4TrmNzRJQLSsw3EoA',
-          distance: 2.2,
-          elevationGain: 20,
-          timeTaken: 3,
-          difficulty: 1.5
-        },
-        {
           id: 9,
           title: 'One Tree Hill Walk',
           latitude: -36.899982,
