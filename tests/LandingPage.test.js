@@ -1,25 +1,10 @@
 import React from 'react'
-import { createStore } from 'redux'
-import combineReducers from '../client/components/reducers/index'
-import { Provider } from 'react-redux'
-
+import renderWithRedux from '../tests/renderWithRedux'
 import { render, fireEvent } from '@testing-library/react'
+import LandingPage, { Landing } from '../client/components/LandingPage'
 
 import '@testing-library/jest-dom/extend-expect'
 import '@babel/polyfill'
-
-import LandingPage, { Landing } from '../client/components/LandingPage'
-
-function renderWithRedux (
-  ui,
-  { initialState, store = createStore(combineReducers, initialState) } = {}
-) {
-  return {
-    ...render(<Provider store={store}>{ui}</Provider>),
-
-    store
-  }
-}
 
 test('loads and displays WalkLand ', async () => {
   const { getByTestId } = renderWithRedux(<LandingPage />)

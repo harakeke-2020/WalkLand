@@ -6,21 +6,16 @@ import SideBar from './SideBar'
 import Details from './Details'
 
 class App extends Component {
-  state = {
-    activePage: 'landingPage',
-    landingPage: true,
-    showMap: true
-  }
   render () {
     return (
-      <div>
-        <div className="landing-page">
+      <div >
+        <div data-testid="landing" className="landing-page">
           {this.props.activePage === 'landingPage' && <LandingPage />}
         </div>
-        <div className="appContainer">
+        <div data-testid="appContainer" className="appContainer">
           {this.props.activePage === 'map' &&
         <>
-        <div className="sideBarContainer">
+        <div data-testid="sidebar" className="sideBarContainer">
           <SideBar />
         </div>
         <div className="mapContainer">

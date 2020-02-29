@@ -24,18 +24,19 @@ class SideBarItem extends Component {
             selectedWalk(walk)
           }}
         >
-          <h2>{title}</h2>
-          <p>rating:  {rating}</p>
+          <h2 data-testid={'sideBarItem'}>{title}</h2>
+          <p data-testid={'rating'}>rating:  {rating}</p>
           { selectedWalkState.id === id &&
         <>
-       
+
         {activePageState === 'details' &&
-        <button onClick={() => activePage('map')}>Show Map</button>}
+        <button data-testid="showmapbutton" onClick={() => activePage('map')}>Show Map</button>}
         {activePageState === 'map' &&
         <button onClick={() => activePage('details') }>Show Details</button>}
+
         </>
           }
-          
+
         </div>
       </div>
     )
