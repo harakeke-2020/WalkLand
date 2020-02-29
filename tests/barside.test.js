@@ -5,13 +5,18 @@ import { fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import '@babel/polyfill'
 
-import { SideBar } from '../client/components/SideBar'
+// this might need to be imported as { sideBar }
+import SideBar, { Sidebar as SideTest } from '../client/components/SideBar'
 
 test('Test the sideBar title is loading', async () => {
-  const mockOnClick = jest.fn()
-  const { getByTestId } = renderWithRedux(<SideBar activePage={mockOnClick} />)
-  const sideBarItem = getByTestId('sideBarItem')
-  expect(sideBarItem).toBeInTheDocument()
+  const data = [{ id: 1, title: 'TestTitle1' }, { id: 2, title: 'TestTitle1' }]
+
+  const { getAllByTestId } = renderWithRedux(
+    <SideTest allWalks = {data}
+
+    />)
+  const sideBarItem = getAllByTestId('sideBarItem')
+  expect(sideBarItem).toHaveLength(2)
 })
 
 // test('Test the sideBar rating is loading', async () => {
