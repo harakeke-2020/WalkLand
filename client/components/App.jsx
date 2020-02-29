@@ -31,7 +31,9 @@ class App extends Component {
               <div className="sideBarContainer">
                 <SideBar />
               </div>
-              <Details />
+              <div className="detailsContainer">
+                <Details />
+              </div>
             </>
           }
         </div>
