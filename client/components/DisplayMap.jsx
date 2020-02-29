@@ -33,17 +33,18 @@ class DisplayMap extends Component {
       // const { unselected } = this.props
       // const { allWalksState, selectedWalkState } = this.props
       // console.log('from unselected markers function ', this.props)
-      const { allWalks } = this.props
-      return this.props.allWalksState.map(walk => {
-        walk.id !== this.props.selectedWalkState.id &&
+      const { allWalksState } = this.props
+      const filteredArray = allWalksState.filter((walk) =>
+        walk.id !== this.props.selectedWalkState.id
+      )
+      return filteredArray.map(walk => {
         return <Marker key={walk.id} id={walk.id} position={{
           lat: walk.latitude,
           lng: walk.longitude
         }}
-        onClick={() => { this.props.selectedWalk(walk, allWalks) }}
+        onClick={() => { this.props.selectedWalk(walk) }}
         />
-      }
-      )
+      })
     }
 
     render () {
