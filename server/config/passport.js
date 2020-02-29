@@ -20,8 +20,8 @@ passport.use(
       session: false
     },
     (req, username, password, done) => {
-      console.log(username)
-      console.log(req.body.email)
+      console.log('in passport config', username)
+      console.log('in passport config', req.body.email)
 
       try {
         db.findUser(username).then(user => {
@@ -81,7 +81,7 @@ passport.use(
 )
 
 const opts = {
-  jwtFromRequest: ExtractJWT.fromAuthHeaderWithScheme('JWT'),
+  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.SECRET_KEY
 }
 
@@ -89,7 +89,7 @@ passport.use(
   'jwt',
   new JWTstrategy(opts, (jwtPayload, done) => {
     try {
-      db.findUsingToken(jwtPayload.id)
+      db.findUserJWT(jwtPayload.id)
         .then(user => {
           if (user) {
             console.log('user found in db in passport')

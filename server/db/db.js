@@ -7,7 +7,8 @@ module.exports = {
   getWalks,
   findUser,
   findUserJWT,
-  registerUser
+  registerUser,
+  deleteUser
 }
 
 function getUsers (db = connection) {
@@ -33,6 +34,12 @@ function findUserJWT (id, db = connection) {
     .where('id', id)
     .select()
     .first()
+}
+
+function deleteUser(username, db = connection) {
+  return db('users')
+    .where('username', username)
+    .del()
 }
 
 function getWalks (db = connection) {
