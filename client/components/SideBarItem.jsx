@@ -22,7 +22,7 @@ export const SideBarItem = (props) => {
           selectedWalk(walk)
         }}
       >
-        <h2 data-testid={'sideBarItem'}>{title}</h2>
+        <h2 data-testid={'sideBarItem'}> {title} </h2>
         <p data-testid={'rating'}>rating:  {rating}</p>
         { selectedWalkState.id === id &&
         <>
