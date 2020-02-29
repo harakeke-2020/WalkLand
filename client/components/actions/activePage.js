@@ -1,10 +1,9 @@
 export const NAVIGATE = 'NAVIGATE'
 
-const activePage = (destination) => {
+// Changed from default export to normal export for readability during import.
+export function activePage (destination) {
   return {
     type: NAVIGATE,
     destination
   }
 }
-
-export default activePage
