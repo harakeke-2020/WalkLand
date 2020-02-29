@@ -6,6 +6,7 @@ module.exports = {
   getUsers,
   getWalks,
   findUser,
+  findUserJWT,
   registerUser
 }
 
@@ -14,8 +15,8 @@ function getUsers (db = connection) {
     .select()
 }
 
-function findUser (user, db = connection) {
-  const username = user.username
+function findUser (username, db = connection) {
+  console.log('username given to finduser in db ', username)
   return db('users')
     .where('username', username)
     .select()
@@ -25,6 +26,13 @@ function findUser (user, db = connection) {
 function registerUser (user, db = connection) {
   return db('users')
     .insert(user)
+}
+
+function findUserJWT (id, db = connection) {
+  return db('users')
+    .where('id', id)
+    .select()
+    .first()
 }
 
 function getWalks (db = connection) {
