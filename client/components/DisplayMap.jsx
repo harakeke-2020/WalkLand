@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
+import { Map, GoogleApiWrapper, Marker, mapStyles } from 'google-maps-react'
 import { connect } from 'react-redux'
 import selectedWalk from './actions/selectedWalk'
 
 class DisplayMap extends Component {
   bounceMarker = () => {
-    const { selectedWalkState } = this.props
-    return <Marker key={selectedWalkState.id} id={selectedWalkState.id} position={{
-      lat: selectedWalkState.latitude,
-      lng: selectedWalkState.longitude
+    return <Marker key={this.props.selectedWalkState.id} id={this.props.selectedWalkState.id} position={{
+      lat: this.props.selectedWalkState.latitude,
+      lng: this.props.selectedWalkState.longitude
     }}
     animation={window.google.maps.Animation.BOUNCE}
+    onClick={() => { this.props.selectedWalk(this.props.selectedWalkState) }}
     />
   }
   initialMarkers = () => {
+    const { allWalks } = this.props
     const { allWalksState } = this.props
     return allWalksState.map(walk => {
       return <Marker key={walk.id} id={walk.id} position={{
@@ -21,33 +22,27 @@ class DisplayMap extends Component {
         lng: walk.longitude
       }}
       animation={window.google.maps.Animation.DROP}
-      onClick={() => { this.props.selectedWalk(walk) }}
+      onClick={() => { this.props.selectedWalk(walk, allWalks) }}
       />
     })
   }
 
     unselectedMarkers = () => {
-      // state.filter((item) => item.id !== action.selectedWalk.id)
-      // const { unselected } = this.props
-      const { allWalksState, selectedWalkState } = this.props
-      console.log('from unselected markers function ', this.props)
-      return allWalksState.filter(walk => {
-        return walk.id !== selectedWalkState.id &&
-          <Marker key={walk.id} id={walk.id} position={{
-            lat: walk.latitude,
-            lng: walk.longitude
-          }}
-          onClick={() => { this.props.selectedWalk(walk) }}
-          />
+      const { allWalksState } = this.props
+      const filteredArray = allWalksState.filter((walk) =>
+        walk.id !== this.props.selectedWalkState.id
+      )
+      return filteredArray.map(walk => {
+        return <Marker key={walk.id} id={walk.id} position={{
+          lat: walk.latitude,
+          lng: walk.longitude
+        }}
+        onClick={() => { this.props.selectedWalk(walk) }}
+        />
       })
     }
 
     render () {
-      const mapStyles = {
-        width: '100%',
-        height: '100%'
-      }
-
       return (
         <div>
           <div className="mapContainer" >
@@ -61,8 +56,9 @@ class DisplayMap extends Component {
                 ? this.initialMarkers()
                 : this.unselectedMarkers()
               }
+              {/* {console.log('markers', this.bounceMarker())} */}
               {this.props.selectedWalkState.id !== undefined &&
-            this.bounceMarker()
+              this.bounceMarker()
               }
             </Map>
           </div>

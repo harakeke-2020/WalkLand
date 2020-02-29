@@ -16,10 +16,10 @@ function getUsers (db = connection) {
 
 function findUser (user, db = connection) {
   const username = user.username
-  console.log('finduser function in db ', user)
   return db('users')
     .where('username', username)
     .select()
+    .first()
 }
 
 function registerUser (user, db = connection) {

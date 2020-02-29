@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 class Details extends Component {
   render () {
     const { selectedWalk } = this.props
-    console.log('state from store in details ', selectedWalk)
     return (
       <div>
         <h3>{selectedWalk.title}</h3>

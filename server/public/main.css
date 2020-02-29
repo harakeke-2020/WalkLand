@@ -21,8 +21,26 @@
 .sideBarContainer {
 flex: 0 1 50%; 
 min-height: 100%;
-max-width: 25%;
-border: 1px inset blue;
+max-width: 19%;
+margin-right: 40px;
+margin-left: 40px;
+margin-top: 200px;
+}
+
+.highlighted {
+  color: white;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  /* box-shadow: 3px 3px 3px #cccccc; */
+}
+
+.item {
+  color: white;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  /* box-shadow: 3px 3px 3px #cccccc; */
 }
 
 .landing-heading-centre {
@@ -44,11 +62,6 @@ border: 1px inset blue;
 .mapContainer {
   min-height: 100%;
   max-width: 75%;
-}
-
-.highlighted {
-  color: white;
-  opacity: 0.5;
 }
 
 .btn {
