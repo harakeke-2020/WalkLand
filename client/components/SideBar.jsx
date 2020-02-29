@@ -18,6 +18,7 @@ export const SideBar = (props) => {
 
 function mapStateToProps (state) {
   return {
+    selectedWalkState: state.selectedWalk,
     allWalks: state.allWalks
 
   }

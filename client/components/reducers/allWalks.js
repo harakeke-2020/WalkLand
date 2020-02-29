@@ -1,10 +1,9 @@
-import mockData from '../../../data/data'
-export const ALLWALKS = 'ALLWALKS'
+import { RECEIVEWALKS } from '../actions/allWalks.js'
 
-const allWalks = (state = mockData, action) => {
+const allWalks = (state = [], action) => {
   switch (action.type) {
-    case ALLWALKS:
-      return action.allWalks
+    case RECEIVEWALKS:
+      return action.walks
     default:
       return state
   }
