@@ -2,23 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import activePage from './actions/activePage'
 
-const Landing = (props) => {
+export const Landing = (props) => {
   return (
     <>
-
-    <div className="fullscreen-bg">
-    <video autoPlay muted loop id="myVideo" className="fullscreen-bg__video">
-    <source src='landingvideo.mp4' type="video/mp4" />
-    </video>
+    <div data-testid="fullscreen" className="fullscreen-bg">
+      <video autoPlay muted loop id="myVideo" className="fullscreen-bg__video">
+        <source data-testid="video" src='landingvideo1.mp4' type="video/mp4" />
+      </video>
 
     </div>
-      <div>
-        <h1 className="landing-heading-centre">Walkland</h1>
-      </div>
+      <h1 data-testid="title" className="landing-heading-centre">Walkland</h1>
       <div className="btn-group-wrap">
-      <div className="div.btn-group">
-        <button className="w3-animate-zoom btneffect btn" onClick={() => props.activePage('map')}>Take a Walk</button>
-      </div>
+        <button data-testid="startButton" className="btn" onClick={() => props.activePage('map')}> Walk through Auckland</button>
       </div>
     </>
   )

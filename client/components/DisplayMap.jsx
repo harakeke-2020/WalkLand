@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
+import { Map, GoogleApiWrapper, Marker, mapStyles } from 'google-maps-react'
 import { connect } from 'react-redux'
 import selectedWalk from './actions/selectedWalk'
 
 class DisplayMap extends Component {
   bounceMarker = () => {
-    console.log('from bouncemarker', this.props.selectedWalkState)
     return <Marker key={this.props.selectedWalkState.id} id={this.props.selectedWalkState.id} position={{
       lat: this.props.selectedWalkState.latitude,
       lng: this.props.selectedWalkState.longitude
@@ -24,6 +23,17 @@ class DisplayMap extends Component {
       }}
       animation={window.google.maps.Animation.DROP}
       onClick={() => { this.props.selectedWalk(walk, allWalks) }}
+      />
+    })
+  }
+  unselectedMarkers = () => {
+    const { unselected } = this.props
+    return unselected.map((walk) => {
+      return <Marker key={walk.id} id={walk.id} position={{
+        lat: walk.latitude,
+        lng: walk.longitude
+      }}
+      onClick={() => { this.props.selectedWalk(walk) }}
       />
     })
   }
@@ -48,11 +58,6 @@ class DisplayMap extends Component {
     }
 
     render () {
-      const mapStyles = {
-        width: '100%',
-        height: '100%'
-      }
-
       return (
         <div>
           <div className="mapContainer" >
