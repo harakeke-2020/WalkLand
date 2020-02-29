@@ -6,7 +6,7 @@ export const Landing = (props) => {
   return (
     <>
     <div data-testid="fullscreen" className="fullscreen-bg">
-      <video autoPlay loop id="myVideo" className="fullscreen-bg__video">
+      <video autoPlay muted loop id="myVideo" className="fullscreen-bg__video">
         <source data-testid="video" src='landingvideo1.mp4' type="video/mp4" />
       </video>
 

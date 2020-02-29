@@ -1,18 +1,33 @@
 const environment = process.env.NODE_ENV || 'development'
 const config = require('../../knexfile')[environment]
-const db = require('knex')(config)
+const connection = require('knex')(config)
 
 module.exports = {
   getUsers,
-  getWalks
+  getWalks,
+  findUser,
+  registerUser
 }
 
-function getUsers () {
+function getUsers (db = connection) {
   return db('users')
     .select()
 }
 
-function getWalks () {
+function findUser (user, db = connection) {
+  const username = user.username
+  console.log('finduser function in db ', user)
+  return db('users')
+    .where('username', username)
+    .select()
+}
+
+function registerUser (user, db = connection) {
+  return db('users')
+    .insert(user)
+}
+
+function getWalks (db = connection) {
   return db('walks')
     .select()
     .then(walks => {

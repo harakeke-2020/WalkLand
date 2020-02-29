@@ -1,26 +1,80 @@
 const express = require('express')
 const router = express.Router()
+const cors = require('cors')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
+
+process.env.SECRET_KEY = 'secret'
 
 const db = require('../db/db')
 
-// const db = require('../db/db')
+router.post('/register', (req, res) => {
+  const userData = req.body
+  db.findUser(userData)
+    .then(user => {
+      console.log('user returned from db ', user)
+      if (!user || !user[0]) {
+        bcrypt.hash(req.body.password, 10, (err, hash) => {
+          userData.password = hash
+          db.registerUser(userData)
+            .then(user => {
+              console.log('user succesfully registered ', userData.usernmae)
+              res.json({ status: userData.username + 'Was registered!' })
+            })
+            .catch(err => {
+              res.send('error: ' + err)
+            })
+        })
+      } else {
+        res.json({ error: 'User already exists' })
+      }
+    })
+    .catch(err => {
+      res.send('error: ' + err)
+    })
+})
 
-router.get('/', (req, res) => {
-  db.getUsers()
-  .then(res => console.log('woo db file connected ', res))
-  console.log('hit the auth route')
-//   if (!req) {
-//     res.sendStatus(404)
-//   } else {
-//     res.json(foods)
-//   }
-}
-)
+// router.post('/login', (req, res) => {
+//   User.findOne({
+//     where: {
+//       email: req.body.email
+//     }
+//   })
+//     .then(user => {
+//       if (user) {
+//         if (bcrypt.compareSync(req.body.password, user.password)) {
+//           let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
+//             expiresIn: 1440
+//           })
+//           res.send(token)
+//         }
+//       } else {
+//         res.status(400).json({ error: 'User does not exist' })
+//       }
+//     })
+//     .catch(err => {
+//       res.status(400).json({ error: err })
+//     })
+// })
 
-//post request when user reqisters
+// router.get('/profile', (req, res) => {
+//   var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
-//get request when user logs in to compare to databse.
-//if user trying to log in matches user in db, then authenticate will be successful
-//logout route?
+//   User.findOne({
+//     where: {
+//       id: decoded.id
+//     }
+//   })
+//     .then(user => {
+//       if (user) {
+//         res.json(user)
+//       } else {
+//         res.send('User does not exist')
+//       }
+//     })
+//     .catch(err => {
+//       res.send('error: ' + err)
+//     })
+// })
 
 module.exports = router
