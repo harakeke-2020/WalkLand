@@ -4,6 +4,7 @@ import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
+import SearchBar from '../components/SearchBar'
 
 class App extends Component {
   state = {
@@ -20,7 +21,10 @@ class App extends Component {
         <div className="appContainer">
           {this.props.activePage === 'map' &&
         <>
-        <div className="sideBarContainer">
+        <div className="">
+        <SearchBar/>
+          </div>
+        <div className="sideBarContainer"> 
           <SideBar />
         </div>
         <div className="mapContainer">
@@ -45,5 +49,6 @@ const mapStateToProps = state => {
     activePage: state.activePage
   }
 }
+
 
 export default connect(mapStateToProps)(App)
