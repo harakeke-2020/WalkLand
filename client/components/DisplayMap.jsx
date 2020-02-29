@@ -14,29 +14,15 @@ class DisplayMap extends Component {
     />
   }
   initialMarkers = () => {
-    const { allWalks } = this.props
     const { allWalksState } = this.props
     return allWalksState.map(walk => {
       return <Marker key={walk.id} id={walk.id} position={{
         lat: walk.latitude,
         lng: walk.longitude
       }}
-      animation={window.google.maps.Animation.DROP}
-      onClick={() => { this.props.selectedWalk(walk, allWalks) }}
-      />
-    })
-  }
-
-  unselectedMarkers = () => {
-    const { allWalksState } = this.props
-    const filteredArray = allWalksState.filter((walk) =>
-      walk.id !== this.props.selectedWalkState.id
-    )
-    return filteredArray.map(walk => {
-      return <Marker key={walk.id} id={walk.id} position={{
-        lat: walk.latitude,
-        lng: walk.longitude
-      }}
+      opacity={ this.props.selectedWalkState.id === undefined ? 1 : 0.3 }
+      visible={ walk.id === this.props.selectedWalkState.id ? false : true }
+      animation={ this.props.selectedWalkState.id === undefined ? 2 : 0}
       onClick={() => { this.props.selectedWalk(walk) }}
       />
     })
@@ -52,11 +38,8 @@ class DisplayMap extends Component {
             style={mapStyles}
             initialCenter={{ lat: -36.848461, lng: 174.763336 }}
           >
-            {this.props.selectedWalkState.id === undefined
-              ? this.initialMarkers()
-              : this.unselectedMarkers()
-            }
-            {/* {console.log('markers', this.bounceMarker())} */}
+            {this.initialMarkers()}
+            
             {this.props.selectedWalkState.id !== undefined &&
               this.bounceMarker()
             }
@@ -77,7 +60,6 @@ const mapStateToProps = (state) => {
   return {
     selectedWalkState: state.selectedWalk,
     allWalksState: state.allWalks
-    // unselected: state.unselectedWalks
   }
 }
 
