@@ -4,6 +4,11 @@ import { connect } from 'react-redux'
 class Details extends Component {
   render () {
     const { selectedWalk } = this.props
+
+    const { ratings } = this.props
+    const idWalk = selectedWalk.id
+    const rating = ratings.filter(rating => rating.walkId === idWalk).map(data => data.rating)
+      
     return (
       <div>
         <h3>{selectedWalk.title}</h3>
@@ -18,7 +23,8 @@ class Details extends Component {
           <li>{`Distance: ${selectedWalk.distance}`}</li>
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
-          <li>{`Difficulty rating: ${selectedWalk.difficulty}`}</li>
+          <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+          <li>{`Ratings: ${rating}`}</li>
         </ul>
       </div>
     )
@@ -27,7 +33,8 @@ class Details extends Component {
 
 const mapStateToProps = state => {
   return {
-    selectedWalk: state.selectedWalk
+    selectedWalk: state.selectedWalk,
+    ratings: state.ratings
   }
 }
 
