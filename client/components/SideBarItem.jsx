@@ -21,9 +21,9 @@ about all Id's on load so it can filter then map through and display the ratings
     const allWalks = allWalksState.map(allWalk => allWalk.id)
     const rating = ratings.map(match => match.rating).filter(rating => rating.walkId === allWalks)
 
-    console.log('this is all walks', allWalks)
-    console.log('this is ratings', ratings)
-    console.log('actual rating', rating)
+    // console.log('this is all walks', allWalks)
+    // console.log('this is ratings', ratings)
+    // console.log('actual rating', rating)
 
     return (
       <div>
