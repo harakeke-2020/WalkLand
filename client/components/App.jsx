@@ -9,6 +9,8 @@ import Details from './Details'
 import LogoComponent from './LogoComponent'
 import NavBar from './NavBar'
 import RegisterUser from './RegisterUser'
+import LoginUser from './LoginUser'
+import Logout from './Logout'
 
 class App extends Component {
   componentDidMount () {
@@ -23,6 +25,9 @@ class App extends Component {
             <LandingPage />
           </div>
         }
+        <RegisterUser />
+        <LoginUser />
+        <Logout />
         {this.props.activePage === 'map' &&
           <div className="map-page-container">
             <div className="logo-nav-container">
