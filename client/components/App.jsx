@@ -8,6 +8,7 @@ import SideBar from './SideBar'
 import Details from './Details'
 import LogoComponent from './LogoComponent'
 import NavBar from './NavBar'
+import FilterBar from './FilterBar'
 
 class App extends Component {
   componentDidMount () {
@@ -42,6 +43,9 @@ class App extends Component {
             <div className="logo-container">
               <LogoComponent />
               <NavBar />
+            </div>
+            <div className="">
+              <FilterBar />
             </div>
             <div className="side-bar-container">
               <SideBar />
