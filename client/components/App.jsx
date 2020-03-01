@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { fetchWalks } from './actions/allWalks'
+
 import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
-import { fetchWalks } from './actions/allWalks'
+import LogoComponent from './LogoComponent'
+import NavBar from './NavBar'
 
 class App extends Component {
   componentDidMount () {
@@ -13,29 +16,42 @@ class App extends Component {
 
   render () {
     return (
-      <div>
-        {this.props.activePage === 'landingPage' && <LandingPage />}
-        <div className="appContainer">
-          {this.props.activePage === 'map' &&
-            <>
-              <div className="sideBarContainer">
-                <SideBar />
-              </div>
-              <div className="mapContainer">
-                <DisplayMap />
-              </div>
-            </>
-          }
-          {this.props.activePage === 'details' &&
-            <>
-              <div className="sideBarContainer">
-                <SideBar />
-              </div>
+      <>
+        {this.props.activePage === 'landingPage' &&
+          <div className="landing-page-container">
+            <LandingPage />
+          </div>
+        }
+        {this.props.activePage === 'map' &&
+          <div className="map-page-container">
+            <div className="logo-container">
+              <LogoComponent />
+              <NavBar />
+            </div>
+            <div className="side-bar-container">
+              <SideBar />
+            </div>
+            <div className="map-container">
+              <DisplayMap />
+            </div>
+          </div>
+        }
+
+        {this.props.activePage === 'details' &&
+          <div className="details-page-container">
+            <div className="logo-container">
+              <LogoComponent />
+              <NavBar />
+            </div>
+            <div className="side-bar-container">
+              <SideBar />
+            </div>
+            <div className="map-container">
               <Details />
-            </>
-          }
-        </div>
-      </div>
+            </div>
+          </div>
+        }
+      </>
     )
   }
 }

@@ -9,6 +9,7 @@ module.exports = {
   findUserJWT,
   registerUser,
   deleteUser
+  // getReviewRatings
 }
 
 function getUsers (db = connection) {
@@ -50,6 +51,13 @@ function getWalks (db = connection) {
       return parsedWalks
     })
 }
+
+// function getReviewRatings (id) {
+//   return db('reviewRatings')
+//     .join('users', 'userId', 'user.id')
+//     .where('walkId', id)
+//     .first()
+// }
 
 function parser (photosArray) {
   let parsedPhotos = JSON.parse(photosArray.photos)
