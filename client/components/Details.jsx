@@ -18,7 +18,7 @@ class Details extends Component {
           <li>{`Distance: ${selectedWalk.distance}`}</li>
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
-          <li>{`Difficulty rating: ${selectedWalk.difficulty}`}</li>
+          <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
         </ul>
       </div>
     )
