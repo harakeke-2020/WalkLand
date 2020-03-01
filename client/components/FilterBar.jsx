@@ -6,7 +6,7 @@ export const SearchBar = (props) => {
   return (
     <div>
       <form className="filterbar">
-        <input type="text" placeholder="Filter" />
+        <input type="text" placeholder="Filter by:" />
       </form>
 
     </div>

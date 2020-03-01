@@ -61,7 +61,7 @@ passport.use(
       try {
         db.findUser(username)
           .then(user => {
-            if (user === null) {
+            if (!user) {
               return done(null, false, { message: 'bad username' })
             }
             bcrypt.compare(password, user.password).then(response => {

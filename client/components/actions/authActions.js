@@ -1,11 +1,18 @@
 import request from 'superagent'
 
 export const LOGIN = 'LOGIN'
+export const LOGOUT = 'LOGOUT'
 
 const loginUser = username => {
   return {
     type: LOGIN,
     username
+  }
+}
+
+export const logoutUser = () => {
+  return {
+    type: LOGOUT
   }
 }
 

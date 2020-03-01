@@ -1,15 +1,32 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import loginState from './actions/loginState'
 import activePage from './actions/activePage'
-class NavBar extends React.Component {
-  // loginTrue = () => {
-  //   this.props.loginState(true)
-  // }
+import RegisterUser from './RegisterUser'
+import Logout from './Logout'
+import LoginUser from './LoginUser'
 
-  // loginFalse = () => {
-  //   this.props.loginState(false)
-  // }
+class NavBar extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      showRegisterPopup: false,
+      showLoginPopup: false
+    }
+  }
+
+  registerClickHandler = () => {
+    this.setState({
+      showRegisterPopup: !this.state.showRegisterPopup,
+      showLoginPopup: false
+    })
+  }
+
+  loginClickHandler = () => {
+    this.setState({
+      showLoginPopup: !this.state.showLoginPopup,
+      showRegisterPopup: false
+    })
+  }
 
   render () {
     return (
@@ -18,12 +35,28 @@ class NavBar extends React.Component {
         ? <div className="logged-in">
           <button className="nav-bar-buttons profile-button" onClick={() => this.props.activePage('profile')}>Profile</button>
           <button className="nav-bar-buttons" onClick={() => this.setState.login('')}>Logout</button>
+          <button className="nav-bar-buttons">Profile</button>
+          <p className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
+          <Logout />
         </div>
 
         : <div className="not-logged-in">
-          <button className="nav-bar-buttons">Login</button>
-          <button className="nav-bar-buttons">Register</button>
+        <div></div>
+        <button className="nav-bar-buttons" onClick={this.loginClickHandler}>Login</button>
+          <button className="nav-bar-buttons" onClick={this.registerClickHandler}>Register</button>
         </div>
+      }
+
+      {this.state.showRegisterPopup
+        ? <RegisterUser
+          closePopup={this.registerClickHandler} />
+        : null
+      }
+
+      {this.state.showLoginPopup
+        ? <LoginUser
+          closePopup={this.loginClickHandler} />
+        : null
       }
 
         {/* <NavBarLogin />
@@ -34,19 +67,12 @@ class NavBar extends React.Component {
     )
   }
 }
- 
-const mapDispatchToProps = dispatch => {
-  return {
-    loginState: (trueOrFalse) => dispatch(loginState(trueOrFalse)),
-    activePage: (destination) => dispatch(activePage(destination))
-  }
-}
+
 
 const mapStateToProps = state => {
   return {
-    loginStatus: state.loginState,
-    login: state.login,
+    login: state.auth
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
+export default connect(mapStateToProps)(NavBar)
