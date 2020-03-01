@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-
 class Details extends Component {
-  
-
   render () {
     const { selectedWalk } = this.props
 
-    const { ratings } = this.props  
-  const idWalk = selectedWalk.id
-  const rating = ratings.filter(rating => rating.walkId === idWalk)
-  .map(data => data.rating)
+    const { ratings } = this.props
+    const idWalk = selectedWalk.id
+    const rating = ratings.filter(rating => rating.walkId === idWalk)
+      .map(data => data.rating)
 
     return (
       <div>
@@ -28,7 +25,7 @@ class Details extends Component {
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-        <li>{`Ratings: ${rating}`}</li>          
+          <li>{`Ratings: ${rating}`}</li>
         </ul>
       </div>
     )
