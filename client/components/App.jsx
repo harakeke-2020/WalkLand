@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchWalks } from './actions/allWalks'
+import { getReviewRatings } from './actions/allWalks'
+
 
 import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
@@ -8,10 +10,12 @@ import SideBar from './SideBar'
 import Details from './Details'
 import LogoComponent from './LogoComponent'
 import NavBar from './NavBar'
+import LoginUser from './LoginUser'
 
 class App extends Component {
   componentDidMount () {
     this.props.dispatch(fetchWalks())
+    this.props.dispatch(getReviewRatings())
   }
 
   render () {
@@ -24,7 +28,7 @@ class App extends Component {
         }
         {this.props.activePage === 'map' &&
           <div className="map-page-container">
-            <div className="logo-container">
+            <div className="logo-nav-container">
               <LogoComponent />
               <NavBar />
             </div>
@@ -39,7 +43,7 @@ class App extends Component {
 
         {this.props.activePage === 'details' &&
           <div className="details-page-container">
-            <div className="logo-container">
+            <div className="logo-nav-container">
               <LogoComponent />
               <NavBar />
             </div>
