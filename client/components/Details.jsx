@@ -8,23 +8,12 @@ class Details extends Component {
     this.props.dispatch(getReviewRatings())
   }
 
-
-  
-
   render () {
     const { ratings } = this.props  
     const { selectedWalk } = this.props
-
-
     const fish = selectedWalk.id
-    const filteredArray = ratings.filter(rating => 
-      rating.walkId === fish    
-    )
-
-    let c = filteredArray.map(data => data.rating)
-
-
-
+    const rating = ratings.filter(rating => rating.walkId === fish)
+    .map(data => data.rating)
 
     return (
       <div>
@@ -41,9 +30,7 @@ class Details extends Component {
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-        <li>{`Ratings: ${c}`}</li>
-          
-          
+        <li>{`Ratings: ${rating}`}</li>          
         </ul>
       </div>
     )
