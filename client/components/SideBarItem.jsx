@@ -14,6 +14,10 @@ class SideBarItem extends Component {
     backgroundImage: `url(${mainPhoto})`
   } 
 
+
+//on component did mount we need to have all walks connecting to the walkId so they
+//can display a rating. We do not select an indivual walk on load so it needs to know
+//about all Id's on load so it can filter then map through and display the ratings
   const { ratings, allWalksState } = this.props  
   const allWalks = allWalksState.map(data => data.id)
   const rating = ratings.filter(rating => rating.walkId === allWalks).map(match => match.rating)
