@@ -8,10 +8,10 @@ exports.up = (knex, Promise) => {
     table.string('mainPhoto')
     table.string('photos')
     table.string('routeImage')
-    table.float('distance')
+    table.string('distance')
     table.integer('elevationGain')
-    table.integer('timeTaken')
-    table.float('difficulty')
+    table.string('timeTaken')
+    table.string('difficulty')
   })
 }
 
