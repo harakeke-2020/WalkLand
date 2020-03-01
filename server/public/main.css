@@ -23,14 +23,7 @@
 
 html,
 body {
-  height    : 100%;
-  min-height: 100%;
-}
-
-/* DELETE THIS WHEN DONE NEPHEW */
-.navbar-text {
-  text-align  : center;
-  justify-self: center;
+  height: 100%;
 }
 
 .landing-page-container {
@@ -55,7 +48,7 @@ body {
   /* background-color  : black; */
   display              : grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows   : repeat(12, 1fr);
+  grid-template-rows   : repeat(12, minmax(0, 1fr));
   width                : 100vw;
   height               : 99.3vh;
 }
@@ -82,20 +75,65 @@ body {
   overflow-y      : scroll;
 }
 
-.logo-container {
+.logo-nav-container {
   display           : grid;
-  grid-template-rows: 1fr, 1fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   grid-column       : 1 / 4;
   grid-row          : 1 / 2;
   background-color  : lightskyblue;
-  height            : 100%;
+  max-height        : 100%;
   width             : 100%;
 }
 
+.not-logged-in {
+  display         : flex;
+  justify-content : right;
+  background-color: hotpink;
+}
+
+.logged-in {
+  display         : flex;
+  justify-content : space-between;
+  background-color: grey;
+}
+
 .logo-main {
-  padding : 3px;
-  width   : 100%;
-  position: inherit;
+  padding     : 5px;
+  position    : inherit;
+  overflow    : hidden;
+  width       : 50%;
+  justify-self: center;
+}
+
+.navbar-text {
+  text-align  : center;
+  justify-self: center;
+  height      : 100%;
+}
+
+.nav-bar-buttons {
+  font-size    : 0.7em;
+  display      : inline-block;
+  width        : 20%;
+  border       : 0.1em solid #000000;
+  text-align   : center;
+  border-radius: 5px;
+  transition   : all 0.5s;
+}
+
+.nav-bar-buttons:hover {
+  color           : #FFFFFF;
+  background-color: #000000;
+}
+
+.profile-button {
+  justify-self: left !important;
+}
+
+.filterbar {
+  display         : flex;
+  background-color: indigo;
+  justify-content : center;
 }
 
 .selected-walk {
@@ -209,34 +247,49 @@ body {
 .profile-container {
   display              : grid;
   grid-template-columns: 30% 70%;
-  grid-template-rows   : 8% 37% 55%;
+  grid-template-rows   : 5% 37% 58%;
   grid-template-areas  :
 
     "header header"
-    "profile-pic reviews"
+    "profile-picture reviews"
     "profile-bio reviews";
   ;
-  height: 100vh;
-  width : 100vw;
+  padding: 0;
+  margin : 0;
+  height : 100vh;
+  width  : 100vw;
 }
 
 .profile-header {
   grid-area       : header;
-  background-color: black;
+  background-color: #020250;
 
 }
 
 .profile-picture {
-  grid-area       : profle-pic;
+  grid-area       : profile-picture;
   background-color: white;
+}
+
+.profile-picture-image {
+  max-width: 50%;
+  display: block;
+  margin    : auto;
+  border-radius: 5%;
 }
 
 .profile-bio {
   grid-area       : profile-bio;
-  background-color: grey;
+  background-color: rgb(245, 243, 243);
 }
 
 .profile-reviews {
   grid-area       : reviews;
-  background-color: bisque;
+  background-color: rgb(255, 244, 231);
+}
+
+.profile-logo {
+  max-height: 100%;
+  display   : block;
+  margin    : auto;
 }

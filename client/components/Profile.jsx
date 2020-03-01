@@ -7,14 +7,17 @@ class Profile extends Component {
             <>
                 <div className="profile-container">
                     <div className="profile-header">
+                        <img className='profile-logo' src='images/mainlogo.png' />
                     </div>
-                    
+
                     <div className="profile-picture">
+                        Welcome, {this.props.username}!
+                        <img className="profile-picture-image" src='images/userProfile.png'/>
                     </div>
-                    
+
                     <div className="profile-bio">
                     </div>
-                    
+
                     <div className="profile-reviews">
                     </div>
                 </div>
@@ -23,16 +26,10 @@ class Profile extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//     return {
-//        
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        username: state.login
+    }
+}
 
-
-// const mapDispatchToProps = {
-//     activePage
-// }
-
-// export default connect(null, mapDispatchToProps)(Profile)
-export default (Profile)
+export default connect(mapStateToProps)(Profile)

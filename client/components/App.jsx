@@ -9,6 +9,7 @@ import Details from './Details'
 import LogoComponent from './LogoComponent'
 import NavBar from './NavBar'
 import Profile from './Profile'
+import RegisterUser from './RegisterUser'
 
 class App extends Component {
   componentDidMount() {
@@ -23,9 +24,10 @@ class App extends Component {
             <LandingPage />
           </div>
         }
+        <RegisterUser />
         {this.props.activePage === 'map' &&
           <div className="map-page-container">
-            <div className="logo-container">
+            <div className="logo-nav-container">
               <LogoComponent />
               <NavBar />
             </div>
@@ -40,7 +42,7 @@ class App extends Component {
 
         {this.props.activePage === 'details' &&
           <div className="details-page-container">
-            <div className="logo-container">
+            <div className="logo-nav-container">
               <LogoComponent />
               <NavBar />
             </div>
