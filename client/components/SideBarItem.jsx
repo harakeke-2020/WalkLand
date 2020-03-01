@@ -1,17 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import activePage from './actions/activePage'
 import selectedWalk from './actions/selectedWalk'
+import { getReviewRatings } from './actions/allWalks'
 
-
-export const SideBarItem = (props) => { 
-  const walk = props.walk
+class SideBarItem extends Component {
+  render() { 
+  const walk = this.props.walk
   const { id, title, mainPhoto } = walk
-  const { activePageState, selectedWalkState } = props
-  const { selectedWalk, activePage } = props
+  const { activePageState, selectedWalkState } = this.props
+  const { selectedWalk, activePage } = this.props
   const style = {
     backgroundImage: `url(${mainPhoto})`
   } 
+
+  const { ratings, allWalksState } = this.props  
+  const allWalks = allWalksState.map(data => data.id)
+  const rating = ratings.filter(rating => rating.walkId === allWalks).map(match => match.rating)
+
+console.log('this is all walks', allWalks)
+console.log('this is ratings', ratings)
+console.log('actual rating', rating)
 
   return (
     <div>
@@ -40,7 +49,7 @@ export const SideBarItem = (props) => {
     </div>
   )
 }
-
+}
 const mapDispatchToProps = dispatch => {
   return {
     activePage: (destination) => dispatch(activePage(destination)),
@@ -48,10 +57,12 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     selectedWalkState: state.selectedWalk,
     activePageState: state.activePage,
+    ratings: state.ratings,
+    allWalksState: state.allWalks
   }
 }
 
