@@ -7,9 +7,14 @@ router.get('/', (req, res) => {
   db.getReviewRatings()
     .then(response => {
       res.json(response)
-    }
-    )
-}
-)
+    })
+})
+
+router.post('/:id', (req, res) => {
+  db.addReview(req.params.id)
+    .then(response => {
+      res.json('')
+    })
+})
 
 module.exports = router
