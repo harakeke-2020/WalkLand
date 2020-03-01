@@ -50,7 +50,7 @@
 }
 
 .side-bar-container {
-  background-color: burlywood;
+  background-color: #C7E9C7;
   grid-column: 1 / 4;
   grid-row: 2 / -1;
   max-height: 100%;
@@ -63,21 +63,23 @@
   grid-template-rows: repeat(2, minmax(0, 1fr));
   grid-column: 1 / 4;
   grid-row: 1 / 2;
-  background-color: lightskyblue;
+  background-color: #AADAFF;
   max-height: 100%;
   width: 100%;
 }
 
 .not-logged-in {
-  display: flex;
-  justify-content: right;
-  background-color: hotpink;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+  background-color: #ECEAE4;
 }
 
 .logged-in {
-  display: flex;
-  justify-content: space-between;
-  background-color: grey;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+  background-color: #ECEAE4;
 }
 
 .logo-main {
@@ -97,10 +99,13 @@
 .nav-bar-buttons {
   font-size: 0.7em;
   display: inline-block;
-  width: 20%;
+  height: 95%;
+  width: 95%;
+  align-self: center;
+  justify-self: center;
   border: 0.1em solid #000000;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: all 0.5s;
 }
 .nav-bar-buttons:hover {
@@ -108,14 +113,9 @@
   background-color: #000000;
 }
 
-.profile-button {
-  justify-self: left !important;
-}
-
 .filterbar {
-  display: flex;
-  background-color: indigo;
-  justify-content: center;
+  background-color: #4DB546;
+  width: 100%;
 }
 
 .selected-walk {
@@ -132,15 +132,16 @@
   margin-bottom: 0px;
   border-radius: 5px;
   transition: all ease-in-out 0.5s;
-  /* box-shadow: 3px 3px 3px #cccccc; */
 }
 
 .sidebar-item:hover {
   width: 97%;
-  height: 100%
+  height: 100%;
+  transition: all ease-in-out 0.5s;
 }
 
-.selected-walk:active {
+.sidebar-item:active {
+  width: 50%;
   color: white;
   border-radius: 5px;
   transition: all ease-in-out 0.5s;
@@ -223,15 +224,17 @@
 }
 
 .popup {
+  grid-template-columns: 1 / 4;
   position: fixed;
   width: 100%;
   height: 30%;
-  top: 0;
+  top: -50%;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgba(0,0,0, 0.9);
+  background-color: rgb(158, 192, 172);
+  border-radius: 20px;
 }
 
 .popup\_inner {
@@ -243,6 +246,13 @@
   margin: auto;
   border-radius: 20px;
   background: white;
+  z-index: 100;
+}
+
+.x-y-centre {
+  font-size: 0.7em;
+  align-self: center;
+  text-align: center;
 }
 
 .label-white-text {

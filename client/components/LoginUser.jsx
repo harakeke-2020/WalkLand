@@ -8,41 +8,48 @@ class Login extends Component {
     password: ''
   }
 
-  handleChange = event => {
+  handleChange = e => {
     this.setState({
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value
     })
   }
 
-  handleSubmit = event => {
-    event.preventDefault()
+  handleSubmit = e => {
+    e.preventDefault()
     this.props.justLogin(this.state)
+    .then(this.props.closePopup)
+    .catch(err => console.log(err))
   }
 
   render () {
     return (
+      <div className='popup'>
+      <div className='popup\_inner'>
       <form onSubmit={this.handleSubmit}>
-        <h1>Login</h1>
-
-        <label>Username</label>
-        <input
-          name='username'
-          placeholder='Username'
-          value={this.state.username}
-          onChange={this.handleChange}
-        /><br/>
-
-        <label>Password</label>
-        <input
-          type='password'
-          name='password'
-          placeholder='Password'
-          value={this.state.password}
-          onChange={this.handleChange}
-        /><br/>
-
-        <input type='submit'/>
+      <button onClick={this.props.closePopup}>Close</button>
+      <h1 className='label-white-text'>Login</h1>
+      
+      <label className='label-white-text'>Username</label>
+      <input
+      name='username'
+      placeholder='Username'
+      value={this.state.username}
+      onChange={this.handleChange}
+      /><br/>
+      
+      <label className='label-white-text'>Password</label>
+      <input
+      type='password'
+      name='password'
+      placeholder='Password'
+      value={this.state.password}
+      onChange={this.handleChange}
+      /><br/>
+      
+      <button type='submit'>Login</button>
       </form>
+      </div>
+      </div>
     )
   }
 }

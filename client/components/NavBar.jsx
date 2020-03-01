@@ -8,20 +8,22 @@ class NavBar extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      showPopup: false
+      showRegisterPopup: false,
+      showLoginPopup: false
     }
   }
-  // loginTrue = () => {
-  //   this.props.loginState(true)
-  // }
 
-  // loginFalse = () => {
-  //   this.props.loginState(false)
-  // }
-
-  clickHandler = () => {
+  registerClickHandler = () => {
     this.setState({
-      showPopup: !this.state.showPopup
+      showRegisterPopup: !this.state.showRegisterPopup,
+      showLoginPopup: false
+    })
+  }
+
+  loginClickHandler = () => {
+    this.setState({
+      showLoginPopup: !this.state.showLoginPopup,
+      showRegisterPopup: false
     })
   }
 
@@ -30,22 +32,30 @@ class NavBar extends React.Component {
       <>
       {this.props.login
         ? <div className="logged-in">
-          <button className="nav-bar-buttons profile-button">Profile</button>
-          <p className="label-white-text">Welcome, {this.props.login}</p>
+          <button className="nav-bar-buttons">Profile</button>
+          <p className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
           <Logout />
         </div>
 
         : <div className="not-logged-in">
-          <button className="nav-bar-buttons">Login</button>
-          <button className="nav-bar-buttons" onClick={this.clickHandler}>Register</button>
+        <div></div>
+        <button className="nav-bar-buttons" onClick={this.loginClickHandler}>Login</button>
+          <button className="nav-bar-buttons" onClick={this.registerClickHandler}>Register</button>
         </div>
       }
 
-      {this.state.showPopup
+      {this.state.showRegisterPopup
         ? <RegisterUser
-          closePopup={this.clickHandler} />
+          closePopup={this.registerClickHandler} />
         : null
       }
+
+      {this.state.showLoginPopup
+        ? <LoginUser
+          closePopup={this.loginClickHandler} />
+        : null
+      }
+
         {/* <NavBarLogin />
 
         <NavBarRegister /> */}
