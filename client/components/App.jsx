@@ -24,7 +24,7 @@ class App extends Component {
         }
         {this.props.activePage === 'map' &&
           <div className="map-page-container">
-            <div className="logo-container">
+            <div className="logo-nav-container">
               <LogoComponent />
               <NavBar />
             </div>
@@ -39,7 +39,7 @@ class App extends Component {
 
         {this.props.activePage === 'details' &&
           <div className="details-page-container">
-            <div className="logo-container">
+            <div className="logo-nav-container">
               <LogoComponent />
               <NavBar />
             </div>
