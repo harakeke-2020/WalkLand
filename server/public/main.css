@@ -27,8 +27,8 @@
 .details-page-container {
   /* background-color: black; */
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(12, minmax(0, 1fr));
   width: 100vw;
   height: 99.3vh;
 }
@@ -36,8 +36,8 @@
 .map-page-container {
   /* background-color: black; */
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(12, minmax(0, 1fr));
   width: 100vw;
   height: 99.3vh;
 }
@@ -152,6 +152,50 @@
     border-radius: 20px;
     letter-spacing: 1px;
     border-color: sandybrown !important;
+}
+.details-container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(12, minmax(0, 1fr));
+  height: 99.3vh;
+}
+
+.details-walktitle {
+  grid-column: 5 / 10;
+  grid-row: 1 ;
+  font-size: 30px;
+  text-align: center;
+
+}
+
+.details-map {
+  grid-column: 1 / 5;
+  grid-row: 9 / 11;
+}
+
+.details-info {
+  grid-column: 1 / 5;
+  grid-row: 7 / 9;
+  height: 100%;
+}
+
+.details-photo-slider {
+  grid-column: 3 / 11;
+  grid-row: 3 / 9;
+  height: 100%;
+  width:100%;
+  border: 5px solid black;
+  
+  
+}
+.details-photos {
+  /* grid-column: 3 / 8;
+  grid-row: 3 / 8; */
+  display: flex;
+  height:100%;
+  width: 100%;
+ 
+ 
 }
 
 @keyframes fadeInAnimation { 
