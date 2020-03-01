@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Carousel } from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 import Slider from "react-slick"
 
 import 'slick-carousel/slick/slick.css'
@@ -11,7 +12,6 @@ class Details extends Component {
   render () {
     const { selectedWalk } = this.props
 
-    console.log("hello")
     const settings = {
       dots: true,
       infinite: true,
@@ -19,17 +19,21 @@ class Details extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     }
+    const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
     return (
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
-          <Slider  {...settings} className = 'details-slider' >
+          <Slider {...settings} >
               {
                 selectedWalk.photos.map((item, idx) => (
                   <img  className = "details-photos" key={idx} src={item} />
                 ))
               }
-             </Slider>
+             </Slider >
+        </div>
+        <div className = "details-text">
+          <p> {texty} </p>
         </div>
         <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
         <ul className = "details-info">
