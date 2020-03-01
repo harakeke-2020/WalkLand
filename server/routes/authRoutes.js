@@ -91,72 +91,37 @@ router.delete('/deleteUser', (req, res, next) => {
   })(req, res, next)
 })
 
-// }
+// authenticates jwt token to persist logged in state
 
-// const initializePassport = require('../passport-config')
-// initializePassport(
-//   passport,
-//   email => users.find(user => user.email === email),
-//   id => users.find(user => user.id === id)
-// )
-
-// router.post('/register', (req, res) => {
-//   const userData = req.body
-//   db.findUser(userData)
-//     .then(async user => {
-//       if (!user) {
-//         userData.password = await bcrypt.hash(userData.password, 10)
-//         db.registerUser(userData)
-//           .then(user => {
-//             console.log('user succesfully registered ', userData.username)
-//             console.log(user)
-//             res.json({ status: userData.username + ' was registered! You can now login' })
+// router.get('/findUser', (req, res, next) => {
+//   passport.authenticate('jwt', { session: false }, (err, user, info) => {
+//     if (err) {
+//       console.log(err)
+//     }
+//     if (info !== undefined) {
+//       console.log(info.message)
+//       res.status(401).send(info.message)
+//     } else if (user.username === req.query.username) {
+//       db.findUser(req.query.username).then((userInfo) => {
+//         if (userInfo != null) {
+//           console.log('user found in db from findUsers')
+//           res.status(200).send({
+//             auth: true,
+//             username: userInfo.username,
+//             password: userInfo.password,
+//             email: userInfo.email,
+//             message: 'user found in db'
 //           })
-//           .catch(err => {
-//             res.send('error: ' + err)
-//           })
-//       } else {
-//         res.json({ error: 'User already exists' })
-//       }
-//     })
-//     .catch(err => {
-//       res.send('error: ' + err)
-//     })
-// })
-
-// router.post('/login', (req, res) => {
-//   db.findUser(req.body)
-//     .then(user => {
-//       if (user) {
-//         if (bcrypt.compareSync(req.body.password, user.password)) {
-//           // let token = jwt.sign(user, process.env.SECRET_KEY, {
-//           //   expiresIn: Math.floor(Date.now() / 1000) + (60 * 60)
-//           // })
-//           // console.log('user verified, token: ', token)
-//           res.json(user.username)
+//         } else {
+//           console.error('no user exists in db with that username')
+//           res.status(401).send('no user exists in db with that username')
 //         }
-//       } else {
-//         res.status(400).json({ error: 'User does not exist' })
-//       }
-//     })
-//     .catch(err => {
-//       res.status(400).json({ error: err })
-//     })
-// })
-
-// router.get('/profile', (req, res) => {
-//   var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
-//   db.findUser(req.body)
-//     .then(user => {
-//       if (user) {
-//         res.json(user)
-//       } else {
-//         res.send('User does not exist')
-//       }
-//     })
-//     .catch(err => {
-//       res.send('error: ' + err)
-//     })
+//       })
+//     } else {
+//       console.error('jwt id and username do not match')
+//       res.status(403).send('username and jwt token do not match')
+//     }
+//   })(req, res, next)
 // })
 
 module.exports = router
