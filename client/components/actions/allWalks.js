@@ -3,6 +3,7 @@ import request from 'superagent'
 
 export const GETWALKS = 'GETWALKS'
 export const RECEIVEWALKS = 'RECEIVEWALKS'
+export const RECEIVERATING = 'RECEIVERATING'
 
 export const requestWalks = () => {
   return {
@@ -17,6 +18,13 @@ export const receiveWalks = (walks) => {
   }
 }
 
+export const receiveRating = (ratings) => {
+  return {
+    type: RECEIVERATING,
+    ratings
+  }
+}
+
 export function fetchWalks () {
   return (dispatch) => {
     // dispatch(requestWalks())
@@ -28,5 +36,15 @@ export function fetchWalks () {
       // .catch(err => {
       //   dispatch(showError(err.message))
       // })
+  }
+}
+
+export function getReviewRatings(id) {
+  return (dispatch) => {
+    return request
+    .get('/api/v1/rating/')
+    .then(res => 
+      dispatch(receiveRating(res.body))
+    )
   }
 }

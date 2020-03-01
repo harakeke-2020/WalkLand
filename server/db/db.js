@@ -22,11 +22,10 @@ function getWalks () {
     })
 }
 
-function getReviewRatings (id) {
-  return db('reviewRatings')
-    .join('users', 'userId', 'user.id')
-    .where('walkId', id)
-    .first()
+function getReviewRatings () {
+  return db('ratingReviews')
+    .join('users', 'userId', 'users.id')
+    .select()
 }
 
 function parser (photosArray) {
