@@ -13,14 +13,14 @@ class NavBar extends React.Component {
   render () {
     return (
       <>
-      {this.props.loginStatus
+      {this.props.login
         ? <div className="logged-in">
           <button className="nav-bar-buttons profile-button">Profile</button>
-          <button className="nav-bar-buttons" onClick={() => this.props.loginState(false)}>Logout</button>
+          <button className="nav-bar-buttons" onClick={() => this.setState.login('')}>Logout</button>
         </div>
-        
+
         : <div className="not-logged-in">
-          <button className="nav-bar-buttons" onClick={() => this.props.loginState(true)}>Login</button>
+          <button className="nav-bar-buttons">Login</button>
           <button className="nav-bar-buttons">Register</button>
         </div>
       }
@@ -42,7 +42,8 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    loginStatus: state.loginState
+    loginStatus: state.loginState,
+    login: state.login
   }
 }
 
