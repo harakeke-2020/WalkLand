@@ -15,8 +15,8 @@ class Details extends Component {
         </ul>
         <img src={selectedWalk.routeImage} height="200" width="300" />
         <ul>
-          <li>{`Distance: ${selectedWalk.distance}km`}</li>
-          <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
+          <li>{`Distance: ${selectedWalk.distance}`}</li>
+          <li>{`Elevation Gain: ${selectedWalk.elevationGain}`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty rating: ${selectedWalk.difficulty}`}</li>
         </ul>
