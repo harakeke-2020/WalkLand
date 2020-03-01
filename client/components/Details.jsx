@@ -20,7 +20,8 @@ class Details extends Component {
     const filteredArray = ratings.filter(rating => 
       rating.walkId === fish    
     )
-  console.log('this is filteredArray ', filteredArray)
+
+    let c = filteredArray.map(data => data.rating)
 
 
 
@@ -40,7 +41,7 @@ class Details extends Component {
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-        <li>{`Ratings: ${ratings.review}`}</li>
+        <li>{`Ratings: ${c}`}</li>
           
           
         </ul>
