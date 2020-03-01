@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchWalks } from './actions/allWalks'
+import { getReviewRatings } from './actions/allWalks'
 
 
 import LandingPage from './LandingPage'
@@ -13,6 +14,7 @@ import NavBar from './NavBar'
 class App extends Component {
   componentDidMount () {
     this.props.dispatch(fetchWalks())
+    this.props.dispatch(getReviewRatings())
   }
 
   render () {

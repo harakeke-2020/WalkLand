@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getReviewRatings } from './actions/allWalks'
+
 
 class Details extends Component {
   
-  componentDidMount () {
-    this.props.dispatch(getReviewRatings())
-  }
 
   render () {
-    const { ratings } = this.props  
     const { selectedWalk } = this.props
-    const fish = selectedWalk.id
-    const rating = ratings.filter(rating => rating.walkId === fish)
-    .map(data => data.rating)
+
+    const { ratings } = this.props  
+  const idWalk = selectedWalk.id
+  const rating = ratings.filter(rating => rating.walkId === idWalk)
+  .map(data => data.rating)
 
     return (
       <div>

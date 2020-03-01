@@ -1,16 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import activePage from './actions/activePage'
 import selectedWalk from './actions/selectedWalk'
 
-export const SideBarItem = (props) => {
+
+export const SideBarItem = (props) => { 
   const walk = props.walk
-  const { id, title, mainPhoto, rating } = walk
+  const { id, title, mainPhoto } = walk
   const { activePageState, selectedWalkState } = props
   const { selectedWalk, activePage } = props
   const style = {
     backgroundImage: `url(${mainPhoto})`
-  }
+  } 
 
   return (
     <div>
@@ -23,7 +24,7 @@ export const SideBarItem = (props) => {
         }}
       >
         <h2 data-testid={'sideBarItem'}> {title} </h2>
-        <p data-testid={'rating'}>rating:  {rating}</p>
+        <p data-testid={'rating'}>rating</p>
         { selectedWalkState.id === id &&
         <>
 
@@ -50,7 +51,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = (state) => {
   return {
     selectedWalkState: state.selectedWalk,
-    activePageState: state.activePage
+    activePageState: state.activePage,
   }
 }
 
