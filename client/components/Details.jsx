@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Carousel from 'nuka-carousel';
+import { Carousel } from 'react-responsive-carousel'
+import Slider from "react-slick"
 
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 class Details extends Component {
   
@@ -9,30 +12,25 @@ class Details extends Component {
     const { selectedWalk } = this.props
 
     console.log("hello")
-    // const settings = {
-    //   dots: true,
-    //   infinite: true,
-    //   speed: 500,
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1
-    // }
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
     return (
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
-          <div className = "details-photos">
-          <Carousel>
-            
+          <Slider  {...settings} className = 'details-slider' >
               {
                 selectedWalk.photos.map((item, idx) => (
-                  <img key={idx} src={item} />
+                  <img  className = "details-photos" key={idx} src={item} />
                 ))
               }
-             </Carousel>
-          </div>
+             </Slider>
         </div>
-        <button id ="prevBtn">Prev</button>
-        <button id ="nextBtn">Next</button>
         <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
         <ul className = "details-info">
           <li>{`Location: ${selectedWalk.location}`}</li>
