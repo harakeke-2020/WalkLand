@@ -9,7 +9,7 @@ export const Sidebar = (props) => {
   return (
 
     <>
-      <FilterBar />
+      <FilterBar/>
       {props.allWalks.map((walk) => {
         return (
           <SideBarItem key={walk.id} walk={walk} mainPhoto={walk.mainPhoto} />
