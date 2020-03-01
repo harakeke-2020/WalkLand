@@ -9,12 +9,6 @@
   #secondary { width:100%; margin:0; border:none; }
 }
 
-/* DELETE THIS WHEN DONE NEPHEW */
-.navbar-text {
-  text-align: center;
-  justify-self: center;
-}
-
 .landing-page-container {
   /* background-color: black; */
   display: grid;
@@ -37,7 +31,7 @@
   /* background-color: black; */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-rows: repeat(12, minmax(0, 1fr));
   width: 100vw;
   height: 99.3vh;
 }
@@ -64,20 +58,64 @@
   overflow-y: scroll;
 }
 
-.logo-container {
+.logo-nav-container {
   display: grid;
-  grid-template-rows: 1fr, 1fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   grid-column: 1 / 4;
   grid-row: 1 / 2;
   background-color: lightskyblue;
-  height: 100%;
+  max-height: 100%;
   width: 100%;
 }
 
+.not-logged-in {
+  display: flex;
+  justify-content: right;
+  background-color: hotpink;
+}
+
+.logged-in {
+  display: flex;
+  justify-content: space-between;
+  background-color: grey;
+}
+
 .logo-main {
-  padding: 3px;
-  width: 100%;
+  padding: 5px;
   position: inherit;
+  overflow: hidden;
+  width: 50%;
+  justify-self: center;
+}
+
+.navbar-text {
+  text-align: center;
+  justify-self: center;
+  height: 100%;
+}
+
+.nav-bar-buttons {
+  font-size: 0.7em;
+  display: inline-block;
+  width: 20%;
+  border: 0.1em solid #000000;
+  text-align: center;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+.nav-bar-buttons:hover {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.profile-button {
+  justify-self: left !important;
+}
+
+.filterbar {
+  display: flex;
+  background-color: indigo;
+  justify-content: center;
 }
 
 .selected-walk {
