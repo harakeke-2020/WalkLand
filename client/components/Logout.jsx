@@ -13,9 +13,9 @@ class Logout extends Component {
 
   render () {
     return (
-      <div>
-        {<button onClick={this.handleClick}>Log Out</button>}
-      </div>
+      <>
+        <button className="nav-bar-buttons" onClick={this.handleClick}>Log Out</button>
+      </>
     )
   }
 }

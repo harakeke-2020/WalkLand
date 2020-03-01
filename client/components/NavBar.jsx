@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import loginState from './actions/loginState'
 import RegisterUser from './RegisterUser'
+import Logout from './Logout'
+import LoginUser from './LoginUser'
 
 class NavBar extends React.Component {
   constructor (props) {
@@ -31,7 +32,7 @@ class NavBar extends React.Component {
         ? <div className="logged-in">
           <button className="nav-bar-buttons profile-button">Profile</button>
           <p className="label-white-text">Welcome, {this.props.login}</p>
-          <button className="nav-bar-buttons">Logout</button>
+          <Logout />
         </div>
 
         : <div className="not-logged-in">
@@ -54,17 +55,11 @@ class NavBar extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    loginState: (trueOrFalse) => dispatch(loginState(trueOrFalse))
-  }
-}
 
 const mapStateToProps = state => {
   return {
-    loginStatus: state.loginState,
-    login: state.login
+    login: state.auth
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
+export default connect(mapStateToProps)(NavBar)
