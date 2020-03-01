@@ -17,7 +17,7 @@ exports.seed = function (knex) {
             'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80',
             'https://images.unsplash.com/photo-1504700610630-ac6aba3536d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
           ]),
-          routeImage: 'https://basemaps.cloud.eaglegis.co.nz/arcgis/rest/services/LINZ/geotiffs/MapServer/tile/9/5754/2350',
+          routeImage: 'http://i.imgur.com/tudbIvd.jpg',
           distance: '4.5Kms',
           elevationGain: 200,
           timeTaken: '2 Hours',
@@ -99,10 +99,10 @@ exports.seed = function (knex) {
           difficulty: 'Easy'
         },
         {
-          id: 7,
+          id: 6,
           title: 'Motutapu Walkway',
-          latitude: -36.749997,
-          longitude: 174.916663,
+          latitude: -36.7538775,
+          longitude: 174.9138084,
           location: 'Devonport',
           mainPhoto: 'https://www.doc.govt.nz/contentassets/7739db54ace849c5bbc7f397c5cf098c/north-head-interp-map-cropped-525.jpg',
           photos: JSON.stringify([
@@ -118,7 +118,7 @@ exports.seed = function (knex) {
           difficulty: 'Intermediate'
         },
         {
-          id: 9,
+          id: 7,
           title: 'One Tree Hill Walk',
           latitude: -36.899982,
           longitude: 174.7745785,
