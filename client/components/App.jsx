@@ -8,13 +8,14 @@ import SideBar from './SideBar'
 import Details from './Details'
 import LogoComponent from './LogoComponent'
 import NavBar from './NavBar'
+import Profile from './Profile'
 
 class App extends Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(fetchWalks())
   }
 
-  render () {
+  render() {
     return (
       <>
         {this.props.activePage === 'landingPage' &&
@@ -50,6 +51,10 @@ class App extends Component {
               <Details />
             </div>
           </div>
+        }
+
+        {this.props.activePage === 'profile' &&
+          <Profile />
         }
       </>
     )

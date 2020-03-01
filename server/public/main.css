@@ -1,185 +1,242 @@
-
 @media screen and (max-width: 1060px) {
-  #primary { width:67%; }
-  #secondary { width:30%; margin-left:3%;}  
+  #primary {
+    width: 67%;
+  }
+
+  #secondary {
+    width      : 30%;
+    margin-left: 3%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  #primary { width:100%; }
-  #secondary { width:100%; margin:0; border:none; }
+  #primary {
+    width: 100%;
+  }
+
+  #secondary {
+    width : 100%;
+    margin: 0;
+    border: none;
+  }
+}
+
+html,
+body {
+  height    : 100%;
+  min-height: 100%;
 }
 
 /* DELETE THIS WHEN DONE NEPHEW */
 .navbar-text {
-  text-align: center;
+  text-align  : center;
   justify-self: center;
 }
 
 .landing-page-container {
-  /* background-color: black; */
-  display: grid;
+  /* background-color  : black; */
+  display              : grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  width: 100vw;
-  height: 99.3vh;
+  grid-template-rows   : repeat(6, 1fr);
+  width                : 100vw;
+  height               : 99.3vh;
 }
 
 .details-page-container {
-  /* background-color: black; */
-  display: grid;
+  /* background-color  : black; */
+  display              : grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  width: 100vw;
-  height: 99.3vh;
+  grid-template-rows   : repeat(12, 1fr);
+  width                : 100vw;
+  height               : 99.3vh;
 }
 
 .map-page-container {
-  /* background-color: black; */
-  display: grid;
+  /* background-color  : black; */
+  display              : grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  width: 100vw;
-  height: 99.3vh;
+  grid-template-rows   : repeat(12, 1fr);
+  width                : 100vw;
+  height               : 99.3vh;
 }
 
 .landing-page {
-  display: grid;
+  display           : grid;
   grid-template-rows: 1fr 1fr 1fr;
 }
 
 .map-container {
-  height: 100%;
-  width: 100%;
-  position: relative;
+  height     : 100%;
+  width      : 100%;
+  position   : relative;
   grid-column: 4 / -1;
-  grid-row: 1 / -1;
+  grid-row   : 1 / -1;
 }
 
 .side-bar-container {
   background-color: burlywood;
-  grid-column: 1 / 4;
-  grid-row: 2 / -1;
-  max-height: 100%;
-  width: 100%;
-  overflow-y: scroll;
+  grid-column     : 1 / 4;
+  grid-row        : 2 / -1;
+  max-height      : 100%;
+  width           : 100%;
+  overflow-y      : scroll;
 }
 
 .logo-container {
-  display: grid;
+  display           : grid;
   grid-template-rows: 1fr, 1fr;
-  grid-column: 1 / 4;
-  grid-row: 1 / 2;
-  background-color: lightskyblue;
-  height: 100%;
-  width: 100%;
+  grid-column       : 1 / 4;
+  grid-row          : 1 / 2;
+  background-color  : lightskyblue;
+  height            : 100%;
+  width             : 100%;
 }
 
 .logo-main {
-  padding: 3px;
-  width: 100%;
+  padding : 3px;
+  width   : 100%;
   position: inherit;
 }
 
 .selected-walk {
-  color: white;
+  color        : white;
   border-radius: 5px;
-  transition: all ease-in-out 0.5s;
+  transition   : all ease-in-out 0.5s;
   /* box-shadow: 3px 3px 3px #cccccc; */
 }
 
 .sidebar-item {
-  width: 94%;
-  height: 95%;
-  color: white;
+  width        : 94%;
+  height       : 95%;
+  color        : white;
   margin-bottom: 0px;
   border-radius: 5px;
-  transition: all ease-in-out 0.5s;
+  transition   : all ease-in-out 0.5s;
   /* box-shadow: 3px 3px 3px #cccccc; */
 }
 
 .sidebar-item:hover {
-  width: 97%;
+  width : 97%;
   height: 100%
 }
 
 .selected-walk:active {
-  color: white;
+  color        : white;
   border-radius: 5px;
-  transition: all ease-in-out 0.5s;
+  transition   : all ease-in-out 0.5s;
   /* box-shadow: 3px 3px 3px #cccccc; */
 }
 
 .landing-heading-centre {
   grid-column: 5 / 9;
-  grid-row: 1 / 2;
+  grid-row   : 1 / 2;
   font-family: 'Hammersmith One';
-  opacity: 0.5;
-  animation: titleFadeInAnimation ease-in-out 6s; 
-  font-size: 5em;
-  text-align: center;
-  color: white;
+  opacity    : 0.5;
+  animation  : titleFadeInAnimation ease-in-out 6s;
+  font-size  : 5em;
+  text-align : center;
+  color      : white;
 }
 
 .btn-group-wrap {
-  display: grid;
+  display           : grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-column: 6 / 8;
-  grid-row: 3 / 5;
-  align-items: center;
-  text-align: center;
-  justify-content: center; 
+  grid-column       : 6 / 8;
+  grid-row          : 3 / 5;
+  align-items       : center;
+  text-align        : center;
+  justify-content   : center;
 }
 
 
 .btn {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  justify-self: center;
-  width: 100%;
-  opacity: 0.3;
-  border-radius: 5px;
-  background-color: transparent;
-  color: white;
-  animation: fadeInAnimation ease-in-out 8s; 
-  animation-fill-mode: forwards; 
-  transition: all ease-in-out 1.3s;
+  grid-column        : 2 / 3;
+  grid-row           : 2 / 3;
+  justify-self       : center;
+  width              : 100%;
+  opacity            : 0.3;
+  border-radius      : 5px;
+  background-color   : transparent;
+  color              : white;
+  animation          : fadeInAnimation ease-in-out 8s;
+  animation-fill-mode: forwards;
+  transition         : all ease-in-out 1.3s;
 }
 
 .btn:hover {
-    width: 100%;
-    opacity: 0.7;
-    color: salmon !important;
-    border-radius: 20px;
-    letter-spacing: 1px;
-    border-color: sandybrown !important;
+  width         : 100%;
+  opacity       : 0.7;
+  color         : salmon !important;
+  border-radius : 20px;
+  letter-spacing: 1px;
+  border-color  : sandybrown !important;
 }
 
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 0.7; 
-   } 
-} 
-@keyframes titleFadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 0.5; 
-   } 
-} 
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes titleFadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
 
 .fullscreen-bg {
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
+  grid-column     : 1 / -1;
+  grid-row        : 1 / -1;
   background-color: black;
-  position: relative;
-  z-index: -100;
+  position        : relative;
+  z-index         : -100;
 }
 
 .fullscreen-bg__video {
-  width: 100%;
+  width : 100%;
   height: 100%;
+}
+
+/** PROFILE PAGE CSS **/
+.profile-container {
+  display              : grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows   : 8% 37% 55%;
+  grid-template-areas  :
+
+    "header header"
+    "profile-pic reviews"
+    "profile-bio reviews";
+  ;
+  height: 100vh;
+  width : 100vw;
+}
+
+.profile-header {
+  grid-area       : header;
+  background-color: black;
+
+}
+
+.profile-picture {
+  grid-area       : profle-pic;
+  background-color: white;
+}
+
+.profile-bio {
+  grid-area       : profile-bio;
+  background-color: grey;
+}
+
+.profile-reviews {
+  grid-area       : reviews;
+  background-color: bisque;
 }
