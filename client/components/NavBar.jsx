@@ -38,8 +38,8 @@ class NavBar extends React.Component {
         </div>
 
         : <div className="not-logged-in">
-        <div></div>
-        <button className="nav-bar-buttons" onClick={this.loginClickHandler}>Login</button>
+          <div></div>
+          <button className="nav-bar-buttons" onClick={this.loginClickHandler}>Login</button>
           <button className="nav-bar-buttons" onClick={this.registerClickHandler}>Register</button>
         </div>
       }
@@ -64,7 +64,6 @@ class NavBar extends React.Component {
     )
   }
 }
-
 
 const mapStateToProps = state => {
   return {
