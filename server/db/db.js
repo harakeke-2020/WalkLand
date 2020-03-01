@@ -8,8 +8,8 @@ module.exports = {
   findUser,
   findUserJWT,
   registerUser,
-  deleteUser
-  // getReviewRatings
+  deleteUser,
+  getReviewRatings
 }
 
 function getUsers (db = connection) {
@@ -52,6 +52,11 @@ function getWalks (db = connection) {
     })
 }
 
+function getReviewRatings (db = connection) {
+  return db('ratingReviews')
+    .join('users', 'userId', 'users.id')
+    .select()
+}
 // function getReviewRatings (id) {
 //   return db('reviewRatings')
 //     .join('users', 'userId', 'user.id')
