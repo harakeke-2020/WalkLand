@@ -23,7 +23,6 @@ class App extends Component {
             <LandingPage />
           </div>
         }
-        <RegisterUser />
         {this.props.activePage === 'map' &&
           <div className="map-page-container">
             <div className="logo-nav-container">
