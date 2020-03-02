@@ -25,7 +25,7 @@ class Details extends Component {
   handleSubmit = e => {
     e.preventDefault()
     this.props.createReview(this.state)
-    .then(thing => console.log('this state: ', thing))
+      .then(thing => console.log('this state: ', thing))
       .catch(err => console.log(err))
   }
 
