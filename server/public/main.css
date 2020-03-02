@@ -462,7 +462,7 @@ margin-top: 30px;
   .profile-container {
     display              : grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows   : 7.6% 46.2% 46.2%;
+    grid-template-rows   : 5.2vh 47.4vh 47.4vh;
     grid-template-areas  :
   
       "profile-header profile-header profile-header profile-header"
