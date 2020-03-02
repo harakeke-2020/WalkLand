@@ -1,139 +1,3 @@
-.landing-page-container {
-  /* background-color: black; */
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  width: 100vw;
-  height: 99.3vh;
-}
-
-.map-page-container {
-  /* background-color: black; */
-  display: grid;
-  grid-template-columns: 15px 320px 15px repeat(9, 1fr);
-  grid-template-rows: 50px repeat(11, minmax(0, 1fr));
-  width: 100vw;
-  height: 99.3vh;
-}
-
-.mapContainer {
-  min-height: 100%;
-  max-width: 75%;
-}
-
-.landing-page {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
-.map-container {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  grid-column: 4 / -1;
-  grid-row: 2 / -1;
-}
-
-.landing-heading-centre {
-  grid-column: 5 / 9;
-  grid-row: 1 / 2;
-  font-family: 'Hammersmith One';
-  opacity: 0.5;
-  animation: titleFadeInAnimation ease-in-out 6s; 
-  font-size: 5rem;
-  text-align: center;
-  color: white;
-}
-
-.btn-group-wrap {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-column: 6 / 8;
-  grid-row: 3 / 5;
-  align-items: center;
-  text-align: center;
-  justify-content: center; 
-}
-
-
-.btn {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  justify-self: center;
-  width: 100%;
-  opacity: 0.3;
-  border-radius: 5px;
-  background-color: transparent;
-  color: white;
-  animation: fadeInAnimation ease-in-out 8s; 
-  animation-fill-mode: forwards; 
-  transition: all ease-in-out 1.3s;
-}
-
-.btn:hover {
-    width: 100%;
-    opacity: 0.7;
-    color: salmon !important;
-    border-radius: 20px;
-    letter-spacing: 1px;
-    border-color: sandybrown !important;
-}
-.details-container {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: repeat(12, minmax(0, 1fr));
-  height: 99.3vh;
-  background-color: #EAE7E7;
-}
-
-.details-walktitle {
-  grid-column: 2 /6;
-  grid-row: 1 / 2 ;
-  font-size: 50px;
-  text-align: center;
-
-}
-
-.details-map {
-  grid-column: 10 / 12;
-  grid-row: 3 / 6; 
-}
-
-.details-info {
-  grid-column: 10 / 12;
-  grid-row: 9 / 11;
-  height: 100%;
-}
-.details-text {
-
-  grid-column: 1 / 10;
-  grid-row: 9 / 12;
-  font-size: 20px;
-
-}
-
-.details-photo-slider {
-  grid-column: 1 / 10;
-  grid-row: 3 / 9;
-  border: 5px solid black;
-  
-  
-}
-.details-photos {
-  max-height:100%;
-  height:380px;
- 
- 
-}
-.detials-slider {
-  height: 100%;
-}
-
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-}
 @media screen and (max-width: 1060px) {
   #primary { width:67%; }
   #secondary { width:30%; margin-left:3%;}  
@@ -144,14 +8,46 @@
   #secondary { width:100%; margin:0; border:none; }
 }
 
+@keyframes fadeInAnimation { 
+  0% { opacity: 0; } 
+  100% { opacity: 0.7; } 
+} 
+@keyframes titleFadeInAnimation { 
+  0% { opacity: 0; } 
+  100% { opacity: 0.5; } 
+} 
 
-.landing-page-container {
-  /* background-color: black; */
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  width: 100vw;
-  height: 99.3vh;
+html {
+margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+margin: 0px;
+}
+
+h2 {
+  margin: 0px;
+}
+
+h3 {
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+button {
+  padding: 3px 10px 3px 10px;
+  border-radius: 5px;
+  border: 2px solid #ABD53C ;
+  background-color: #ABD53C;
+  color: white;
+  font-style: bold;
 }
 
 .map-page-container {
@@ -168,250 +64,12 @@
   max-width: 75%;
 }
 
-.landing-page {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
 .map-container {
   height: 100%;
   width: 100%;
   position: relative;
   grid-column: 4 / -1;
   grid-row: 2 / -1;
-}
-
-.landing-heading-centre {
-  grid-column: 5 / 9;
-  grid-row: 1 / 2;
-  font-family: 'Hammersmith One';
-  opacity: 0.5;
-  animation: titleFadeInAnimation ease-in-out 6s; 
-  font-size: 5rem;
-  text-align: center;
-  color: white;
-  z-index: 2;
-}
-
-.btn-group-wrap {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-column: 6 / 8;
-  grid-row: 3 / 5;
-  align-items: center;
-  text-align: center;
-  justify-content: center; 
-}
-
-
-.btn {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  justify-self: center;
-  width: 100%;
-  opacity: 0.3;
-  border-radius: 5px;
-  background-color: transparent;
-  color: white;
-  animation: fadeInAnimation ease-in-out 8s; 
-  animation-fill-mode: forwards; 
-  transition: all ease-in-out 1.3s;
-}
-
-.btn:hover {
-    width: 100%;
-    opacity: 0.7;
-    color: salmon !important;
-    border-radius: 20px;
-    letter-spacing: 1px;
-    border-color: sandybrown !important;
-}
-.details-container {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: repeat(12, minmax(0, 1fr));
-  height: 99.3vh;
-  background-color: #EAE7E7;
-}
-
-.details-walktitle {
-  grid-column: 2 /6;
-  grid-row: 1 / 2 ;
-  font-size: 50px;
-  text-align: center;
-
-}
-
-.details-map {
-  grid-column: 10 / 12;
-  grid-row: 3 / 6; 
-}
-
-.details-info {
-  grid-column: 10 / 12;
-  grid-row: 9 / 11;
-  height: 100%;
-}
-.details-text {
-
-  grid-column: 1 / 10;
-  grid-row: 9 / 12;
-  font-size: 20px;
-
-}
-
-.details-photo-slider {
-  grid-column: 1 / 10;
-  grid-row: 3 / 9;
-  border: 5px solid black;
-  
-  
-}
-.details-photos {
-  max-height:100%;
-  height:380px;
- 
- 
-}
-.detials-slider {
-  height: 100%;
-}
-
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 0.7; 
-   } 
-} 
-@keyframes titleFadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 0.5; 
-   } 
-} 
-
-.fullscreen-bg {
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
-  background-color: black;
-  position: relative;
-  z-index: -100;
-}
-
-.fullscreen-bg__video {
-  width: 100%;
-  height: 100%;
-}
-
-.detailsContainer {
-padding: 15px;
-margin-top: 30px;
-}
-
-html {
-  box-sizing:border-box
-}
-
-/* Slideshow container */
-.slideshow-container {
-  position: relative;
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* Hide the images by default */
-.mySlides {
-  position: relative;
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  position: absolute;
-  cursor: pointer;
-  width: auto;
-  margin-top: 22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.prev {
-  left: 0;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numberText {
-  position: absolute;
-  color: whitesmoke;
-  font-size: 12px;
-  padding: 8px 12px;
-  top: 0px;
-  left: 5px;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
 }
 
 .popup {
@@ -511,111 +169,5 @@ html {
   color: black;
 }
 
-  /** PROFILE PAGE CSS **/
-  .profile-container {
-    display              : grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows   : 7.6% 46.2% 46.2%;
-    grid-template-areas  :
-  
-      "profile-header profile-header profile-header profile-header"
-      "profile-top profile-top profile-top profile-top"
-      "profile-bottom profile-bottom profile-bottom profile-bottom";
-    ;
-    padding: 0;
-    margin : 0;
-    height : 100vh;
-    width  : 100vw;
-    background-color: #f4f4f4;
-  }
-  
-  .profile-header {
-    /* grid-area       : profile-header;
-    background-color: #020250;
-    padding: 0;
-    margin: 0; */
-    display: grid;
-    grid-template-rows: repeat(1, minmax(0, 1fr));
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-column: 1 / last-column;
-    grid-row: 1 / 1;
-    background-color: #ABD53C;
-    max-height: 100%;
-    width: 100%;
-  }
-  
-  .profile-header-btn-group {
-    display: inline-block;
-    height:100%;
-    margin-left: 20px;
-  }
-
-  .profile-header-btn {
-    background-color: rgb(155, 155, 155);
-    border-style: none;
-    color: white;
-    text-align: center;
-    display: inline-block;
-    height:100%;
-  }
-
-  .profile-header-btn:hover {
-    background-color: rgb(116, 116, 116);
-  }
-  
-  .profile-top {
-    grid-area       : profile-top;
-    background-color: #f4f4f4;
-    padding: 30px;
-    /* border-style: groove;
-    border-color: rgb(204, 204, 204);
-    border-width: 0.1px; */
-  }
-
-  .profile-top-children {
-    height:100%;
-    width: 100%;
-    background: #FFFFFF ; 
-  }
-  
-  .profile-picture-image {
-    max-width: 50%;
-    display: block;
-    margin    : auto;
-    border-radius: 5%;
-  }
-  
-  .profile-cover {
-    grid-area       : profile-cover;
-    background-color: rgb(245, 243, 243);
-    /* border-style: groove;
-    border-color: rgb(204, 204, 204);
-    border-radius: 5px;
-    border-width: 0.5px; */
-  }
-
-  .profile-bottom {
-    grid-area       : profile-bottom;
-    padding: 30px;
-    padding-top: 10px;
-    /* border-style: groove;
-    border-color: rgb(204, 204, 204);
-    border-width: 0.1px; */
-  }
-
-  .profile-bottom-children {
-    height:100%;
-    width: 100%;
-    background: #FFFFFF ; 
-  }
-  
-  .profile-logo {
-    /* max-height: 100%; */
-    grid-column: 2 / 3;
-    padding: 5px;
-    width: 30%;
-    justify-self: center;
-    align-self: center;
-  }
 
  
