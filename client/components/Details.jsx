@@ -55,11 +55,7 @@ class Details extends Component {
     }
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
     
-    const { ratings } = this.props
-    const idWalk = selectedWalk.id
-    const rating = ratings.filter(rating => rating.walkId === idWalk)
-      .map(data => data.rating)
-    
+
     return (
 
       <div className="details-container">
@@ -74,15 +70,19 @@ class Details extends Component {
           </Slider >
         </div>
         <div className = "details-text">
-          <p> {texty} </p>
+          <p> {`Description: ${selectedWalk.description}`} </p>
         </div>
         <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
         <ul className = "details-info">
+        
           <li>{`Location: ${selectedWalk.location}`}</li>
-          <li>{`Distance: ${selectedWalk.distance}km`}</li>
+          <li>{`Distance: ${selectedWalk.distance}`}</li>
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+          <li>{`Surface: ${selectedWalk.surface}`}</li>
+          
+
           <ul>
             {reviewsArray.map((item, idx) => (
               <>
