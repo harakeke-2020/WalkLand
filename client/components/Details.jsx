@@ -56,13 +56,13 @@ class Details extends Component {
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
-          {/* <Slider {...settings} >
+          <Slider {...settings} >
             {
               selectedWalk.photos.map((item, idx) => (
                 <img className = "details-photos" key={idx} src={item} />
               ))
             }
-          </Slider > */}
+          </Slider >
         </div>
         <div className = "details-text">
           <p> {texty} </p>
@@ -94,8 +94,11 @@ class Details extends Component {
             <p>Be a part of the experience</p>
             <label>Rating</label>
             <input
+              type='number'
+              min='1'
+              max='5'
               name='rating'
-              placeholder='Rating'
+              placeholder='Rating (1 - 5)'
               value={this.state.rating}
               onChange={this.handleChange}
             /><br/>
