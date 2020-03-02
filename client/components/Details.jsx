@@ -7,8 +7,14 @@ class Details extends Component {
 
     const { ratings } = this.props
     const idWalk = selectedWalk.id
-    const rating = ratings.filter(rating => rating.walkId === idWalk).map(data => data.rating)
-      
+    const reviewsArray = ratings.filter(rating => rating.walkId === idWalk).map(data => {
+      return {
+        rating: data.rating,
+        review: data.review,
+        author: 'to be added'
+      }
+    })
+
     return (
       <div>
         <h3>{selectedWalk.title}</h3>
@@ -24,7 +30,17 @@ class Details extends Component {
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-          <li>{`Ratings: ${rating}`}</li>
+          <ul>
+            {reviewsArray.map((item, idx) => (
+              <>
+              <li key={idx}>
+                <span>Rating: {item.rating}</span>
+                <span>Review: {item.review}</span>
+                <span>Author: {item.author}</span>
+              </li>
+              </>
+            ))}
+          </ul>
         </ul>
       </div>
     )
@@ -34,7 +50,8 @@ class Details extends Component {
 const mapStateToProps = state => {
   return {
     selectedWalk: state.selectedWalk,
-    ratings: state.ratings
+    ratings: state.ratings,
+    username: state.auth
   }
 }
 
