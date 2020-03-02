@@ -1,24 +1,24 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchWalks } from './actions/allWalks'
-import { getReviewRatings } from './actions/allWalks'
-
+import { fetchWalks, getReviewRatings } from './actions/allWalks'
 
 import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
 import NavBar from './NavBar'
+import Profile from './Profile'
+import RegisterUser from './RegisterUser'
 import FilterBar from './FilterBar'
 import LoginUser from './LoginUser'
 
 class App extends Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(fetchWalks())
     this.props.dispatch(getReviewRatings())
   }
 
-  render () {
+  render() {
     return (
       <>
         {this.props.activePage === 'landingPage' &&
@@ -60,6 +60,10 @@ class App extends Component {
               <Details />
             </div>
           </div>
+        }
+
+        {this.props.activePage === 'profile' &&
+          <Profile />
         }
       </>
     )

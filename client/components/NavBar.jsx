@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import activePage from './actions/activePage'
 import RegisterUser from './RegisterUser'
 import Logout from './Logout'
 import LoginUser from './LoginUser'
 
 class NavBar extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       showRegisterPopup: false,
@@ -27,15 +28,15 @@ class NavBar extends React.Component {
     })
   }
 
-  render () {
+  render() {
     return (
       <>
-      {this.props.login
-        ? <div className="logged-in">
-          <button className="nav-bar-buttons">Profile</button>
-          <p className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
-          <Logout />
-        </div>
+        {this.props.login
+          ? <div className="logged-in">
+            <button className="nav-bar-buttons" onClick={() => this.props.activePage('profile')}>Profile</button>
+            <p className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
+            <Logout />
+          </div>
 
         : <div className="not-logged-in">
           <div className="login-text">
@@ -45,24 +46,29 @@ class NavBar extends React.Component {
         </div>
       }
 
-      {this.state.showRegisterPopup
-        ? <RegisterUser
-          closePopup={this.registerClickHandler} />
-        : null
-      }
+        {this.state.showRegisterPopup
+          ? <RegisterUser
+            closePopup={this.registerClickHandler} />
+          : null
+        }
 
-      {this.state.showLoginPopup
-        ? <LoginUser
-          closePopup={this.loginClickHandler} />
-        : null
-      }
+        {this.state.showLoginPopup
+          ? <LoginUser
+            closePopup={this.loginClickHandler} />
+          : null
+        }
 
         {/* <NavBarLogin />
-
         <NavBarRegister /> */}
 
       </>
     )
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    activePage: (destination) => dispatch(activePage(destination))
   }
 }
 
@@ -72,4 +78,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(NavBar)
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)

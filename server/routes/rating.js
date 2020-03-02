@@ -11,18 +11,18 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log('hit the route')
   db.findUser(req.body.username)
     .then(returnedUser => {
       const newObject = {
         userId: returnedUser.id,
-        rating: Number(req.body.rating),
         walkId: req.body.walkId,
+        username: req.body.username,
+        rating: Number(req.body.rating),
         review: req.body.review
       }
       console.log('user for addreview: ', newObject)
       db.addReview(newObject)
-        .then(res => res.json(res))
+        .then(resolve => res.json(''))
     })
     .catch(err => console.log(err))
 })
