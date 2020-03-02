@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log('hit the route')
   db.findUser(req.body.username)
     .then(returnedUser => {
       const newObject = {
