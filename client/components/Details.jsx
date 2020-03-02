@@ -40,7 +40,7 @@ class Details extends Component {
       return {
         rating: data.rating,
         review: data.review,
-        author: 'to be added'
+        author: data.username
       }
     })
 
