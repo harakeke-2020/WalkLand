@@ -16,9 +16,11 @@ class Details extends Component {
     walkId: this.props.selectedWalk.id
   }
 
+  
+
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value 
     })
   }
 
@@ -39,7 +41,14 @@ class Details extends Component {
       slidesToScroll: 1
     }
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
+    
+    const { ratings } = this.props
+    const idWalk = selectedWalk.id
+    const rating = ratings.filter(rating => rating.walkId === idWalk)
+      .map(data => data.rating)
+    
     return (
+
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
@@ -61,6 +70,8 @@ class Details extends Component {
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+          <li>{`Rating: ${rating}`}</li>
+          
         </ul>
 
         {this.props.login &&
