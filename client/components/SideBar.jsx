@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import SideBarItem from './SideBarItem'
 import { connect } from 'react-redux'
 
-
 export const Sidebar = (props) => {
   return (
 

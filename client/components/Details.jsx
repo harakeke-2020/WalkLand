@@ -33,6 +33,17 @@ class Details extends Component {
 
   render () {
     const { selectedWalk } = this.props
+
+    const { ratings } = this.props
+    const idWalk = selectedWalk.id
+    const reviewsArray = ratings.filter(rating => rating.walkId === idWalk).map(data => {
+      return {
+        rating: data.rating,
+        review: data.review,
+        author: 'to be added'
+      }
+    })
+
     const settings = {
       dots: true,
       infinite: true,
@@ -63,6 +74,17 @@ class Details extends Component {
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+          <ul>
+            {reviewsArray.map((item, idx) => (
+              <>
+              <li key={idx}>
+                <span>Rating: {item.rating}</span>
+                <span>Review: {item.review}</span>
+                <span>Author: {item.author}</span>
+              </li>
+              </>
+            ))}
+          </ul>
         </ul>
 
         {this.props.login &&
@@ -106,8 +128,8 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => {
   return {
     selectedWalk: state.selectedWalk,
-    login: state.auth,
-    ratings: state.ratings
+    ratings: state.ratings,
+    login: state.auth
   }
 }
 

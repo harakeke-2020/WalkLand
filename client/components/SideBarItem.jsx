@@ -10,21 +10,14 @@ class SideBarItem extends Component {
     const { id, title, mainPhoto } = walk
     const { activePageState, selectedWalkState } = this.props
     const { selectedWalk, activePage } = this.props
+    const walkRatings = this.props.ratings
+    const walkId = this.props.walk.id
+    const filterByWalk = walkRatings.filter(walk => walk.id === walkId)
+    const walkAverage = filterByWalk.reduce((total, next) => total + next.rating, 0) / filterByWalk.length
+  
     const style = {
       backgroundImage: `url(${mainPhoto})`
     }
-
-    /* on component did mount we need to have all walks connecting to the walkId so they
-can display a rating. We do not select an indivual walk on load so it needs to know
-about all Id's on load so it can filter then map through and display the ratings on the right walk */
-    
-    // const { ratings, allWalksState } = this.props
-    // const allWalks = allWalksState.map(allWalk => allWalk.id)
-    // const rating = ratings.map(match => match.rating).filter(rating => rating.walkId === allWalks)
-
-    // console.log('this is all walks', allWalks)
-    // console.log('this is ratings', ratings)
-    // console.log('actual rating', rating)
 
     return (
       <div>
@@ -37,7 +30,7 @@ about all Id's on load so it can filter then map through and display the ratings
           }}
         >
           <h2 data-testid={'sideBarItem'}> {title} </h2>
-          <p data-testid={'rating'}>rating</p>
+          <p data-testid={'rating'}>rating: {walkAverage}</p>
           { selectedWalkState.id === id &&
         <>
 
