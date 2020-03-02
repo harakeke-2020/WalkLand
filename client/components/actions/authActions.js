@@ -42,6 +42,7 @@ export function registerUserAndLogin (user) {
             })
         }
       })
+      .catch(err => console.log(err.message))
   }
 }
 
@@ -58,6 +59,7 @@ export function justLogin (user) {
           dispatch(loginUser(res.req._data.username))
         }
       })
+      .catch(err => console.log(err.message))
   }
 }
 

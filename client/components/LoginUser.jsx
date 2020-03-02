@@ -18,7 +18,6 @@ class Login extends Component {
     e.preventDefault()
     this.props.justLogin(this.state)
       .then(this.props.closePopup)
-      .catch(err => console.log(err.message))
   }
 
   render () {
