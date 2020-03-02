@@ -56,17 +56,19 @@ class Details extends Component {
         <div className = "details-blackbox">
 
         </div>
-        <div className = "details-text">
+        {/* <div className = "details-text">
           <p> {texty} </p>
-        </div>
+        </div> */}
         <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
-        <ul className = "details-info">
-          <li>{`Location: ${selectedWalk.location}`}</li>
-          <li>{`Distance: ${selectedWalk.distance}km`}</li>
-          <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
-          <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
-          <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-        </ul>
+        <div className = "details-info">
+          <ul >
+            <li>{`Location: ${selectedWalk.location}`}</li>
+            <li>{`Distance: ${selectedWalk.distance}km`}</li>
+            <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
+            <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
+            <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+          </ul>
+        </div>
 
         {/* {this.props.login &&
         <div >
