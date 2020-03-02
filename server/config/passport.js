@@ -133,16 +133,13 @@ passport.use(
     try {
       db.findUserJWT(jwtPayload.id)
         .then(user => {
-          db.findUser(user.username)
-            .then(compareUser => {
-              if (jwtPayload.id === compareUser.id) {
-                console.log('user is authorized for next action ', user, compareUser)
-                done(null, user)
-              } else {
-                console.log('user not found in db')
-                done(null, false)
-              }
-            })
+          if (user) {
+            console.log('user is authorized for next action ', user)
+            done(null, user)
+          } else {
+            console.log('user not found in db')
+            done(null, false)
+          }
         })
     } catch (err) {
       done(err)
