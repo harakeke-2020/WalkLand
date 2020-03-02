@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchWalks } from './actions/allWalks'
-import { getReviewRatings } from './actions/allWalks'
-
+import { fetchWalks, getReviewRatings } from './actions/allWalks'
 
 import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'

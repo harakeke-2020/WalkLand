@@ -9,20 +9,12 @@
   #secondary { width:100%; margin:0; border:none; }
 }
 
+
 .landing-page-container {
   /* background-color: black; */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  width: 100vw;
-  height: 99.3vh;
-}
-
-.details-page-container {
-  /* background-color: black; */
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: repeat(12, minmax(0, 1fr));
   width: 100vw;
   height: 99.3vh;
 }
@@ -47,106 +39,6 @@
   position: relative;
   grid-column: 4 / -1;
   grid-row: 2 / -1;
-}
-
-.sidebar-container {
-  display: grid;
-  grid-template-rows: 80px 1fr;
-  grid-template-columns: 15px 1fr 15px;
-  background-color: whitesmoke;
-  grid-column: 1 / 4;
-  grid-row: 2 / -1;
-  max-height: 100%;
-  width: 100%;
-}
-
-.items-container {
-  background-color: whitesmoke;
-  grid-column: 1 / 4;
-  grid-row: 2 / -1;
-  max-height: 100%;
-  width: 100%;
-  overflow-y: scroll;
-}
-
-.logo-nav-container {
-  display: grid;
-  grid-template-rows: repeat(1, minmax(0, 1fr));
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-column: 1 / last-column;
-  grid-row: 1 / 1;
-  background-color: rgb(136, 199, 64);
-  max-height: 100%;
-  width: 100%;
-}
-
-.not-logged-in {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 30px;
-  align-content: center;
-  text-align: right;
-}
-
-.login-text a {
-  padding: 5px;
-}
-
-.logged-in {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
-  grid-template-rows: repeat(1, minmax(0, 1fr));
-  background-color: #ECEAE4;
-}
-
-.logo-main {
-  grid-column: 2 / 3;
-  padding: 5px;
-  width: 30%;
-  justify-self: center;
-  align-self: center;
-}
-
-
-
-.nav-bar-buttons:hover {
-  color: #FFFFFF;
-  background-color: #000000;
-}
-
-.filterbar {
-  grid-column: 2 / 3;
-  background-color: whitesmoke;
-  align-self: center;
-  justify-self: center;
-}
-
-.selected-walk {
-  color: white;
-  border-radius: 5px;
-  transition: all ease-in-out 0.5s;
-  box-shadow: 3px 3px 3px #cccccc;
-}
-
-.sidebar-item {
-  height: 95%;
-  color: white;
-  margin: 0px 0px 5px 15px;
-  border-radius: 5px;
-  transition: all ease-in-out 0.5s;
-}
-
-.sidebar-item:hover {
-  /* width: 97%;
-  height: 100%; */
-  transition: all ease-in-out 0.5s;
-}
-
-.sidebar-item:active {
-  /* width: 50%;
-  color: white;
-  border-radius: 5px; */
-  transition: all ease-in-out 0.5s;
-  /* box-shadow: 3px 3px 3px #cccccc; */
 }
 
 .landing-heading-centre {
