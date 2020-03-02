@@ -2,15 +2,33 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import activePage from './actions/activePage'
+import ProfileSetting from './ProfileSetting'
+import ProfileReviews from './ProfileReviews'
 
 class Profile extends Component {
+
+    // Create local state just to handle local changes
+    state = {
+        currentPage: 'reviews'
+    }
+
+    stateHandler = () => {
+        this.setState({
+            currentPage: 'map'
+        })
+    }
+
     render() {
         return (
             <>
                 <div className="profile-container">
                     <div className="profile-header">
                         <img className='profile-logo' src='images/mainlogo.png' />
-                        <button className="profile-header-home-btn" onClick={() => this.props.activePage('map')}>Home</button>
+                        <div className="profile-header-btn-group">
+                            <button className="profile-header-btn" onClick={() => this.props.activePage('map')}>Home</button>
+                            <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button>
+                            <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>
+                        </div>
                     </div>
 
                     <div className="profile-picture">
@@ -22,6 +40,9 @@ class Profile extends Component {
                     </div>
 
                     <div className="profile-reviews">
+                        {
+                            this.state.currentPage === 'reviews' ? <ProfileReviews /> : <ProfileSetting stateHandler = {this.stateHandler}/>
+                        }
                     </div>
                 </div>
             </>

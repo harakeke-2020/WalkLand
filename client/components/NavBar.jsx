@@ -33,9 +33,7 @@ class NavBar extends React.Component {
       <>
         {this.props.login
           ? <div className="logged-in">
-            <button className="nav-bar-buttons profile-button" onClick={() => this.props.activePage('profile')}>Profile</button>
-            <button className="nav-bar-buttons" onClick={() => this.setState.login('')}>Logout</button>
-            <button className="nav-bar-buttons profile-button" onClick={() => this.props.activePage('profile')}>Profile</button>
+            <button className="nav-bar-buttons" onClick={() => this.props.activePage('profile')}>Profile</button>
             <p className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
             <Logout />
           </div>
@@ -60,7 +58,6 @@ class NavBar extends React.Component {
         }
 
         {/* <NavBarLogin />
-
         <NavBarRegister /> */}
 
       </>
@@ -70,7 +67,6 @@ class NavBar extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginState: (trueOrFalse) => dispatch(loginState(trueOrFalse)),
     activePage: (destination) => dispatch(activePage(destination))
   }
 }

@@ -16,6 +16,12 @@ export const logoutUser = () => {
   }
 }
 
+export const deleteUser = () => {
+  return {
+    type: DELETE_USER
+  }
+}
+
 export function registerUserAndLogin (user) {
   return (dispatch) => {
     return request
@@ -49,5 +55,17 @@ export function justLogin (user) {
           dispatch(loginUser(res.req._data.username))
         }
       })
+  }
+}
+
+// Delete profile by sending a DELETE request from /api/v1/auth/deleteUser
+export function deleteProfile() {
+  return (dispatch) => {
+    console.log('deleteProfile() from actions/authActions is hit')
+    return request.delete('http://localhost:3000/api/v1/auth/deleteUser')
+    .then(res => {
+      dispatch(deleteUser())
+      console.log('res')
+    })
   }
 }
