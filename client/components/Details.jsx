@@ -82,7 +82,6 @@ class Details extends Component {
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
           <li>{`Surface: ${selectedWalk.surface}`}</li>
           
-
           <ul>
             {reviewsArray.map((item, idx) => (
               <>
