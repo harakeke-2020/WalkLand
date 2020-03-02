@@ -51,20 +51,24 @@ class Details extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      initialSlide: 0
+      initialSlide: 0,
+      className: 'details-slider'
     }
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
     return (
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider-div ">
-          <Slider {...settings} >
-            {
+          <div className = "details-slider">
+            <img className = "details-map" src={selectedWalk.routeImage} />
+          </div>
+          {/* <Slider {...settings} >
+            {<img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
               selectedWalk.photos.map((item, idx) => (
                 <img className = "details-photos" key={idx} src={item} />
               ))
             }
-          </Slider >
+          </Slider > */}
         </div>
         <div className = "details-blackbox">
 
@@ -72,14 +76,15 @@ class Details extends Component {
         {/* <div className = "details-text">
           <p> {texty} </p>
         </div> */}
-        <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
-        <ul className = "details-info">
-          <li>{`Location: ${selectedWalk.location}`}</li>
-          <li>{`Distance: ${selectedWalk.distance}km`}</li>
-          <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
-          <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
-          <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-          <ul>
+        {/* <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" /> */}
+        <div className = "details-text">
+          <ul className = "details-list" >
+            <li>{`Location: ${selectedWalk.location}`}</li>
+            <li>{`Distance: ${selectedWalk.distance}km`}</li>
+            <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
+            <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
+            <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+            {/* <ul>
             {reviewsArray.map((item, idx) => (
               <>
               <li key={idx}>
@@ -89,11 +94,11 @@ class Details extends Component {
               </li>
               </>
             ))}
+          </ul> */}
           </ul>
-        </ul>
-
-        {/* {this.props.login &&
-        <div >
+        </div>
+        {this.props.login &&
+        <div className = "details-form">
           <form onSubmit={this.handleSubmit}>
             <h1>Submit your experience!</h1>
             <p>Be a part of the experience</p>
@@ -119,7 +124,7 @@ class Details extends Component {
             <button type='submit'>Submit Review</button>
           </form>
         </div>
-        } */}
+        }
 
       </div>
     )
