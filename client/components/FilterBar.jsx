@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 
 export const SearchBar = (props) => {
   return (
-    <div>
-      <form className="filterbar">
+    <div className="filterbar">
+      <form className="filter-field">
         <input type="text" placeholder="Filter by:" />
       </form>
 
