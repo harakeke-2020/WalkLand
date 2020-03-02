@@ -22,8 +22,8 @@ exports.seed = function (knex) {
           elevationGain: 200,
           timeTaken: '2 Hours',
           difficulty: 'Intermediate',
-          Surface: 'surface will go here',
-          description: 'Goldie\'s Bushwalk is an amazing walk'
+          Surface: 'There are numerous stream crossings',
+          description: 'Goldies Bush and Mokoroa Falls Loop is a 6.0 kilometer lightly trafficked loop trail located near Auckland, Auckland, New Zealand that features a waterfall and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips.'
         },
         { id: 2,
           title: 'Western Springs',
@@ -42,8 +42,8 @@ exports.seed = function (knex) {
           elevationGain: 9999,
           timeTaken: '30 Minutes',
           difficulty: 'beginner',
-          Surface: 'surface will go here',
-          description: 'Western Springs is an amazing walk! really awesome'
+          Surface: 'Concrete foot path and large grass lawns to walk around on',
+          description: 'Western Springs Park Walk is a very easy 1.8k walk that will take you around 30 mins to complete. Highlights of the Western Springs Park Walk are the eels and the free tram ride around Western Spring Park. It surrounds a natural spring-fed lake, one of Auckland\'s early water supplies.'
         },
         {
           id: 3,
@@ -63,8 +63,8 @@ exports.seed = function (knex) {
           elevationGain: 572,
           timeTaken: '3 Hours',
           difficulty: 'Intermediate',
-          Surface: 'surface will go here',
-          description: 'Te Henga Walkway an amazing walk! really awesome'
+          Surface: 'traverses coastal cliffs and is uneven and muddy in places',
+          description: 'Te Henga Walkway is a 10.0 kilometer lightly trafficked point-to-point trail located near Henderson, Auckland, New Zealand that offers the chance to see wildlife and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips and is accessible year-round.'
 
         },
         {
@@ -106,8 +106,8 @@ exports.seed = function (knex) {
           elevationGain: 1442,
           timeTaken: '1 Hour',
           difficulty: 'Easy',
-          Surface: 'surface will go here',
-          description: 'Maungauika an amazing walk! really awesome'
+          Surface: 'Paths guide you along the walk',
+          description: 'The North Head Historical Reserve is considered to be the most significant historical coastal defence site in New Zealand and receives a significant number of visitors each year. The location has commanding views over the Hauraki Gulf and inner harbour. First used by Maori for defence purposes the site was one of three cone pa in the Devonport area.'
         },
         {
           id: 6,
@@ -127,8 +127,8 @@ exports.seed = function (knex) {
           elevationGain: 1442,
           timeTaken: '1.50 Hours',
           difficulty: 'Intermediate',
-          Surface: 'surface will go here',
-          description: 'Motutapu Walkway an amazing walk! really awesome'
+          Surface: 'Three quarters of the walk is on volcanic rock road and tracks',
+          description: 'The Motutapu Walkway starts at the southern end of Home Bay. Poles mark the track across farmland, climbing to the island’s 120 m trig station and giving panoramic views of the Hauraki Gulf. The track passes an area of native bush planted by volunteers in 2002 and 2003. '
         },
         {
           id: 7,
@@ -148,8 +148,29 @@ exports.seed = function (knex) {
           elevationGain: 231,
           timeTaken: '2.0 Hours',
           difficulty: 'Easy',
-          Surface: 'surface will go here',
-          description: 'One Tree Hill an amazing walk! really awesome'
+          Surface: 'Grass surface that has surrounding paths',
+          description: 'Easy 2 hour round trip walk to One Tree Hill in Auckland. Excellent 360 views over Auckland from the top of One Tree Hill. Unfortunately the \'one tree\' is now no longer and is only a stump. No car access to the top of One Tree Hill anymore.'
+        },
+        {
+          id: 8,
+          title: 'Kitekite Falls',
+          latitude: -36.96216,
+          longitude: 174.48242,
+          location: 'Auckland',
+          mainPhoto: 'https://img.theculturetrip.com/wp-content/uploads/2017/05/10135772153_4935a93929_k.jpg',
+          photos: JSON.stringify([
+            'https://cdn-assets.alltrails.com/static-map/production/at-map/18531131/trail-new-zealand-auckland-region-kitekite-falls-hike-at-map-18531131-1538011453-1200x630-3-5.jpg',
+            'https://images.squarespace-cdn.com/content/v1/53ae6e0ce4b0f6113495c6b1/1452405152772-L42CMLOW3OADSOHNJBWZ/ke17ZwdGBToddI8pDm48kB7VtZGBFPr7lZCrlHS4ye0UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcFHn9sAeODwGxZ7mkTPk4lvstZaCL7z4CAlHCpnWsqfoF7VxFElKmyMCgmkHEhWl7/kitekite3.png ',
+            'https://media2.trover.com/T/575e9c827eb4f464a8047469/fixedw_large_4x.jpg',
+            'https://www.totstoteens.co.nz/wp-content/uploads/2018/03/waterfall-Oakley-1200-by-630.jpg'
+          ]),
+          routeImage: 'https://www.onetreehillcollege.school.nz/files/5114/3184/8392/Map.gif',
+          distance: '3.50Kms',
+          elevationGain: 89,
+          timeTaken: '1.5 Hours',
+          difficulty: 'Easy',
+          Surface: 'bush track that can become slippery',
+          description: 'Easy 2 hour round trip walk to One Tree Hill in Auckland. Excellent 360 views over Auckland from the top of One Tree Hill. Unfortunately the \'one tree\' is now no longer and is only a stump. No car access to the top of One Tree Hill anymore.'
         }
       ])
     })
