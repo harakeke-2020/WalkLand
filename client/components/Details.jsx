@@ -27,7 +27,7 @@ class Details extends Component {
   handleSubmit = e => {
     e.preventDefault()
     this.props.createReview(this.state)
-    .then(thing => console.log('this state: ', thing))
+      .then(thing => console.log('this state: ', thing))
       .catch(err => console.log(err))
   }
 
@@ -56,13 +56,13 @@ class Details extends Component {
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
-          <Slider {...settings} >
+          {/* <Slider {...settings} >
             {
               selectedWalk.photos.map((item, idx) => (
                 <img className = "details-photos" key={idx} src={item} />
               ))
             }
-          </Slider >
+          </Slider > */}
         </div>
         <div className = "details-text">
           <p> {texty} </p>

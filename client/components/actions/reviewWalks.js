@@ -6,7 +6,7 @@ export const ADD_REVIEW = 'ADD_REVIEW'
 const addReview = review => {
   return {
     type: ADD_REVIEW,
-    review
+    review: review
   }
 }
 
@@ -22,12 +22,11 @@ export function createReview (review) {
     return request
       .post('http://localhost:3000/api/v1/rating')
       .send(review)
-      .then(thing => console.log('what the post:', thing))
       .then(res => {
         if (res.message) {
-          console.log('res from reviewWalksaction: ', res)
+          console.log('res from review Walksaction: ', res)
         } else {
-          dispatch(addReview(res))
+          dispatch(addReview(review))
         }
       })
   }
