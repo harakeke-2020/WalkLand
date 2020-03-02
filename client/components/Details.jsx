@@ -29,9 +29,8 @@ class Details extends Component {
 
     const { ratings } = this.props
     const idWalk = selectedWalk.id
-    const rating = ratings.filter(rating => rating.walkId === idWalk)
-      .map(data => data.rating)
-
+    const rating = ratings.filter(rating => rating.walkId === idWalk).map(data => data.rating)
+      
     return (
       <div>
         <h3>{selectedWalk.title}</h3>
