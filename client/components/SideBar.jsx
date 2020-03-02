@@ -10,7 +10,7 @@ export const Sidebar = (props) => {
 
       {props.allWalks.map((walk) => {
         return (
-          <SideBarItem key={walk.id} walk={walk} mainPhoto={walk.mainPhoto}/>
+          <SideBarItem key={walk.id} walk={walk} mainPhoto={walk.mainPhoto} />
         )
       })}
     </>

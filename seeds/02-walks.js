@@ -14,10 +14,10 @@ exports.seed = function (knex) {
           photos: JSON.stringify([
             'https://tramper.nz/imgcache/8/8763-feature.jpg',
             'https://www.nstc.org.nz/resources/Pictures/Te%20Henga1.jpg',
-            'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80',
-            'https://images.unsplash.com/photo-1504700610630-ac6aba3536d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+            'https://www.nstc.org.nz/resources/Pictures/Te%20Henga8.jpg',
+            'https://tomhike.com/wp-content/gallery/goldie-bush/IMG_0178.jpg'
           ]),
-          routeImage: 'https://basemaps.cloud.eaglegis.co.nz/arcgis/rest/services/LINZ/geotiffs/MapServer/tile/9/5754/2350',
+          routeImage: 'http://i.imgur.com/tudbIvd.jpg',
           distance: '4.5Kms',
           elevationGain: 200,
           timeTaken: '2 Hours',
@@ -52,7 +52,7 @@ exports.seed = function (knex) {
             'https://www.newzealand.com/assets/Tourism-NZ/Auckland/141d0c557d/img-1536202424-2494-10947-p-18AB2FE5-AD39-F1FE-E87423DF59CE5681-2544003__FocalPointCropWzQ0MCwxMjgwLDYwLDM2LDc1LCJqcGciLDY1LDIuNV0.jpg',
             'https://i0.wp.com/thethingis.co.nz/wp-content/uploads/2017/03/p638_orig.png?fit=1024%2C707',
             'https://nztramper.com/wp-content/gallery/te-henga-walkway/te-henga-walkway-sign.jpg',
-            'https://welshkiwi.com/wp-content/uploads/2018/10/0545DF91-87E7-4119-A510-96123BADD452-1440x1080.jpeg8'
+            'https://nzfrenzynorth.files.wordpress.com/2013/01/view-over-bethells-oneill-bay-from-raetahinga-point-viewpoint-on-the-te-henga-walkway.jpg'
           ]),
           routeImage: 'images/tehengawalkway.png',
           distance: '10.0Kms',
@@ -99,10 +99,10 @@ exports.seed = function (knex) {
           difficulty: 'Easy'
         },
         {
-          id: 7,
+          id: 6,
           title: 'Motutapu Walkway',
-          latitude: -36.749997,
-          longitude: 174.916663,
+          latitude: -36.7538775,
+          longitude: 174.9138084,
           location: 'Devonport',
           mainPhoto: 'https://www.doc.govt.nz/contentassets/7739db54ace849c5bbc7f397c5cf098c/north-head-interp-map-cropped-525.jpg',
           photos: JSON.stringify([
@@ -118,7 +118,7 @@ exports.seed = function (knex) {
           difficulty: 'Intermediate'
         },
         {
-          id: 9,
+          id: 7,
           title: 'One Tree Hill Walk',
           latitude: -36.899982,
           longitude: 174.7745785,

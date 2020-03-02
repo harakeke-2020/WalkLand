@@ -80,8 +80,7 @@ passport.use(
   )
 )
 
-
-//this route persists a login if the app is exited and restarted
+// this route persists a login if the app is exited and restarted
 
 // router.get('/findUser', (req, res, next) => {
 //   passport.authenticate('jwt', { session: false }, (err, user, info) => {
@@ -126,19 +125,24 @@ const opts = {
   secretOrKey: process.env.SECRET_KEY
 }
 
+//
+
 passport.use(
   'jwt',
   new JWTstrategy(opts, (jwtPayload, done) => {
     try {
       db.findUserJWT(jwtPayload.id)
         .then(user => {
-          if (user) {
-            console.log('user found in db in passport')
-            done(null, user)
-          } else {
-            console.log('user not found in db')
-            done(null, false)
-          }
+          db.findUser(user.username)
+            .then(compareUser => {
+              if (jwtPayload.id === compareUser.id) {
+                console.log('user is authorized for next action ', user, compareUser)
+                done(null, user)
+              } else {
+                console.log('user not found in db')
+                done(null, false)
+              }
+            })
         })
     } catch (err) {
       done(err)
