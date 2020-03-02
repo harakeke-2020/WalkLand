@@ -7,8 +7,8 @@ function viewProfile (username) {
     type: VIEW_PROFILE,
     username,
     isViewing: true
-  };
-};
+  }
+}
 
 export default viewProfile
 
