@@ -19,7 +19,6 @@ class RegisterUser extends Component {
     e.preventDefault()
     this.props.registerUserAndLogin(this.state)
       .then(this.props.closePopup)
-      .catch(err => console.log(err))
   }
 
   render () {

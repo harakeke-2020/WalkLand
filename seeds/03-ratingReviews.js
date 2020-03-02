@@ -10,8 +10,8 @@ exports.seed = function (knex) {
         { id: 4, userId: 4, walkId: 4, username: 'Duodenum', rating: 4, review: 'Rangitoto Summit Track was amazing' },
         { id: 5, userId: 5, walkId: 5, username: 'Femur', rating: 4, review: 'Maungauika/North Head Historic Walk was amazing' },
         { id: 6, userId: 6, walkId: 6, username: 'themonkey', rating: 2, review: 'Motutapu Walkway was amazing' },
-        { id: 7, userId: 7, walkId: 7, username: 'semantic domentic', rating: 5, review: 'One Tree Hill Walk was amazing' }
-
+        { id: 7, userId: 7, walkId: 7, username: 'dave', rating: 5, review: 'One Tree Hill Walk was amazing' },
+        { id: 8, userId: 8, walkId: 8, username: 'bob', rating: 5, review: 'Kitekite Falls was amazing' }
       ])
     })
 }
