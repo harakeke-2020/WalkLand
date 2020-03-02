@@ -10,6 +10,11 @@ class SideBarItem extends Component {
     const { id, title, mainPhoto } = walk
     const { activePageState, selectedWalkState } = this.props
     const { selectedWalk, activePage } = this.props
+    const walkRatings = this.props.ratings //array of ratings
+    const walkId = this.props.walk.id //id of walk passed down
+    const filterByWalk = walkRatings.filter(walk => walk.walkId === walkId)
+    const walkAverage = filterByWalk.reduce((total, next) => total + Number(next.rating), 0) / filterByWalk.length
+  
     const style = {
       backgroundImage: `url(${mainPhoto})`
     }
@@ -25,7 +30,7 @@ class SideBarItem extends Component {
           }}
         >
           <h2 data-testid={'sideBarItem'}> {title} </h2>
-          <p data-testid={'rating'}>rating</p>
+          <p data-testid={'rating'}>rating: {walkAverage}</p>
           { selectedWalkState.id === id &&
         <>
 

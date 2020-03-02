@@ -8,6 +8,8 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+let slideIndex = 1
+
 class Details extends Component {
   state = {
     username: this.props.login,
@@ -27,12 +29,23 @@ class Details extends Component {
   handleSubmit = e => {
     e.preventDefault()
     this.props.createReview(this.state)
-    .then(thing => console.log('this state: ', thing))
+      .then(thing => console.log('this state: ', thing))
       .catch(err => console.log(err))
   }
 
   render () {
     const { selectedWalk } = this.props
+
+    const { ratings } = this.props
+    const idWalk = selectedWalk.id
+    const reviewsArray = ratings.filter(rating => rating.walkId === idWalk).map(data => {
+      return {
+        rating: data.rating,
+        review: data.review,
+        author: data.username
+      }
+    })
+
     const settings = {
       dots: true,
       infinite: true,
@@ -70,8 +83,17 @@ class Details extends Component {
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-          <li>{`Rating: ${rating}`}</li>
-          
+          <ul>
+            {reviewsArray.map((item, idx) => (
+              <>
+              <li key={idx}>
+                <span>Rating: {item.rating}</span>
+                <span>Review: {item.review}</span>
+                <span>Author: {item.author}</span>
+              </li>
+              </>
+            ))}
+          </ul>
         </ul>
 
         {this.props.login &&
@@ -81,8 +103,11 @@ class Details extends Component {
             <p>Be a part of the experience</p>
             <label>Rating</label>
             <input
+              type='number'
+              min='1'
+              max='5'
               name='rating'
-              placeholder='Rating'
+              placeholder='Rating (1 - 5)'
               value={this.state.rating}
               onChange={this.handleChange}
             /><br/>
@@ -115,8 +140,8 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => {
   return {
     selectedWalk: state.selectedWalk,
-    login: state.auth,
-    ratings: state.ratings
+    ratings: state.ratings,
+    login: state.auth
   }
 }
 
