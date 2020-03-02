@@ -16,6 +16,7 @@ module.exports = {
 function getUsers (db = connection) {
   return db('users')
     .select()
+    .then(data => console.log(data))
 }
 
 function findUser (username, db = connection) {

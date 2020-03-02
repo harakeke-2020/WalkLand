@@ -34,7 +34,8 @@ class Profile extends Component {
 
                     <div className="profile-top">
                         <div className="profile-top-children"></div>
-                        Welcome, {this.props.username}!
+                        {this.props.outsideUser.isViewing ? ("You are currently viewing " + this.props.outsideUser.username + "'s profile.") : ("Welcome! " + this.props.username)}
+                        {console.log(this.props.userProfiles)}
                     </div>
 
                     <div className="profile-cover">
@@ -59,7 +60,9 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
     return {
-        username: state.auth
+        username: state.auth,
+        outsideUser: state.viewProfile,
+        userProfiles: state.userProfiles
     }
 }
 
