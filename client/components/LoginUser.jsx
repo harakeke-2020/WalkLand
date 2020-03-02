@@ -24,27 +24,27 @@ class Login extends Component {
   render () {
     return (
       <div className='popup'>
-        <div className='popup\_inner'>
+        <button className='button-round' onClick={this.props.closePopup}>x</button>
+        <div className='popup_inner'>
           <form onSubmit={this.handleSubmit}>
-            <button onClick={this.props.closePopup}>Close</button>
-            <h1 className='label-white-text'>Login</h1>
+            <h3>Login</h3>
 
-            <label className='label-white-text'>Username</label>
+            <label name="username-label">Username</label>
             <input
               name='username'
               placeholder='Username'
               value={this.state.username}
               onChange={this.handleChange}
-            /><br/>
+            />
 
-            <label className='label-white-text'>Password</label>
+            <label name="password-label">Password</label>
             <input
               type='password'
               name='password'
               placeholder='Password'
               value={this.state.password}
               onChange={this.handleChange}
-            /><br/>
+            />
 
             <button type='submit'>Login</button>
           </form>

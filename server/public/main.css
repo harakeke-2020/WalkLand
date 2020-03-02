@@ -1,14 +1,3 @@
-@media screen and (max-width: 1060px) {
-  #primary { width:67%; }
-  #secondary { width:30%; margin-left:3%;}  
-}
-
-@media screen and (max-width: 768px) {
-  #primary { width:100%; }
-  #secondary { width:100%; margin:0; border:none; }
-}
-
-
 .landing-page-container {
   /* background-color: black; */
   display: grid;
@@ -51,7 +40,7 @@
   font-family: 'Hammersmith One';
   opacity: 0.5;
   animation: titleFadeInAnimation ease-in-out 6s; 
-  font-size: 5em;
+  font-size: 5rem;
   text-align: center;
   color: white;
 }
@@ -198,9 +187,10 @@
   font-family: 'Hammersmith One';
   opacity: 0.5;
   animation: titleFadeInAnimation ease-in-out 6s; 
-  font-size: 5em;
+  font-size: 5rem;
   text-align: center;
   color: white;
+  z-index: 2;
 }
 
 .btn-group-wrap {
@@ -322,7 +312,9 @@ padding: 15px;
 margin-top: 30px;
 }
 
-* {box-sizing:border-box}
+html {
+  box-sizing:border-box
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -424,38 +416,99 @@ margin-top: 30px;
 
 .popup {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background-color: rgb(158, 192, 172);
+  width: 25%;
+  height: 25%;
+  top: 50%;
+  left: 50%;
+  background-color: #abd53c;
   border-radius: 20px;
   z-index: 99;
+  min-width: 250px;
+  min-height: 140px;
+  transform: translate(-50%, -50%);
 }
 
-.popup\_inner {
+.popup_inner {
   position: absolute;
-  left: 25%;
-  right: 25%;
-  top: 25%;
-  bottom: 25%;
-  margin: auto;
+  left: 10%;
+  right: 10%;
+  top: 10%;
+  bottom: 10%;
   border-radius: 20px;
   background: white;
   z-index: 100;
 }
 
+.popup_inner form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr);
+  grid-template-rows: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr));
+}
+
+.popup_inner form h3 {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+
+.popup_inner form label[name="username-label"] {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  font-size: 0.85rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.popup_inner form label[name="password-label"] {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  font-size: 0.85rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.popup_inner form input[name="username"] {
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+}
+
+.popup_inner form input[name="password"] {
+  grid-column: 2 / -1;
+  grid-row: 3 / 4;
+}
+
+.popup_inner form button {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  padding: 0;
+  border: 0;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+/* 
+.popup_inner form button span{
+  text-justify: center;
+  width: 100%;
+} */
+
+.button-round {
+  border-radius: 50%;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  margin: 0.5rem;
+  color: gray
+}
+
 .x-y-centre {
-  font-size: 0.7em;
+  font-size: 0.7rem;
   align-self: center;
   text-align: center;
 }
 
 .label-white-text {
-  color: white;
+  color: black;
 }
 
   /** PROFILE PAGE CSS **/
