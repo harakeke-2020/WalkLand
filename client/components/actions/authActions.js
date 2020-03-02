@@ -2,6 +2,7 @@ import request from 'superagent'
 
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
+export const DELETE_USER = 'DELETE_USER'
 
 const loginUser = username => {
   return {
@@ -62,7 +63,9 @@ export function justLogin (user) {
 export function deleteProfile() {
   return (dispatch) => {
     console.log('deleteProfile() from actions/authActions is hit')
-    return request.delete('http://localhost:3000/api/v1/auth/deleteUser')
+    return request
+    .delete('http://localhost:3000/api/v1/auth/deleteUser')
+    .set('authorization', `bearer ${localStorage.token}`)
     .then(res => {
       dispatch(deleteUser())
       console.log('res')

@@ -12,6 +12,7 @@ class Profile extends Component {
         currentPage: 'reviews'
     }
 
+    // Function that gets passed down to child components of Profile. Responsible for changing current page.
     stateHandler = () => {
         this.setState({
             currentPage: 'map'
@@ -31,17 +32,17 @@ class Profile extends Component {
                         </div>
                     </div>
 
-                    <div className="profile-picture">
+                    <div className="profile-top">
+                        <div className="profile-top-children"></div>
                         Welcome, {this.props.username}!
-                        <img className="profile-picture-image" src='images/userProfile.png' />
                     </div>
 
-                    <div className="profile-bio">
+                    <div className="profile-cover">
                     </div>
 
-                    <div className="profile-reviews">
+                    <div className="profile-bottom">
                         {
-                            this.state.currentPage === 'reviews' ? <ProfileReviews /> : <ProfileSetting stateHandler = {this.stateHandler}/>
+                            this.state.currentPage === 'reviews' ? <ProfileReviews /> : <ProfileSetting stateHandler={this.stateHandler} />
                         }
                     </div>
                 </div>
@@ -63,3 +64,6 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)
+
+
+//<img className="profile-picture-image" src='images/userProfile.png' />

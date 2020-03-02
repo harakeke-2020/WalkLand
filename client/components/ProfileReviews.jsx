@@ -5,7 +5,7 @@ class ProfileReviews extends Component {
     render() {
         return (
             <>
-                <div>youre at reviews</div>
+                <div className="profile-bottom-children" >youre at reviews</div>
             </>
         )
     }

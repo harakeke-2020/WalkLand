@@ -261,22 +261,23 @@
   /** PROFILE PAGE CSS **/
 .profile-container {
     display              : grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows   : 6% 36% 58%;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows   : 5% 47.5% 47.5%;
     grid-template-areas  :
   
-      "header header"
-      "profile-picture reviews"
-      "profile-bio reviews";
+      "profile-header profile-header profile-header profile-header"
+      "profile-top profile-top profile-top profile-top"
+      "profile-bottom profile-bottom profile-bottom profile-bottom";
     ;
     padding: 0;
     margin : 0;
     height : 100vh;
     width  : 100vw;
+    background-color: #f4f4f4;
   }
   
   .profile-header {
-    grid-area       : header;
+    grid-area       : profile-header;
     background-color: #020250;
     padding: 0;
     margin: 0;
@@ -296,13 +297,19 @@
     height:100%;
   }
   
-  .profile-picture {
-    grid-area       : profile-picture;
-    background-color: white;
-    border-style: groove;
+  .profile-top {
+    grid-area       : profile-top;
+    background-color: #f4f4f4;
+    padding: 30px;
+    /* border-style: groove;
     border-color: rgb(204, 204, 204);
-    border-radius: 5px;
-    border-width: 0.5px;
+    border-width: 0.1px; */
+  }
+
+  .profile-top-children {
+    height:100%;
+    width: 100%;
+    background: #FFFFFF ; 
   }
   
   .profile-picture-image {
@@ -312,21 +319,28 @@
     border-radius: 5%;
   }
   
-  .profile-bio {
-    grid-area       : profile-bio;
+  .profile-cover {
+    grid-area       : profile-cover;
     background-color: rgb(245, 243, 243);
-    border-style: groove;
+    /* border-style: groove;
     border-color: rgb(204, 204, 204);
     border-radius: 5px;
-    border-width: 0.5px;
+    border-width: 0.5px; */
   }
-  
-  .profile-reviews {
-    grid-area       : reviews;
-    background-color: rgb(255, 244, 231);
-    border-style: groove;
+
+  .profile-bottom {
+    grid-area       : profile-bottom;
+    padding: 30px;
+    padding-top: 10px;
+    /* border-style: groove;
     border-color: rgb(204, 204, 204);
-    border-width: 0.1px;
+    border-width: 0.1px; */
+  }
+
+  .profile-bottom-children {
+    height:100%;
+    width: 100%;
+    background: #FFFFFF ; 
   }
   
   .profile-logo {
