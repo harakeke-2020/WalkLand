@@ -10,10 +10,10 @@ class SideBarItem extends Component {
     const { id, title, mainPhoto } = walk
     const { activePageState, selectedWalkState } = this.props
     const { selectedWalk, activePage } = this.props
-    const walkRatings = this.props.ratings
-    const walkId = this.props.walk.id
-    const filterByWalk = walkRatings.filter(walk => walk.id === walkId)
-    const walkAverage = filterByWalk.reduce((total, next) => total + next.rating, 0) / filterByWalk.length
+    const walkRatings = this.props.ratings //array of ratings
+    const walkId = this.props.walk.id //id of walk passed down
+    const filterByWalk = walkRatings.filter(walk => walk.walkId === walkId)
+    const walkAverage = filterByWalk.reduce((total, next) => total + Number(next.rating), 0) / filterByWalk.length
   
     const style = {
       backgroundImage: `url(${mainPhoto})`

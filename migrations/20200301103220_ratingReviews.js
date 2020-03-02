@@ -3,6 +3,7 @@ exports.up = (knex, Promise) => {
     table.increments().primary()
     table.integer('userId')
     table.integer('walkId')
+    table.text('username')
     table.integer('rating')
     table.text('review')
   })

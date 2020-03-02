@@ -6,7 +6,7 @@ const ratings = (state = [], action) => {
     case RECEIVERATING:
       return action.ratings
     case ADD_REVIEW:
-      return action.review
+      return [...state, action.review]
     default:
       return state
   }
