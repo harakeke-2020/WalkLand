@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 import FilterBar from './FilterBar'
 
 export const Sidebar = (props) => {
-
-
   return (
 
     <>
@@ -22,7 +20,7 @@ export const Sidebar = (props) => {
 function mapStateToProps (state) {
   return {
     selectedWalkState: state.selectedWalk,
-    allWalks: state.allWalks,
+    allWalks: state.allWalks
 
   }
 }
