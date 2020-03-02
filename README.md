@@ -46,4 +46,4 @@ you want to push your changes to the remote dev branch so you can add them to th
  Run `git pull origin dev` if you think the remote dev branch has changed while you were merging your local branch to local dev branch.
  Fix any merge conflicts, add & commit, then run `git push origin dev`. 
  Otherwise:
-  add & commit your changes, the run `git push origin dev`
+ add & commit your changes, the run `git push origin dev`
