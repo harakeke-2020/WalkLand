@@ -10,8 +10,11 @@ WalkLand is a final group projected created by students at Dev Academy.
 GIT AND GITHUB
 
 **Fixing merge conflicts**
+
 --KEEP CURRENT CHANGES: Deletes all incoming changes from the incoming branch, and keeps your code.
+
 --ACCEPT INCOMING CHANGES: Replaces your code with the incoming changes
+
 --ACCEPT BOTH CHANGES: Keeps your code and adds the code from the incoming branch.
 
 **PULLING FROM DEV:
@@ -29,6 +32,7 @@ you want to push your changes to the remote dev branch so you can add them to th
  add and commit changes in the branch you're working on. Then:
  
  `git checkout dev`        puts you in the local dev branch.
+ 
  `git pull origin dev`      pulls down any changes from the repo on github.
  
  Fix any merge conflicts.
@@ -38,12 +42,17 @@ you want to push your changes to the remote dev branch so you can add them to th
  
  THEN,
  `git merge <your local branch name>`
+ 
   Fix merge conflicts
+  
   Install dependencies if packagelock.json changed
+  
   Run the server with `npm run dev` to test that dev works with your changes
+  
+  
   If everything works great, then:
   
  Run `git pull origin dev` if you think the remote dev branch has changed while you were merging your local branch to local dev branch.
  Fix any merge conflicts, add & commit, then run `git push origin dev`. 
- Otherwise:
- add & commit your changes, the run `git push origin dev`
+ 
+ Otherwise: add & commit your changes, the run `git push origin dev`
