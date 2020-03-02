@@ -76,10 +76,11 @@ class Details extends Component {
         <ul className = "details-info">
         
           <li>{`Location: ${selectedWalk.location}`}</li>
-          <li>{`Distance: ${selectedWalk.distance}km`}</li>
+          <li>{`Distance: ${selectedWalk.distance}`}</li>
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+          <li>{`Surface: ${selectedWalk.surface}`}</li>
           
           <ul>
             {reviewsArray.map((item, idx) => (

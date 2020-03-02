@@ -85,7 +85,7 @@ exports.seed = function (knex) {
           elevationGain: 1442,
           timeTaken: '1 Hour',
           difficulty: 'Easy',
-          Surface: 'surface will go here',
+          Surface: 'Formed track – lots of loose, fine scoria',
           description: 'One of Auckland’s iconic landmarks, Rangitoto Island is an amazing day out. Arrive by ferry or private boat and explore, The 360-degree views of Auckland and the Hauraki Gulf from the summit are spectacular. There are plenty of other walking tracks if you are keen to explore further and short lava caves that are worth investigating.'
         },
         {
