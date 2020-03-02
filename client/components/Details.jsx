@@ -25,24 +25,26 @@ class Details extends Component {
   handleSubmit = e => {
     e.preventDefault()
     this.props.createReview(this.state)
-    .then(thing => console.log('this state: ', thing))
+      .then(thing => console.log('this state: ', thing))
       .catch(err => console.log(err))
   }
 
   render () {
     const { selectedWalk } = this.props
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
+      arrows: false,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      initialSlide: 0
     }
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
     return (
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
-        <div className = "details-photo-slider">
+        <div className = "details-photo-slider-div ">
           <Slider {...settings} >
             {
               selectedWalk.photos.map((item, idx) => (
@@ -50,6 +52,9 @@ class Details extends Component {
               ))
             }
           </Slider >
+        </div>
+        <div className = "details-blackbox">
+
         </div>
         <div className = "details-text">
           <p> {texty} </p>
@@ -63,8 +68,8 @@ class Details extends Component {
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
         </ul>
 
-        {this.props.login &&
-        <div>
+        {/* {this.props.login &&
+        <div >
           <form onSubmit={this.handleSubmit}>
             <h1>Submit your experience!</h1>
             <p>Be a part of the experience</p>
@@ -90,7 +95,7 @@ class Details extends Component {
             <button type='submit'>Submit Review</button>
           </form>
         </div>
-        }
+        } */}
 
       </div>
     )
