@@ -21,7 +21,9 @@ exports.seed = function (knex) {
           distance: '4.5Kms',
           elevationGain: 200,
           timeTaken: '2 Hours',
-          difficulty: 'Intermediate'
+          difficulty: 'Intermediate',
+          Surface: 'surface will go here',
+          description: 'Goldie\'s Bushwalk is an amazing walk'
         },
         { id: 2,
           title: 'Western Springs',
@@ -39,7 +41,9 @@ exports.seed = function (knex) {
           distance: '1.80Kms',
           elevationGain: 9999,
           timeTaken: '30 Minutes',
-          difficulty: 'beginner'
+          difficulty: 'beginner',
+          Surface: 'surface will go here',
+          description: 'Western Springs is an amazing walk! really awesome'
         },
         {
           id: 3,
@@ -58,7 +62,10 @@ exports.seed = function (knex) {
           distance: '10.0Kms',
           elevationGain: 572,
           timeTaken: '3 Hours',
-          difficulty: 'Intermediate'
+          difficulty: 'Intermediate',
+          Surface: 'surface will go here',
+          description: 'Te Henga Walkway an amazing walk! really awesome'
+
         },
         {
           id: 4,
@@ -77,7 +84,9 @@ exports.seed = function (knex) {
           distance: '3.10Kms',
           elevationGain: 1442,
           timeTaken: '1 Hour',
-          difficulty: 'Easy'
+          difficulty: 'Easy',
+          Surface: 'surface will go here',
+          description: 'One of Auckland’s iconic landmarks, Rangitoto Island is an amazing day out. Arrive by ferry or private boat and explore, The 360-degree views of Auckland and the Hauraki Gulf from the summit are spectacular. There are plenty of other walking tracks if you are keen to explore further and short lava caves that are worth investigating.'
         },
         {
           id: 5,
@@ -96,7 +105,9 @@ exports.seed = function (knex) {
           distance: '3.0Kms',
           elevationGain: 1442,
           timeTaken: '1 Hour',
-          difficulty: 'Easy'
+          difficulty: 'Easy',
+          Surface: 'surface will go here',
+          description: 'Maungauika an amazing walk! really awesome'
         },
         {
           id: 6,
@@ -115,7 +126,9 @@ exports.seed = function (knex) {
           distance: '4.50Kms',
           elevationGain: 1442,
           timeTaken: '1.50 Hours',
-          difficulty: 'Intermediate'
+          difficulty: 'Intermediate',
+          Surface: 'surface will go here',
+          description: 'Motutapu Walkway an amazing walk! really awesome'
         },
         {
           id: 7,
@@ -134,7 +147,9 @@ exports.seed = function (knex) {
           distance: '3.50Kms',
           elevationGain: 231,
           timeTaken: '2.0 Hours',
-          difficulty: 'Easy'
+          difficulty: 'Easy',
+          Surface: 'surface will go here',
+          description: 'One Tree Hill an amazing walk! really awesome'
         }
       ])
     })
