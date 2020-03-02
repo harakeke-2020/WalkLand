@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchWalks } from './actions/allWalks'
-import { getReviewRatings } from './actions/allWalks'
-
+import { fetchWalks, getReviewRatings } from './actions/allWalks'
 
 import LandingPage from './LandingPage'
 import DisplayMap from './DisplayMap'
 import SideBar from './SideBar'
 import Details from './Details'
-import LogoComponent from './LogoComponent'
 import NavBar from './NavBar'
+import FilterBar from './FilterBar'
 import LoginUser from './LoginUser'
 
 class App extends Component {
@@ -29,11 +27,14 @@ class App extends Component {
         {this.props.activePage === 'map' &&
           <div className="map-page-container">
             <div className="logo-nav-container">
-              <LogoComponent />
+              <img className="logo-main" src='images/mainlogo.png' />
               <NavBar />
             </div>
-            <div className="side-bar-container">
-              <SideBar />
+            <div className="sidebar-container">
+              <FilterBar/>
+              <div className="items-container">
+                <SideBar />
+              </div>
             </div>
             <div className="map-container">
               <DisplayMap />
@@ -42,13 +43,16 @@ class App extends Component {
         }
 
         {this.props.activePage === 'details' &&
-          <div className="details-page-container">
+          <div className="map-page-container">
             <div className="logo-nav-container">
-              <LogoComponent />
+              <img className="logo-main" src='images/mainlogo.png' />
               <NavBar />
             </div>
-            <div className="side-bar-container">
-              <SideBar />
+            <div className="sidebar-container">
+              <FilterBar/>
+              <div className="items-container">
+                <SideBar />
+              </div>
             </div>
             <div className="map-container">
               <Details />

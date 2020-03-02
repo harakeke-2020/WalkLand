@@ -8,6 +8,8 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+let slideIndex = 1
+
 class Details extends Component {
   state = {
     username: this.props.login,
@@ -31,6 +33,17 @@ class Details extends Component {
 
   render () {
     const { selectedWalk } = this.props
+
+    const { ratings } = this.props
+    const idWalk = selectedWalk.id
+    const reviewsArray = ratings.filter(rating => rating.walkId === idWalk).map(data => {
+      return {
+        rating: data.rating,
+        review: data.review,
+        author: 'to be added'
+      }
+    })
+
     const settings = {
       dots: false,
       infinite: true,
@@ -60,15 +73,24 @@ class Details extends Component {
           <p> {texty} </p>
         </div> */}
         <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
-        <div className = "details-info">
-          <ul >
-            <li>{`Location: ${selectedWalk.location}`}</li>
-            <li>{`Distance: ${selectedWalk.distance}km`}</li>
-            <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
-            <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
-            <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+        <ul className = "details-info">
+          <li>{`Location: ${selectedWalk.location}`}</li>
+          <li>{`Distance: ${selectedWalk.distance}km`}</li>
+          <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
+          <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
+          <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+          <ul>
+            {reviewsArray.map((item, idx) => (
+              <>
+              <li key={idx}>
+                <span>Rating: {item.rating}</span>
+                <span>Review: {item.review}</span>
+                <span>Author: {item.author}</span>
+              </li>
+              </>
+            ))}
           </ul>
-        </div>
+        </ul>
 
         {/* {this.props.login &&
         <div >
@@ -111,8 +133,8 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => {
   return {
     selectedWalk: state.selectedWalk,
-    login: state.auth,
-    ratings: state.ratings
+    ratings: state.ratings,
+    login: state.auth
   }
 }
 
