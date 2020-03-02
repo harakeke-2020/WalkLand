@@ -117,8 +117,8 @@ exports.seed = function (knex) {
           location: 'Devonport',
           mainPhoto: 'https://www.doc.govt.nz/contentassets/7739db54ace849c5bbc7f397c5cf098c/north-head-interp-map-cropped-525.jpg',
           photos: JSON.stringify([
-            'https://i1.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/Screen-Shot-2019-04-14-at-8.38.47-PM.png?resize=1393%2C800&ssl=1',
             'https://i2.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/img_9434.jpg?w=648&h=486&ssl=1',
+            'https://www.motutapu.org.nz/wp-content/uploads/2016/11/Reid-Homestead-600x400.jpg',
             'https://i0.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/img_9412.jpg?w=364&h=486&ssl=1',
             'https://i2.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/img_9437.jpg?w=506&h=675&ssl=1'
           ]),
@@ -157,21 +157,22 @@ exports.seed = function (knex) {
           latitude: -36.96216,
           longitude: 174.48242,
           location: 'Auckland',
-          mainPhoto: 'https://img.theculturetrip.com/wp-content/uploads/2017/05/10135772153_4935a93929_k.jpg',
+          mainPhoto: 'https://www.totstoteens.co.nz/wp-content/uploads/2018/03/waterfall-Oakley-1200-by-630.jpg',
           photos: JSON.stringify([
-            'https://cdn-assets.alltrails.com/static-map/production/at-map/18531131/trail-new-zealand-auckland-region-kitekite-falls-hike-at-map-18531131-1538011453-1200x630-3-5.jpg',
+            'https://img.theculturetrip.com/wp-content/uploads/2017/05/10135772153_4935a93929_k.jpg',
             'https://images.squarespace-cdn.com/content/v1/53ae6e0ce4b0f6113495c6b1/1452405152772-L42CMLOW3OADSOHNJBWZ/ke17ZwdGBToddI8pDm48kB7VtZGBFPr7lZCrlHS4ye0UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcFHn9sAeODwGxZ7mkTPk4lvstZaCL7z4CAlHCpnWsqfoF7VxFElKmyMCgmkHEhWl7/kitekite3.png ',
             'https://media2.trover.com/T/575e9c827eb4f464a8047469/fixedw_large_4x.jpg',
             'https://www.totstoteens.co.nz/wp-content/uploads/2018/03/waterfall-Oakley-1200-by-630.jpg'
           ]),
-          routeImage: 'https://www.onetreehillcollege.school.nz/files/5114/3184/8392/Map.gif',
+          routeImage: 'https://cdn-assets.alltrails.com/static-map/production/at-map/18531131/trail-new-zealand-auckland-region-kitekite-falls-hike-at-map-18531131-1538011453-1200x630-3-5.jpg',
           distance: '3.50Kms',
           elevationGain: 89,
           timeTaken: '1.5 Hours',
           difficulty: 'Easy',
           Surface: 'bush track that can become slippery',
-          description: 'Easy 2 hour round trip walk to One Tree Hill in Auckland. Excellent 360 views over Auckland from the top of One Tree Hill. Unfortunately the \'one tree\' is now no longer and is only a stump. No car access to the top of One Tree Hill anymore.'
+          description: 'Kitekite Falls Hike is a 3.5 kilometer moderately trafficked out and back trail located near Auckland, Auckland, New Zealand that features a waterfall and is good for all skill levels. The trail is primarily used for hiking, walking, and nature trips and is accessible year-round.'
         }
       ])
     })
 }
+

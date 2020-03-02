@@ -10,7 +10,8 @@ exports.seed = function (knex) {
         { id: 4, username: 'kreepyKevin', email: '6666@mail.com', password: '4444' },
         { id: 5, username: 'silentTom', email: '2452@mail.com', password: '5555' },
         { id: 6, username: 'emiree', email: '1010@mail.com', password: '6666' },
-        { id: 7, username: 'hummus', email: '6632@mail.com', password: '7777' }
+        { id: 7, username: 'hummus', email: '6632@mail.com', password: '7777' },
+        { id: 8, username: 'jam', email: '2222@mail.com', password: '8888' }
       ])
     })
 }

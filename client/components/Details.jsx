@@ -70,7 +70,7 @@ class Details extends Component {
           </Slider >
         </div>
         <div className = "details-text">
-          <p> {`Description: ${selectedWalk.description}`} </p>
+          <p> {`${selectedWalk.description}`} </p>
         </div>
         <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
         <ul className = "details-info">
