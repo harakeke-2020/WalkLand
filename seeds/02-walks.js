@@ -165,12 +165,51 @@ exports.seed = function (knex) {
             'https://www.totstoteens.co.nz/wp-content/uploads/2018/03/waterfall-Oakley-1200-by-630.jpg'
           ]),
           routeImage: 'https://cdn-assets.alltrails.com/static-map/production/at-map/18531131/trail-new-zealand-auckland-region-kitekite-falls-hike-at-map-18531131-1538011453-1200x630-3-5.jpg',
-          distance: '3.50Kms',
+          distance: '3.5Kms',
           elevationGain: 89,
           timeTaken: '1.5 Hours',
           difficulty: 'Easy',
           Surface: 'bush track that can become slippery',
           description: 'Kitekite Falls Hike is a 3.5 kilometer moderately trafficked out and back trail located near Auckland, Auckland, New Zealand that features a waterfall and is good for all skill levels. The trail is primarily used for hiking, walking, and nature trips and is accessible year-round.'
+        },
+        {
+          id: 9,
+          title: 'Orakei Basin Walkway',
+          latitude: -36.8677131,
+          longitude: 174.8167634,
+          location: 'Orakei',
+          mainPhoto: 'https://www.aucklandcouncil.govt.nz/parks-recreation/get-outdoors/aklpaths/AKLPathImages/161_OrakeiBasinPath2.jpg?RenditionID=8',
+          photos: JSON.stringify([
+            'https://www.aucklandcouncil.govt.nz/parks-recreation/get-outdoors/aklpaths/AKLPathImages/161_OrakeiBasinPath7.jpg?RenditionID=8',
+            '',
+            '',
+            ''
+          ]),
+          routeImage: 'https://www.google.com/maps/vt/data=nIlRrlj_6wDUFR3JPBb0WHZxXR1pV49EwBhHne2iixGnsh2vKKSip30n8E9F7VQKbIKg9raKKEa4L48cHkEKD_TWLChqzqu47TI1bCE4zFa_uFArO5hZBOUN56iRHv9qJysRovoJmLu9G8EcWMXvNggV16hDLz6hCtwsldrAnCI57LSn-oKmUMisSic5BOwY230SdnCCeHJdCk-em7lP3vyPwRgW3t6nlqb2ed74P2hNT1RStNNqTL--hpoV6Fd2MY-n76VSMw',
+          distance: '3.1Kms',
+          elevationGain: 24,
+          timeTaken: '1 Hour',
+          difficulty: 'Easy',
+          Surface: 'wooden path',
+          description: 'Orakei Basin Walkway is a 3.1 kilometer moderately trafficked loop trail located near Auckland, Auckland, New Zealand that features a lake and is good for all skill levels. The trail is primarily used for walking, running, nature trips, and bird watching and is accessible year-round.'
+        },
+        {
+          id: 10,
+          title: 'Regional Park Coastal Walk',
+          latitude: -36.6889338,
+          longitude: 174.7493937,
+          location: 'Long Bay',
+          mainPhoto: 'https://welshkiwi.com/wp-content/uploads/2018/04/443ADF0A-3654-4C79-A240-B669A4BFD256-1440x1080.jpeg',
+          photos: JSON.stringify([
+            'https://nztramper.com/wp-content/uploads/2012/11/Coastal-Walk-Pohutakawa-Bay.jpg',
+        ]),
+          routeImage: 'https://i.imgur.com/hNLnrpt.jpg',
+          distance: '3.1Kms',
+          elevationGain: 24,
+          timeTaken: '1 Hour',
+          difficulty: 'Easy',
+          Surface: 'wooden path',
+          description: 'Orakei Basin Walkway is a 3.1 kilometer moderately trafficked loop trail located near Auckland, Auckland, New Zealand that features a lake and is good for all skill levels. The trail is primarily used for walking, running, nature trips, and bird watching and is accessible year-round.'
         }
       ])
     })
