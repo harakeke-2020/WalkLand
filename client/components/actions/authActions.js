@@ -30,8 +30,9 @@ export function registerUserAndLogin (user) {
       .send(user)
       .then(data => {
         if (data.message) {
-          console.log(data)
+          console.log(data.message)
         } else {
+          console.log(data.statusText)
           return request.post('http://localhost:3000/api/v1/auth/loginUser')
             .send({ username: user.username, password: user.password })
             .then(res => {
@@ -41,6 +42,7 @@ export function registerUserAndLogin (user) {
             })
         }
       })
+      .catch(err => console.log(err.message))
   }
 }
 
@@ -50,25 +52,26 @@ export function justLogin (user) {
       .send({ username: user.username, password: user.password })
       .then(res => {
         if (res.message) {
-          console.log(res)
+          console.log(res.message)
         } else {
+          console.log(res.body.message)
           localStorage.setItem('token', res.body.token)
           dispatch(loginUser(res.req._data.username))
         }
       })
+      .catch(err => console.log(err.message))
   }
 }
 
 // Delete profile by sending a DELETE request from /api/v1/auth/deleteUser
 export function deleteProfile (username) {
   return (dispatch) => {
-    console.log('deleteProfile() from actions/authActions is hit')
     return request
       .delete(`http://localhost:3000/api/v1/auth/deleteUser/${username}`)
       .set('authorization', `bearer ${localStorage.token}`)
       .then(res => {
         dispatch(deleteUser())
-        console.log('res')
+        console.log(res.statusText)
       })
   }
 }
