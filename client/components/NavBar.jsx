@@ -38,12 +38,13 @@ class NavBar extends React.Component {
             <Logout />
           </div>
 
-          : <div className="not-logged-in">
-            <div></div>
-            <button className="nav-bar-buttons" onClick={this.loginClickHandler}>Login</button>
-            <button className="nav-bar-buttons" onClick={this.registerClickHandler}>Register</button>
+        : <div className="not-logged-in">
+          <div className="login-text">
+            <a href="/#/" onClick={this.loginClickHandler}>Login</a>
+            <a href="/#/" onClick={this.registerClickHandler}>Register</a>
           </div>
-        }
+        </div>
+      }
 
         {this.state.showRegisterPopup
           ? <RegisterUser
