@@ -5,4 +5,5 @@
 
 WalkLand is a final group projected created by students at Dev Academy.
 
-## Please see the wiki for guidance around this project
+## Please see the wiki for guidance around this project. see [here](https://github.com/harakeke-2020/WalkLand/wiki/Workflow)
+
