@@ -39,12 +39,12 @@ export function fetchWalks () {
   }
 }
 
-export function getReviewRatings(id) {
+export function getReviewRatings () {
   return (dispatch) => {
     return request
-    .get('/api/v1/rating/')
-    .then(res => 
-      dispatch(receiveRating(res.body))
-    )
+      .get('/api/v1/rating/')
+      .then(res =>
+        dispatch(receiveRating(res.body))
+      )
   }
 }

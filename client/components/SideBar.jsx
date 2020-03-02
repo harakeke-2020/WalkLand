@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import FilterBar from './FilterBar'
 
 export const Sidebar = (props) => {
-
+  
 
   return (
 

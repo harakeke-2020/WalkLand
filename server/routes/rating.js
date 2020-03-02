@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/:id', (req, res) => {
+router.post('/', (req, res) => {
   db.addReview(req.params.id)
     .then(response => {
       res.json('')
