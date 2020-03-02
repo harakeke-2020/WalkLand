@@ -14,3 +14,7 @@ exports.seed = function (knex) {
       ])
     })
 }
+
+// on register
+// bio
+// user profile

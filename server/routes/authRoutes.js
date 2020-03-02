@@ -65,6 +65,8 @@ router.post('/loginUser', (req, res, next) => {
 })
 
 router.delete('/deleteUser', (req, res, next) => {
+  // req.get("authorization")
+  console.log('request in route ', req)
   passport.authenticate('jwt', { session: false }, (err, user, info) => {
     if (err) {
       console.error(err)
