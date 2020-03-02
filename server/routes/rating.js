@@ -10,11 +10,21 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/:id', (req, res) => {
-  db.addReview(req.params.id)
-    .then(response => {
-      res.json('')
+router.post('/', (req, res) => {
+  console.log('hit the route')
+  db.findUser(req.body.username)
+    .then(returnedUser => {
+      const newObject = {
+        userId: returnedUser.id,
+        rating: Number(req.body.rating),
+        walkId: req.body.walkId,
+        review: req.body.review
+      }
+      console.log('user for addreview: ', newObject)
+      db.addReview(newObject)
+        .then(res => res.json(res))
     })
+    .catch(err => console.log(err))
 })
 
 module.exports = router

@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { createReview } from './actions/reviewWalks'
+import { create } from 'react-test-renderer'
 
 class Details extends Component {
   state = {
+    username: this.props.login,
     rating: '',
-    review: ''
+    review: '',
+    walkId: this.props.selectedWalk.id
   }
 
   handleChange = e => {
@@ -15,7 +19,9 @@ class Details extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    console.log('handle submit')
+    this.props.createReview(this.state)
+    .then(thing => console.log('this state: ', thing))
+      .catch(err => console.log(err))
   }
 
   render () {
@@ -65,6 +71,8 @@ class Details extends Component {
               value={this.state.review}
               onChange={this.handleChange}
             /><br/>
+            <input type='hidden' value={this.props.selectedWalk.id} name="walkId" />
+            <input type='hidden' value={this.props.login} name="username" />
 
             <button type='submit'>Submit Review</button>
           </form>
@@ -76,6 +84,10 @@ class Details extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  createReview: review => dispatch(createReview(review))
+})
+
 const mapStateToProps = state => {
   return {
     selectedWalk: state.selectedWalk,
@@ -84,4 +96,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Details)
+export default connect(mapStateToProps, mapDispatchToProps)(Details)
