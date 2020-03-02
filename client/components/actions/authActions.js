@@ -60,15 +60,15 @@ export function justLogin (user) {
 }
 
 // Delete profile by sending a DELETE request from /api/v1/auth/deleteUser
-export function deleteProfile() {
+export function deleteProfile (username) {
   return (dispatch) => {
     console.log('deleteProfile() from actions/authActions is hit')
     return request
-    .delete('http://localhost:3000/api/v1/auth/deleteUser')
-    .set('authorization', `bearer ${localStorage.token}`)
-    .then(res => {
-      dispatch(deleteUser())
-      console.log('res')
-    })
+      .delete(`http://localhost:3000/api/v1/auth/deleteUser/${username}`)
+      .set('authorization', `bearer ${localStorage.token}`)
+      .then(res => {
+        dispatch(deleteUser())
+        console.log('res')
+      })
   }
 }

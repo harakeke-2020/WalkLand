@@ -64,9 +64,9 @@ router.post('/loginUser', (req, res, next) => {
   })(req, res, next)
 })
 
-router.delete('/deleteUser', (req, res, next) => {
+router.delete('/deleteUser/:username', (req, res, next) => {
   // req.get("authorization")
-  console.log('request in route ', req)
+  console.log('request in route ', req.params)
   passport.authenticate('jwt', { session: false }, (err, user, info) => {
     if (err) {
       console.error(err)
@@ -75,20 +75,26 @@ router.delete('/deleteUser', (req, res, next) => {
       console.error(info.message)
       res.status(403).send(info.message)
     } else {
-      db.deleteUser(user.username)
-        .then((userInfo) => {
-          if (userInfo === 1) {
-            console.log('user deleted from db')
-            res.status(200).send('user deleted from db')
-          } else {
-            console.error('user not found in db')
-            res.status(404).send('no user with that username to delete')
-          }
-        })
-        .catch((error) => {
-          console.error('problem communicating with db')
-          res.status(500).send(error)
-        })
+      console.log('username in params ', req.params.username, 'username from jwt auth ', user.username)
+      if (req.params.username === user.username) {
+        db.deleteUser(user.username)
+          .then((userInfo) => {
+            if (userInfo === 1) {
+              console.log('user deleted from db')
+              res.status(200).send('user deleted from db')
+            } else {
+              console.error('user not found in db')
+              res.status(404).send('no user with that username to delete')
+            }
+          })
+          .catch((error) => {
+            console.error('problem communicating with db')
+            res.status(500).send(error)
+          })
+      } else {
+        console.error('jwt id and username do not match')
+        res.status(403).send('username and jwt token do not match')
+      }
     }
   })(req, res, next)
 })
