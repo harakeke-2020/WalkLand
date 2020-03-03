@@ -1,57 +1,14 @@
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 0.7; 
-   } 
-} 
-@keyframes titleFadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 0.5; 
-   } 
-} 
 
-.fullscreen-bg {
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
-  background-color: black;
-  position: relative;
-  z-index: -100;
+body {
+  background-image: url('../images/Landingpage.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-color:#464646;
 }
 
-.fullscreen-bg__video {
-  width: 100%;
-  height: 100%;
-}
 
-.landing-page-container {
-  /* background-color: black; */
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  width: 100vw;
-  height: 99.3vh;
-}
-
-.landing-page {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
-.landing-heading-centre {
-  grid-column: 5 / 9;
-  grid-row: 1 / 2;
-  font-family: 'Hammersmith One';
-  opacity: 0.5;
-  animation: titleFadeInAnimation ease-in-out 6s; 
-  font-size: 5em;
-  text-align: center;
-  color: white;
-}
 
 .btn-group-wrap {
   display: grid;
@@ -64,16 +21,20 @@
 }
 
 .btn {
-  border-radius: 25px;
-  padding: 3px 35px 3px 35px;
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
+  width:15vw;
+  height: 3vw;
+  border-radius: 40px !important;
+  background-color: rgb(171, 213, 60) !important;
+  border-color: rgb(171, 213, 60) !important;
   justify-self: center;
-  width: 100%;
-  animation: fadeInAnimation ease-in-out 2.5s; 
+  font-family:  nobel, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 2px;
 }
 
-.btn:hover {
-    opacity: 0.7;
+.logo {
+  text-align: center;
+  
+ 
 }
-
