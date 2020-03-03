@@ -6,12 +6,12 @@ class ProfileReviews extends Component {
     let reviewsArr = []
     return (
             <>
-                <div className="profile-bottom-children" >{this.props.ratings.map(ratingInfo => {
-                  if (ratingInfo.username === this.props.currentUsername) {
-                    reviewsArr.push(`${ratingInfo.review}`)
-                  }
-                })}
-                {reviewsArr}
+                <div className="profile-bottom-children">
+                  {this.props.ratings.map(ratingInfo => {
+                    if (ratingInfo.username === this.props.currentUsername) {
+                      reviewsArr.push(`${ratingInfo.review}`)
+                    }
+                  })}
                 </div>
             </>
     )
