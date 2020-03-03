@@ -1,59 +1,68 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { fetchProfileInfo } from './actions/userProfiles'
 
 import activePage from './actions/activePage'
 import ProfileSetting from './ProfileSetting'
 import ProfileReviews from './ProfileReviews'
+import ProfileBanner from './ProfileBanner'
 
 class Profile extends Component {
-    // Create local state just to handle local changes
-    state = {
-      currentPage: 'reviews'
-    }
+  // Create local state just to handle local changes
+  state = {
+    currentPage: 'reviews'
+  }
 
-    // Function that gets passed down to child components of Profile. Responsible for changing current page.
-    stateHandler = () => {
-      this.setState({
-        currentPage: 'map'
-      })
-    }
+  componentDidMount = () => {
+    this.props.fetchProfileInfo(this.props.outsideUser.username)
+  }
+  // Function that gets passed down to child components of Profile. Responsible for changing current page.
+  stateHandler = () => {
+    this.setState({
+      currentPage: 'map'
+    })
+  }
 
-    render () {
-      return (
-            <>
-                <div className="profile-container">
-                  <div className="profile-header">
-                    <img className='profile-logo' src='images/mainlogo.png' />
-                    <div className="profile-header-btn-group">
-                      <button className="profile-header-btn" onClick={() => this.props.activePage('map')}>Home</button>
-                      <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button>
-                      <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>
-                    </div>
-                  </div>
+  render() {
+    return (
+      <>
+        <div className="profile-container">
+          <div className="profile-header">
+            <img className='profile-logo' src='images/mainlogo.png' />
+            <div className="profile-header-btn-group">
+              <button className="profile-header-btn" onClick={() => this.props.activePage('map')}>Home</button>
+              <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button>
+              <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>
+            </div>
+          </div>
 
-                  <div className="profile-top">
-                    <div className="profile-top-children"></div>
-                    {this.props.outsideUser.isViewing ? ('You are currently viewing ' + this.props.outsideUser.username + "'s profile.") : ('Welcome! ' + this.props.username)}
-                    {console.log(this.props.userProfiles)}
-                  </div>
+          <div className="profile-top">
+            <div className="profile-top-children">
+              {this.props.outsideUser.isViewing ? <ProfileBanner user={this.props.outsideUser.username} /> : <ProfileBanner user={this.props.username} />}
+            </div>
+            {/* {this.props.outsideUser.isViewing ? ('You are currently viewing ' + this.props.outsideUser.username + "'s profile.") : ('Welcome! ' + this.props.username)}
+            {this.props.userProfiles.username}
+            {this.props.userProfiles.email} */}
+          </div>
 
-                  <div className="profile-cover">
-                  </div>
+          <div className="profile-cover">
+          </div>
 
-                  <div className="profile-bottom">
-                    {
-                      this.state.currentPage === 'reviews' ? <ProfileReviews /> : <ProfileSetting stateHandler={this.stateHandler} />
-                    }
-                  </div>
-                </div>
-            </>
-      )
-    }
+          <div className="profile-bottom">
+            {
+              this.state.currentPage === 'reviews' ? <ProfileReviews /> : <ProfileSetting stateHandler={this.stateHandler} />
+            }
+          </div>
+        </div>
+      </>
+    )
+  }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    activePage: (destination) => dispatch(activePage(destination))
+    activePage: (destination) => dispatch(activePage(destination)),
+    fetchProfileInfo: (user) => dispatch(fetchProfileInfo(user))
   }
 }
 

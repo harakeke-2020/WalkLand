@@ -4,8 +4,9 @@ const router = express.Router()
 const db = require('../db/db')
 
 router.get('/:username', (req, res) => {
-  db.findUser(req.body.username)
+  db.findUser(req.params.username)
     .then(returnedUser => {
+      console.log(returnedUser)
       res.json(returnedUser)
     })
 })

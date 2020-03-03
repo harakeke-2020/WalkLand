@@ -22,7 +22,7 @@ function getUsers (db = connection) {
 function findUser (username, db = connection) {
   console.log('username given to finduser in db ', username)
   return db('users')
-    .where('username', username)
+    .where('username',  username)
     .select()
     .first()
 }
