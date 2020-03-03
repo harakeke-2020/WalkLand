@@ -23,6 +23,9 @@ class Profile extends Component {
     })
   }
 
+  compareHandler = () => {
+    return this.props.username === this.props.outsideUser.username
+  }
   render() {
     return (
       <>
@@ -31,7 +34,7 @@ class Profile extends Component {
             <img className='profile-logo' src='images/mainlogo.png' />
             <div className="profile-header-btn-group">
               <button className="profile-header-btn" onClick={() => this.props.activePage('map')}>Home</button>
-              <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button>
+              {this.compareHandler() ? <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button> : null}
               <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>
             </div>
           </div>
@@ -49,9 +52,13 @@ class Profile extends Component {
           </div>
 
           <div className="profile-bottom">
+
+            {this.compareHandler() ? 
+            
             <div className="profile-bottom-children">
-              {this.props.outsideUser.isViewing ? <ProfileSetting showButton="false" stateHandler={() => this.stateHandler}/> : <ProfileSetting showButton="true" />}
-            </div>
+              {this.compareHandler() && this.state.currentPage === 'settings' ? <ProfileSetting showButton="true" stateHandler={() => this.stateHandler} /> : <ProfileSetting showButton="false" />}
+            </div> : null}
+
           </div>
         </div>
       </>
