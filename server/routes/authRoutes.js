@@ -23,12 +23,8 @@ router.post('/registerUser', (req, res, next) => {
       res.statusMessage = `${info.message}`
       res.status(403).end()
     } else {
-      db.registerUser(user)
-        .then(() => {
-          console.log('user created in db')
           res.statusMessage = 'user created!'
           res.status(200).end()
-        })
     }
   })(req, res, next)
 })
@@ -39,6 +35,7 @@ router.post('/loginUser', (req, res, next) => {
       console.error(`error ${err}`)
     }
     if (info !== undefined) {
+      console.log('login error ', info.message)
       res.statusMessage = `${info.message}`
       if (info.message === 'bad username') {
         res.status(401).end()
