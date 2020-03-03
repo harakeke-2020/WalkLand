@@ -28,7 +28,10 @@ class Details extends Component {
   handleSubmit = e => {
     e.preventDefault()
     this.props.createReview({ ...this.state, username: this.props.login })
-      .then(thing => console.log('this state: ', thing))
+      .then(() => this.setState({
+        rating: '',
+        review: ''
+      }))
       .catch(err => console.log(err))
   }
 
@@ -83,7 +86,8 @@ class Details extends Component {
           <li>{`Surface: ${selectedWalk.surface}`}</li>
 
           <ul>
-            {reviewsArray.length > 0 && reviewsArray.map((item, idx) => (
+            {reviewsArray.length > 0
+              ? reviewsArray.map((item, idx) => (
               <>
               <li key={idx}>
                 <span>Rating: {item.rating}</span>
@@ -94,7 +98,9 @@ class Details extends Component {
                 }}>{item.author}</a></span>
               </li>
               </>
-            ))}
+              ))
+              : <p>No reviews yet</p>
+            }
           </ul>
         </ul>
 
