@@ -18,8 +18,6 @@ class Details extends Component {
     walkId: this.props.selectedWalk.id
   }
 
-  
-
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value 
