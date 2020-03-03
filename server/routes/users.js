@@ -10,6 +10,8 @@ router.get('/:username', (req, res) => {
         res.statusMessage = 'User profile not found'
         res.status(404).end()
       } else {
+        delete returnedUser.password
+        console.log(returnedUser)
         res.json(returnedUser)
       }
     })

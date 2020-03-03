@@ -14,7 +14,6 @@ let slideIndex = 1
 
 class Details extends Component {
   state = {
-    username: this.props.login,
     rating: '',
     review: '',
     walkId: this.props.selectedWalk.id
@@ -28,7 +27,7 @@ class Details extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.createReview(this.state)
+    this.props.createReview({ ...this.state, username: this.props.login })
       .then(thing => console.log('this state: ', thing))
       .catch(err => console.log(err))
   }

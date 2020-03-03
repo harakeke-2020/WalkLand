@@ -15,7 +15,6 @@ export function fetchProfileInfo (user) {
     return request
       .get(`http://localhost:3000/api/v1/users/${user}`)
       .then(res => {
-        console.log('from getProfile in thunk ', res)
         dispatch(receiveProfileInfo(res.body))
       })
       .catch(err => {
