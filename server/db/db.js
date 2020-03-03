@@ -16,12 +16,13 @@ module.exports = {
 function getUsers (db = connection) {
   return db('users')
     .select()
+    .then(data => console.log(data))
 }
 
 function findUser (username, db = connection) {
   console.log('username given to finduser in db ', username)
   return db('users')
-    .where('username', username)
+    .where('username',  username)
     .select()
     .first()
 }

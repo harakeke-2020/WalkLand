@@ -3,13 +3,17 @@ const router = express.Router()
 
 const db = require('../db/db')
 
-router.get('/', (req, res) => {
-  db.getUsers()
-    .then(response => {
-      res.json(response)
-    })
-    .catch(err => {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
+router.get('/:username', (req, res) => {
+  db.findUser(req.params.username)
+    .then(returnedUser => {
+      if(!returnedUser) {
+        res.statusMessage = 'User profile not found'
+        res.status(404).end()
+      } else {
+        delete returnedUser.password
+        console.log(returnedUser)
+        res.json(returnedUser)
+      }
     })
 })
 

@@ -1,15 +1,8 @@
 import request from 'superagent'
-// import { showError } from './showError'
 
 export const GETWALKS = 'GETWALKS'
 export const RECEIVEWALKS = 'RECEIVEWALKS'
 export const RECEIVERATING = 'RECEIVERATING'
-
-export const requestWalks = () => {
-  return {
-    type: GETWALKS
-  }
-}
 
 export const receiveWalks = (walks) => {
   return {

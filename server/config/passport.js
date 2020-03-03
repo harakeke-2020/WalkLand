@@ -60,7 +60,7 @@ passport.use(
         db.findUser(username)
           .then(user => {
             if (!user) {
-              return done(null, false, { message: 'username incorrect' })
+              return done(null, false, { message: 'user not found' })
             }
             bcrypt.compare(password, user.password).then(response => {
               if (response !== true) {

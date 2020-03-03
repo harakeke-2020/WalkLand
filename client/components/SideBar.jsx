@@ -10,11 +10,12 @@ export const Sidebar = (props) => {
           <SideBarItem key={walk.id} walk={walk} mainPhoto={walk.mainPhoto} />
         )
       })}
+
     </>
   )
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
     selectedWalkState: state.selectedWalk,
     allWalks: state.allWalks
