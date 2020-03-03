@@ -31,7 +31,7 @@ $ npm run walkland
 
 ## What is Walkland?
 We want everyone to enjoy the beauty that Auckland has to provide.
-We have selected some of the best walks in Auckland in order to provide you with succint and concentrated information about the walks.
+We have selected some of the best walks in Auckland in order to provide you with succinct and concentrated information about the walks.
 Feel free to have a browse through the site and see what's going on!
 
 
