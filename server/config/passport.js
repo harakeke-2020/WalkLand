@@ -32,7 +32,6 @@ passport.use(
           bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
             db.registerUser({
               username,
-              email: req.body.email,
               password: hashedPassword
             }).then(user => {
               console.log('user created')

@@ -26,7 +26,8 @@ class Profile extends Component {
   compareHandler = () => {
     return this.props.username === this.props.outsideUser.username
   }
-  render() {
+
+  render () {
     return (
       <>
         {this.props.userProfiles === 'error' ? <a href="/#/" onClick={() => this.props.activePage('details')}>User does does not exist anymore. Click to go back.</a>
