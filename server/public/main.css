@@ -54,20 +54,17 @@ button {
   /* background-color: black; */
   display: grid;
   grid-template-columns: 15px 320px 15px repeat(9, 1fr);
-  grid-template-rows: 50px repeat(11, minmax(0, 1fr));
+  grid-template-rows: 50px repeat(11, 1fr);
   width: 100vw;
   height: 99.3vh;
 }
 
-.mapContainer {
-  min-height: 100%;
-  max-width: 75%;
-}
-
 .map-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   height: 100%;
   width: 100%;
-  position: relative;
   grid-column: 4 / -1;
   grid-row: 2 / -1;
 }

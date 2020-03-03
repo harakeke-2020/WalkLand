@@ -4,6 +4,8 @@ import { createReview } from './actions/reviewWalks'
 import { create } from 'react-test-renderer'
 // import { Carousel } from 'react-responsive-carousel'
 import Slider from 'react-slick'
+import activePage from './actions/activePage'
+import viewProfile from './actions/viewProfile'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -12,23 +14,20 @@ let slideIndex = 1
 
 class Details extends Component {
   state = {
-    username: this.props.login,
     rating: '',
     review: '',
     walkId: this.props.selectedWalk.id
   }
 
-  
-
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value 
+      [e.target.name]: e.target.value
     })
   }
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.createReview(this.state)
+    this.props.createReview({ ...this.state, username: this.props.login })
       .then(thing => console.log('this state: ', thing))
       .catch(err => console.log(err))
   }
@@ -51,10 +50,11 @@ class Details extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding: '0px'
     }
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
-    
 
     return (
 
@@ -72,23 +72,26 @@ class Details extends Component {
         <div className = "details-text">
           <p> {`${selectedWalk.description}`} </p>
         </div>
-        <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
+        <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
         <ul className = "details-info">
-        
+
           <li>{`Location: ${selectedWalk.location}`}</li>
           <li>{`Distance: ${selectedWalk.distance}`}</li>
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
           <li>{`Surface: ${selectedWalk.surface}`}</li>
-          
+
           <ul>
             {reviewsArray.map((item, idx) => (
               <>
               <li key={idx}>
                 <span>Rating: {item.rating}</span>
                 <span>Review: {item.review}</span>
-                <span>Author: {item.author}</span>
+                <span>Author: <a href="/#/" onClick={() => {
+                  this.props.activePage('profile')
+                  this.props.viewProfile(item.author, true)
+                }}>{item.author}</a></span>
               </li>
               </>
             ))}
@@ -133,7 +136,9 @@ class Details extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  createReview: review => dispatch(createReview(review))
+  createReview: review => dispatch(createReview(review)),
+  activePage: (destination) => dispatch(activePage(destination)),
+  viewProfile: (username, isViewing) => dispatch(viewProfile(username, isViewing))
 })
 
 const mapStateToProps = state => {
