@@ -6,13 +6,12 @@ const db = require('../db/db')
 router.get('/', (req, res) => {
   db.getWalks()
     .then(response => {
-      // if (!req) {
-      //   res.sendStatus(404)
-      // } else {
-      // console.log(res)
       res.json(response)
     }
     )
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
 }
 )
 
