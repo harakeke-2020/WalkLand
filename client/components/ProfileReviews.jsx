@@ -4,15 +4,18 @@ import { connect } from 'react-redux'
 class ProfileReviews extends Component {
 
     render() {
-        let reviewsArr = []
+        // let reviewsArr = []
         return (
             <>
-                <div className="profile-bottom-children" >{this.props.ratings.map(ratingInfo => {
-                    if (ratingInfo.username === this.props.currentUsername) {
-                        reviewsArr.push(`${ratingInfo.review}<div>`)
+            test
+                <div className="profile-bottom-children" >
+                {this.props.ratings.map(ratingInfo => {
+                    if (ratingInfo.username === this.props.currentUsername) {                        
+                        <>
+                        <div>{ratingInfo.review}</div>
+                        </>
                     }
                 })}
-                {reviewsArr}
                 </div>
             </>
         )
