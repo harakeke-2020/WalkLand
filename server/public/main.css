@@ -30,6 +30,7 @@ margin: 0px;
 }
 
 h2 {
+  font-size: 20px;
   margin: 0px;
 }
 
@@ -42,12 +43,13 @@ p {
 }
 
 button {
-  padding: 3px 10px 3px 10px;
+  padding: 3px 5px 3px 5px;
   border-radius: 5px;
   border: 2px solid #ABD53C ;
   background-color: #ABD53C;
   color: white;
   font-style: bold;
+  text-transform: uppercase;
 }
 
 .map-page-container {

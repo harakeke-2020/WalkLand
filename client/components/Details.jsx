@@ -46,26 +46,26 @@ class Details extends Component {
     })
 
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       centerMode: true,
       centerPadding: '0px',
-      arrows: false,
-      appendDots: dots => (
-        <div
-          style={{
-            backgroundColor: 'transparent',
-            borderRadius: '10px',
-            padding: '10px',
-            bottom: '0px'
-          }}
-        >
-          <ul style={{ margin: '0px' }}> {dots} </ul>
-        </div>
-      )
+      arrows: false
+      // appendDots: dots => (
+      //   <div
+      //     style={{
+      //       backgroundColor: 'transparent',
+      //       borderRadius: '10px',
+      //       padding: '10px',
+      //       bottom: '10px'
+      //     }}
+      //   >
+      //     <ul style={{ margin: '0px' }}> {dots} </ul>
+      //   </div>
+      // )
     }
 
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
@@ -73,7 +73,7 @@ class Details extends Component {
     return (
 
       <div className="details-container">
-        <h1 className = "details-walktitle">{selectedWalk.title}</h1>
+        <div className = "details-walktitle"><h1>{selectedWalk.title}</h1></div>
         <div className = "details-photo-slider">
           <Slider {...settings} >
             {
