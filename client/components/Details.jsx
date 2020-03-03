@@ -18,11 +18,9 @@ class Details extends Component {
     walkId: this.props.selectedWalk.id
   }
 
-  
-
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value 
+      [e.target.name]: e.target.value
     })
   }
 
@@ -51,10 +49,11 @@ class Details extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding: '0px'
     }
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
-    
 
     return (
 
@@ -72,16 +71,16 @@ class Details extends Component {
         <div className = "details-text">
           <p> {`${selectedWalk.description}`} </p>
         </div>
-        <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
+        <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
         <ul className = "details-info">
-        
+
           <li>{`Location: ${selectedWalk.location}`}</li>
           <li>{`Distance: ${selectedWalk.distance}`}</li>
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
           <li>{`Surface: ${selectedWalk.surface}`}</li>
-          
+
           <ul>
             {reviewsArray.map((item, idx) => (
               <>
