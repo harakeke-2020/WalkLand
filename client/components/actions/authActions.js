@@ -49,6 +49,7 @@ export function registerUserAndLogin (user) {
       .catch(err => {
         console.log('in catch of register thunk function ', err.message)
         dispatch(setError(err.message))
+        throw err
       })
   }
 }
@@ -70,6 +71,7 @@ export function justLogin (user) {
       .catch(err => {
         console.log(err.message)
         dispatch(setError(err.message))
+        throw err
       })
   }
 }

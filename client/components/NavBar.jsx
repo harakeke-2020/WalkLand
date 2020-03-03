@@ -4,7 +4,7 @@ import activePage from './actions/activePage'
 import RegisterUser from './RegisterUser'
 import Logout from './Logout'
 import LoginUser from './LoginUser'
-import viewProfile  from './actions/viewProfile'
+import viewProfile from './actions/viewProfile'
 
 class NavBar extends React.Component {
   constructor (props) {
@@ -23,6 +23,8 @@ class NavBar extends React.Component {
   }
 
   loginClickHandler = () => {
+    console.log('loginClickHandler')
+    console.log(this.state)
     this.setState({
       showLoginPopup: !this.state.showLoginPopup,
       showRegisterPopup: false
@@ -34,7 +36,7 @@ class NavBar extends React.Component {
       <>
         {this.props.login
           ? <div className="logged-in">
-            <button className="nav-bar-buttons" onClick={() => {this.props.activePage('profile'); this.props.viewProfile(this.props.login, false)}}>Profile</button>
+            <button className="nav-bar-buttons" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login, false) }}>Profile</button>
             <p className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
             <Logout />
           </div>

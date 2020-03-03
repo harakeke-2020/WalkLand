@@ -1,0 +1,21 @@
+.hamish-error {
+  background: rgb(250, 128, 114, 0.9);
+  z-index: 105;
+  width: 20%;
+}
+
+.hamish-button-round {
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 106;
+}
+
+.hamish-popup-inner {
+  border: 1.5px black solid;
+}
+
+.hamish-error-text {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 50px;
+}
+
