@@ -15,6 +15,9 @@ router.get('/:username', (req, res) => {
         res.json(returnedUser)
       }
     })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
 })
 
 module.exports = router
