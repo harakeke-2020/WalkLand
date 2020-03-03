@@ -4,17 +4,15 @@ import activePage from './actions/activePage'
 import selectedWalk from './actions/selectedWalk'
 import { getReviewRatings } from './actions/allWalks'
 
-class SideBarItem extends Component {
-  render () {
-    const walk = this.props.walk
+export const SideBarItem = (props) => {
+    const walk = props.walk
     const { id, title, mainPhoto } = walk
-    const { activePageState, selectedWalkState } = this.props
-    const { selectedWalk, activePage } = this.props
-    const walkRatings = this.props.ratings //array of ratings
-    const walkId = this.props.walk.id //id of walk passed down
+    const { activePageState, selectedWalkState } = props
+    const { selectedWalk, activePage } = props
+    const walkRatings = props.ratings 
+    const walkId = props.walk.id 
     const filterByWalk = walkRatings.filter(walk => walk.walkId === walkId)
     const walkAverage = filterByWalk.reduce((total, next) => total + Number(next.rating), 0) / filterByWalk.length
-  
     const style = {
       backgroundImage: `url(${mainPhoto})`
     }
@@ -29,23 +27,20 @@ class SideBarItem extends Component {
             selectedWalk(walk)
           }}
         >
-          <h2 data-testid={'sideBarItem'}> {title} </h2>
+          <h2 data-testid={'sideBarTitle'}> {title} </h2>
           <p data-testid={'rating'}>rating: {walkAverage}</p>
           { selectedWalkState.id === id &&
         <>
-
         {activePageState === 'details' &&
-        <button onClick={() => activePage('map')}>Show Map</button>}
+        <button data-testid='showMap' onClick={() => activePage('map')}>Show Map</button>}
         {activePageState === 'map' &&
-        <button data-testid="showmapbutton" onClick={() => activePage('details') }>Show Details</button>}
-
+        <button data-testid="showDetails" onClick={() => activePage('details') }>Show Details</button>}
         </>
           }
-
         </div>
       </div>
     )
-  }
+  
 }
 const mapDispatchToProps = dispatch => {
   return {
