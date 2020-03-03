@@ -22,21 +22,23 @@ class ProfileReviews extends Component {
       <>
         <div className="profile-bot-container-left">
           <div className="profile-bot-content-card">
-            My review: {reviewsArr[0]} <br/>
+            <div className="profile-card-top">test</div>
+            My review: {reviewsArr[0]} <br />
             My rating: {reviewsArr[1]}
           </div>
         </div>
 
         <div className="profile-bot-container-mid">
-          <div className="profile-card-top"></div>
-          <div className="profile-card-bot">
-            My review: {reviewsArr[2]} <br/>
+          <div className="profile-bot-content-card">
+            <div className="profile-card-top">test</div>
+            My review: {reviewsArr[2]} <br />
             My rating: {reviewsArr[3]}
           </div>
         </div>
 
         <div className="profile-bot-container-right">
           <div className="profile-bot-content-card">
+            <div className="profile-card-top">test</div>
             {reviewsArr[4]}
             {reviewsArr[5]}
           </div>
