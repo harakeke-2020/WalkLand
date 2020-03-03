@@ -16,7 +16,7 @@ export const Landing = (props) => {
         <button data-testid="startButton" className="btn" onClick={() => props.activePage('map')}>START JOURNEY</button>
       </div>
       <div>
-        <button data-testid="startButton" onClick={() => props.activePage('profile')}>Login</button>
+        <button onClick={() => props.activePage('profile')}>Login</button>
       </div>
     </>
   )
