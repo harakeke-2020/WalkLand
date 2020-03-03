@@ -40,6 +40,7 @@
   .profile-header-btn {
     background-color: rgb(155, 155, 155);
     border-style: none;
+    border-radius: 0px;
     color: white;
     text-align: center;
     display: inline-block;
@@ -60,9 +61,25 @@
   }
 
   .profile-top-children {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+
+      "profile-top-content-left profile-top-content-right"
+    ;
+
     height:100%;
     width: 100%;
     background: #FFFFFF ; 
+  }
+
+  .profile-top-content-right {
+    background: brown
+  }
+
+  .profile-top-content-left {
+    background: white
   }
   
   .profile-picture-image {

@@ -26,43 +26,42 @@ class Profile extends Component {
   compareHandler = () => {
     return this.props.username === this.props.outsideUser.username
   }
-  render () {
+  render() {
     return (
       <>
-      {this.props.userProfiles === 'error' ? <span>User does does not exist</span>
-        : <div className="profile-container">
-          <div className="profile-header">
-            <img className='profile-logo' src='images/mainlogo.png' />
-            <div className="profile-header-btn-group">
-              <button className="profile-header-btn" onClick={() => this.props.activePage('map')}>Home</button>
-              {this.compareHandler() ? <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button> : null}
-              <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>
+        {this.props.userProfiles === 'error' ? <a href="/#/" onClick={() => this.props.activePage('details')}>User does does not exist anymore. Click to go back.</a>
+          : <div className="profile-container">
+            <div className="profile-header">
+              <img className='profile-logo' src='images/mainlogo.png' />
+              <div className="profile-header-btn-group">
+                <button className="profile-header-btn" onClick={() => this.props.activePage('map')}>Home</button>
+                {this.compareHandler() ? <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button> : null}
+                <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>
+              </div>
             </div>
-          </div>
 
-          <div className="profile-top">
-            <div className="profile-top-children">
-              {this.props.outsideUser.isViewing ? <ProfileBanner user={this.props.outsideUser.username} /> : <ProfileBanner user={this.props.username} />}
-            </div>
-            {/* {this.props.outsideUser.isViewing ? ('You are currently viewing ' + this.props.outsideUser.username + "'s profile.") : ('Welcome! ' + this.props.username)}
+            <div className="profile-top">
+              <div className="profile-top-children">
+                {this.props.outsideUser.isViewing ? <ProfileBanner user={this.props.outsideUser.username} welcome={`You are viewing ${this.props.outsideUser.username}'s profile`} /> : <ProfileBanner user={this.props.username} welcome={`Welcome, ${this.props.username}!`} />}
+              </div>
+              {/* {this.props.outsideUser.isViewing ? ('You are currently viewing ' + this.props.outsideUser.username + "'s profile.") : ('Welcome! ' + this.props.username)}
             {this.props.userProfiles.username}
             {this.props.userProfiles.email} */}
-          </div>
+            </div>
 
-          <div className="profile-cover">
-          </div>
+            <div className="profile-cover">
+            </div>
 
-          <div className="profile-bottom">
+            <div className="profile-bottom">
 
-            {this.compareHandler()
-
-              ? <div className="profile-bottom-children">
+              <div className="profile-bottom-children">
                 {this.compareHandler() && this.state.currentPage === 'settings' ? <ProfileSetting showButton="true" stateHandler={() => this.stateHandler} /> : <ProfileSetting showButton="false" />}
-              </div> : null}
+                {this.state.currentPage === 'reviews' ? <ProfileReviews /> : null}
+              </div>
 
+            </div>
           </div>
-        </div>
-      }
+        }
       </>
     )
   }

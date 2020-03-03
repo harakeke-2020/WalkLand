@@ -5,7 +5,8 @@ class ProfileBanner extends Component {
     render() {
         return (
             <>
-                <div className="profile-top-children" >You are currently viewing {this.props.user}'s profile</div>
+                <div className="profile-top-content-left" >{this.props.welcome}</div>
+                <div className="profile-top-content-right"></div>
             </>
         )
     }
