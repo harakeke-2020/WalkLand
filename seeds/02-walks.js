@@ -10,12 +10,12 @@ exports.seed = function (knex) {
           latitude: -36.845928,
           longitude: 174.474207,
           location: 'Muriwai',
-          mainPhoto: 'https://images.unsplash.com/photo-1517896470636-9242d3a38392?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80',
+          mainPhoto: 'https://cdn-assets.alltrails.com/uploads/photo/image/18238463/extra_large_402813450dbfc0f7a66096692f0f543c.jpg',
           photos: JSON.stringify([
-            'https://tramper.nz/imgcache/8/8763-feature.jpg',
-            'https://www.nstc.org.nz/resources/Pictures/Te%20Henga1.jpg',
-            'https://www.nstc.org.nz/resources/Pictures/Te%20Henga8.jpg',
-            'https://tomhike.com/wp-content/gallery/goldie-bush/IMG_0178.jpg'
+            'https://cdn-assets.alltrails.com/uploads/photo/image/18238463/extra_large_402813450dbfc0f7a66096692f0f543c.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/22578955/extra_large_074a071686927417546e8646bff479ed.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/21824864/extra_large_f1eb12e2bbed6d49dff05753dcf6d83c.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/25533958/extra_large_ef609dc231603d2ecdfac3e4a30beefe.jpg'
           ]),
           routeImage: 'http://i.imgur.com/tudbIvd.jpg',
           distance: '4.5Kms',
@@ -30,12 +30,12 @@ exports.seed = function (knex) {
           latitude: -36.866598,
           longitude: 174.729742,
           location: 'Western Springs',
-          mainPhoto: 'https://2.bp.blogspot.com/-2egh_2WODWM/UUBHHx9mqiI/AAAAAAAAht4/vUyv-hZoa3w/s1600/march+pasifika+163.jpg',
+          mainPhoto: 'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/western_spring_1.jpg?itok=T8GWhSxC',
           photos: JSON.stringify([
-            'https://media2.trover.com/T/5aab8b8385f4f4ae1100603e/fixedw_large_4x.jpg',
-            'https://www.healthykids.org.nz/sites/default/files/styles/scale_width_media/public/2018-06/Western%20Springs%20Lakeside%20Park%20Auckland-cropped.jpg?itok=1BuUknQm',
-            'https://fastly.4sqi.net/img/general/558x200/582947_fjPVGAWcr82dXboTVM2PMURTsl4asGjAGGEFHQlrxNI.jpg',
-            'https://www.aucklandcouncil.govt.nz/parks-recreation/get-outdoors/aklpaths/AKLPathImages/147_WesternSpringsLoopPath05.jpg?RenditionID=8'
+            'https://media-cdn.tripadvisor.com/media/photo-o/0d/31/33/2f/20161004-134443-largejpg.jpg',
+            'https://media-cdn.tripadvisor.com/media/photo-o/12/15/de/65/the-japanese-garden.jpg',
+            'https://media-cdn.tripadvisor.com/media/photo-o/10/b1/0e/a4/the-park.jpg',
+            'https://media-cdn.tripadvisor.com/media/photo-o/0f/ae/cf/34/park.jpg'
           ]),
           routeImage: 'images/westernspringspath.png',
           distance: '1.80Kms',
@@ -51,14 +51,14 @@ exports.seed = function (knex) {
           latitude: -36.884323,
           longitude: 174.450309,
           location: 'Muriwai',
-          mainPhoto: 'https://www.doc.govt.nz/thumbs/hero/contentassets/70d774979b3440de8a37068e7a2a8d9e/te-henga-walkway-hero.jpg',
+          mainPhoto: 'https://cdn-assets.alltrails.com/uploads/photo/image/25384768/extra_large_84b5c992579e8631d589e687afa57e79.jpg',
           photos: JSON.stringify([
-            'https://www.newzealand.com/assets/Tourism-NZ/Auckland/141d0c557d/img-1536202424-2494-10947-p-18AB2FE5-AD39-F1FE-E87423DF59CE5681-2544003__FocalPointCropWzQ0MCwxMjgwLDYwLDM2LDc1LCJqcGciLDY1LDIuNV0.jpg',
-            'https://i0.wp.com/thethingis.co.nz/wp-content/uploads/2017/03/p638_orig.png?fit=1024%2C707',
-            'https://nztramper.com/wp-content/gallery/te-henga-walkway/te-henga-walkway-sign.jpg',
-            'https://nzfrenzynorth.files.wordpress.com/2013/01/view-over-bethells-oneill-bay-from-raetahinga-point-viewpoint-on-the-te-henga-walkway.jpg'
+            'https://cdn-assets.alltrails.com/uploads/photo/image/25384768/extra_large_84b5c992579e8631d589e687afa57e79.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/24822144/extra_large_9a8f240397d49ba5dcafca4c67de0475.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/24822146/extra_large_34d946fc5cfbf5867f596498ef429f64.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/23301390/extra_large_91ce39551d95384765984d9e03a99ef2.jpg'
           ]),
-          routeImage: 'images/tehengawalkway.png',
+          routeImage: 'https://s3.ap-southeast-2.amazonaws.com/newzealand.travlr.com/uploads/images/venue/607797d294147384493af55f89eff042.jpg?v=1',
           distance: '10.0Kms',
           elevationGain: 572,
           timeTaken: '3 Hours',
@@ -73,14 +73,14 @@ exports.seed = function (knex) {
           latitude: -36.806138,
           longitude: 174.861599,
           location: 'Rangitoto',
-          mainPhoto: 'https://cdn.getyourguide.com/img/tour_img-2408255-146.jpg',
+          mainPhoto: 'https://cdn-assets.alltrails.com/uploads/photo/image/21926900/extra_large_e64b9e52d441fddf9b98856a5c16fbaa.jpg',
           photos: JSON.stringify([
-            'https://www.aa.co.nz/assets/NEW-AA-TRAVELLER/Must-Dos/Hero-Images/_resampled/ScaleWidthWyI3OTUiXQ/Rangitoto-Summit.jpg?m=1562844211?m=1562844211',
-            'https://www.we12travel.com/blog/wp-content/uploads/2017/12/hiking-on-rangitoto-island-lava-field1.jpg',
-            'https://www.aa.co.nz/assets/NEW-AA-TRAVELLER/EDM-Aggregate-Content/_resampled/ScaleWidthWyI3OTUiXQ/Rangitoto-Walkers.jpg?m=1557466516?m=1557466516',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/21926900/extra_large_e64b9e52d441fddf9b98856a5c16fbaa.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/22796037/extra_large_523a4220d73cbdd686a3cbc42c32f2d0.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/25474412/extra_large_8cef49974c57ecdbda84e280f8053073.jpg',
             'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/1b/93/d7/photo0jpg.jpg'
           ]),
-          routeImage: 'images/tehengawalkway.png',
+          routeImage: 'https://cdn-assets.alltrails.com/uploads/photo/image/22420358/extra_large_6681c195333a67b86650ccc0cfc0811e.jpg',
           distance: '3.10Kms',
           elevationGain: 1442,
           timeTaken: '1 Hour',
@@ -94,12 +94,11 @@ exports.seed = function (knex) {
           latitude: -36.829496,
           longitude: 174.8128587,
           location: 'Devonport',
-          mainPhoto: 'https://docnz.files.wordpress.com/2019/04/north-head-devonport-doc.jpg',
+          mainPhoto: 'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/8_devon-2.jpg?itok=qZxFMw1W',
           photos: JSON.stringify([
+            'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/8_devon-2.jpg?itok=qZxFMw1W',
             'https://nzplaces.nz/media/17640/maungauika-panorama-1.jpg',
-            'https://docnz.files.wordpress.com/2019/04/north-head-devonport-doc.jpg',
-            'https://www.doc.govt.nz/globalassets/images/places/auckland/north-head/north-head-auckland-gallery.jpg',
-            'https://nzplaces.nz/media/17640/maungauika-panorama-1.jpg'
+            'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/7_devon-2.jpg?itok=Q7GBYsC9'
           ]),
           routeImage: 'https://www.doc.govt.nz/contentassets/7739db54ace849c5bbc7f397c5cf098c/north-head-interp-map-cropped-525.jpg',
           distance: '3.0Kms',
@@ -114,13 +113,13 @@ exports.seed = function (knex) {
           title: 'Motutapu Walkway',
           latitude: -36.7538775,
           longitude: 174.9138084,
-          location: 'Devonport',
-          mainPhoto: 'https://www.doc.govt.nz/contentassets/7739db54ace849c5bbc7f397c5cf098c/north-head-interp-map-cropped-525.jpg',
+          location: 'Auckland',
+          mainPhoto: 'https://tramper.nz/imgcache/10/10638-feature@2x.jpg',
           photos: JSON.stringify([
-            'https://i2.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/img_9434.jpg?w=648&h=486&ssl=1',
-            'https://www.motutapu.org.nz/wp-content/uploads/2016/11/Reid-Homestead-600x400.jpg',
-            'https://i0.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/img_9412.jpg?w=364&h=486&ssl=1',
-            'https://i2.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/img_9437.jpg?w=506&h=675&ssl=1'
+            'https://tramper.nz/imgcache/10/10638-feature@2x.jpg',
+            'https://1.bp.blogspot.com/-XkYic0laqAg/Uok_2nUTN9I/AAAAAAAABlE/-gCiFgDjBWE/s1600/IMAG0205.jpg',
+            'https://1.bp.blogspot.com/-mWucUwZfdag/UolLGuO2NoI/AAAAAAAABl4/t86IXSy1tnI/s1600/IMAG0218.jpg',
+            'https://2.bp.blogspot.com/-8wcIxnB1E94/UolHkKLVP2I/AAAAAAAABlY/PH5PJdxJ5rY/s1600/IMAG0215.jpg'
           ]),
           routeImage: 'https://i1.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/Screen-Shot-2019-04-14-at-8.38.47-PM.png?resize=1393%2C800&ssl=1',
           distance: '4.50Kms',
@@ -136,12 +135,12 @@ exports.seed = function (knex) {
           latitude: -36.899982,
           longitude: 174.7745785,
           location: 'Auckland',
-          mainPhoto: 'https://www.aucklandnz.com/sites/build_auckland/files/styles/carousel_banner/public/tourismnz/p-ECF142B8-05F9-7CD1-25AD2D89ADC6CB87-2544003.jpg',
+          mainPhoto: 'https://cdn-assets.alltrails.com/uploads/photo/image/24376250/extra_large_a242781d88efc4bf8935228bd44da3be.jpg',
           photos: JSON.stringify([
-            'https://www.aucklandnz.com/sites/build_auckland/files/styles/carousel_banner/public/tourismnz/p-ECF142B8-05F9-7CD1-25AD2D89ADC6CB87-2544003.jpg',
-            'https://nomadsworld.com/wp-content/uploads/2017/08/auckland_one_tree_hill_bg_wiki.jpg',
-            'https://ourauckland.aucklandcouncil.govt.nz/media/6174/maungakiekie-one-tree-hill-summit-at-20-years.jpg',
-            'https://i.ytimg.com/vi/qNWidzkH9gU/maxresdefault.jpg'
+            'https://cdn-assets.alltrails.com/uploads/photo/image/24376255/extra_large_3fc2dc7ee44ce18cdf1f59d8b58ff2f3.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/24376250/extra_large_a242781d88efc4bf8935228bd44da3be.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/24376264/extra_large_f0244cbfe36b3061e1b26745118a59ba.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/24376262/extra_large_e2b1ca5437ff999f711d46b043337912.jpg'
           ]),
           routeImage: 'https://www.onetreehillcollege.school.nz/files/5114/3184/8392/Map.gif',
           distance: '3.50Kms',
@@ -157,12 +156,12 @@ exports.seed = function (knex) {
           latitude: -36.96216,
           longitude: 174.48242,
           location: 'Auckland',
-          mainPhoto: 'https://www.totstoteens.co.nz/wp-content/uploads/2018/03/waterfall-Oakley-1200-by-630.jpg',
+          mainPhoto: 'https://cdn-assets.alltrails.com/uploads/photo/image/22828781/extra_large_28431b706fa28a1162c958488bf2eccb.jpg',
           photos: JSON.stringify([
-            'https://img.theculturetrip.com/wp-content/uploads/2017/05/10135772153_4935a93929_k.jpg',
-            'https://images.squarespace-cdn.com/content/v1/53ae6e0ce4b0f6113495c6b1/1452405152772-L42CMLOW3OADSOHNJBWZ/ke17ZwdGBToddI8pDm48kB7VtZGBFPr7lZCrlHS4ye0UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcFHn9sAeODwGxZ7mkTPk4lvstZaCL7z4CAlHCpnWsqfoF7VxFElKmyMCgmkHEhWl7/kitekite3.png ',
-            'https://media2.trover.com/T/575e9c827eb4f464a8047469/fixedw_large_4x.jpg',
-            'https://www.totstoteens.co.nz/wp-content/uploads/2018/03/waterfall-Oakley-1200-by-630.jpg'
+            'https://cdn-assets.alltrails.com/uploads/photo/image/22539648/extra_large_884ee0a36c380c637d1befde2bb40803.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/22609975/extra_large_571cf3cd3949d05863b7a16d0acc371c.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/23337800/extra_large_6fcc17deebdc4063b442f52d99e5da1f.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/22539647/extra_large_26608da7a5ec3f2cd4be27c1178fa9e2.jpg'
           ]),
           routeImage: 'https://cdn-assets.alltrails.com/static-map/production/at-map/18531131/trail-new-zealand-auckland-region-kitekite-falls-hike-at-map-18531131-1538011453-1200x630-3-5.jpg',
           distance: '3.5Kms',
@@ -178,12 +177,12 @@ exports.seed = function (knex) {
           latitude: -36.8677131,
           longitude: 174.8167634,
           location: 'Orakei',
-          mainPhoto: 'https://www.aucklandcouncil.govt.nz/parks-recreation/get-outdoors/aklpaths/AKLPathImages/161_OrakeiBasinPath2.jpg?RenditionID=8',
+          mainPhoto: 'https://cdn-assets.alltrails.com/uploads/photo/image/20660748/extra_large_66be6172df679b4a88f6f4f8f993268c.jpg',
           photos: JSON.stringify([
-            'https://www.aucklandcouncil.govt.nz/parks-recreation/get-outdoors/aklpaths/AKLPathImages/161_OrakeiBasinPath7.jpg?RenditionID=8',
-            '',
-            '',
-            ''
+            'https://cdn-assets.alltrails.com/uploads/photo/image/24388360/extra_large_4b7eee044b27f08ecd7073f517941305.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/22442056/extra_large_2703eb4194548f7d5ec4fd1a86cccc8e.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/22442045/extra_large_512b1bff9fffb8bb3b910b0f7420fc7d.jpg',
+            'https://cdn-assets.alltrails.com/uploads/photo/image/21988151/extra_large_d14889b522a65d7c4eeb4860467f03a6.jpg'
           ]),
           routeImage: 'https://www.google.com/maps/vt/data=nIlRrlj_6wDUFR3JPBb0WHZxXR1pV49EwBhHne2iixGnsh2vKKSip30n8E9F7VQKbIKg9raKKEa4L48cHkEKD_TWLChqzqu47TI1bCE4zFa_uFArO5hZBOUN56iRHv9qJysRovoJmLu9G8EcWMXvNggV16hDLz6hCtwsldrAnCI57LSn-oKmUMisSic5BOwY230SdnCCeHJdCk-em7lP3vyPwRgW3t6nlqb2ed74P2hNT1RStNNqTL--hpoV6Fd2MY-n76VSMw',
           distance: '3.1Kms',
@@ -199,9 +198,12 @@ exports.seed = function (knex) {
           latitude: -36.6889338,
           longitude: 174.7493937,
           location: 'Long Bay',
-          mainPhoto: 'https://welshkiwi.com/wp-content/uploads/2018/04/443ADF0A-3654-4C79-A240-B669A4BFD256-1440x1080.jpeg',
+          mainPhoto: 'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/nature_walk_at_long_bay_regional_park_in_auckland_2.jpg?itok=r_mqx9HZ',
           photos: JSON.stringify([
-            'https://nztramper.com/wp-content/uploads/2012/11/Coastal-Walk-Pohutakawa-Bay.jpg',
+            'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/nature_walk_at_long_bay_regional_park_in_auckland_3.jpg?itok=PCpF3KGS',
+            'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/start_of_the_long_bay_regional_park_coastal_walk_1_0.jpg?itok=AR4_A1Ti',
+            'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/grannys_bay_beach_on_the_long_bay_regional_park_coastal_track_in_auckland_3.jpg?itok=c95OICx4',
+            'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/pohutukawa_bay_beach_on_the_long_bay_regional_park_coastal_track_walk_in_auckland_3.jpg?itok=Yn9UJw5w'
         ]),
           routeImage: 'https://i.imgur.com/hNLnrpt.jpg',
           distance: '3.1Kms',

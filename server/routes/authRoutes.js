@@ -9,11 +9,9 @@ const bcrypt = require('bcrypt')
 const passport = require('passport')
 const jwtSecret = process.env.SECRET_KEY
 const jwt = require('jsonwebtoken')
-// const methodOverride = require('method-override')
 
 const db = require('../db/db')
 
-// module.exports = app => {
 router.post('/registerUser', (req, res, next) => {
   passport.authenticate('register', (err, user, info) => {
     if (err) {
@@ -23,12 +21,8 @@ router.post('/registerUser', (req, res, next) => {
       res.statusMessage = `${info.message}`
       res.status(403).end()
     } else {
-      db.registerUser(user)
-        .then(() => {
-          console.log('user created in db')
-          res.statusMessage = 'user created!'
-          res.status(200).end()
-        })
+      res.statusMessage = 'user created!'
+      res.status(200).end()
     }
   })(req, res, next)
 })
@@ -39,6 +33,7 @@ router.post('/loginUser', (req, res, next) => {
       console.error(`error ${err}`)
     }
     if (info !== undefined) {
+      console.log('login error ', info.message)
       res.statusMessage = `${info.message}`
       if (info.message === 'bad username') {
         res.status(401).end()
@@ -62,7 +57,6 @@ router.post('/loginUser', (req, res, next) => {
 })
 
 router.delete('/deleteUser/:username', (req, res, next) => {
-  // req.get("authorization")
   console.log('request in route ', req.params)
   passport.authenticate('jwt', { session: false }, (err, user, info) => {
     if (err) {
@@ -93,44 +87,11 @@ router.delete('/deleteUser/:username', (req, res, next) => {
           })
       } else {
         console.error('jwt id and username do not match')
-        res.statusMessage = 'You are not authorized :('
+        res.statusMessage = 'You are not authorized'
         res.status(403).end()
       }
     }
   })(req, res, next)
 })
-
-// authenticates jwt token to persist logged in state
-
-// router.get('/findUser', (req, res, next) => {
-//   passport.authenticate('jwt', { session: false }, (err, user, info) => {
-//     if (err) {
-//       console.log(err)
-//     }
-//     if (info !== undefined) {
-//       console.log(info.message)
-//       res.status(401).send(info.message)
-//     } else if (user.username === req.query.username) {
-//       db.findUser(req.query.username).then((userInfo) => {
-//         if (userInfo != null) {
-//           console.log('user found in db from findUsers')
-//           res.status(200).send({
-//             auth: true,
-//             username: userInfo.username,
-//             password: userInfo.password,
-//             email: userInfo.email,
-//             message: 'user found in db'
-//           })
-//         } else {
-//           console.error('no user exists in db with that username')
-//           res.status(401).send('no user exists in db with that username')
-//         }
-//       })
-//     } else {
-//       console.error('jwt id and username do not match')
-//       res.status(403).send('username and jwt token do not match')
-//     }
-//   })(req, res, next)
-// })
 
 module.exports = router

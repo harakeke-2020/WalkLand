@@ -9,18 +9,19 @@ import Details from './Details'
 import NavBar from './NavBar'
 import Profile from './Profile'
 import RegisterUser from './RegisterUser'
-import FilterBar from './FilterBar'
 import LoginUser from './LoginUser'
+import ErrorComponent from './ErrorComponent'
 
 class App extends Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(fetchWalks())
     this.props.dispatch(getReviewRatings())
   }
 
-  render() {
+  render () {
     return (
       <>
+      {this.props.errorState !== '' && <ErrorComponent /> }
         {this.props.activePage === 'landingPage' &&
           <div className="landing-page-container">
             <LandingPage />
@@ -33,7 +34,6 @@ class App extends Component {
               <NavBar />
             </div>
             <div className="sidebar-container">
-              <FilterBar/>
               <div className="items-container">
                 <SideBar />
               </div>
@@ -51,7 +51,6 @@ class App extends Component {
               <NavBar />
             </div>
             <div className="sidebar-container">
-              <FilterBar/>
               <div className="items-container">
                 <SideBar />
               </div>
@@ -72,7 +71,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    activePage: state.activePage
+    activePage: state.activePage,
+    errorState: state.errorState
   }
 }
 

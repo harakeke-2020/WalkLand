@@ -1,4 +1,5 @@
 import request from 'superagent'
+import { setError } from '../actions/setError'
 
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
@@ -31,6 +32,9 @@ export function registerUserAndLogin (user) {
       .then(data => {
         if (data.message) {
           console.log(data.message)
+          console.log('before login in register thunk function ', data.message)
+          dispatch(setError(data.message))
+          dispatch(loginUser(res.req._data.username))
         } else {
           console.log(data.statusText)
           return request.post('http://localhost:3000/api/v1/auth/loginUser')
@@ -42,7 +46,11 @@ export function registerUserAndLogin (user) {
             })
         }
       })
-      .catch(err => console.log(err.message))
+      .catch(err => {
+        console.log('in catch of register thunk function ', err.message)
+        dispatch(setError(err.message))
+        throw err
+      })
   }
 }
 
@@ -53,17 +61,21 @@ export function justLogin (user) {
       .then(res => {
         if (res.message) {
           console.log(res.message)
+          dispatch(setError(res.message))
         } else {
           console.log(res.body.message)
           localStorage.setItem('token', res.body.token)
           dispatch(loginUser(res.req._data.username))
         }
       })
-      .catch(err => console.log(err.message))
+      .catch(err => {
+        console.log(err.message)
+        dispatch(setError(err.message))
+        throw err
+      })
   }
 }
 
-// Delete profile by sending a DELETE request from /api/v1/auth/deleteUser
 export function deleteProfile (username) {
   return (dispatch) => {
     return request
@@ -72,6 +84,9 @@ export function deleteProfile (username) {
       .then(res => {
         dispatch(deleteUser())
         console.log(res.statusText)
+      })
+      .catch(err => {
+        dispatch(setError(err.message))
       })
   }
 }

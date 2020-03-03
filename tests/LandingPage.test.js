@@ -15,7 +15,7 @@ test('loads and displays WalkLand ', async () => {
 test('The main button has the correct text and is present ', async () => {
   const { getByTestId } = renderWithRedux(<LandingPage />)
   const button = getByTestId('startButton')
-  expect(button).toHaveTextContent('Walk through Auckland')
+  expect(button).toHaveTextContent('START JOURNEY')
   expect(button).toBeInTheDocument()
 })
 
