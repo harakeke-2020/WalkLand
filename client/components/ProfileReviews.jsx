@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 class ProfileReviews extends Component {
   render() {
+  
     let reviewsArr = []
 
     let reviews = this.props.ratings.map(ratingInfo => {

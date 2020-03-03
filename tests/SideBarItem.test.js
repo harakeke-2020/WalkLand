@@ -83,7 +83,8 @@ test('Title is visible and contains correct title', async () => {
     expect(sideTitle).toBeTruthy()
   })
 
-  test('Tests that the rating displays', async () => {    
+  test('Tests that the rating displays', async () => { 
+    const ratings = [1]   
       const { getByTestId } = renderWithRedux(
       <SideBarItem selectedWalk={mockOnClick}
         activePage={mockOnClick}
