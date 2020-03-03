@@ -87,7 +87,7 @@ router.delete('/deleteUser/:username', (req, res, next) => {
           })
       } else {
         console.error('jwt id and username do not match')
-        res.statusMessage = 'You are not authorized :('
+        res.statusMessage = 'You are not authorized'
         res.status(403).end()
       }
     }
