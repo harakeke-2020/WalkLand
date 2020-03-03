@@ -5,7 +5,6 @@ import { registerUserAndLogin } from './actions/authActions'
 class RegisterUser extends Component {
   state = {
     username: '',
-    email: '',
     password: ''
   }
 

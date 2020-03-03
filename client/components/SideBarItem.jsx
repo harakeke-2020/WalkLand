@@ -5,17 +5,17 @@ import selectedWalk from './actions/selectedWalk'
 import { getReviewRatings } from './actions/allWalks'
 
 export const SideBarItem = (props) => {
-    const walk = props.walk
-    const { id, title, mainPhoto } = walk
-    const { activePageState, selectedWalkState } = props
-    const { selectedWalk, activePage } = props
-    const walkRatings = props.ratings 
-    const walkId = props.walk.id 
-    const filterByWalk = walkRatings.filter(walk => walk.walkId === walkId)
-    const walkAverage = filterByWalk.reduce((total, next) => total + Number(next.rating), 0) / filterByWalk.length
-    const style = {
-      backgroundImage: `url(${mainPhoto})`
-    }
+  const walk = props.walk
+  const { id, title, mainPhoto } = walk
+  const { activePageState, selectedWalkState } = props
+  const { selectedWalk, activePage } = props
+  const walkRatings = props.ratings
+  const walkId = props.walk.id
+  const filterByWalk = walkRatings.filter(walk => walk.walkId === walkId)
+  const walkAverage = filterByWalk.reduce((total, next) => total + Number(next.rating), 0) / filterByWalk.length
+  const style = {
+    backgroundImage: `url(${mainPhoto})`
+  }
 
     return (
       <div>
@@ -36,11 +36,10 @@ export const SideBarItem = (props) => {
         {activePageState === 'map' &&
         <button data-testid="showDetails" onClick={() => activePage('details') }>Show Details</button>}
         </>
-          }
-        </div>
+        }
       </div>
-    )
-  
+    </div>
+  )
 }
 const mapDispatchToProps = dispatch => {
   return {
