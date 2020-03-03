@@ -63,7 +63,7 @@
   justify-content: center; 
 }
 
-.btn {
+#btn {
   border-radius: 25px;
   padding: 3px 35px 3px 35px;
   grid-column: 2 / 3;
