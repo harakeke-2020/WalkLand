@@ -1,5 +1,4 @@
 const request = require('supertest')
-const x = require('../../server/db/db')
 
 jest.mock('../../server/db/db', () => ({
   getWalks: () => Promise.resolve([
