@@ -5,7 +5,7 @@ import { create } from 'react-test-renderer'
 // import { Carousel } from 'react-responsive-carousel'
 import Slider from 'react-slick'
 import activePage from './actions/activePage'
-import viewProfile  from './actions/viewProfile'
+import viewProfile from './actions/viewProfile'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -22,7 +22,7 @@ class Details extends Component {
 
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value 
+      [e.target.name]: e.target.value
     })
   }
 
@@ -54,7 +54,6 @@ class Details extends Component {
       slidesToScroll: 1
     }
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
-    
 
     return (
 
@@ -75,21 +74,24 @@ class Details extends Component {
         </div>
         <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
         <ul className = "details-info">
-        
+
           <li>{`Location: ${selectedWalk.location}`}</li>
           <li>{`Distance: ${selectedWalk.distance}`}</li>
           <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
           <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
           <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
           <li>{`Surface: ${selectedWalk.surface}`}</li>
-          
+
           <ul>
             {reviewsArray.map((item, idx) => (
               <>
               <li key={idx}>
                 <span>Rating: {item.rating}</span>
                 <span>Review: {item.review}</span>
-                <span>Author: <a href="/#/" onClick={() => {this.props.activePage('profile'); this.props.viewProfile(item.author, true)}}>{item.author}</a></span>
+                <span>Author: <a href="/#/" onClick={() => {
+                  this.props.activePage('profile')
+                  this.props.viewProfile(item.author, true)
+                }}>{item.author}</a></span>
               </li>
               </>
             ))}

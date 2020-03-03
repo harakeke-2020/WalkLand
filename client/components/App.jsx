@@ -9,7 +9,6 @@ import Details from './Details'
 import NavBar from './NavBar'
 import Profile from './Profile'
 import RegisterUser from './RegisterUser'
-import FilterBar from './FilterBar'
 import LoginUser from './LoginUser'
 
 class App extends Component {
@@ -33,7 +32,6 @@ class App extends Component {
               <NavBar />
             </div>
             <div className="sidebar-container">
-              <FilterBar/>
               <div className="items-container">
                 <SideBar />
               </div>
@@ -51,7 +49,6 @@ class App extends Component {
               <NavBar />
             </div>
             <div className="sidebar-container">
-              <FilterBar/>
               <div className="items-container">
                 <SideBar />
               </div>

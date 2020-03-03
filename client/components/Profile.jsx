@@ -29,6 +29,7 @@ class Profile extends Component {
   render() {
     return (
       <>
+      {this.props.userProfiles === 'error' ? <span>User does does not exist</span> : <span>no error all good</span>}
         <div className="profile-container">
           <div className="profile-header">
             <img className='profile-logo' src='images/mainlogo.png' />

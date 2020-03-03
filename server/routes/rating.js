@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+  console.log('add review form data ', req.body)
   db.findUser(req.body.username)
     .then(returnedUser => {
       const newObject = {
@@ -20,7 +21,7 @@ router.post('/', (req, res) => {
         rating: Number(req.body.rating),
         review: req.body.review
       }
-      console.log('user for addreview: ', newObject)
+      console.log('review for addreview: ', newObject)
       db.addReview(newObject)
         .then(resolve => res.json(''))
     })
