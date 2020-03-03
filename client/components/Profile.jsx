@@ -49,9 +49,9 @@ class Profile extends Component {
           </div>
 
           <div className="profile-bottom">
-            {
-              this.state.currentPage === 'reviews' ? <ProfileReviews /> : <ProfileSetting stateHandler={this.stateHandler} />
-            }
+            <div className="profile-bottom-children">
+              {this.props.outsideUser.isViewing ? <ProfileSetting showButton="false" stateHandler={() => this.stateHandler}/> : <ProfileSetting showButton="true" />}
+            </div>
           </div>
         </div>
       </>

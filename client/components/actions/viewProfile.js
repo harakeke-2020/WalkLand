@@ -2,11 +2,11 @@
 export const VIEW_PROFILE = "VIEW_PROFILE";
 
 // Synchronous action
-function viewProfile (username) {
+function viewProfile (username, isViewing) {
   return {
     type: VIEW_PROFILE,
     username,
-    isViewing: true
+    isViewing
   }
 }
 
