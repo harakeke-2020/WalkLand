@@ -52,8 +52,21 @@ class Details extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       centerMode: true,
-      centerPadding: '0px'
+      centerPadding: '0px',
+      appendDots: dots => (
+        <div
+          style={{
+            backgroundColor: 'transparent',
+            borderRadius: '10px',
+            padding: '10px',
+            bottom: '0px'
+          }}
+        >
+          <ul style={{ margin: '0px' }}> {dots} </ul>
+        </div>
+      )
     }
+
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
 
     return (
