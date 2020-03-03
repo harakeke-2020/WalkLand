@@ -5,17 +5,17 @@ import { deleteProfile } from './actions/authActions'
 import activePage from './actions/activePage'
 
 class ProfileSetting extends Component {
-    deleteToken = () => {
-      localStorage.removeItem('token')
-    }
+  deleteToken = () => {
+    localStorage.removeItem('token')
+  }
 
-    render () {
-      return (
-            <>
-                <button onClick={() => { this.props.deleteProfile(this.props.auth); this.props.stateHandler(); this.deleteToken(); this.props.activePage('map') }}>Delete profile?</button>
-            </>
-      )
-    }
+  render() {
+    return (
+      <>
+      {this.props.showButton === "false" ? null : <button onClick={() => { this.props.deleteProfile(this.props.auth); this.props.stateHandler; this.deleteToken(); this.props.activePage('map') }}>Delete profile?</button>}
+      </>
+    )
+  }
 }
 
 const mapStateToProps = state => {
