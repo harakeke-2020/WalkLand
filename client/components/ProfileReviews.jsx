@@ -28,7 +28,8 @@ class ProfileReviews extends Component {
         </div>
 
         <div className="profile-bot-container-mid">
-          <div className="profile-bot-content-card">
+          <div className="profile-card-top"></div>
+          <div className="profile-card-bot">
             My review: {reviewsArr[2]} <br/>
             My rating: {reviewsArr[3]}
           </div>
