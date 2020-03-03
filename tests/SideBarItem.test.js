@@ -5,7 +5,6 @@ import { SideBarItem } from '../client/components/SideBarItem'
 
 const mockOnClick = jest.fn()
 const rating = [2,3,4,5]
-const average = 1
 const data = {
   id: 1,
   title: 'Goldie\'s Bushwalk',
@@ -76,19 +75,17 @@ test('Tests that the title is visible and contains the title', async () => {
     expect(sideTitle).toHaveTextContent('Goldie\'s Bushwalk')
   })
 
-  test('Tests that the rating displays', async () => {
-const walkRatings= [1,2,3]
-    const { getByTestId } = renderWithRedux(
+  test('Tests that the rating displays', async () => {    
+      const { getByTestId } = renderWithRedux(
       <SideBarItem selectedWalk={mockOnClick}
         activePage={mockOnClick}
         walk={data}
         selectedWalkState={data}
-        activePageState={'details'}
+        ratings={rating} 
       />)
       const walkRating = getByTestId('rating')
       expect(walkRating).toBeInTheDocument()
       expect(walkRating).toHaveTextContent('rating')
-      expect(walkRating).toHaveTextContent(1)
     })
 
   

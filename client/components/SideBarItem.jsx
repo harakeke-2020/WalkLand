@@ -16,7 +16,6 @@ export const SideBarItem = (props) => {
     const style = {
       backgroundImage: `url(${mainPhoto})`
     }
-    console.log(filterByWalk)
 
     return (
       <div>
