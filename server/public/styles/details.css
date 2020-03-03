@@ -1,7 +1,7 @@
 .details-container {
   display: grid;
   grid-template-columns:  repeat(12, minmax(0, 1fr));
-  grid-template-rows: 60px 35% repeat(10, minmax(0, 1fr));
+  grid-template-rows: 60px 425px repeat(10, minmax(0, 1fr));
   grid-column: 1 / -1;
   grid-row: 1 / -1; 
   background-color: #EAE7E7;

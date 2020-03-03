@@ -53,6 +53,7 @@ class Details extends Component {
       slidesToScroll: 1,
       centerMode: true,
       centerPadding: '0px',
+      arrows: false,
       appendDots: dots => (
         <div
           style={{
