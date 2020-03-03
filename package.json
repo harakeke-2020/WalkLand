@@ -14,7 +14,12 @@
     "start": "run-s build server",
     "build": "webpack",
     "server": "node server",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "db:delete": "rm -f server/db/dev.sqlite3",
+    "db:migrate": "npx knex migrate:latest",
+    "db:seed": "npx knex seed:run",
+    "db:reset": "run-s db:delete db:migrate db:seed",
+    "walkland": "run-s db:migrate db:seed dev"
   },
   "babel": {
     "presets": [
