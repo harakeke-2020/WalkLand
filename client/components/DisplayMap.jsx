@@ -16,6 +16,7 @@ export const DisplayMap = (props) => {
     onClick={() => { props.selectedWalk(walk) }}
     />
   }
+  
   const initialMarkers = () => {
     const { allWalksState, selectedWalkState } = props
     return allWalksState.map(walk => {

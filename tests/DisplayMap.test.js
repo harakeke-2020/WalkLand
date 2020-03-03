@@ -56,17 +56,14 @@ const google = {
 global.window.google = google
 
 
-
-
-test('shows that the map loads', async () => {
-const mockfunc = jest.fn()
+test('Map component is in the component', async () => {
   const { getByTestId } = renderWithRedux(
     <Map 
     allWalksState={mockData}
     selectedWalkState={mockData}
     Animation={google}
     />)
-  const showDetails = getByTestId('loadMap')
-  expect(showDetails).toBeInTheDocument()
- 
+  const loadMap = getByTestId('loadMap')
+  expect(loadMap).toBeInTheDocument()
+  expect(loadMap).toBeVisible()
 })
