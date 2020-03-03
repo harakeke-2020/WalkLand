@@ -56,7 +56,6 @@ function getWalks (db = connection) {
 
 function getReviewRatings (db = connection) {
   return db('ratingReviews')
-    .join('users', 'userId', 'users.id')
     .select()
 }
 
