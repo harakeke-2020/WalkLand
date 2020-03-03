@@ -13,12 +13,12 @@ import FilterBar from './FilterBar'
 import LoginUser from './LoginUser'
 
 class App extends Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(fetchWalks())
     this.props.dispatch(getReviewRatings())
   }
 
-  render() {
+  render () {
     return (
       <>
         {this.props.activePage === 'landingPage' &&
