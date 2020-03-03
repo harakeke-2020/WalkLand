@@ -26,11 +26,11 @@ class Profile extends Component {
   compareHandler = () => {
     return this.props.username === this.props.outsideUser.username
   }
-  render() {
+  render () {
     return (
       <>
-      {this.props.userProfiles === 'error' ? <span>User does does not exist</span> : <span>no error all good</span>}
-        <div className="profile-container">
+      {this.props.userProfiles === 'error' ? <span>User does does not exist</span>
+        : <div className="profile-container">
           <div className="profile-header">
             <img className='profile-logo' src='images/mainlogo.png' />
             <div className="profile-header-btn-group">
@@ -54,14 +54,15 @@ class Profile extends Component {
 
           <div className="profile-bottom">
 
-            {this.compareHandler() ? 
-            
-            <div className="profile-bottom-children">
-              {this.compareHandler() && this.state.currentPage === 'settings' ? <ProfileSetting showButton="true" stateHandler={() => this.stateHandler} /> : <ProfileSetting showButton="false" />}
-            </div> : null}
+            {this.compareHandler()
+
+              ? <div className="profile-bottom-children">
+                {this.compareHandler() && this.state.currentPage === 'settings' ? <ProfileSetting showButton="true" stateHandler={() => this.stateHandler} /> : <ProfileSetting showButton="false" />}
+              </div> : null}
 
           </div>
         </div>
+      }
       </>
     )
   }
