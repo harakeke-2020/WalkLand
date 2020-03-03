@@ -83,7 +83,7 @@ class Details extends Component {
           <li>{`Surface: ${selectedWalk.surface}`}</li>
 
           <ul>
-            {reviewsArray.map((item, idx) => (
+            {reviewsArray.length > 0 && reviewsArray.map((item, idx) => (
               <>
               <li key={idx}>
                 <span>Rating: {item.rating}</span>
