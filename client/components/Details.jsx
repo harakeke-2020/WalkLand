@@ -4,6 +4,8 @@ import { createReview } from './actions/reviewWalks'
 import { create } from 'react-test-renderer'
 // import { Carousel } from 'react-responsive-carousel'
 import Slider from 'react-slick'
+import activePage from './actions/activePage'
+import viewProfile from './actions/viewProfile'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -12,7 +14,6 @@ let slideIndex = 1
 
 class Details extends Component {
   state = {
-    username: this.props.login,
     rating: '',
     review: '',
     walkId: this.props.selectedWalk.id
@@ -26,7 +27,7 @@ class Details extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.createReview(this.state)
+    this.props.createReview({ ...this.state, username: this.props.login })
       .then(thing => console.log('this state: ', thing))
       .catch(err => console.log(err))
   }
@@ -60,13 +61,14 @@ class Details extends Component {
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
-          <Slider {...settings} >
+          {/* <Slider {...settings} >
             {
               selectedWalk.photos.map((item, idx) => (
                 <img className = "details-photos" key={idx} src={item} />
               ))
             }
-          </Slider >
+          </Slider > */}
+          testing submit review
         </div>
         <div className = "details-text">
           <p> {`${selectedWalk.description}`} </p>
@@ -87,7 +89,10 @@ class Details extends Component {
               <li key={idx}>
                 <span>Rating: {item.rating}</span>
                 <span>Review: {item.review}</span>
-                <span>Author: {item.author}</span>
+                <span>Author: <a href="/#/" onClick={() => {
+                  this.props.activePage('profile')
+                  this.props.viewProfile(item.author, true)
+                }}>{item.author}</a></span>
               </li>
               </>
             ))}
@@ -132,7 +137,9 @@ class Details extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  createReview: review => dispatch(createReview(review))
+  createReview: review => dispatch(createReview(review)),
+  activePage: (destination) => dispatch(activePage(destination)),
+  viewProfile: (username, isViewing) => dispatch(viewProfile(username, isViewing))
 })
 
 const mapStateToProps = state => {
