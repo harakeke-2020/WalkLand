@@ -6,7 +6,7 @@ import Logout from './Logout'
 import LoginUser from './LoginUser'
 
 class NavBar extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       showRegisterPopup: false,
@@ -28,7 +28,7 @@ class NavBar extends React.Component {
     })
   }
 
-  render() {
+  render () {
     return (
       <>
         {this.props.login
@@ -38,13 +38,13 @@ class NavBar extends React.Component {
             <Logout />
           </div>
 
-        : <div className="not-logged-in">
-          <div className="login-text">
-            <a href="/#/" onClick={this.loginClickHandler}>Login</a>
-            <a href="/#/" onClick={this.registerClickHandler}>Register</a>
+          : <div className="not-logged-in">
+            <div className="login-text">
+              <a href="/#/" onClick={this.loginClickHandler}>Login</a>
+              <a href="/#/" onClick={this.registerClickHandler}>Register</a>
+            </div>
           </div>
-        </div>
-      }
+        }
 
         {this.state.showRegisterPopup
           ? <RegisterUser
