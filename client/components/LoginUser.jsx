@@ -23,7 +23,7 @@ class Login extends Component {
   render () {
     return (
       <div className='popup'>
-        <button className='button-round' onClick={this.props.closePopup}>x</button>
+        <button className='button-round button-x' onClick={this.props.closePopup}>x</button>
         <div className='popup_inner'>
           <form onSubmit={this.handleSubmit}>
             <h3>Login</h3>

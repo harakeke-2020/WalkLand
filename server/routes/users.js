@@ -11,7 +11,7 @@ router.get('/:username', (req, res) => {
         res.status(404).end()
       } else {
         delete returnedUser.password
-        console.log(returnedUser)
+        console.log('from finduser route ', returnedUser)
         res.json(returnedUser)
       }
     })

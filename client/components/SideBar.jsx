@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 
 export const Sidebar = (props) => {
   return (
-
     <>
-
       {props.allWalks.map((walk) => {
         return (
           <SideBarItem key={walk.id} walk={walk} mainPhoto={walk.mainPhoto} />
@@ -20,9 +18,7 @@ export const Sidebar = (props) => {
 function mapStateToProps(state) {
   return {
     selectedWalkState: state.selectedWalk,
-    allWalks: state.allWalks,
-
-
+    allWalks: state.allWalks
   }
 }
 

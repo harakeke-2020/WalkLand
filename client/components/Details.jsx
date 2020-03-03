@@ -50,7 +50,9 @@ class Details extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding: '0px'
     }
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
 
@@ -59,19 +61,18 @@ class Details extends Component {
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
-          {/* <Slider {...settings} >
+          <Slider {...settings} >
             {
               selectedWalk.photos.map((item, idx) => (
                 <img className = "details-photos" key={idx} src={item} />
               ))
             }
-          </Slider > */}
-          testing submit review
+          </Slider >
         </div>
         <div className = "details-text">
           <p> {`${selectedWalk.description}`} </p>
         </div>
-        <img className = "details-map" src={selectedWalk.routeImage} height="200" width="300" />
+        <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
         <ul className = "details-info">
 
           <li>{`Location: ${selectedWalk.location}`}</li>
