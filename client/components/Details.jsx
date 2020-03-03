@@ -61,14 +61,13 @@ class Details extends Component {
       <div className="details-container">
         <h1 className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
-          {/* <Slider {...settings} >
+          <Slider {...settings} >
             {
               selectedWalk.photos.map((item, idx) => (
                 <img className = "details-photos" key={idx} src={item} />
               ))
             }
-          </Slider > */}
-          testing submit review
+          </Slider >
         </div>
         <div className = "details-text">
           <p> {`${selectedWalk.description}`} </p>
