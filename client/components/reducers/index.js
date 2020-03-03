@@ -7,6 +7,7 @@ import ratings from './ratings'
 import auth from './auth'
 import viewProfile from './viewProfile'
 import userProfiles from './userProfiles'
+import errorState from './errorState'
 
 export default combineReducers({
   activePage,
@@ -15,5 +16,6 @@ export default combineReducers({
   ratings,
   auth,
   viewProfile,
-  userProfiles
+  userProfiles,
+  errorState
 })
