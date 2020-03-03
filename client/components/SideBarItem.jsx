@@ -19,7 +19,7 @@ export const SideBarItem = (props) => {
 
     return (
       <div>
-        <div style={style}
+        <div data-testid={'style'} style={style}
           className={
             `${selectedWalkState.id === id ? 'selected-walk' : 'sidebar-item'}`
           }
