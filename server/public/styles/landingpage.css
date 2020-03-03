@@ -21,13 +21,15 @@ body {
 }
 
 .btn {
+  display: block;
   width:15vw;
   height: 3vw;
-  border-radius: 40px !important;
+  border-radius: 40vw !important;
   background-color: rgb(171, 213, 60) !important;
   border-color: rgb(171, 213, 60) !important;
   justify-self: center;
   font-family:  nobel, sans-serif;
+  font-size: 1em ;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 2px;
@@ -35,6 +37,5 @@ body {
 
 .logo {
   text-align: center;
-  
  
 }
