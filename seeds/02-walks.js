@@ -37,7 +37,7 @@ exports.seed = function (knex) {
             'https://media-cdn.tripadvisor.com/media/photo-o/10/b1/0e/a4/the-park.jpg',
             'https://media-cdn.tripadvisor.com/media/photo-o/0f/ae/cf/34/park.jpg'
           ]),
-          routeImage: 'images/westernspringspath.png',
+          routeImage: 'images/WESTERN.png',
           distance: '1.80Kms',
           elevationGain: 9999,
           timeTaken: '30 Minutes',
