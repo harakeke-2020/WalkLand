@@ -20,7 +20,8 @@
     "db:seed": "npx knex seed:run",
     "db:reset": "run-s db:delete db:migrate db:seed",
     "walkland": "run-s db:migrate db:seed dev",
-    "e2e": "nightwatch"
+    "nightwatch": "nightwatch",
+    "e2e": "run-s db:migrate db:seed nightwatch"
   },
   "babel": {
     "presets": [
