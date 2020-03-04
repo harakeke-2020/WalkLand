@@ -34,14 +34,14 @@ class SideBarItem extends Component {
         >
           <h2 className='item-title' data-testid={'sideBarTitle'}> {title} </h2>
           {walkAverage ? <p className='sidebar-rating' data-testid={'rating'}>Rating: {Math.round((walkAverage + Number.EPSILON) * 100) / 100}</p> : <p>No rating yet</p>}
-        <p className='sidebar-distance'>Distance: {distance}</p>
+          <p className='sidebar-distance'>Distance: {distance}</p>
           { selectedWalkState.id === id &&
         <>
 
         {activePageState === 'details' &&
-        <button data-testid='showMap' name = 'showMap' onClick={() => activePage('map')}>Show Map</button>}
+        <button data-testid='showMap' name='showMap' onClick={() => activePage('map')}>Show Map</button>}
         {activePageState === 'map' &&
-        <button data-testid="showDetails" name = 'showDetials' onClick={() => activePage('details') }>Show Details</button>}
+        <button data-testid="showDetails" name='showDetails' onClick={() => activePage('details') }>Show Details</button>}
         </>
           }
         </div>

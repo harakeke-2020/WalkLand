@@ -94,7 +94,7 @@ class Details extends Component {
               {reviewsArray.length > 0
                 ? reviewsArray.map((item, idx) =>
                   <>
-                    <li id = "tomId" className="card card-body hamish-review-card" key={idx}>
+                    <li id="tomId" className="card card-body hamish-review-card" key={idx}>
                       <ul className="hamish-stars-ul">
                         {
                           item.stars.length > 0 &&
