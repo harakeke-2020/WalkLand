@@ -2,7 +2,7 @@
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 400px minmax(0, 1fr);
+  grid-template-rows: 400px repeat(3, 1fr);
   grid-column: 1 / -1;
   grid-row: 1 / -1; 
   background-color: #EAE7E7;
@@ -11,10 +11,10 @@
 
 .details-content {
   grid-column: 1 / -1;
-  grid-row: 2 / -1; 
+  grid-row: 2 / 3; 
   display: grid;
   grid-template-columns:  repeat(12, minmax(0, 1fr));
-  grid-template-rows: auto 200px 600px 300px 
+  grid-auto-rows: minmax(min-content, max-content);
 }
 
 .details-walktitle {
@@ -26,6 +26,32 @@
   text-transform: uppercase;
   background-color: black;
   color: white;
+}
+
+.right-margin {
+  margin-right: 5px;
+}
+
+.details-form {
+  grid-row: 4 / 5;
+  grid-column: 2 / -2;
+  background-color: white;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.details-form textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  overflow: auto;
+  outline: none;
+  background-color: #EAE7E7;
+  padding: 10px;
+}
+
+.details-form form button {
+  margin-top: 12px !important;
 }
 
 .details-photo-slider {

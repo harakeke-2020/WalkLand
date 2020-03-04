@@ -115,11 +115,10 @@ class Details extends Component {
           </div>
 
           {reviewExists === -1 && this.props.login &&
-        <div>
+        <div className="details-form">
           <form onSubmit={this.handleSubmit}>
-            <h1>Submit your experience!</h1>
-            <p>Be a part of the experience</p>
-            <label>Rating</label>
+            <h3>Share your experience!</h3>
+            <label className="right-margin">Rating</label>
             <input
               type='number'
               min='1'
@@ -130,11 +129,10 @@ class Details extends Component {
               onChange={this.handleChange}
             /><br/>
 
-            <label>Review</label>
-            <input
+            <textarea
               type='text'
               name='review'
-              placeholder='Review'
+              placeholder='Add Review...'
               value={this.state.review}
               onChange={this.handleChange}
             /><br/>
