@@ -60,7 +60,7 @@ test('expect getReviewRatings to return all data from database and check Id', ()
 })
 
 test('expect addReview to return a 4th id', () => {
-  const testReview = { userId: 4, walkId: 3, username: 'testEmail7.com', rating: 2, review: 'walk was cool' }
+  const testReview = { walkId: 3, username: 'testEmail7.com', rating: 2, review: 'walk was cool' }
   return db.addReview(testReview, testDb)
     .then(response => {
       expect(response[0]).toEqual(4)
