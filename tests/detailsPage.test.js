@@ -40,6 +40,7 @@ test('Loads and displays description ', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('image')
   expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
 })
 
 
@@ -47,29 +48,34 @@ test('Loads and displays description ', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('slider')
   expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
 })
 
 test('Loads and displays description ', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('description')
   expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
 })
 
 test('Loads and displays description ', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('ul')
   expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
 })
 
 test('Loads and displays description ', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('grid')
   expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
 })
 
 test('Loads and displays description ', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('review')
   expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
 })
 
