@@ -1,5 +1,4 @@
 export const SELECTEDWALK = 'SELECTEDWALK'
-
 const selectedWalk = (state = {}, action) => {
   switch (action.type) {
     case SELECTEDWALK:

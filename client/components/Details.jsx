@@ -15,8 +15,10 @@ class Details extends Component {
   state = {
     rating: '',
     review: '',
-    walkId: this.props.selectedWalk.id
+    walkId: this.props.selectedWalk.id,
+    selectedWalk: null
   }
+
 
   handleChange = e => {
     this.setState({
@@ -35,7 +37,8 @@ class Details extends Component {
   }
 
   render () {
-    const { selectedWalk } = this.props
+    const  { selectedWalk } = this.props
+
     const { ratings } = this.props
     const idWalk = selectedWalk.id
     const reviewsArray = ratings.filter(rating => rating.walkId === idWalk).map(data => {
@@ -47,7 +50,7 @@ class Details extends Component {
     })
     const authorsArray = reviewsArray.map(review => review.author)
     const reviewExists = authorsArray.indexOf(this.props.login)
-    console.log('currently logged in user ', this.props.login)
+
 
     const settings = {
       dots: true,
@@ -58,23 +61,22 @@ class Details extends Component {
       centerMode: true,
       centerPadding: '0px'
     }
-    const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
-
     return (
-
+      <>
+    { selectedWalk &&  
       <div className="details-container">
-        <h1 data-testid='detailsTitle' className = "details-walktitle">{selectedWalk.title}</h1>
+        <h1 data-testid={'detailsTitle'} className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
           <Slider {...settings} >
             {
-              selectedWalk.photos.map((item, idx) => (
+              selectedWalk.photos && selectedWalk.photos.map((item, idx) => (
                 <img className = "details-photos" key={idx} src={item} />
               ))
             }
           </Slider >
         </div>
         <div className = "details-text">
-          <p> {`${selectedWalk.description}`} </p>
+          <p data-testid={'description'}>{`${selectedWalk.description}`} </p>
         </div>
         <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
         <ul className = "details-info">
@@ -133,13 +135,14 @@ class Details extends Component {
             <button type='submit'>Submit Review</button>
           </form>
         </div>
-        }
-
-      </div>
-    )
   }
+      </div>
+  }
+      </>
+    )
+      }     
 }
-
+          
 const mapDispatchToProps = dispatch => ({
   createReview: review => dispatch(createReview(review)),
   activePage: (destination) => dispatch(activePage(destination)),
