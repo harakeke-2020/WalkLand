@@ -28,7 +28,7 @@ class Profile extends Component {
   render () {
     return (
       <>
-        {this.props.userProfiles === 'error' ? <a className="alert alert-danger hamish-profile-deleted" href="/#/" onClick={() => this.props.activePage('details')}>User does does not exist anymore. Click to go back.</a>
+        {this.props.userProfiles === 'error' ? <a className="alert alert-danger hamish-profile-deleted" href="/#/" onClick={() => this.props.activePage('details')}>Profile not found. Click to go back.</a>
           : <div className="profile-container">
             <div className="profile-header">
               <img className='profile-logo' src='images/mainlogo.png' />
