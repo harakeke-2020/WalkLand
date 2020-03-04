@@ -7,9 +7,6 @@ import Slider from 'react-slick'
 import activePage from './actions/activePage'
 import viewProfile from './actions/viewProfile'
 
-// import 'slick-carousel/slick/slick.css'
-// import 'slick-carousel/slick/slick-theme.css'
-
 let slideIndex = 1
 
 class Details extends Component {
@@ -25,7 +22,6 @@ class Details extends Component {
   }
 
   handleSubmit = e => {
-    console.log('given to submit, ', this.state)
     e.preventDefault()
     this.props.createReview({ ...this.state, username: this.props.login, walkId: this.props.selectedWalk.id })
       .then(() => this.setState({

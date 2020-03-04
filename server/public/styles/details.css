@@ -19,7 +19,7 @@
 
 .details-walktitle {
   width: 150px;
-  position: relative;
+  position: absolute;
   grid-column: 1 / 2;
   grid-row: 1 / 2 ;
   font-size: 20px;
@@ -29,27 +29,27 @@
 }
 
 .details-photo-slider {
-  grid-column: 2 / -1;
+  grid-column: 1 / -1;
   grid-row: 1 / 2;
   border: none;
 }
 
 .details-map {
-  grid-column: 1 / 7;
+  grid-column: 7 / 13;
   grid-row: 1 / 2; 
 }
 
 .details-info {
   display: grid;
-  grid-column: 7 / 13;
+  grid-column: 1 / 7;
   grid-row: 1 / 2; 
   list-style-type:none;
   color: white;
   background-color: black;
-  padding: 30px;
+  padding: 50px 0px 30px 50px;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 1px;
   line-height: 2em;
 }
@@ -65,6 +65,7 @@ align-self: center;
 
 .details-photos {
   height:100%;
+  opacity: 0.85;
 }
 
 .detials-slider {
