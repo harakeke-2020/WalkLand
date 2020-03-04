@@ -100,7 +100,7 @@ exports.seed = function (knex) {
             'https://nzplaces.nz/media/17640/maungauika-panorama-1.jpg',
             'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/7_devon-2.jpg?itok=Q7GBYsC9'
           ]),
-          routeImage: 'https://www.doc.govt.nz/contentassets/7739db54ace849c5bbc7f397c5cf098c/north-head-interp-map-cropped-525.jpg',
+          routeImage: 'images/MAUNGAYIKA.png',
           distance: '3.0Kms',
           elevationGain: 675,
           timeTaken: '1 Hour',
@@ -121,7 +121,7 @@ exports.seed = function (knex) {
             'https://1.bp.blogspot.com/-mWucUwZfdag/UolLGuO2NoI/AAAAAAAABl4/t86IXSy1tnI/s1600/IMAG0218.jpg',
             'https://2.bp.blogspot.com/-8wcIxnB1E94/UolHkKLVP2I/AAAAAAAABlY/PH5PJdxJ5rY/s1600/IMAG0215.jpg'
           ]),
-          routeImage: 'https://i1.wp.com/exploringkiwis.com/wp-content/uploads/2019/04/Screen-Shot-2019-04-14-at-8.38.47-PM.png?resize=1393%2C800&ssl=1',
+          routeImage: 'images/Motutapu Walkway.png',
           distance: '4.50Kms',
           elevationGain: 346,
           timeTaken: '1.50 Hours',
@@ -142,7 +142,7 @@ exports.seed = function (knex) {
             'https://cdn-assets.alltrails.com/uploads/photo/image/24376264/extra_large_f0244cbfe36b3061e1b26745118a59ba.jpg',
             'https://cdn-assets.alltrails.com/uploads/photo/image/24376262/extra_large_e2b1ca5437ff999f711d46b043337912.jpg'
           ]),
-          routeImage: 'https://www.onetreehillcollege.school.nz/files/5114/3184/8392/Map.gif',
+          routeImage: 'images/ONE TREEHILL.png',
           distance: '3.50Kms',
           elevationGain: 231,
           timeTaken: '2.0 Hours',
@@ -163,7 +163,7 @@ exports.seed = function (knex) {
             'https://cdn-assets.alltrails.com/uploads/photo/image/23337800/extra_large_6fcc17deebdc4063b442f52d99e5da1f.jpg',
             'https://cdn-assets.alltrails.com/uploads/photo/image/22539647/extra_large_26608da7a5ec3f2cd4be27c1178fa9e2.jpg'
           ]),
-          routeImage: 'https://cdn-assets.alltrails.com/static-map/production/at-map/18531131/trail-new-zealand-auckland-region-kitekite-falls-hike-at-map-18531131-1538011453-1200x630-3-5.jpg',
+          routeImage: 'images/PIHA WALKWAY.png',
           distance: '3.5Kms',
           elevationGain: 89,
           timeTaken: '1.5 Hours',
@@ -184,7 +184,7 @@ exports.seed = function (knex) {
             'https://cdn-assets.alltrails.com/uploads/photo/image/22442045/extra_large_512b1bff9fffb8bb3b910b0f7420fc7d.jpg',
             'https://cdn-assets.alltrails.com/uploads/photo/image/21988151/extra_large_d14889b522a65d7c4eeb4860467f03a6.jpg'
           ]),
-          routeImage: 'https://www.google.com/maps/vt/data=nIlRrlj_6wDUFR3JPBb0WHZxXR1pV49EwBhHne2iixGnsh2vKKSip30n8E9F7VQKbIKg9raKKEa4L48cHkEKD_TWLChqzqu47TI1bCE4zFa_uFArO5hZBOUN56iRHv9qJysRovoJmLu9G8EcWMXvNggV16hDLz6hCtwsldrAnCI57LSn-oKmUMisSic5BOwY230SdnCCeHJdCk-em7lP3vyPwRgW3t6nlqb2ed74P2hNT1RStNNqTL--hpoV6Fd2MY-n76VSMw',
+          routeImage: 'images/ORAKEI WALKWAY.png',
           distance: '3.1Kms',
           elevationGain: 24,
           timeTaken: '1 Hour',
@@ -205,7 +205,7 @@ exports.seed = function (knex) {
             'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/grannys_bay_beach_on_the_long_bay_regional_park_coastal_track_in_auckland_3.jpg?itok=c95OICx4',
             'https://www.freewalks.nz/sites/www.freewalks.nz/files/styles/full__desktop/public/images/tracks/pohutukawa_bay_beach_on_the_long_bay_regional_park_coastal_track_walk_in_auckland_3.jpg?itok=Yn9UJw5w'
         ]),
-          routeImage: 'https://i.imgur.com/hNLnrpt.jpg',
+          routeImage: 'images/Regional Park Coastal Walk.png',
           distance: '3.1Kms',
           elevationGain: 24,
           timeTaken: '1 Hour',
