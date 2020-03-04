@@ -79,6 +79,7 @@ class Details extends Component {
 
           <ul className="details-info">
             <div className='details-info-text'>
+              <li>{`Name: ${selectedWalk.title}`}</li>
               <li>{`Location: ${selectedWalk.location}`}</li>
               <li>{`Distance: ${selectedWalk.distance}`}</li>
               <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>

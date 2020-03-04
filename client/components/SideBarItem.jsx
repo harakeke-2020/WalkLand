@@ -33,7 +33,7 @@ class SideBarItem extends Component {
           }}
         >
           <h2 className='item-title' data-testid={'sideBarTitle'}> {title} </h2>
-          {walkAverage ? <p className='sidebar-rating' data-testid={'rating'}>rating: {Math.round((walkAverage + Number.EPSILON) * 100) / 100}</p> : <p>No rating yet</p>}
+          {walkAverage ? <p className='sidebar-rating' data-testid={'rating'}>Rating: {Math.round((walkAverage + Number.EPSILON) * 100) / 100}</p> : <p>No rating yet</p>}
         <p className='sidebar-distance'>Distance: {distance}</p>
           { selectedWalkState.id === id &&
         <>
