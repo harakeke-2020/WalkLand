@@ -36,7 +36,6 @@ export function registerUserAndLogin (user) {
           dispatch(setError(data.message))
           dispatch(loginUser(res.req._data.username))
         } else {
-          console.log(data.statusText)
           return request.post('http://localhost:3000/api/v1/auth/loginUser')
             .send({ username: user.username, password: user.password })
             .then(res => {
@@ -47,7 +46,6 @@ export function registerUserAndLogin (user) {
         }
       })
       .catch(err => {
-        console.log('in catch of register thunk function ', err.message)
         dispatch(setError(err.message))
         throw err
       })
@@ -63,13 +61,11 @@ export function justLogin (user) {
           console.log(res.message)
           dispatch(setError(res.message))
         } else {
-          console.log(res.body.message)
           localStorage.setItem('token', res.body.token)
           dispatch(loginUser(res.req._data.username))
         }
       })
       .catch(err => {
-        console.log(err.message)
         dispatch(setError(err.message))
         throw err
       })
@@ -83,7 +79,6 @@ export function deleteProfile (username) {
       .set('authorization', `bearer ${localStorage.token}`)
       .then(res => {
         dispatch(deleteUser())
-        console.log(res.statusText)
       })
       .catch(err => {
         dispatch(setError(err.message))
