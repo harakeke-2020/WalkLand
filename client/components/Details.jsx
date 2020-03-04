@@ -37,10 +37,12 @@ class Details extends Component {
     const { ratings } = this.props
     const idWalk = selectedWalk.id
     const reviewsArray = ratings.filter(rating => rating.walkId === idWalk).map(data => {
+      const stars = new Array(data.rating).fill('star')
       return {
         rating: data.rating,
         review: data.review,
-        author: data.username
+        author: data.username,
+        stars
       }
     })
     const authorsArray = reviewsArray.map(review => review.author)
@@ -55,8 +57,6 @@ class Details extends Component {
       centerPadding: '0px',
       arrows: false
     }
-
-    const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
 
     return (
 
@@ -92,9 +92,15 @@ class Details extends Component {
           <div className='details-reviews'>
             <ul>
               {reviewsArray.length > 0
-                ? reviewsArray.map((item, idx) => (
-                   <>
+                ? reviewsArray.map((item, idx) =>
+                  <>
                     <li key={idx}>
+                      <ul>
+                        {
+                          item.stars.length > 0 &&
+                          item.stars.map((star, idx) => <li key={idx}>star</li>)
+                        }
+                      </ul>
                       <span>Rating: {item.rating}</span>
                       <span>Review: {item.review}</span>
                       <span>Author: <a href="/#/" onClick={() => {
@@ -103,7 +109,7 @@ class Details extends Component {
                       }}>{item.author}</a></span>
                     </li>
                     </>
-                ))
+                )
                 : <p>No reviews yet</p>
               }
             </ul>
