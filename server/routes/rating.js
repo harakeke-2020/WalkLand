@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
   db.findUser(req.body.username)
     .then(returnedUser => {
       const newObject = {
-        userId: returnedUser.id,
         walkId: req.body.walkId,
         username: req.body.username,
         rating: Number(req.body.rating),

@@ -15,7 +15,6 @@ export const Landing = (props) => {
       <div className="btn-group-wrap">
         <button data-testid="startButton" className="btn btn-primary btn-sm" onClick={() => props.activePage('map')}>START JOURNEY</button>
       </div>
-
     </>
   )
 }

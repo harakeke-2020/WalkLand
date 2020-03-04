@@ -16,7 +16,6 @@ class Details extends Component {
     rating: '',
     review: '',
     walkId: this.props.selectedWalk.id,
-    selectedWalk: null
   }
 
 
@@ -28,7 +27,7 @@ class Details extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.createReview({ ...this.state, username: this.props.login })
+    this.props.createReview({ ...this.state, username: this.props.login, walkId: this.props.selectedWalk.id })
       .then(() => this.setState({
         rating: '',
         review: ''
@@ -51,15 +50,15 @@ class Details extends Component {
     const authorsArray = reviewsArray.map(review => review.author)
     const reviewExists = authorsArray.indexOf(this.props.login)
 
-
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       centerMode: true,
-      centerPadding: '0px'
+      centerPadding: '0px',
+      arrows: false
     }
     return (
       <>
@@ -101,12 +100,12 @@ class Details extends Component {
                 }}>{item.author}</a></span>
               </li>
               </>
-              ))
-              : <p>No reviews yet</p>
-            }
+                ))
+                : <p>No reviews yet</p>
+              }
+            </ul>
           </ul>
-        </ul>
-        {reviewExists === -1 && this.props.login &&
+          {reviewExists === -1 && this.props.login &&
         <div>
           <form onSubmit={this.handleSubmit}>
             <h1>Submit your experience!</h1>
