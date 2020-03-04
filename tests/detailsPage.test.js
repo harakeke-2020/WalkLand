@@ -33,13 +33,57 @@ const mockData = [{
 test('loads and displays WalkLand ', () => {
   const { queryByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const details = queryByTestId('detailsTitle')
-  expect(details).toBeInTheDocument
+  expect(details).toHaveClass('details-content')
+  expect(details).toBeTruthy()
 })
 
-// test('Loads and displays description ', () => {
-//   const { getByTestId, rerender } = renderWithRedux(<Details selectedWalk={mockData}  />)
-//   const description = getByTestId('description')
-//   rerender(<Details selectedWalk={mockData}/>)
-//   expect(description).toBeInTheDocument()
-// })
+test('Loads and displays description ', () => {
+  const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
+  const routeImage = getByTestId('image')
+  expect(routeImage).toHaveClass('details-map')
+  expect(routeImage).toHaveAttribute('height')
+  expect(routeImage).toHaveAttribute('width')
+  expect(routeImage).toBeInTheDocument()
+  expect(routeImage).toBeTruthy()
+})
+
+
+test('user can see slider ', () => {
+  const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
+  const description = getByTestId('slider')
+  expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
+})
+
+test('Loads and displays description ', () => {
+  const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
+  const description = getByTestId('description')
+  expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
+})
+
+test('Loads and displays description ', () => {
+  const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
+  const description = getByTestId('ul')
+  expect(description).toHaveClass('details-info')
+  expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
+
+})
+
+test('Loads and displays description ', () => {
+  const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
+  const description = getByTestId('grid')
+  expect(description).toHaveClass('hamish-reviews-grid')
+  expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
+})
+
+test('Loads and displays description ', () => {
+  const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
+  const description = getByTestId('review')
+  expect(description).toHaveTextContent('No reviews yet')
+  expect(description).toBeInTheDocument()
+  expect(description).toBeTruthy()
+})
 
