@@ -10,7 +10,7 @@
 }
 
 .items-container {
-  background-color: whitesmoke;
+  background-color:#EAE7E7;
   grid-column: 1 / 4;
   grid-row: 2 / -1;
   max-height: 100%;

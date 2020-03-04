@@ -1,11 +1,13 @@
 
-body {
+.title-background {
   background-image: url('../images/Landingpage.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
   background-color:#464646;
+  z-index: -110;
+  height: 100vh;
 }
 
 
