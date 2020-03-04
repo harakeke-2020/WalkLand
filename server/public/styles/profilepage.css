@@ -19,21 +19,34 @@
   .profile-header-btn-group {
     display    : inline-block;
     height     : 100%;
-    margin-left: 50%;
+    /* margin-left: 50%; */
   }
 
   .profile-header-btn {
     background-color: rgb(155, 155, 155);
     border-style    : none;
     border-radius   : 0px;
-    color           : white;
+    /* color           : white; */
     text-align      : center;
     display         : inline-block;
     height          : 100%;
   }
 
   .profile-header-btn:hover {
-    background-color: rgb(116, 116, 116);
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+
+  .hamish-del-btn {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    height: inherit !important;
+  }
+
+  .hamish-del-btn:hover {
+    width: 10em;
+    font-size: 1.1em;
   }
 
   .profile-top {

@@ -1,6 +1,5 @@
 import React from 'react'
 import renderWithRedux from '../tests/renderWithRedux'
-import { render, fireEvent, queryByTestId, getByTestId } from '@testing-library/react'
 import  { DisplayMap as Map } from '../client/components/DisplayMap'
 
 const mockData = [{

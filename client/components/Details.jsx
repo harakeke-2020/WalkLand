@@ -62,22 +62,22 @@ class Details extends Component {
       <div className="details-container">
         <div className = "details-walktitle">
         </div>
-        <div className = "details-photo-slider">
+        <div data-testid={'slider'} className = "details-photo-slider">
           <Slider {...settings} >
             {
               selectedWalk.photos && selectedWalk.photos.map((item, idx) => (
-                <img className = "details-photos" key={idx} src={item} />
+                <img  className = "details-photos" key={idx} src={item} />
               ))
             }
           </Slider >
         </div>
-        <div className="details-content">
-          <div data-testid={'description'} className="details-text">
-            <p> {`${selectedWalk.description}`} </p>
+        <div data-testid={'detailsTitle'} className="details-content">
+          <div className="details-text">
+            <p data-testid={'description'}> {`${selectedWalk.description}`} </p>
           </div>
-          <img className="details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
+          <img data-testid={'image'} className="details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
 
-          <ul className="details-info">
+          <ul data-testid={'ul'} className="details-info">
             <div className='details-info-text'>
               <li>{`Name: ${selectedWalk.title}`}</li>
               <li>{`Location: ${selectedWalk.location}`}</li>
@@ -90,7 +90,7 @@ class Details extends Component {
           </ul>
 
           <div className='hamish-reviews-wrapper'>
-            <ul className='hamish-reviews-grid'>
+            <ul data-testid={'grid'} className='hamish-reviews-grid'>
               {reviewsArray.length > 0
                 ? reviewsArray.map((item, idx) =>
                   <>
@@ -98,10 +98,10 @@ class Details extends Component {
                       <ul className="hamish-stars-ul">
                         {
                           item.stars.length > 0 &&
-                          item.stars.map((star, idx) => <img key={idx} className="hamish-stars-li" width="25" src="https://image.flaticon.com/icons/svg/148/148841.svg" alt="Image of star"/>)
+                          item.stars.map((star, idx) => <img  key={idx} className="hamish-stars-li" width="25" src="https://image.flaticon.com/icons/svg/148/148841.svg" alt="Image of star"/>)
                         }
                       </ul>
-                      <span className="card-text" ><span className="hamish-bold">Review</span>: {item.review}</span><br></br>
+                      <span  className="card-text" ><span className="hamish-bold">Review</span>: {item.review}</span><br></br>
                       <span className="card-text"><span className="hamish-bold">Author:</span> <a href="/#/" onClick={() => {
                         this.props.activePage('profile')
                         this.props.viewProfile(item.author, true)
@@ -109,16 +109,16 @@ class Details extends Component {
                     </li>
                     </>
                 )
-                : <p>No reviews yet</p>
+                : <p data-testid={'review'}>No reviews yet</p>
               }
             </ul>
           </div>
 
-          {reviewExists === -1 && this.props.login &&
-        <div className="details-form">
+          { reviewExists === -1 && this.props.login &&
+        <div data-testid={'form'} className="details-form">
           <form onSubmit={this.handleSubmit}>
             <h3>Share your experience!</h3>
-            <label className="right-margin">Rating</label>
+            <label  className="right-margin">Rating</label>
             <input
               type='number'
               min='1'
@@ -136,14 +136,16 @@ class Details extends Component {
               value={this.state.review}
               onChange={this.handleChange}
             /><br/>
-            <input type='hidden' value={this.props.selectedWalk.id} name="walkId" />
+            <input  type='hidden' value={this.props.selectedWalk.id} name="walkId" />
             <input type='hidden' value={this.props.login} name="username" />
             <button name = "submitReview" type='submit'>Submit Review</button>
           </form>
         </div>
           }
         </div>
+  
       </div>
+        
     )
   }
 }

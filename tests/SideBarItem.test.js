@@ -1,6 +1,6 @@
 import React from 'react'
 import renderWithRedux from '../tests/renderWithRedux'
-import { render, fireEvent, queryByTestId } from '@testing-library/react'
+import { fireEvent } from '@testing-library/react'
 import { SideBarItem } from '../client/components/SideBarItem'
 
 const mockOnClick = jest.fn()
@@ -82,23 +82,6 @@ test('Title is visible and contains correct title', async () => {
     expect(sideTitle).toBeVisible()
     expect(sideTitle).toBeTruthy()
   })
-
-  // test('Tests that the rating displays', async () => { 
-  //   const ratings = [1]   
-  //     const { getByTestId } = renderWithRedux(
-  //     <SideBarItem selectedWalk={mockOnClick}
-  //       activePage={mockOnClick}
-  //       walk={data}
-  //       selectedWalkState={data}
-  //       ratings={rating} 
-  //     />)
-  //     const walkRating = getByTestId('rating')
-
-  //     expect(walkRating).toHaveTextContent('rating')
-  //     expect(walkRating).toBeInTheDocument()
-  //     expect(walkRating).toBeVisible()
-  //     expect(walkRating).toBeTruthy()
-  //   })
 
     test('Component has background & background is visible', async () => {    
       const { getByTestId } = renderWithRedux(
