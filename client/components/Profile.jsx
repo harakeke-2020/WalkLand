@@ -33,13 +33,13 @@ class Profile extends Component {
             <div className="profile-header">
               <img className='profile-logo' src='images/mainlogo.png' />
               <div className="profile-header-btn-group">
-                <button name = "home" className="profile-header-btn" onClick={() => this.props.activePage('map')}>Home</button>
-                {this.compareHandler() ? <button name = "settings" className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button> : null}
-                <button name = "reviews" className="profile-header-btn" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>
+                <button name = "home" className="profile-header-btn btn btn-link" onClick={() => this.props.activePage('map')}>Home</button>
+                {this.compareHandler() && this.state.currentPage === 'reviews' && <button name = "settings" className="profile-header-btn btn btn-link" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button>}
+                {this.state.currentPage === 'settings' && <button name = "reviews" className="profile-header-btn btn btn-link" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>}
               </div>
             </div>
 
-            <div className="profile-top">Home
+            <div className="profile-top">
               <div className="profile-top-children">
                 <ProfileBanner user={this.props.outsideUser.username} welcome={`You are viewing ${this.props.outsideUser.username}'s profile`} />
               </div>
