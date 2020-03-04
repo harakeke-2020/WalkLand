@@ -114,9 +114,9 @@ class Details extends Component {
             </ul>
           </div>
 
-          { reviewExists && reviewExists === -1 && this.props.login &&
-        <div className="details-form">
-          <form data-testid={'form'} onSubmit={this.handleSubmit}>
+          { reviewExists === -1 && this.props.login &&
+        <div data-testid={'form'} className="details-form">
+          <form onSubmit={this.handleSubmit}>
             <h3>Share your experience!</h3>
             <label  className="right-margin">Rating</label>
             <input
@@ -143,7 +143,9 @@ class Details extends Component {
         </div>
           }
         </div>
+  
       </div>
+        
     )
   }
 }
