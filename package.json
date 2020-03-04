@@ -21,7 +21,7 @@
     "db:reset": "run-s db:delete db:migrate db:seed",
     "walkland": "run-s db:migrate db:seed dev",
     "nightwatch": "nightwatch",
-    "e2e": "run-s db:migrate db:seed nightwatch"
+    "e2e": "run-s db:migrate db:seed test nightwatch"
   },
   "babel": {
     "presets": [
