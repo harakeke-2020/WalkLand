@@ -41,8 +41,8 @@ class NavBar extends React.Component {
 
           : <div id="nav" className="not-logged-in">
             <div className="login-text">
-              <a href="/#/" onClick={this.loginClickHandler}>Login</a>
-              <a href="/#/" onClick={this.registerClickHandler}>Register</a>
+              <a id = "loginLink" href="/#/" onClick={this.loginClickHandler}>Login</a>
+              <a id = "registerLink" href="/#/" onClick={this.registerClickHandler}>Register</a>
             </div>
           </div>
         }
