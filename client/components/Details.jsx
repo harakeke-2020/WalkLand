@@ -45,7 +45,6 @@ class Details extends Component {
     })
     const authorsArray = reviewsArray.map(review => review.author)
     const reviewExists = authorsArray.indexOf(this.props.login)
-
     const settings = {
       dots: false,
       infinite: true,
@@ -88,25 +87,28 @@ class Details extends Component {
               <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
               <li>{`Surface: ${selectedWalk.surface}`}</li>
             </div>
-            <ul>
+          </ul>
 
+          <div className='details-reviews'>
+            <ul>
               {reviewsArray.length > 0
                 ? reviewsArray.map((item, idx) => (
-              <>
-              <li key={idx}>
-                <span>Rating: {item.rating}</span>
-                <span>Review: {item.review}</span>
-                <span>Author: <a href="/#/" onClick={() => {
-                  this.props.activePage('profile')
-                  this.props.viewProfile(item.author, true)
-                }}>{item.author}</a></span>
-              </li>
-              </>
+                   <>
+                    <li key={idx}>
+                      <span>Rating: {item.rating}</span>
+                      <span>Review: {item.review}</span>
+                      <span>Author: <a href="/#/" onClick={() => {
+                        this.props.activePage('profile')
+                        this.props.viewProfile(item.author, true)
+                      }}>{item.author}</a></span>
+                    </li>
+                    </>
                 ))
                 : <p>No reviews yet</p>
               }
             </ul>
-          </ul>
+          </div>
+
           {reviewExists === -1 && this.props.login &&
         <div>
           <form onSubmit={this.handleSubmit}>
