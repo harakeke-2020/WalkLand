@@ -32,6 +32,7 @@ export const DisplayMap = (props) =>{
   
     return (
       <>
+      <div data-testid="loadMap">
           <Map
             google={props.google}
             zoom={11}
@@ -42,6 +43,7 @@ export const DisplayMap = (props) =>{
             {bounceMarker()}
           
           </Map>
+          </div>
       </>
     )
   }
