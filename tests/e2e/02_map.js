@@ -10,7 +10,7 @@ this.checkSideBar = function (browser) {
 
   browser
     .expect.element('.sidebar-item p')
-    .text.to.contain('rating')
+    .text.to.contain('Rating')
 
   browser
     .click('.sidebar-item')
@@ -24,7 +24,7 @@ this.checkSideBarItem = function (browser) {
     .click('button[name=landingButton]')
     .waitForElementVisible('.items-container', 1000)
     .click('.sidebar-item')
-    .expect.element('button[name=showDetials]').to.be.visible
+    .expect.element('button[name=showDetails]').to.be.visible
     // .waitForElementVisible('button[name=showDetials]', 1000)
 }
 
