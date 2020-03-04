@@ -14,7 +14,7 @@
   grid-row: 2 / -1; 
   display: grid;
   grid-template-columns:  repeat(12, minmax(0, 1fr));
-  grid-template-rows: 600px 200px 600px 300px 
+  grid-template-rows: auto 200px 600px 300px 
 }
 
 .details-walktitle {
@@ -40,6 +40,7 @@
 }
 
 .details-info {
+  display: grid;
   grid-column: 7 / 13;
   grid-row: 1 / 2; 
   list-style-type:none;
@@ -51,7 +52,10 @@
   font-size: 20px;
   letter-spacing: 1px;
   line-height: 2em;
-  align-self: center;
+}
+
+.details-info-text {
+align-self: center;
 }
 .details-text {
   grid-column: 1 / -1;
