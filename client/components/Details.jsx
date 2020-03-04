@@ -15,8 +15,7 @@ let slideIndex = 1
 class Details extends Component {
   state = {
     rating: '',
-    review: '',
-    walkId: this.props.selectedWalk.id
+    review: ''
   }
 
   handleChange = e => {
@@ -26,8 +25,9 @@ class Details extends Component {
   }
 
   handleSubmit = e => {
+    console.log('given to submit, ', this.state)
     e.preventDefault()
-    this.props.createReview({ ...this.state, username: this.props.login })
+    this.props.createReview({ ...this.state, username: this.props.login, walkId: this.props.selectedWalk.id })
       .then(() => this.setState({
         rating: '',
         review: ''
@@ -49,7 +49,6 @@ class Details extends Component {
     })
     const authorsArray = reviewsArray.map(review => review.author)
     const reviewExists = authorsArray.indexOf(this.props.login)
-    console.log('currently logged in user ', this.props.login)
 
     const settings = {
       dots: true,
