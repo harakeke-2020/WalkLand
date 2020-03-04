@@ -39,7 +39,7 @@ class Profile extends Component {
               </div>
             </div>
 
-            <div className="profile-top">Home
+            <div className="profile-top">
               <div className="profile-top-children">
                 {this.props.outsideUser.isViewing ? <ProfileBanner user={this.props.outsideUser.username} welcome={`You are viewing ${this.props.outsideUser.username}'s profile`} /> : <ProfileBanner user={this.props.username} welcome={`Welcome, ${this.props.username}!`} />}
               </div>

@@ -22,7 +22,7 @@ class ProfileReviews extends Component {
         <div className="profile-bot-container-left">
           <div className="profile-bot-content-card">
             <div className="profile-card-top">
-              Image of Walk: <img className="profile-walk-image" src={reviewsArr[0] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[0].props.children).mainPhoto} /><br />
+              <img className="profile-walk-image" src={reviewsArr[0] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[0].props.children).mainPhoto} /><br />
             </div>
             <div className="profile-card-bot">
               Walk name: {reviewsArr[0] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[0].props.children).title} <br />
@@ -35,7 +35,7 @@ class ProfileReviews extends Component {
         {reviewsArr[3] === undefined ? null : <div className="profile-bot-container-mid">
           <div className="profile-bot-content-card">
             <div className="profile-card-top">
-              Image of Walk: <img className="profile-walk-image" src={reviewsArr[3] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[3].props.children).mainPhoto} /><br />
+              <img className="profile-walk-image" src={reviewsArr[3] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[3].props.children).mainPhoto} /><br />
             </div>
             <div className="profile-card-bot">
               Walk name: {reviewsArr[3] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[3].props.children).title} <br />
@@ -49,7 +49,7 @@ class ProfileReviews extends Component {
         {reviewsArr[6] === undefined ? null : <div className="profile-bot-container-right">
           <div className="profile-bot-content-card">
             <div className="profile-card-top">
-              Image of Walk: <img className="profile-walk-image" src={reviewsArr[6] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[6].props.children).mainPhoto} /><br />
+              <img className="profile-walk-image" src={reviewsArr[6] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[6].props.children).mainPhoto} /><br />
             </div>
             <div className="profile-card-bot">
               Walk name: {reviewsArr[6] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[6].props.children).title} <br />

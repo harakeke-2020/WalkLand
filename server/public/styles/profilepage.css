@@ -54,7 +54,7 @@
   .profile-top {
     grid-area       : profile-top;
     background-color: #f4f4f4;
-    padding         : 30px;
+    padding         : 35px 140px;
     /* border-style : groove;
     border-color    : rgb(204, 204, 204);
     border-width    : 0.1px; */
@@ -81,7 +81,7 @@
 
   .profile-top-content-left {
     background: white;
-    padding   : 10%;
+    padding   : 150px 50px;
   }
 
   .profile-cover-image {
@@ -94,6 +94,9 @@
     display              : grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
+    padding-right: 170px;
+    padding-left: 170px;
+    padding-bottom: 50px;
     /* grid-template-rows   : 100%;
     grid-template-areas  :
 
