@@ -72,12 +72,12 @@ class Details extends Component {
           </Slider >
         </div>
         <div className="details-content">
-          <div className = "details-text">
+          <div className="details-text">
             <p> {`${selectedWalk.description}`} </p>
           </div>
-          <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
+          <img className="details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
 
-          <ul className = "details-info">
+          <ul className="details-info">
             <div className='details-info-text'>
               <li>{`Location: ${selectedWalk.location}`}</li>
               <li>{`Distance: ${selectedWalk.distance}`}</li>

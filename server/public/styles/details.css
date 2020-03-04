@@ -87,6 +87,9 @@ align-self: center;
   grid-column: 1 / -1;
   grid-row: 2 / 3; 
   font-size: 20px;
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
 }
 
 .details-photos {
