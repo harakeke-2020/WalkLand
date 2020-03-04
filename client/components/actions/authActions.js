@@ -39,7 +39,6 @@ export function registerUserAndLogin (user) {
           return request.post('http://localhost:3000/api/v1/auth/loginUser')
             .send({ username: user.username, password: user.password })
             .then(res => {
-              console.log(res.req._data.username)
               localStorage.setItem('token', res.body.token)
               dispatch(loginUser(res.req._data.username))
             })

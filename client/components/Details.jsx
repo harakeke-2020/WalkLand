@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createReview } from './actions/reviewWalks'
 import { create } from 'react-test-renderer'
-// import { Carousel } from 'react-responsive-carousel'
 import Slider from 'react-slick'
 import activePage from './actions/activePage'
 import viewProfile from './actions/viewProfile'
@@ -66,20 +65,21 @@ class Details extends Component {
         <div className = "details-photo-slider">
           <Slider {...settings} >
             {
-              selectedWalk.photos.map((item, idx) => (
+              selectedWalk.photos && selectedWalk.photos.map((item, idx) => (
                 <img className = "details-photos" key={idx} src={item} />
               ))
             }
           </Slider >
         </div>
         <div className="details-content">
-          <div className = "details-text">
+          <div data-testid={'description'} className="details-text">
             <p> {`${selectedWalk.description}`} </p>
           </div>
-          <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
+          <img className="details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
 
-          <ul className = "details-info">
+          <ul className="details-info">
             <div className='details-info-text'>
+              <li>{`Name: ${selectedWalk.title}`}</li>
               <li>{`Location: ${selectedWalk.location}`}</li>
               <li>{`Distance: ${selectedWalk.distance}`}</li>
               <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
@@ -94,7 +94,7 @@ class Details extends Component {
               {reviewsArray.length > 0
                 ? reviewsArray.map((item, idx) =>
                   <>
-                    <li className="card card-body hamish-review-card" key={idx}>
+                    <li id="tomId" className="card card-body hamish-review-card" key={idx}>
                       <ul className="hamish-stars-ul">
                         {
                           item.stars.length > 0 &&
@@ -115,11 +115,10 @@ class Details extends Component {
           </div>
 
           {reviewExists === -1 && this.props.login &&
-        <div>
+        <div className="details-form">
           <form onSubmit={this.handleSubmit}>
-            <h1>Submit your experience!</h1>
-            <p>Be a part of the experience</p>
-            <label>Rating</label>
+            <h3>Share your experience!</h3>
+            <label className="right-margin">Rating</label>
             <input
               type='number'
               min='1'
@@ -130,17 +129,16 @@ class Details extends Component {
               onChange={this.handleChange}
             /><br/>
 
-            <label>Review</label>
-            <input
+            <textarea
               type='text'
               name='review'
-              placeholder='Review'
+              placeholder='Add Review...'
               value={this.state.review}
               onChange={this.handleChange}
             /><br/>
             <input type='hidden' value={this.props.selectedWalk.id} name="walkId" />
             <input type='hidden' value={this.props.login} name="username" />
-            <button type='submit'>Submit Review</button>
+            <button name = "submitReview" type='submit'>Submit Review</button>
           </form>
         </div>
           }

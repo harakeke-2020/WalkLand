@@ -184,7 +184,7 @@ exports.seed = function (knex) {
             'https://cdn-assets.alltrails.com/uploads/photo/image/22442045/extra_large_512b1bff9fffb8bb3b910b0f7420fc7d.jpg',
             'https://cdn-assets.alltrails.com/uploads/photo/image/21988151/extra_large_d14889b522a65d7c4eeb4860467f03a6.jpg'
           ]),
-          routeImage: 'https://www.google.com/maps/vt/data=nIlRrlj_6wDUFR3JPBb0WHZxXR1pV49EwBhHne2iixGnsh2vKKSip30n8E9F7VQKbIKg9raKKEa4L48cHkEKD_TWLChqzqu47TI1bCE4zFa_uFArO5hZBOUN56iRHv9qJysRovoJmLu9G8EcWMXvNggV16hDLz6hCtwsldrAnCI57LSn-oKmUMisSic5BOwY230SdnCCeHJdCk-em7lP3vyPwRgW3t6nlqb2ed74P2hNT1RStNNqTL--hpoV6Fd2MY-n76VSMw',
+          routeImage: 'images/orakeiWalkway.png',
           distance: '3.1Kms',
           elevationGain: 24,
           timeTaken: '1 Hour',

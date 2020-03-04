@@ -14,7 +14,6 @@ this.landingPageLogo = function (browser) {
     .waitForElementVisible('.logo')
     .expect.element('.logo img').to.be.present
   browser
-    .url(urlLink)
     .waitForElementVisible('button[name=landingButton]')
     .expect.element('button[name=landingButton]').to.have.attribute('name')
 }
@@ -24,7 +23,7 @@ this.clickStartButton = function (browser) {
     .url(urlLink)
     .waitForElementVisible('button[name=landingButton]', 1000)
     .click('button[name=landingButton]')
-    .waitForElementVisible('map', 1000)
+    .waitForElementVisible('map', 5000)
     .waitForElementVisible('.logo-nav-container', 1000)
     .waitForElementVisible('.sidebar-container', 1000)
 }

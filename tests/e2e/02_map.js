@@ -1,18 +1,5 @@
 const urlLink = process.env.TEST_URL || 'http://localhost:3000'
 
-// this.clickmapIcon = function (browser) {
-//   browser
-//     .url(urlLink)
-//     .click('button[name=landingButton]')
-//     .waitForElementVisible('#gmimap0', 3000)
-//     .waitForElementVisible('#gmimap0 area', 3000)
-//     .moveToElement('#gmimap0 area', 10, 10)
-//     .mouseButtonClick()
-//   browser
-//     .url(urlLink)
-
-//   // .waitForElementVisible('button[name=showDetials]', 3000)
-// }
 this.checkSideBar = function (browser) {
   browser
     .url(urlLink)
@@ -22,17 +9,10 @@ this.checkSideBar = function (browser) {
     .count.to.equal(10)
 
   browser
-    .url(urlLink)
-    .click('button[name=landingButton]')
-    .waitForElementVisible('.items-container', 1000)
-    .waitForElementVisible('.sidebar-item p', 1000)
     .expect.element('.sidebar-item p')
-    .text.to.contain('rating')
+    .text.to.contain('Rating')
 
   browser
-    .url(urlLink)
-    .click('button[name=landingButton]')
-    .waitForElementVisible('.items-container', 1000)
     .click('.sidebar-item')
     .expect.elements('.sidebar-item')
     .count.to.equal(9)
@@ -44,6 +24,7 @@ this.checkSideBarItem = function (browser) {
     .click('button[name=landingButton]')
     .waitForElementVisible('.items-container', 1000)
     .click('.sidebar-item')
-    .expect.element('button[name=showDetials]').to.be.visible
+    .expect.element('button[name=showDetails]').to.be.visible
     // .waitForElementVisible('button[name=showDetials]', 1000)
 }
+
