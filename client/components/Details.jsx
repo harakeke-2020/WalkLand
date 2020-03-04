@@ -80,13 +80,13 @@ class Details extends Component {
           <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
 
           <ul className = "details-info">
-          <div className='details-info-text'>
-            <li>{`Location: ${selectedWalk.location}`}</li>
-            <li>{`Distance: ${selectedWalk.distance}`}</li>
-            <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
-            <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
-            <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-            <li>{`Surface: ${selectedWalk.surface}`}</li>
+            <div className='details-info-text'>
+              <li>{`Location: ${selectedWalk.location}`}</li>
+              <li>{`Distance: ${selectedWalk.distance}`}</li>
+              <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
+              <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
+              <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+              <li>{`Surface: ${selectedWalk.surface}`}</li>
             </div>
             <ul>
 
