@@ -8,8 +8,9 @@ import '@babel/polyfill'
 
 test('loads and displays WalkLand ', async () => {
   const { getByTestId } = renderWithRedux(<LandingPage />)
-  const title = getByTestId('title')
-  expect(title).toHaveTextContent('Walkland')
+  const title = getByTestId('image')
+  expect(title).toHaveAttribute('src')
+  expect(title).toBeInTheDocument()
 })
 
 test('The main button has the correct text and is present ', async () => {
@@ -28,9 +29,9 @@ test('should call props.onClick when clicked', async () => {
 
 test('video exsists', async () => {
   const { getByTestId } = renderWithRedux(<LandingPage />)
-  const video = getByTestId('video')
+  const video = getByTestId('logo')
   expect(video).toBeInTheDocument()
-  expect(video).toHaveAttribute('src')
+  expect(video).toHaveClass('logo')
 })
 
 test('video has className fullscreen-bg', async () => {
