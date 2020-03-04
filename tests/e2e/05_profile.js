@@ -17,7 +17,7 @@ this.checkProfile = function (browser) {
 
 }
 
-this.checkProfile = function (browser) {
+this.deleteProfile = function (browser) {
   const user = 'dank45'
   // eslint-disable-next-line no-unused-expressions
   browser

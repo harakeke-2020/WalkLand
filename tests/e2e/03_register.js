@@ -28,11 +28,11 @@ this.checkRegisterPopUp = function (browser) {
   // eslint-disable-next-line no-unused-expressions
   browser
     .waitForElementVisible('button[name=logOut]', 2000)
-    .expect.element('button[name=logOut]').to.be.visible
+    .expect.element('#logOut4').to.be.present
   // eslint-disable-next-line no-unused-expressions
   browser
     .click('button[name=logOut]')
-    .expect.element('button[name=logOut]').to.not.be.found
+    .expect.element('#logOut4').to.not.be.present
 }
 
 // this.checkRegisterPopUp = function (browser) {
