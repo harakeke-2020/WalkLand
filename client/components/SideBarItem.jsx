@@ -28,13 +28,13 @@ export const SideBarItem = (props) => {
         }}
       >
         <h2 data-testid={'sideBarTitle'}> {title} </h2>
-        {!!walkAverage ? <p data-testid={'rating'}>rating: {walkAverage}</p> : <p>No rating yet</p>}
+        {walkAverage ? <p data-testid={'rating'}>rating: {walkAverage}</p> : <p>No rating yet</p>}
         { selectedWalkState.id === id &&
         <>
         {activePageState === 'details' &&
-        <button data-testid='showMap' onClick={() => activePage('map')}>Show Map</button>}
+        <button data-testid='showMap' name = 'showMap' onClick={() => activePage('map')}>Show Map</button>}
         {activePageState === 'map' &&
-        <button data-testid="showDetails" onClick={() => activePage('details') }>Show Details</button>}
+        <button data-testid="showDetails" name = 'showDetials' onClick={() => activePage('details') }>Show Details</button>}
         </>
         }
       </div>

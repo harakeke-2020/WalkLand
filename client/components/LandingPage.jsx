@@ -13,7 +13,7 @@ export const Landing = (props) => {
         <img src="images/Logowalkland white.png"></img>
       </div>
       <div className="btn-group-wrap">
-        <button data-testid="startButton" className="btn btn-primary btn-sm" onClick={() => props.activePage('map')}>START JOURNEY</button>
+        <button name = 'landingButton' data-testid="startButton" className="btn btn-primary btn-sm" onClick={() => props.activePage('map')}>START JOURNEY</button>
       </div>
 
     </>
