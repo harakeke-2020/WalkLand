@@ -45,3 +45,36 @@
   color: white;
 }
 
+.hamish-reviews-wrapper {
+  grid-column: 2 / -2;
+  grid-row: 3 / 4;
+}
+
+.hamish-reviews-grid {
+  padding-inline-start: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.hamish-review-card {
+  /* display: inline-block;
+  float: left; */
+  width: 33.33% !important;
+  max-width: 33.33%;
+  /* background: white;
+  padding: 10px; */
+}
+
+.hamish-stars-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-inline-start: 0px;
+}
+
+.hamish-bold {
+  font-weight: bold;
+}
+

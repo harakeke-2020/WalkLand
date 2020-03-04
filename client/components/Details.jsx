@@ -37,10 +37,12 @@ class Details extends Component {
     const { ratings } = this.props
     const idWalk = selectedWalk.id
     const reviewsArray = ratings.filter(rating => rating.walkId === idWalk).map(data => {
+      const stars = new Array(data.rating).fill('star')
       return {
         rating: data.rating,
         review: data.review,
-        author: data.username
+        author: data.username,
+        stars
       }
     })
     const authorsArray = reviewsArray.map(review => review.author)
@@ -55,8 +57,6 @@ class Details extends Component {
       centerPadding: '0px',
       arrows: false
     }
-
-    const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
 
     return (
 
@@ -89,21 +89,26 @@ class Details extends Component {
             </div>
           </ul>
 
-          <div className='details-reviews'>
-            <ul>
+          <div className='hamish-reviews-wrapper'>
+            <ul className='hamish-reviews-grid'>
               {reviewsArray.length > 0
-                ? reviewsArray.map((item, idx) => (
-                   <>
-                    <li key={idx}>
-                      <span>Rating: {item.rating}</span>
-                      <span>Review: {item.review}</span>
-                      <span>Author: <a href="/#/" onClick={() => {
+                ? reviewsArray.map((item, idx) =>
+                  <>
+                    <li className="card card-body hamish-review-card" key={idx}>
+                      <ul className="hamish-stars-ul">
+                        {
+                          item.stars.length > 0 &&
+                          item.stars.map((star, idx) => <img key={idx} className="hamish-stars-li" width="25" src="https://image.flaticon.com/icons/svg/148/148841.svg" alt="Image of star"/>)
+                        }
+                      </ul>
+                      <span className="card-text" ><span className="hamish-bold">Review</span>: {item.review}</span><br></br>
+                      <span className="card-text"><span className="hamish-bold">Author:</span> <a href="/#/" onClick={() => {
                         this.props.activePage('profile')
                         this.props.viewProfile(item.author, true)
                       }}>{item.author}</a></span>
                     </li>
                     </>
-                ))
+                )
                 : <p>No reviews yet</p>
               }
             </ul>
