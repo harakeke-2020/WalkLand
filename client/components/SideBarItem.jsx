@@ -4,14 +4,13 @@ import activePage from './actions/activePage'
 import selectedWalk from './actions/selectedWalk'
 import { getReviewRatings } from './actions/allWalks'
 
-class SideBarItem extends Component {
-  render () {
-    const walk = this.props.walk
+export const SideBarItem = (props) => {
+    const walk = props.walk
     const { id, title, mainPhoto } = walk
-    const { activePageState, selectedWalkState } = this.props
-    const { selectedWalk, activePage } = this.props
-    const walkRatings = this.props.ratings // array of ratings
-    const walkId = this.props.walk.id // id of walk passed down
+    const { activePageState, selectedWalkState } = props
+    const { selectedWalk, activePage } = props
+    const walkRatings = props.ratings // array of ratings
+    const walkId = props.walk.id // id of walk passed down
     const filterByWalk = walkRatings.filter(walk => walk.walkId === walkId)
     const walkAverage = filterByWalk.reduce((total, next) => total + Number(next.rating), 0) / filterByWalk.length
 
@@ -21,7 +20,7 @@ class SideBarItem extends Component {
 
     return (
       <div>
-        <div style={style}
+        <div data-testid={'style'} style={style}
           className={
             `${selectedWalkState.id === id ? 'selected-walk' : 'sidebar-item'}`
           }
@@ -45,7 +44,7 @@ class SideBarItem extends Component {
       </div>
     )
   }
-}
+
 const mapDispatchToProps = dispatch => {
   return {
     activePage: (destination) => dispatch(activePage(destination)),
