@@ -83,22 +83,22 @@ test('Title is visible and contains correct title', async () => {
     expect(sideTitle).toBeTruthy()
   })
 
-  test('Tests that the rating displays', async () => { 
-    const ratings = [1]   
-      const { getByTestId } = renderWithRedux(
-      <SideBarItem selectedWalk={mockOnClick}
-        activePage={mockOnClick}
-        walk={data}
-        selectedWalkState={data}
-        ratings={rating} 
-      />)
-      const walkRating = getByTestId('rating')
+  // test('Tests that the rating displays', async () => { 
+  //   const ratings = [1]   
+  //     const { getByTestId } = renderWithRedux(
+  //     <SideBarItem selectedWalk={mockOnClick}
+  //       activePage={mockOnClick}
+  //       walk={data}
+  //       selectedWalkState={data}
+  //       ratings={rating} 
+  //     />)
+  //     const walkRating = getByTestId('rating')
 
-      expect(walkRating).toHaveTextContent('rating')
-      expect(walkRating).toBeInTheDocument()
-      expect(walkRating).toBeVisible()
-      expect(walkRating).toBeTruthy()
-    })
+  //     expect(walkRating).toHaveTextContent('rating')
+  //     expect(walkRating).toBeInTheDocument()
+  //     expect(walkRating).toBeVisible()
+  //     expect(walkRating).toBeTruthy()
+  //   })
 
     test('Component has background & background is visible', async () => {    
       const { getByTestId } = renderWithRedux(
