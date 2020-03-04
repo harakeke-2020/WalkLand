@@ -21,7 +21,7 @@ class ProfileReviews extends Component {
     })
     
     return (
-      <div>
+      <>
       {console.log('reviewsArr: ', reviewsArr)}
       <div className="profile-bot-container-left">
       <div className="profile-bot-content-card">
@@ -50,16 +50,11 @@ class ProfileReviews extends Component {
       Image of Walk: <img src={reviewsArr[6] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[6].props.children).mainPhoto} /><br/>
       </div>
       </div>
-      </div>
+      </>
       )
     }
   }
 
-  // const userId = !!this.props.userId.id && this.props.userId.id
-  // const allRatings = this.props.ratings
-  // const allWalks = this.props.allWalks
-  // const reviewByUser = allRatings.filter(rating => rating.userId === userId)
-  
   const mapStateToProps = state => {
     return {
       ratings: state.ratings,
