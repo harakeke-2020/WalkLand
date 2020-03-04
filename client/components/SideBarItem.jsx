@@ -19,19 +19,19 @@ class SideBarItem extends Component {
       backgroundImage: `url(${mainPhoto})`
     }
 
-    return (
-      <div>
-        <div style={style}
-          className={
-            `${selectedWalkState.id === id ? 'selected-walk' : 'sidebar-item'}`
-          }
-          onClick={() => {
-            selectedWalk(walk)
-          }}
-        >
-          <h2 data-testid={'sideBarItem'}> {title} </h2>
-          <p data-testid={'rating'}>rating: {walkAverage}</p>
-          { selectedWalkState.id === id &&
+  return (
+    <div>
+      <div style={style}
+        className={
+          `${selectedWalkState.id === id ? 'selected-walk' : 'sidebar-item'}`
+        }
+        onClick={() => {
+          selectedWalk(walk)
+        }}
+      >
+        <h2 data-testid={'sideBarTitle'}> {title} </h2>
+        {!!walkAverage ? <p data-testid={'rating'}>rating: {Math.round((walkAverage + Number.EPSILON) * 100) / 100}</p> : <p>No rating yet</p>}
+        { selectedWalkState.id === id &&
         <>
 
         {activePageState === 'details' &&
