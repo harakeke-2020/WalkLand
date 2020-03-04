@@ -28,15 +28,3 @@ this.checkSideBarItem = function (browser) {
     // .waitForElementVisible('button[name=showDetials]', 1000)
 }
 
-// this.clickmapIcon = function (browser) {
-//   browser
-//     .url(urlLink)
-//     .click('button[name=landingButton]')
-//     .waitForElementVisible('#gmimap0', 3000)
-//     .waitForElementVisible('#gmimap0 area', 3000)
-//     .click('#gmimap0')
-//   browser
-//     .url(urlLink)
-
-  // .waitForElementVisible('button[name=showDetials]', 3000)
-

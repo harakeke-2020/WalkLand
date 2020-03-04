@@ -1,7 +1,8 @@
 const urlLink = process.env.TEST_URL || 'http://localhost:3000'
 
-this.checkProfile = function (browser) {
+this.createAReview = function (browser) {
   const user = 'dank45'
+  const walkInput = "good walk"
   // eslint-disable-next-line no-unused-expressions
   browser
     .url(urlLink)
@@ -18,8 +19,14 @@ this.checkProfile = function (browser) {
     .clearValue('input[name=rating]')
     .setValue('input[name=rating]', '4')
     .clearValue('input[name=review]')
-    .setValue('input[name=review]', 'good walk')
+    .setValue('input[name=review]', walkInput)
     .click('button[name=submitReview]')
     .expect.elements('#tomId')
     .count.to.equal(2)
+  browser
+    .expect.element('#tomId:nth-child(2)')
+    .text.to.contain(user)
+  browser
+    .expect.element('#tomId:nth-child(2)')
+    .text.to.contain(walkInput)
 }
