@@ -27,19 +27,6 @@ test('should call props.onClick when clicked', async () => {
   expect(mockOnClick).toHaveBeenCalledTimes(1)
 })
 
-test('video exsists', async () => {
-  const { getByTestId } = renderWithRedux(<LandingPage />)
-  const video = getByTestId('logo')
-  expect(video).toBeInTheDocument()
-  expect(video).toHaveClass('logo')
-})
-
-test('video has className fullscreen-bg', async () => {
-  const { getByTestId } = renderWithRedux(<LandingPage />)
-  const fullscreen = getByTestId('fullscreen')
-  expect(fullscreen).toHaveClass('fullscreen-bg')
-})
-
 test('button has classname ', async () => {
   const { getByTestId } = renderWithRedux(<LandingPage />)
   const startbutton = getByTestId('startButton')
