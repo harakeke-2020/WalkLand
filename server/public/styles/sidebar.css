@@ -1,7 +1,7 @@
 .sidebar-container {
   display: grid;
-  grid-template-rows: 80px 1fr;
-  grid-template-columns: 15px 1fr 15px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 50px 1fr 50px;
   background-color: whitesmoke;
   grid-column: 1 / 4;
   grid-row: 2 / -1;
@@ -26,23 +26,57 @@
 }
 
 .sidebar-item {
-  height: 95%;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr) ;
+  grid-template-columns: repeat(5, 1fr) 75px;
+  position: relative;
+  height: 125px;
   color: white;
   border-radius: 5px;
   transition: all ease-in-out 0.5s;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  margin: 10px;
+  margin: 15px;
+}
+
+.sidebar-item p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.sidebar-item h2 {
+  grid-column: 1 / 6;
+  grid-row: 1 / 2;
+  padding: 10px 0 0 10px;
+}
+
+.selected-walk h2 {
+  grid-column: 1 / 6;
+  grid-row: 1 / 2;
+  padding: 10px 0 0 10px;
+}
+.selected-walk p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.selected-walk button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .selected-walk {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr) ;
+  grid-template-columns: repeat(5, 1fr) 75px;
+  position: relative;
   color: white;
   border-radius: 5px;
   transition: all ease-in-out 0.5s;
   box-shadow: 3px 3px 3px #cccccc;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  margin-left: 10px;
+  margin: 10px;
+  height: 125px;
 }
 
 .sidebar-item:hover {
