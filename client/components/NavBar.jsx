@@ -39,7 +39,7 @@ class NavBar extends React.Component {
             <Logout />
           </div>
 
-          : <div className="not-logged-in">
+          : <div id="nav" className="not-logged-in">
             <div className="login-text">
               <a href="/#/" onClick={this.loginClickHandler}>Login</a>
               <a href="/#/" onClick={this.registerClickHandler}>Register</a>

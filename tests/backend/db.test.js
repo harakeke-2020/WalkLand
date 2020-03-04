@@ -15,7 +15,6 @@ test('expect getUsers to gets all 3 users', () => {
     .then(users => {
       expect(users.length).toBe(3)
     })
-    .catch(err => expect(err).toBeNull())
 })
 
 test('expect findUser to return one specific object', () => {
@@ -25,7 +24,6 @@ test('expect findUser to return one specific object', () => {
       expect(user.username).toEqual(testUser)
       expect(typeof user).toBe('object')
     })
-    .catch(err => expect(err).toBeNull())
 })
 
 // .insert returns the id of the new element
@@ -35,7 +33,6 @@ test('expect registerUser to add a 4th entry into the database', () => {
     .then(result => {
       expect(result[0]).toEqual(4)
     })
-    .catch(err => expect(err).toBeNull())
 })
 // .del returns 1 for success delete
 test('expect deleteUser to successfully delete a entry in the database', () => {
@@ -44,7 +41,6 @@ test('expect deleteUser to successfully delete a entry in the database', () => {
     .then(result => {
       expect(result).toEqual(1)
     })
-    .catch(err => expect(err).toBeNull())
 })
 
 test('expect getWalks to successfully return all data from database and check Id', () => {
@@ -53,7 +49,6 @@ test('expect getWalks to successfully return all data from database and check Id
       expect(walks.length).toEqual(3)
       expect(walks.map(x => x.id)).toEqual([1, 2, 3])
     })
-    .catch(err => expect(err).toBeNull())
 })
 
 test('expect getReviewRatings to return all data from database and check Id', () => {
@@ -62,7 +57,6 @@ test('expect getReviewRatings to return all data from database and check Id', ()
       expect(reviews.length).toEqual(3)
       expect(reviews.map(x => x.id)).toEqual([1, 2, 3])
     })
-    .catch(err => expect(err).toBeNull())
 })
 
 test('expect addReview to return a 4th id', () => {
@@ -71,5 +65,4 @@ test('expect addReview to return a 4th id', () => {
     .then(response => {
       expect(response[0]).toEqual(4)
     })
-    .catch(err => expect(err).toBeNull())
 })

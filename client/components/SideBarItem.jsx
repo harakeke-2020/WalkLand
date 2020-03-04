@@ -10,35 +10,34 @@ class SideBarItem extends Component {
     const { id, title, mainPhoto } = walk
     const { activePageState, selectedWalkState } = this.props
     const { selectedWalk, activePage } = this.props
-    const walkRatings = this.props.ratings //array of ratings
-    const walkId = this.props.walk.id //id of walk passed down
+    const walkRatings = this.props.ratings // array of ratings
+    const walkId = this.props.walk.id // id of walk passed down
     const filterByWalk = walkRatings.filter(walk => walk.walkId === walkId)
     const walkAverage = filterByWalk.reduce((total, next) => total + Number(next.rating), 0) / filterByWalk.length
-  
+
     const style = {
       backgroundImage: `url(${mainPhoto})`
     }
 
-  return (
-    <div>
-      <div style={style}
-        className={
-          `${selectedWalkState.id === id ? 'selected-walk' : 'sidebar-item'}`
-        }
-        onClick={() => {
-          selectedWalk(walk)
-        }}
-      >
-        <h2 data-testid={'sideBarTitle'}> {title} </h2>
-        {!!walkAverage ? <p data-testid={'rating'}>rating: {Math.round((walkAverage + Number.EPSILON) * 100) / 100}</p> : <p>No rating yet</p>}
-        { selectedWalkState.id === id &&
+    return (
+      <div>
+        <div style={style}
+          className={
+            `${selectedWalkState.id === id ? 'selected-walk' : 'sidebar-item'}`
+          }
+          onClick={() => {
+            selectedWalk(walk)
+          }}
+        >
+          <h2 data-testid={'sideBarTitle'}> {title} </h2>
+          {walkAverage ? <p data-testid={'rating'}>rating: {Math.round((walkAverage + Number.EPSILON) * 100) / 100}</p> : <p>No rating yet</p>}
+          { selectedWalkState.id === id &&
         <>
 
         {activePageState === 'details' &&
-        <button onClick={() => activePage('map')}>Show Map</button>}
+        <button data-testid='showMap' name = 'showMap' onClick={() => activePage('map')}>Show Map</button>}
         {activePageState === 'map' &&
-        <button data-testid="showmapbutton" onClick={() => activePage('details') }>Show Details</button>}
-
+        <button data-testid="showDetails" name = 'showDetials' onClick={() => activePage('details') }>Show Details</button>}
         </>
           }
 

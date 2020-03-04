@@ -28,3 +28,20 @@
   margin-top: 50px;
 }
 
+.hamish-profile-deleted {
+  background: rgba(250, 128, 114, 0.5);
+  border: 0px;
+  text-decoration: none !important;
+  text-align: center;
+  display:block;
+  height: 100px;
+  margin: 12% auto auto auto;
+  font-size: 1.3em;
+  padding: 25px;
+  max-width: 35%;
+}
+
+.hamish-profile-deleted:hover {
+  color: white;
+}
+

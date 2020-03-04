@@ -28,7 +28,6 @@ class ProfileReviews extends Component {
               Walk name: {reviewsArr[0] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[0].props.children).title} <br />
               My review: {reviewsArr[1]} <br />
               My rating: {reviewsArr[2]}
-              {/* tesst */}
             </div>
           </div>
         </div>
