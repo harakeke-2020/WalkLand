@@ -9,8 +9,8 @@ export const Landing = (props) => {
       <div data-testid="fullscreen" className="fullscreen-bg">
 
       </div>
-      <div className="logo" >
-        <img src="images/Logowalkland white.png"></img>
+      <div data-testid='logo' className="logo" >
+        <img  data-testid='image'src="images/Logowalkland white.png"></img>
       </div>
       <div className="btn-group-wrap">
         <button data-testid="startButton" className="btn btn-primary btn-sm" onClick={() => props.activePage('map')}>START JOURNEY</button>

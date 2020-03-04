@@ -37,7 +37,6 @@ class Details extends Component {
 
   render () {
     const { selectedWalk } = this.props
-
     const { ratings } = this.props
     const idWalk = selectedWalk.id
     const reviewsArray = ratings.filter(rating => rating.walkId === idWalk).map(data => {
@@ -65,7 +64,7 @@ class Details extends Component {
     return (
 
       <div className="details-container">
-        <h1 className = "details-walktitle">{selectedWalk.title}</h1>
+        <h1 data-testid='detailsTitle' className = "details-walktitle">{selectedWalk.title}</h1>
         <div className = "details-photo-slider">
           <Slider {...settings} >
             {
