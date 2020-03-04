@@ -2,13 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createReview } from './actions/reviewWalks'
 import { create } from 'react-test-renderer'
-// import { Carousel } from 'react-responsive-carousel'
 import Slider from 'react-slick'
 import activePage from './actions/activePage'
 import viewProfile from './actions/viewProfile'
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+// import 'slick-carousel/slick/slick.css'
+// import 'slick-carousel/slick/slick-theme.css'
 
 let slideIndex = 1
 
