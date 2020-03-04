@@ -61,9 +61,6 @@ class NavBar extends React.Component {
           : null
         }
 
-        {/* <NavBarLogin />
-        <NavBarRegister /> */}
-
       </>
     )
   }

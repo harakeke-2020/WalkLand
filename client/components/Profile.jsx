@@ -45,9 +45,6 @@ class Profile extends Component {
               <div className="profile-top-children">
                 {this.props.outsideUser.isViewing ? <ProfileBanner user={this.props.outsideUser.username} welcome={`You are viewing ${this.props.outsideUser.username}'s profile`} /> : <ProfileBanner user={this.props.username} welcome={`Welcome, ${this.props.username}!`} />}
               </div>
-              {/* {this.props.outsideUser.isViewing ? ('You are currently viewing ' + this.props.outsideUser.username + "'s profile.") : ('Welcome! ' + this.props.username)}
-            {this.props.userProfiles.username}
-            {this.props.userProfiles.email} */}
             </div>
 
             <div className="profile-cover">
