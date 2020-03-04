@@ -1,8 +1,6 @@
 exports.seed = function (knex) {
-  // Deletes ALL existing entries
   return knex('ratingReviews').del()
     .then(function () {
-      // Inserts seed entries
       return knex('ratingReviews').insert([
         { id: 1, userId: 1, walkId: 1, username: 'Felix', rating: 5, review: 'Goldie\'s Bush walk was amazing' },
         { id: 2, userId: 2, walkId: 2, username: 'Doderick', rating: 3, review: 'Western springs walk was amazing' },

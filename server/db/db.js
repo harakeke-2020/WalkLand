@@ -56,7 +56,6 @@ function getWalks (db = connection) {
 
 function getReviewRatings (db = connection) {
   return db('ratingReviews')
-    .join('users', 'userId', 'users.id')
     .select()
 }
 
@@ -64,12 +63,6 @@ function addReview (review, db = connection) {
   return db('ratingReviews')
     .insert(review)
 }
-// function getReviewRatings (id) {
-//   return db('reviewRatings')
-//     .join('users', 'userId', 'user.id')
-//     .where('walkId', id)
-//     .first()
-// }
 
 function parser (photosArray) {
   let parsedPhotos = JSON.parse(photosArray.photos)

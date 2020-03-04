@@ -18,12 +18,14 @@ class Login extends Component {
     e.preventDefault()
     this.props.justLogin(this.state)
       .then(this.props.closePopup)
+      .catch(() => null)
   }
 
   render () {
+    console.log('login component state ', this.state)
     return (
       <div className='popup'>
-        <button className='button-round' onClick={this.props.closePopup}>x</button>
+        <button className='button-round button-x' onClick={this.props.closePopup}>x</button>
         <div className='popup_inner'>
           <form onSubmit={this.handleSubmit}>
             <h3>Login</h3>
@@ -50,6 +52,12 @@ class Login extends Component {
         </div>
       </div>
     )
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    error: state.errorState
   }
 }
 
