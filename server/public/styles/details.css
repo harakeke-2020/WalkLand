@@ -1,7 +1,7 @@
 .details-container {
   position: relative;
   display: grid;
-  grid-template-columns:  auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: 400px minmax(0, 1fr);
   grid-column: 1 / -1;
   grid-row: 1 / -1; 
