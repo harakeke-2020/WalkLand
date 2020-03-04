@@ -65,14 +65,14 @@ class Details extends Component {
         <div className = "details-photo-slider">
           <Slider {...settings} >
             {
-              selectedWalk.photos.map((item, idx) => (
+              selectedWalk.photos && selectedWalk.photos.map((item, idx) => (
                 <img className = "details-photos" key={idx} src={item} />
               ))
             }
           </Slider >
         </div>
         <div className="details-content">
-          <div className="details-text">
+          <div data-testid={'description'} className="details-text">
             <p> {`${selectedWalk.description}`} </p>
           </div>
           <img className="details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
