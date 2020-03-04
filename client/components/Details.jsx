@@ -7,9 +7,6 @@ import Slider from 'react-slick'
 import activePage from './actions/activePage'
 import viewProfile from './actions/viewProfile'
 
-// import 'slick-carousel/slick/slick.css'
-// import 'slick-carousel/slick/slick-theme.css'
-
 let slideIndex = 1
 
 class Details extends Component {
@@ -25,7 +22,6 @@ class Details extends Component {
   }
 
   handleSubmit = e => {
-    console.log('given to submit, ', this.state)
     e.preventDefault()
     this.props.createReview({ ...this.state, username: this.props.login, walkId: this.props.selectedWalk.id })
       .then(() => this.setState({
@@ -49,7 +45,6 @@ class Details extends Component {
     })
     const authorsArray = reviewsArray.map(review => review.author)
     const reviewExists = authorsArray.indexOf(this.props.login)
-
     const settings = {
       dots: false,
       infinite: true,
@@ -82,33 +77,38 @@ class Details extends Component {
             <p> {`${selectedWalk.description}`} </p>
           </div>
           <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
+
           <ul className = "details-info">
+            <div className='details-info-text'>
+              <li>{`Location: ${selectedWalk.location}`}</li>
+              <li>{`Distance: ${selectedWalk.distance}`}</li>
+              <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
+              <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
+              <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+              <li>{`Surface: ${selectedWalk.surface}`}</li>
+            </div>
+          </ul>
 
-            <li>{`Location: ${selectedWalk.location}`}</li>
-            <li>{`Distance: ${selectedWalk.distance}`}</li>
-            <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
-            <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
-            <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-            <li>{`Surface: ${selectedWalk.surface}`}</li>
-
+          <div className='details-reviews'>
             <ul>
               {reviewsArray.length > 0
                 ? reviewsArray.map((item, idx) => (
-              <>
-              <li key={idx}>
-                <span>Rating: {item.rating}</span>
-                <span>Review: {item.review}</span>
-                <span>Author: <a href="/#/" onClick={() => {
-                  this.props.activePage('profile')
-                  this.props.viewProfile(item.author, true)
-                }}>{item.author}</a></span>
-              </li>
-              </>
+                   <>
+                    <li key={idx}>
+                      <span>Rating: {item.rating}</span>
+                      <span>Review: {item.review}</span>
+                      <span>Author: <a href="/#/" onClick={() => {
+                        this.props.activePage('profile')
+                        this.props.viewProfile(item.author, true)
+                      }}>{item.author}</a></span>
+                    </li>
+                    </>
                 ))
                 : <p>No reviews yet</p>
               }
             </ul>
-          </ul>
+          </div>
+
           {reviewExists === -1 && this.props.login &&
         <div>
           <form onSubmit={this.handleSubmit}>

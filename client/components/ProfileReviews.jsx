@@ -25,10 +25,9 @@ class ProfileReviews extends Component {
               Image of Walk: <img className="profile-walk-image" src={reviewsArr[0] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[0].props.children).mainPhoto} /><br />
             </div>
             <div className="profile-card-bot">
-              {/* Walk name: {reviewsArr[0] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[0].props.children).title} <br />
+              Walk name: {reviewsArr[0] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[0].props.children).title} <br />
               My review: {reviewsArr[1]} <br />
-              My rating: {reviewsArr[2]} */}
-              tesst
+              My rating: {reviewsArr[2]}
             </div>
           </div>
         </div>

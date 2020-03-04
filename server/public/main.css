@@ -55,14 +55,15 @@ button {
   background-color: #ABD53C;
   color: white;
   font-style: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-size: 12px;
 }
 
 .map-page-container {
   /* background-color: black; */
   display: grid;
-  grid-template-columns: 50px 13cm 50px repeat(9, 1fr);
-  grid-template-rows: 50px repeat(11, 1fr);
+  grid-template-columns: 30% repeat(9, 1fr);
+  grid-template-rows: repeat(12, 1fr);
   width: 100vw;
   height: 99.3vh;
 }
@@ -73,7 +74,17 @@ button {
   grid-template-rows: repeat(6, 1fr);
   height: 100%;
   width: 100%;
-  grid-column: 4 / -1;
+  grid-column: 2 / -1;
+  grid-row: 2 / -1;
+}
+
+.map-containerz {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  height: 100%;
+  width: 100%;
+  grid-column: 2 / -1;
   grid-row: 2 / -1;
 }
 
@@ -185,4 +196,10 @@ button {
 
 .label-white-text {
   color: black;
+}
+
+
+.map-containerz > div > div {
+  width: 70% !important;
+  height: 91.6665% !important;
 }
