@@ -22,17 +22,10 @@ this.checkSideBar = function (browser) {
     .count.to.equal(10)
 
   browser
-    .url(urlLink)
-    .click('button[name=landingButton]')
-    .waitForElementVisible('.items-container', 1000)
-    .waitForElementVisible('.sidebar-item p', 1000)
     .expect.element('.sidebar-item p')
     .text.to.contain('rating')
 
   browser
-    .url(urlLink)
-    .click('button[name=landingButton]')
-    .waitForElementVisible('.items-container', 1000)
     .click('.sidebar-item')
     .expect.elements('.sidebar-item')
     .count.to.equal(9)

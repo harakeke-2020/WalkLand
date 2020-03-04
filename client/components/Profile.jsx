@@ -33,13 +33,13 @@ class Profile extends Component {
             <div className="profile-header">
               <img className='profile-logo' src='images/mainlogo.png' />
               <div className="profile-header-btn-group">
-                <button className="profile-header-btn" onClick={() => this.props.activePage('map')}>Home</button>
-                {this.compareHandler() ? <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button> : null}
-                <button className="profile-header-btn" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>
+                <button name = "home" className="profile-header-btn" onClick={() => this.props.activePage('map')}>Home</button>
+                {this.compareHandler() ? <button name = "settings" className="profile-header-btn" onClick={() => this.setState({ currentPage: 'settings' })}>Settings</button> : null}
+                <button name = "reviews" className="profile-header-btn" onClick={() => this.setState({ currentPage: 'reviews' })}>Reviews</button>
               </div>
             </div>
 
-            <div className="profile-top">
+            <div className="profile-top">Home
               <div className="profile-top-children">
                 {this.props.outsideUser.isViewing ? <ProfileBanner user={this.props.outsideUser.username} welcome={`You are viewing ${this.props.outsideUser.username}'s profile`} /> : <ProfileBanner user={this.props.username} welcome={`Welcome, ${this.props.username}!`} />}
               </div>
