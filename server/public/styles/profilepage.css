@@ -38,6 +38,17 @@
     font-size: 1.1em;
   }
 
+  .hamish-del-btn {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    height: inherit !important;
+  }
+
+  .hamish-del-btn:hover {
+    width: 10em;
+    font-size: 1.1em;
+  }
+
   .profile-top {
     grid-area       : profile-top;
     background-color: #f4f4f4;
