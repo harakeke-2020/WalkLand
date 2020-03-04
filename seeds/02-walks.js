@@ -17,7 +17,7 @@ exports.seed = function (knex) {
             'https://cdn-assets.alltrails.com/uploads/photo/image/21824864/extra_large_f1eb12e2bbed6d49dff05753dcf6d83c.jpg',
             'https://cdn-assets.alltrails.com/uploads/photo/image/25533958/extra_large_ef609dc231603d2ecdfac3e4a30beefe.jpg'
           ]),
-          routeImage: 'http://i.imgur.com/tudbIvd.jpg',
+          routeImage: 'images/GOLDIES BUSH.png',
           distance: '4.5Kms',
           elevationGain: 200,
           timeTaken: '2 Hours',
@@ -37,7 +37,7 @@ exports.seed = function (knex) {
             'https://media-cdn.tripadvisor.com/media/photo-o/10/b1/0e/a4/the-park.jpg',
             'https://media-cdn.tripadvisor.com/media/photo-o/0f/ae/cf/34/park.jpg'
           ]),
-          routeImage: 'images/WESTERN.png',
+          routeImage: 'images/WESTERN SPRINGS.png',
           distance: '1.80Kms',
           elevationGain: 9999,
           timeTaken: '30 Minutes',
@@ -58,7 +58,7 @@ exports.seed = function (knex) {
             'https://cdn-assets.alltrails.com/uploads/photo/image/24822146/extra_large_34d946fc5cfbf5867f596498ef429f64.jpg',
             'https://cdn-assets.alltrails.com/uploads/photo/image/23301390/extra_large_91ce39551d95384765984d9e03a99ef2.jpg'
           ]),
-          routeImage: 'https://s3.ap-southeast-2.amazonaws.com/newzealand.travlr.com/uploads/images/venue/607797d294147384493af55f89eff042.jpg?v=1',
+          routeImage: 'images/the-nga-walkway.png',
           distance: '10.0Kms',
           elevationGain: 572,
           timeTaken: '3 Hours',
@@ -80,7 +80,7 @@ exports.seed = function (knex) {
             'https://cdn-assets.alltrails.com/uploads/photo/image/25474412/extra_large_8cef49974c57ecdbda84e280f8053073.jpg',
             'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/1b/93/d7/photo0jpg.jpg'
           ]),
-          routeImage: 'https://cdn-assets.alltrails.com/uploads/photo/image/22420358/extra_large_6681c195333a67b86650ccc0cfc0811e.jpg',
+          routeImage: 'images/rangitoto.png',
           distance: '3.10Kms',
           elevationGain: 1442,
           timeTaken: '1 Hour',
