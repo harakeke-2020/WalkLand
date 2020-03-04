@@ -5,11 +5,11 @@ import activePage from './actions/activePage'
 export const Landing = (props) => {
   return (
     <>
-      <div data-testid="fullscreen" className="logo fullscreen-bg" >
-        <img src="images/Logowalkland white.png"></img>
+      <div className="logo fullscreen-bg" >
+        <img data-testid="image" src="images/Logowalkland white.png"></img>
       </div>
       <div className="btn-group-wrap">
-        <button name = 'landingButton' data-testid="startButton" className="btn btn-primary btn-sm" onClick={() => props.activePage('map')}>START JOURNEY</button>
+        <button name='landingButton' data-testid="startButton" className="btn btn-primary btn-sm" onClick={() => props.activePage('map')}>START JOURNEY</button>
       </div>
     </>
   )
