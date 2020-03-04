@@ -89,21 +89,20 @@ class Details extends Component {
             </div>
           </ul>
 
-          <div className='details-reviews'>
-            <ul>
+          <div className='hamish-reviews-wrapper'>
+            <ul className='hamish-reviews-grid'>
               {reviewsArray.length > 0
                 ? reviewsArray.map((item, idx) =>
                   <>
-                    <li key={idx}>
-                      <ul>
+                    <li className="card card-body hamish-review-card" key={idx}>
+                      <ul className="hamish-stars-ul">
                         {
                           item.stars.length > 0 &&
-                          item.stars.map((star, idx) => <li key={idx}>star</li>)
+                          item.stars.map((star, idx) => <img key={idx} className="hamish-stars-li" width="25" src="https://image.flaticon.com/icons/svg/148/148841.svg" alt="Image of star"/>)
                         }
                       </ul>
-                      <span>Rating: {item.rating}</span>
-                      <span>Review: {item.review}</span>
-                      <span>Author: <a href="/#/" onClick={() => {
+                      <span className="card-text" ><span className="hamish-bold">Review</span>: {item.review}</span><br></br>
+                      <span className="card-text"><span className="hamish-bold">Author:</span> <a href="/#/" onClick={() => {
                         this.props.activePage('profile')
                         this.props.viewProfile(item.author, true)
                       }}>{item.author}</a></span>
