@@ -51,6 +51,7 @@
 }
 
 .hamish-reviews-grid {
+  margin: 60px 0 60px;
   padding-inline-start: 0px;
   display: flex;
   flex-direction: row;
@@ -61,10 +62,11 @@
 .hamish-review-card {
   /* display: inline-block;
   float: left; */
-  width: 33.33% !important;
-  max-width: 33.33%;
+  width: 30% !important;
+  max-width: 30%;
   margin: 5px;
-  min-height: 200px;
+  min-height: 270px;
+  border-radius: 5px;
   /* background: white;
   padding: 10px; */
 }
@@ -74,6 +76,7 @@
   flex-direction: row;
   justify-content: center;
   padding-inline-start: 0px;
+  margin-bottom: 25px;
 }
 
 .hamish-bold {
