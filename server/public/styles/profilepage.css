@@ -1,6 +1,6 @@
   /** PROFILE PAGE CSS **/
   .profile-container {
-    display              : grid;
+    /* display              : grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows   : 7.6% 46.2% 46.2%;
     grid-template-areas  :
@@ -11,8 +11,8 @@
     ;
     padding         : 0;
     margin          : 0;
-    height          : 100vh;
-    width           : 100vw;
+    height          : 100vh; */
+    width           : 100%;
     background-color: #f4f4f4;
   }
 
@@ -63,7 +63,8 @@
   .profile-top-children {
     display              : grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows   : 100%;
+    padding: 30px;
+    /* grid-template-rows   : 100%;
     grid-template-areas  :
 
       "profile-top-content-left profile-top-content-right"
@@ -71,7 +72,7 @@
 
     height    : 100%;
     width     : 100%;
-    background: #FFFFFF;
+    background: #FFFFFF; */
   }
 
   .profile-top-content-right {
@@ -91,8 +92,9 @@
 
   .profile-bottom-children {
     display              : grid;
-    grid-template-columns: 33% auto 33%;
-    grid-template-rows   : 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    /* grid-template-rows   : 100%;
     grid-template-areas  :
 
       "profile-bot-container-left profile-bot-container-mid profile-bot-container-right"
@@ -100,32 +102,29 @@
 
     height    : 100%;
     width     : 100%;
-    background: #FFFFFF;
+    background: #FFFFFF; */
   }
 
   .profile-bot-container-left {
     background: white;
-    max-width : 100%;
-    height    : 100%;
-    padding   : 30px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
   }
 
   .profile-bot-container-mid {
     background: white;
-    max-width : 100%;
-    height    : 100%;
-    padding   : 30px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
   }
 
   .profile-bot-container-right {
     background: white;
-    max-width : 100%;
-    height    : 100%;
-    padding   : 30px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
   }
 
   .profile-bot-content-card {
-    
+/*     
     display              : grid;
     grid-template-columns: 100%;
     grid-template-rows   : 70% 30%;
@@ -140,7 +139,7 @@
     background   : white;
     max-width    : 50%;
     height       : 100%;
-    margin-left  : 25%;
+    margin-left  : 25%; */
     box-shadow   : 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px
   }
@@ -193,14 +192,14 @@
     object-position: center right;
   }
 
-  .profile-cover {
+  /* .profile-cover {
     grid-area       : profile-cover;
     background-color: rgb(245, 243, 243);
     /* border-style : groove;
     border-color    : rgb(204, 204, 204);
     border-radius   : 5px;
     border-width    : 0.5px; */
-  }
+  } */
 
   .profile-bottom {
     grid-area      : profile-bottom;
@@ -211,11 +210,6 @@
     border-width   : 0.1px; */
   }
 
-  .profile-bottom-children {
-    height    : 100%;
-    width     : 100%;
-    background: #FFFFFF;
-  }
 
   .profile-logo {
     /* max-height: 100%; */

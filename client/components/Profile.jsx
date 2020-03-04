@@ -25,7 +25,7 @@ class Profile extends Component {
     return this.props.username === this.props.outsideUser.username
   }
 
-  render () {
+  render() {
     return (
       <>
         {this.props.userProfiles === 'error' ? <a className="alert alert-danger hamish-profile-deleted" href="/#/" onClick={() => this.props.activePage('details')}>Profile not found. Click to go back.</a>
@@ -39,23 +39,18 @@ class Profile extends Component {
               </div>
             </div>
 
-            <div className="profile-top">
-              <div className="profile-top-children">
-                {this.props.outsideUser.isViewing ? <ProfileBanner user={this.props.outsideUser.username} welcome={`You are viewing ${this.props.outsideUser.username}'s profile`} /> : <ProfileBanner user={this.props.username} welcome={`Welcome, ${this.props.username}!`} />}
-              </div>
+            <div className="profile-top-children">
+              {this.props.outsideUser.isViewing ? <ProfileBanner user={this.props.outsideUser.username} welcome={`You are viewing ${this.props.outsideUser.username}'s profile`} /> : <ProfileBanner user={this.props.username} welcome={`Welcome, ${this.props.username}!`} />}
+            </div>
+            {/* {this.props.outsideUser.isViewing ? ('You are currently viewing ' + this.props.outsideUser.username + "'s profile.") : ('Welcome! ' + this.props.username)}
+            {this.props.userProfiles.username}
+            {this.props.userProfiles.email} */}
+
+            <div className="profile-bottom-children">
+              {this.compareHandler() && this.state.currentPage === 'settings' ? <ProfileSetting showButton="true" stateHandler={() => this.stateHandler} /> : <ProfileSetting showButton="false" />}
+              {this.state.currentPage === 'reviews' ? <ProfileReviews /> : null}
             </div>
 
-            <div className="profile-cover">
-            </div>
-
-            <div className="profile-bottom">
-
-              <div className="profile-bottom-children">
-                {this.compareHandler() && this.state.currentPage === 'settings' ? <ProfileSetting showButton="true" stateHandler={() => this.stateHandler} /> : <ProfileSetting showButton="false" />}
-                {this.state.currentPage === 'reviews' ? <ProfileReviews /> : null}
-              </div>
-
-            </div>
           </div>
         }
       </>
