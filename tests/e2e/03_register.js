@@ -22,7 +22,7 @@ this.checkRegisterPopUp = function (browser) {
     .clearValue('input[name=password]')
     .setValue('input[name=password]', 'q')
     .click('button[name=submit]')
-    .waitForElementVisible('#profile-name-nav', 1000)
+    .waitForElementVisible('#profile-name-nav', 2000)
     .expect.element('#profile-name-nav')
     .text.to.contain(user)
   // eslint-disable-next-line no-unused-expressions

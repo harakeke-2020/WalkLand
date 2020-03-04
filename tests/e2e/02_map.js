@@ -1,18 +1,5 @@
 const urlLink = process.env.TEST_URL || 'http://localhost:3000'
 
-// this.clickmapIcon = function (browser) {
-//   browser
-//     .url(urlLink)
-//     .click('button[name=landingButton]')
-//     .waitForElementVisible('#gmimap0', 3000)
-//     .waitForElementVisible('#gmimap0 area', 3000)
-//     .moveToElement('#gmimap0 area', 10, 10)
-//     .mouseButtonClick()
-//   browser
-//     .url(urlLink)
-
-//   // .waitForElementVisible('button[name=showDetials]', 3000)
-// }
 this.checkSideBar = function (browser) {
   browser
     .url(urlLink)
@@ -40,3 +27,16 @@ this.checkSideBarItem = function (browser) {
     .expect.element('button[name=showDetials]').to.be.visible
     // .waitForElementVisible('button[name=showDetials]', 1000)
 }
+
+// this.clickmapIcon = function (browser) {
+//   browser
+//     .url(urlLink)
+//     .click('button[name=landingButton]')
+//     .waitForElementVisible('#gmimap0', 3000)
+//     .waitForElementVisible('#gmimap0 area', 3000)
+//     .click('#gmimap0')
+//   browser
+//     .url(urlLink)
+
+  // .waitForElementVisible('button[name=showDetials]', 3000)
+

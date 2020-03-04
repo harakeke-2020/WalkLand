@@ -94,7 +94,7 @@ class Details extends Component {
               {reviewsArray.length > 0
                 ? reviewsArray.map((item, idx) =>
                   <>
-                    <li className="card card-body hamish-review-card" key={idx}>
+                    <li id = "tomId" className="card card-body hamish-review-card" key={idx}>
                       <ul className="hamish-stars-ul">
                         {
                           item.stars.length > 0 &&
@@ -140,7 +140,7 @@ class Details extends Component {
             /><br/>
             <input type='hidden' value={this.props.selectedWalk.id} name="walkId" />
             <input type='hidden' value={this.props.login} name="username" />
-            <button type='submit'>Submit Review</button>
+            <button name = "submitReview" type='submit'>Submit Review</button>
           </form>
         </div>
           }
