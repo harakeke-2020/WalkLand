@@ -15,8 +15,7 @@ let slideIndex = 1
 class Details extends Component {
   state = {
     rating: '',
-    review: '',
-    walkId: this.props.selectedWalk.id
+    review: ''
   }
 
   handleChange = e => {
@@ -26,9 +25,13 @@ class Details extends Component {
   }
 
   handleSubmit = e => {
+    console.log('given to submit, ', this.state)
     e.preventDefault()
-    this.props.createReview({ ...this.state, username: this.props.login })
-      .then(thing => console.log('this state: ', thing))
+    this.props.createReview({ ...this.state, username: this.props.login, walkId: this.props.selectedWalk.id })
+      .then(() => this.setState({
+        rating: '',
+        review: ''
+      }))
       .catch(err => console.log(err))
   }
 
@@ -44,6 +47,8 @@ class Details extends Component {
         author: data.username
       }
     })
+    const authorsArray = reviewsArray.map(review => review.author)
+    const reviewExists = authorsArray.indexOf(this.props.login)
 
     const settings = {
       dots: false,
@@ -87,7 +92,8 @@ class Details extends Component {
             <li>{`Surface: ${selectedWalk.surface}`}</li>
 
             <ul>
-              {reviewsArray.map((item, idx) => (
+              {reviewsArray.length > 0
+                ? reviewsArray.map((item, idx) => (
               <>
               <li key={idx}>
                 <span>Rating: {item.rating}</span>
@@ -98,11 +104,12 @@ class Details extends Component {
                 }}>{item.author}</a></span>
               </li>
               </>
-              ))}
+                ))
+                : <p>No reviews yet</p>
+              }
             </ul>
           </ul>
-
-          {this.props.login &&
+          {reviewExists === -1 && this.props.login &&
         <div>
           <form onSubmit={this.handleSubmit}>
             <h1>Submit your experience!</h1>
@@ -128,7 +135,6 @@ class Details extends Component {
             /><br/>
             <input type='hidden' value={this.props.selectedWalk.id} name="walkId" />
             <input type='hidden' value={this.props.login} name="username" />
-
             <button type='submit'>Submit Review</button>
           </form>
         </div>

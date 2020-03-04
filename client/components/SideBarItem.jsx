@@ -28,6 +28,7 @@ export const SideBarItem = (props) => {
         }}
       >
         <h2 data-testid={'sideBarTitle'}> {title} </h2>
+        {!!walkAverage ? <p data-testid={'rating'}>rating: {walkAverage}</p> : <p>No rating yet</p>}
         { selectedWalkState.id === id &&
         <>
         {activePageState === 'details' &&
@@ -36,7 +37,6 @@ export const SideBarItem = (props) => {
         <button data-testid="showDetails" onClick={() => activePage('details') }>Show Details</button>}
         </>
         }
-        <p data-testid={'rating'}>rating: {walkAverage}</p>
       </div>
     </div>
   )

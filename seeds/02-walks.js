@@ -58,7 +58,7 @@ exports.seed = function (knex) {
             'https://cdn-assets.alltrails.com/uploads/photo/image/24822146/extra_large_34d946fc5cfbf5867f596498ef429f64.jpg',
             'https://cdn-assets.alltrails.com/uploads/photo/image/23301390/extra_large_91ce39551d95384765984d9e03a99ef2.jpg'
           ]),
-          routeImage: 'images/tehengawalkway.png',
+          routeImage: 'https://s3.ap-southeast-2.amazonaws.com/newzealand.travlr.com/uploads/images/venue/607797d294147384493af55f89eff042.jpg?v=1',
           distance: '10.0Kms',
           elevationGain: 572,
           timeTaken: '3 Hours',
