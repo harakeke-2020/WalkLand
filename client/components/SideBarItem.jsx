@@ -28,7 +28,7 @@ export const SideBarItem = (props) => {
         }}
       >
         <h2 data-testid={'sideBarTitle'}> {title} </h2>
-        {!!walkAverage ? <p data-testid={'rating'}>rating: {walkAverage}</p> : <p>No rating yet</p>}
+        {!!walkAverage ? <p data-testid={'rating'}>rating: {Math.round((walkAverage + Number.EPSILON) * 100) / 100}</p> : <p>No rating yet</p>}
         { selectedWalkState.id === id &&
         <>
         {activePageState === 'details' &&

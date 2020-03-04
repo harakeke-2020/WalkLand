@@ -1,12 +1,21 @@
 .hamish-error {
   background: rgb(250, 128, 114, 0.9);
   z-index: 105;
-  width: 20%;
+  position: fixed;
+  width: 25%;
+  height: 25%;
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  min-width: 250px;
+  min-height: 140px;
+  transform: translate(-50%, -50%);
 }
 
 .hamish-button-round {
   background: rgba(255, 255, 255, 0.8);
   z-index: 106;
+  right: 0;
 }
 
 .hamish-popup-inner {

@@ -7,16 +7,15 @@ import Slider from 'react-slick'
 import activePage from './actions/activePage'
 import viewProfile from './actions/viewProfile'
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+// import 'slick-carousel/slick/slick.css'
+// import 'slick-carousel/slick/slick-theme.css'
 
 let slideIndex = 1
 
 class Details extends Component {
   state = {
     rating: '',
-    review: '',
-    walkId: this.props.selectedWalk.id
+    review: ''
   }
 
   handleChange = e => {
@@ -26,8 +25,9 @@ class Details extends Component {
   }
 
   handleSubmit = e => {
+    console.log('given to submit, ', this.state)
     e.preventDefault()
-    this.props.createReview({ ...this.state, username: this.props.login })
+    this.props.createReview({ ...this.state, username: this.props.login, walkId: this.props.selectedWalk.id })
       .then(() => this.setState({
         rating: '',
         review: ''
@@ -49,23 +49,25 @@ class Details extends Component {
     })
     const authorsArray = reviewsArray.map(review => review.author)
     const reviewExists = authorsArray.indexOf(this.props.login)
-    console.log('currently logged in user ', this.props.login)
 
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       centerMode: true,
-      centerPadding: '0px'
+      centerPadding: '0px',
+      arrows: false
     }
+
     const texty = "I saw the way the woman walked, shoulders back, yet eyes frequently checking her own appearance; it was as if she felt superior and insecure all at once, perhaps that's the emotional optimum in a shallow society. I prefer the way our Maya is, she swaggers, a sort of free-style motion that says she's real happy with who she is, eyes on the sky, the trees and the birds, music in her soul as much as her ears."
 
     return (
 
       <div className="details-container">
-        <h1 className = "details-walktitle">{selectedWalk.title}</h1>
+        <div className = "details-walktitle">
+        </div>
         <div className = "details-photo-slider">
           <Slider {...settings} >
             {
@@ -75,22 +77,23 @@ class Details extends Component {
             }
           </Slider >
         </div>
-        <div className = "details-text">
-          <p> {`${selectedWalk.description}`} </p>
-        </div>
-        <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
-        <ul className = "details-info">
+        <div className="details-content">
+          <div className = "details-text">
+            <p> {`${selectedWalk.description}`} </p>
+          </div>
+          <img className = "details-map" src={selectedWalk.routeImage} height="100%" width="100%" />
+          <ul className = "details-info">
 
-          <li>{`Location: ${selectedWalk.location}`}</li>
-          <li>{`Distance: ${selectedWalk.distance}`}</li>
-          <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
-          <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
-          <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
-          <li>{`Surface: ${selectedWalk.surface}`}</li>
+            <li>{`Location: ${selectedWalk.location}`}</li>
+            <li>{`Distance: ${selectedWalk.distance}`}</li>
+            <li>{`Elevation Gain: ${selectedWalk.elevationGain}m`}</li>
+            <li>{`Estimated Time: ${selectedWalk.timeTaken}`}</li>
+            <li>{`Difficulty: ${selectedWalk.difficulty}`}</li>
+            <li>{`Surface: ${selectedWalk.surface}`}</li>
 
-          <ul>
-            {reviewsArray.length > 0
-              ? reviewsArray.map((item, idx) => (
+            <ul>
+              {reviewsArray.length > 0
+                ? reviewsArray.map((item, idx) => (
               <>
               <li key={idx}>
                 <span>Rating: {item.rating}</span>
@@ -101,12 +104,12 @@ class Details extends Component {
                 }}>{item.author}</a></span>
               </li>
               </>
-              ))
-              : <p>No reviews yet</p>
-            }
+                ))
+                : <p>No reviews yet</p>
+              }
+            </ul>
           </ul>
-        </ul>
-        {reviewExists === -1 && this.props.login &&
+          {reviewExists === -1 && this.props.login &&
         <div>
           <form onSubmit={this.handleSubmit}>
             <h1>Submit your experience!</h1>
@@ -135,8 +138,8 @@ class Details extends Component {
             <button type='submit'>Submit Review</button>
           </form>
         </div>
-        }
-
+          }
+        </div>
       </div>
     )
   }
