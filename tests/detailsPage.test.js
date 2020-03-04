@@ -1,12 +1,10 @@
 import React from 'react'
 import './setup'
 import renderWithRedux from '../tests/renderWithRedux'
-import { render, fireEvent, queryByTestId, getByTestId } from '@testing-library/react'
 import Details from '../client/components/Details'
 
 import '@testing-library/jest-dom/extend-expect'
 import '@babel/polyfill'
-
 
 const mockData = [{
   id: 1,
@@ -55,14 +53,14 @@ test('user can see slider ', () => {
   expect(description).toBeTruthy()
 })
 
-test('Loads and displays description ', () => {
+test('User can see description ', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('description')
   expect(description).toBeInTheDocument()
   expect(description).toBeTruthy()
 })
 
-test('Loads and displays description ', () => {
+test('User can see details ', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('ul')
   expect(description).toHaveClass('details-info')
@@ -71,7 +69,7 @@ test('Loads and displays description ', () => {
 
 })
 
-test('Loads and displays description ', () => {
+test('use can see image ', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('grid')
   expect(description).toHaveClass('hamish-reviews-grid')
@@ -79,7 +77,7 @@ test('Loads and displays description ', () => {
   expect(description).toBeTruthy()
 })
 
-test('Loads and displays description ', () => {
+test('User can see reviews', () => {
   const { getByTestId } = renderWithRedux(<Details selectedWalk={mockData}  />)
   const description = getByTestId('review')
   expect(description).toHaveTextContent('No reviews yet')
