@@ -58,7 +58,7 @@ class Details extends Component {
     }
 
     return (
-       
+
       <div className="details-container">
         <div className = "details-walktitle">
         </div>
