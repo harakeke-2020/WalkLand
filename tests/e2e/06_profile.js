@@ -1,7 +1,7 @@
 const urlLink = process.env.TEST_URL || 'http://localhost:3000'
 
 this.checkProfile = function (browser) {
-  const user = 'dank45'
+  const user = 'Test User'
   // eslint-disable-next-line no-unused-expressions
   browser
     .url(urlLink)
@@ -18,7 +18,7 @@ this.checkProfile = function (browser) {
 }
 
 this.deleteProfile = function (browser) {
-  const user = 'dank45'
+  const user = 'Test User'
   // eslint-disable-next-line no-unused-expressions
   browser
     .url(urlLink)

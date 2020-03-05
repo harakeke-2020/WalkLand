@@ -11,7 +11,7 @@ this.checkRegisterPopUp = function (browser) {
 }
 
 this.checkRegisterPopUp = function (browser) {
-  const user = 'dank45'
+  const user = 'Test User'
   browser
     .url(urlLink)
     .click('button[name=landingButton]')

@@ -1,8 +1,8 @@
 const urlLink = process.env.TEST_URL || 'http://localhost:3000'
 
 this.createAReview = function (browser) {
-  const user = 'dank45'
-  const walkInput = "good walk"
+  const user = 'Test User'
+  const walkInput = "Goldie's Walkway was AMAZING!"
   // eslint-disable-next-line no-unused-expressions
   browser
     .url(urlLink)

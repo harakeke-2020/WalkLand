@@ -10,7 +10,7 @@ let slideIndex = 1
 
 class Details extends Component {
   state = {
-    rating: '',
+    rating: 0,
     review: ''
   }
 
@@ -24,7 +24,7 @@ class Details extends Component {
     e.preventDefault()
     this.props.createReview({ ...this.state, username: this.props.login, walkId: this.props.selectedWalk.id })
       .then(() => this.setState({
-        rating: '',
+        rating: 0,
         review: ''
       }))
       .catch(err => console.log(err))
@@ -56,7 +56,6 @@ class Details extends Component {
       centerPadding: '0px',
       arrows: false
     }
-
     return (
 
       <div className="details-container">

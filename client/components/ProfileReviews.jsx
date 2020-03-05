@@ -17,7 +17,7 @@ class ProfileReviews extends Component {
     })
     return (
       <>
-        <div className="profile-bot-container-left">
+      {reviewsArr[0] === undefined ? null : <div className="profile-bot-container-left">
           <div className="profile-bot-content-card">
             <div className="profile-card-top">
               <img className="profile-walk-image" src={reviewsArr[0] === undefined ? '' : this.props.allWalks.find(walk => walk.id === reviewsArr[0].props.children).mainPhoto} /><br />
@@ -29,6 +29,7 @@ class ProfileReviews extends Component {
             </div>
           </div>
         </div>
+       }
 
         {reviewsArr[3] === undefined ? null : <div className="profile-bot-container-mid">
           <div className="profile-bot-content-card">

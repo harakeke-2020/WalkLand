@@ -27,7 +27,7 @@ this.checkLoginfails = function (browser) {
 }
 
 this.checkLoginPass = function (browser) {
-  const user = 'dank45'
+  const user = 'Test User'
   // eslint-disable-next-line no-unused-expressions
   browser
     .url(urlLink)
