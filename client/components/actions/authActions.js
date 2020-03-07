@@ -27,7 +27,7 @@ export const deleteUser = () => {
 export function registerUserAndLogin (user) {
   return (dispatch) => {
     return request
-      .post('http://walkland.herokuapp.com/api/v1/auth/registerUser')
+      .post('https://walkland.herokuapp.com/api/v1/auth/registerUser')
       .send(user)
       .then(data => {
         if (data.message) {
@@ -36,7 +36,7 @@ export function registerUserAndLogin (user) {
           dispatch(setError(data.message))
           dispatch(loginUser(res.req._data.username))
         } else {
-          return request.post('http://walkland.herokuapp.com/api/v1/auth/loginUser')
+          return request.post('https://walkland.herokuapp.com/api/v1/auth/loginUser')
             .send({ username: user.username, password: user.password })
             .then(res => {
               localStorage.setItem('token', res.body.token)
@@ -53,7 +53,7 @@ export function registerUserAndLogin (user) {
 
 export function justLogin (user) {
   return (dispatch) => {
-    return request.post('http://walkland.herokuapp.com/api/v1/auth/loginUser')
+    return request.post('https://walkland.herokuapp.com/api/v1/auth/loginUser')
       .send({ username: user.username, password: user.password })
       .then(res => {
         if (res.message) {
