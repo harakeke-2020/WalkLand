@@ -2,6 +2,7 @@ const environment = process.env.NODE_ENV || 'development'
 const config = require('../../knexfile')[environment]
 const connection = require('knex')(config)
 
+//test
 module.exports = {
   getUsers,
   getWalks,
