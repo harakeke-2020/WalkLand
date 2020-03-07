@@ -15,7 +15,7 @@ const db = require("../db/db");
 
 router.post("/registerUser", (req, res, next) => {
   return request
-    .post("http://localhost:3000/api/v1/auth/registerUser")
+    .post("http://walkland.herokuapp.com/api/v1/auth/registerUser")
     .then(() => {
       passport.authenticate("register", (err, user, info) => {
         if (err) {
@@ -34,7 +34,7 @@ router.post("/registerUser", (req, res, next) => {
 
 router.post("/loginUser", (req, res, next) => {
   return request
-    .post("http://localhost:3000/api/v1/auth/loginUser")
+    .post("http://walkland.herokuapp.com/api/v1/auth/loginUser")
     .then(() => {
       passport.authenticate("login", (err, users, info) => {
         if (err) {

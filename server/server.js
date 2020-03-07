@@ -26,7 +26,7 @@ server.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
   next();
 });
-server.use("/api/v1/auth", auth);
+server.use("http://walkland.herokuapp.com/api/v1/auth", auth);
 server.use("/api/v1/walks", walks);
 server.use("/api/v1/users", users);
 server.use("/api/v1/rating", rating);
