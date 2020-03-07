@@ -1,7 +1,7 @@
 exports.seed = function (knex) {
-  return knex('ratingReviews').del()
+  return knex('ratingreviews').del()
     .then(function () {
-      return knex('ratingReviews').insert([
+      return knex('ratingreviews').insert([
         { id: 1, walkId: 1, username: 'Felix', rating: 5, review: 'Goldie\'s Bush walk was amazing' },
         { id: 2, walkId: 2, username: 'Doderick', rating: 3, review: 'Western springs walk was amazing' },
         { id: 3, walkId: 3, username: 'Mylanta', rating: 5, review: 'Te Henga Walkway was amazing. The entry into the beach, the walk along the cliffside, the ease into Muriwai Beach. It truly showed the best of the beauty that Auckland\'s West Coast has to offer.' },
