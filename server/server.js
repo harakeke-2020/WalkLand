@@ -12,12 +12,12 @@ const server = express()
 
 require('./config/passport')
 
-server.use(cors())
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json())
 server.use(passport.initialize())
 // server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
+server.use(cors())
 
 server.use('/api/v1/auth', auth)
 server.use('/api/v1/walks', walks)
