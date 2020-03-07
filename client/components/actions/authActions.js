@@ -74,7 +74,7 @@ export function justLogin (user) {
 export function deleteProfile (username) {
   return (dispatch) => {
     return request
-      .delete(`http://walkland.herokuapp.com/api/v1/auth/deleteUser/${username}`)
+      .delete(`https://walkland.herokuapp.com/api/v1/auth/deleteUser/${username}`)
       .set('authorization', `bearer ${localStorage.token}`)
       .then(res => {
         dispatch(deleteUser())
