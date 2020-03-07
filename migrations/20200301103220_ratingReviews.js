@@ -1,5 +1,5 @@
 exports.up = (knex, Promise) => {
-  return knex.schema.createTable('Ratingreviews', function (table) {
+  return knex.schema.createTable('ratingreviews', function (table) {
     table.increments().primary()
     table.integer('walkId')
     table.text('username')
@@ -9,5 +9,5 @@ exports.up = (knex, Promise) => {
 }
 
 exports.down = (knex, Promise) => {
-  return knex.schema.dropTable('Ratingreviews')
+  return knex.schema.dropTable('ratingreviews')
 }

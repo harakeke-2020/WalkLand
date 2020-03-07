@@ -1,8 +1,8 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('Walks').del()
+  return knex('walks').del()
     .then(function () {
-      return knex('Walks').insert([
+      return knex('walks').insert([
         {
           id: 1,
           title: 'Goldie\'s Bushwalk',
