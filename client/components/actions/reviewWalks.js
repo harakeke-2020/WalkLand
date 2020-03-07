@@ -13,7 +13,7 @@ const addReview = review => {
 export function createReview (review) {
   return (dispatch) => {
     return request
-      .post('https://walkland.herokuapp.com/api/v1/rating')
+      .post('http://walkland.herokuapp.com/api/v1/rating')
       .send(review)
       .then(res => {
         if (res.message) {
