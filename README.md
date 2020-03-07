@@ -14,6 +14,10 @@ We want to be able to share this amazing city called Auckland, and allow people 
 
 We hope you enjoy your time in Walkland.
 
+## Before you start
+The app hasn't been deployed, and the working branch is dev.
+Please make sure you are on the dev branch before installing!
+
 
 ## Installing
 Firstly, install all the required packages by running:
