@@ -4,7 +4,7 @@ const auth = require('./routes/authRoutes')
 const walks = require('./routes/walks')
 const users = require('./routes/users')
 const rating = require('./routes/rating')
-const Cors = require('cors')
+const cors = require('cors')
 const passport = require('passport')
 const bodyParser = require('body-parser')
 
@@ -12,7 +12,7 @@ const server = express()
 
 require('./config/passport')
 
-server.use(Cors())
+server.use(cors())
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json())
 server.use(passport.initialize())
