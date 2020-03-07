@@ -1,3 +1,4 @@
+//try 'ratingreviews'
 exports.up = (knex, Promise) => {
   return knex.schema.createTable('ratingreviews', function (table) {
     table.increments().primary()
