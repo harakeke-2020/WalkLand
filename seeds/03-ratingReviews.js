@@ -1,3 +1,4 @@
+//test without primary id
 exports.seed = function (knex) {
   return knex('ratingreviews').del()
     .then(function () {
