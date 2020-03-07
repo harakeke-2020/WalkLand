@@ -89,7 +89,6 @@
     "styled-components": "^5.0.1",
     "superagent": "^5.2.2",
     "watchman": "^1.0.0",
-    "sqlite3": "^4.1.1",
     "chromedriver": "^80.0.1",
     "file-loader": "^5.1.0",
     "node-sass": "^4.13.1",
@@ -116,6 +115,7 @@
     "react-redux": "^7.0.2",
     "react-test-renderer": "^16.13.0",
     "selenium-server": "^3.141.59",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "sqlite3": "^4.1.1"
   }
 }
