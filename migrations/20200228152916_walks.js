@@ -12,7 +12,7 @@ exports.up = (knex, Promise) => {
     table.integer('elevationGain')
     table.text('timeTaken')
     table.text('difficulty')
-    table.text('Surface')
+    table.text('surface')
     table.text('description')
   })
 }
